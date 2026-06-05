@@ -1,0 +1,516 @@
+Cybersecurity Fundamentals
+CCY2001: Introduction to Cybersecurity
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Topic 4
+Cryptography 
+Part 2
+' - 1
+Topic 4
+Cryptography 
+Part 2
+' - 2
+Definition of Block Cipher
+A block of plaintext is treated 
+as a whole and used to 
+produce a ciphertext block of 
+equal length
+The majority of network
+based symmetric 
+cryptographic applications 
+make use of block ciphers
+' - 3
+Feistel
+Feistel
+Cipher
+Cipher 
+is the concept structure used by many significant 
+symmetric block ciphers currently in use. It 
+Substitution
+: Each plaintext element or group of elements is 
+uniquely replaced by a corresponding ciphertext element or 
+group of elements
+Permutation
+includes the following:
+: No elements are added or deleted or replaced in 
+the sequence, rather the order in which the elements appear in 
+the sequence is changed
+' - 4
+Feistel
+Feistel
+Cipher
+Cipher 
+Shannon
+is a practical application of a proposal by 
+to develop a product cipher that defines 
+Confusion
+Diffusion
+Claude 
+Diffusion 
+functions.
+: The statistical structure of the plaintext is dissipated into 
+long
+range statistics of the ciphertext. This is achieved by having 
+each plaintext digit affect the value of many ciphertext digits
+Confusion
+and
+: To make the relationship between the statistics of 
+the ciphertext and the key as complex as possible. It means that 
+the way in which the key was used to produce that ciphertext is 
+so complex as to make it difficult to deduce the key
+' - 5
+Feistel
+Cipher Design Features
+Block size
+•
+Larger block sizes mean greater security but reduced 
+encryption/decryption speed for a given algorithm
+•
+Key size
+Larger key size means greater security but may 
+decrease encryption/decryption speeds
+Number of rounds
+•
+The essence of the 
+Feistel
+cipher is that a single 
+round offers inadequate security but that multiple 
+rounds offer increasing security
+Subkey generation algorithm
+•
+Greater complexity in this algorithm should lead to 
+greater difficulty of cryptanalysis
+Round function F
+•
+Greater complexity generally means greater 
+resistance to cryptanalysis
+' - 6
+Feistel
+Cipher Example
+' - 7
+Data Encryption Standard (DES)
+Issued in 1977 by the 
+National Bureau of 
+Standards (now NIST) 
+as Federal Information 
+Processing Standard 46
+Data are encrypted in 
+64-bit blocks using a 
+56-bit key based on 
+Feistel Cipher Concept
+Was the most widely 
+used encryption 
+scheme until the 
+introduction of the 
+Advanced Encryption 
+Standard (AES) in 2001
+The algorithm 
+transforms 64-bit input 
+in a series of steps into 
+a 64-bit output
+Algorithm itself is 
+referred to as the Data 
+Encryption Algorithm 
+(DEA)
+The same steps, with 
+the same key, are used 
+to reverse the 
+encryption
+' - 8
+Data Encryption Standard (DES)
+Initial Permutation (IP)
+First step of the data computation 
+IP reorders the input data bits 
+Even bits to LH half, odd bits to RH half 
+Example: IP(675a6967 5e5a6b5a) = (ffb2194d 004df6fb)
+' - 9
+Data Encryption Standard (DES)
+Initial Permutation (IP)
+First step of the data computation 
+IP reorders the input data bits 
+Even bits to LH half, odd bits to RH half 
+Example: IP(675a6967 5e5a6b5a) = (ffb2194d 004df6fb)
+' - 10
+Data Encryption Standard (DES)
+Based on Feistel Cipher, the overall processing at 
+each round can be summarized in the following 
+formulas: 
+Li= Ri-1
+and Ri= Li-1⨁F(Ri-1, Ki)
+' - 11
+Data Encryption Standard (DES)
+' - 12
+Data Encryption Standard (DES)
+' - 13
+Copyrights ©Dr. Ehab Abousaif -Topic: 4 Cryptography –Part 2 -14
+Data Encryption Standard (DES)
+Substitution 
+Boxes
+(S-Box)
+Data Encryption Standard (DES)
+Si
+control
+input symbol
+output symbol
+ Substitution Boxes have eight S-boxes which map 6 to 4 bits 
+ Each S-box is actually 4 little 4 bit boxes 
+• outer bits 1 & 6 (row bits) select one row
+• inner bits 2-5 (column bits) select one column
+• output symbol is one in the intersection of row and column  
+• result is 8 lots of 4 bits, or 32 bits
+' - 15
+Data Encryption Standard (DES)
+Si
+control
+input symbol
+output symbol
+• outer bits 1 & 6 (row bits) select one row
+• inner bits 2-5 (column bits) select one column
+• output symbol is one in the intersection of row and column
+' - 16
+Data Encryption Standard (DES)
+Si
+control
+input symbol
+output symbol
+• outer bits 1 & 6 (row bits) select one row
+• output symbol is one in the intersection of row and column
+• inner bits 2-5 (column bits) select one column
+' - 17
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 28 29 24 25 21 20 16 17 13 12 4 5 8 9 32 1
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40
+S4
+control
+input symbol
+output symbol
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30
+S3
+control
+input symbol
+output symbol
+input symbol
+S5
+control
+input symbol
+output symbol
+input symbol
+S6
+control
+input symbol
+output symbol
+input symbol
+S7
+control
+input symbol
+output symbol
+input symbol
+S8
+control
+input symbol
+output symbol
+input symbol
+S1
+control
+input symbol
+output symbol
+input symbol
+S2
+control
+input symbol
+output symbol
+input symbol
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30
+Right Half i-1
+Round Key i
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30
+O +
+O +
+Left Half i-1
+DES Single Round
+' - 18
+Data Encryption Standard (DES)
+ Key Schedule consists of:
+• Initial Permutation of the key (PC1) which 
+selects 56-bits in two 28-bit halves 
+• 16 stages consisting of: 
+• Selecting 24-bits from each half 
+• Permuting them by PC2 for use in function F 
+• Rotating each half separately either 1 or 2 
+places depending on the key rotation 
+schedule K
+' - 19
+Data Encryption Standard (DES)
+ Key Schedule consists of:
+• Initial Permutation of the key (PC1) which 
+selects 56-bits in two 28-bit halves 
+• 16 stages consisting of: 
+• Selecting 24-bits from each half 
+• Permuting them by PC2 for use in function F 
+• Rotating each half separately either 1 or 2 
+places depending on the key rotation 
+schedule K
+' - 20
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40 51 52 53 54 55 56 57 58 49 50 61 62 59 60 63 64
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40 51 52 53 54 55 56 49 50
+64-bit key with parity bits
+56-bit key
+1 2 3 4 5 6 7 11 12 13 14 15 17 18 9 10 21 22 23 25 26 27 28 19 20 31 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 39 51 52 53 54 55 49 50 57 58 61 62 59 60 63
+permuted
+choice 1
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40 51 52 53 54 55 56 49 50
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40 51 52 53 54 55 56 49 50
+Left
+Shift
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40 51 52 53 54 55 56 49 50
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 10 21 23 24 26 27 28 19 20 31 32 29 30 33 34 36 37 41 42 44 45 46 47 48 39 40 51 52 53 55 56 49 50
+1 2 3 4 5 6 7 8 11 12 13 14 15 16 17 18 9 10 21 22 23 24 25 26 27 28 19 20 31 32 29 30 33 34 35 36 37 38 41 42 43 44 45 46 47 48 39 40
+permuted
+choice 2
+48
+DES Key Schedule
+' - 21
+DES 
+Example
+Plaintext:
+02468aceeca86420
+Key:
+0f1571c947d9e859
+Ciphertext
+:
+da02ce3a89ecac3b
+' - 22
+DES
+Avalanche 
+Effect
+A small change in either the
+plaintext or the key should
+produce a significant change in
+the ciphertext.
+In particular, a change in one bit
+of the plaintext or one bit of the
+key should produce a change in
+many bits of the ciphertext.
+Avalanche 
+Effect in DES: Change in Plaintext 
+Fourth bit of the plaintext is changed, so that 
+the plaintext is 12468aceeca86420
+' - 23
+DES
+Avalanche 
+Effect
+A small change in either the
+plaintext or the key should
+produce a significant change in
+the ciphertext.
+In particular, a change in one bit
+of the plaintext or one bit of the
+key should produce a change in
+many bits of the ciphertext.
+Avalanche 
+Effect in DES: Change in Key 
+Two keys that differ in only the fourth bit position: the original key, 
+0f1571c947d9e859, and the altered key, 1f1571c947d9e859
+' - 24
+Average Time Required for Exhaustive Key Search
+(Brute
+Force Attack) 
+' - 25
+Advanced 
+Encryption Standard 
+(AES
+)
+The cipher takes a 
+plaintext block size of 
+128 bits, or 16 bytes
+The key length can be 
+16, 24, or 32 bytes 
+(128, 192, or 256 bits) 
+The algorithm is 
+referred to as AES
+128, AES-192, or AES
+256, depending on the 
+key length
+' - 26
+Advanced 
+Encryption 
+Standard 
+(AES
+)
+ The cipher consists of N rounds, where the
+number of rounds depends on the key
+length: 10 rounds for a 16-byte key, 12
+rounds for a 24-byte key, and 14 rounds for
+a 32-byte key.
+ The first (N– 1) rounds consist of four
+distinct transformation functions: SubBytes,
+ShiftRows, MixColumns, and AddRoundKey.
+ The final round (N) contains only three
+transformations: SubBytes, ShiftRows, and
+AddRoundKey.
+ There is a initial single transformation
+(AddRoundKey) before the first round,
+which can be considered Round (0).
+' - 27
+Advanced 
+Encryption 
+Standard 
+(AES
+)
+' - 28
+Advanced 
+Encryption 
+Standard 
+(AES
+)
+' - 29
+Advanced 
+Encryption 
+Standard 
+(AES
+)
+ Not a Feistel structure, but processes the entire data
+block as a single matrix during each round using
+substitutions and permutation
+ Thecipher begins and ends with an AddRoundKey stage
+ Can view the cipher as alternating operations of XOR
+encryption (AddRoundKey) of a block, followed by
+scrambling of the block (the other three stages)
+ The decryption algorithm makes use of the expanded
+key in reverse order, however the decryption algorithm
+is not identical to the encryption algorithm
+ Final round of both encryption and decryption consists
+of only three stages
+' - 30
+Advanced 
+Encryption 
+Standard 
+(AES
+)
+Four different stages are used:
+• Substitute bytes – uses an S-box to perform a byte
+by-byte substitution of the block
+• ShiftRows– a simple permutation of rows
+• MixColumns– a substitution that makes use of 
+arithmetic over columns
+• AddRoundKey– a simple bitwise XOR of the 
+current block with a portion of the expanded key
+' - 31
+Advanced 
+Encryption 
+Standard 
+(AES) Single 
+Round
+' - 32
+AES
+Byte
+Level 
+Operation
+(
+SubBytes
+The forward substitute byte transformation, called SubBytes:
+)
+ It is a simple table lookup. AES defines a (16 * 16) matrix of byte values, called an S-box, that
+contains a permutation of all possible 256 (8-bit) values.
+ Each individual byte of State is mapped into a new byte in the following way:
+ The leftmost 4 bits of the byte are used as a row value and the rightmost 4 bits are used as
+a column value.
+ These row and column values serve as indexes into the S-box to select a unique 8-bit
+output value.
+' - 33
+AES Byte
+Level 
+Operation (
+SubBytes
+S-box 
+)
+ Each individual byte of State is mapped into a new byte in the following way:
+ The leftmost 4 bits of the byte are used as a row value and the rightmost 4 bits are used as
+a column value.
+ These row and column values serve as indexes into the S-box to select a unique 8-bit
+output value.
+' - 34
+AES Byte
+Level 
+Operation (
+SubBytes
+Inverse S-box 
+)
+ Each individual byte of State is mapped into a new byte in the following way:
+ The leftmost 4 bits of the byte are used as a row value and the rightmost 4 bits are used as
+a column value.
+ These row and column values serve as indexes into the S-box to select a unique 8-bit
+output value.
+' - 35
+AES Row and 
+Column 
+(
+Operations
+ShiftRows
+)
+The forward shift row transformation, called ShiftRows:
+ Thefirst row of State is not altered.
+ For the second row, a 1-byte circular left shift is performed.
+ For the third row, a 2-byte circular left shift is performed.
+ For the fourth row, a 3-byte circular left shift is performed.
+The inverse shift row transformation, called InvShiftRows, performs the
+circular shifts in the opposite direction for each of the last three rows, with
+a 1-byte circular right shift for the second row, and so on.
+' - 36
+AES Row and 
+Column 
+(
+Operations
+MixColumns
+The forward mix column transformation, called MixColumns:
+)
+ Operates on each column individually. Each byte of a column is mapped
+into a new value that is a function of all four bytes in that column.
+ Each element in the product matrix is the sum of products of elements of
+one row and onecolumn.
+' - 37
+AddRoundKey
+Transformation
+The 128 bits of State are bitwise XORed
+with the 128 bits of the round key
+Operation is viewed as a columnwise
+operation between the 4 bytes of a
+State column and one word of the
+round key
+It is a byte-level operation
+' - 38
+AES Key 
+Expansion
+Takes as input a four-word (16
+byte) key and produces a
+linear array of 44 words (176)
+bytes
+Key is copied into the first four
+words of the expanded key
+Each added word w[i] depends
+on the immediately preceding
+word, w[i– 1], and the word
+four positions back, w[i– 4]
+'
+Average Time Required for Exhaustive Key Search
+(Brute
+Force Attack) 
+' - 40
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+CCY2001: Introduction to Cybersecurity
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+' - 41

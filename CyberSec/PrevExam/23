@@ -1,0 +1,197 @@
+CCY2001 Introduction to Cybersecurity                       Page 1    MPC6/1-1 
+      
+ 
+ 
+Arab Academy for Science, Technology, and Maritime 
+Transport- College of Computing and Information 
+Technology - Heliopolis                       
+ Academic Year : Spring 2023/2024 
+Semester  : 4 
+No. of Pages :  5 Department : CS 
+No. of Questions :  Four Time Allowed : 120 Minutes 
+Examiner :   Dr. Ehab K. Abousaif Date : 6  /  6  / 2024 
+CCY2001 Introduction to Cybersecurity (Final Exam)                       (40 Points) 
+Question One     (12 Points)      (SO’s: 1, 3, 6) 
+a) Based on Vigenère Autokey system, use your last name as a keyword, encrypt the following 
+sentence: “attack will occur tomorrow”. 
+b) Based on AES-128 symmetric encryption, the 128-bit block of data to be encrypted is the 
+first sixteen letters of your full name coded in ASCII-hexadecimal (use your full name 
+without spaces and if your full name less than sixteen letters, repeat it until reach sixteen). 
+Apply a Substitution-Bytes operation using the standard Substitution Box and then follow it 
+by a Shift-Rows operation. Show the detailed steps and the result in state arrays (4x4).   
+ 
+Question Two    (8 Points)      (SO’s: 1, 3, 6) 
+You are planning to have a secure communication with one of your friends using DES algorithm 
+to encrypt the messages. You decide to use the first eight letters of your full name (without 
+spaces) coded by ASCII as the key of the algorithm, but you want to exchange this key with 
+your friend using RSA algorithm. Your private / public keys pair is PRA= {41, 133} and PUA= 
+{29, 133} and the private / public keys pair of your friend is PRB= {23, 187} and PUB= {7, 187}. 
+Suppose you know the public keys of each other, and the key exchange mechanism must 
+achieve secrecy and authentication. Apply the RSA algorithm showing the detailed steps of 
+the encryption algorithms to get the encrypted key that you will send to your friend. 
+ 
+Question Three     (6 Points)      (SO’s: 1, 3, 6) 
+Sketch the block diagram(s) that fulfil each of the following security requirements: 
+a) Based on public-key cryptography, Alice needs to send a message to Bob. It’s required to 
+ensure that no one can know the content of the message except Bob and also Bob requires to 
+ensure that the message is originated from Alice. 
+b) Alice needs to send a confidential and digitally signed message to Bob, the confidentiality 
+must be fulfilled using symmetric key algorithm, so they have to exchange the keys first. 
+Suppose that they have each other public key certificates and the digital signature must be 
+fulfilled by cryptographic hash algorithm. 
+c) An application running on a client side needs to connect to its server side securely over a 
+connection-oriented protocol. The application requires AES encryption for confidentiality 
+and MAC based on SHA512 for message integrity. Suppose that they don’t have each other 
+public key certificate. 
+ 
+Question Four     (14 Points)      (SO’s: 1, 3, 6) 
+Answer the following: 
+a) Feistel cipher design has the following features: Choose two answers 
+i. Greater complexity of the round function means greater resistance to cryptanalysis 
+ii. The decryption algorithm is independent of the round function 
+iii. Larger key size will increase encryption/decryption speeds 
+iv. Larger block size will increase encryption/decryption speeds 
+b) SHA-512 algorithm has the property that: Choose two answers 
+i. Every bit of the hash code is unique and not a function of the input 
+ii. Only one bit of the hash code is a function of the input 
+iii. 
+Changing one bit of the input will change the whole hash code 
+iv. 
+Every bit of the hash code is a function of every bit of the input 
+c) One of the following is not true about DES: Choose one answer 
+i. 
+Based on Feistel Structure 
+ii. 
+iii. 
+iv. 
+Use a key of 56-bit length in each round 
+Has initial symmetric key of 64-bits 
+Has a good Avalanche effect 
+d) One of the following is true about AES Choose one answer 
+i. 
+Its encryption algorithm needs more time than DES 
+ii. 
+iii. 
+iv. 
+The plaintext block size is varied according to AES-128, AES-192, and AES-256 
+Use fixed number of rounds independent of the key size 
+Use different algorithm for decryption 
+e) Suppose that the input of the 5th S-box of the DES algorithm is (110110), then the output of 
+this S-box will be: Choose one answer 
+i. 
+0101 
+ii. 
+iii. 
+iv. 
+1100 
+0010 
+1110 
+f) Message Authentication Code is a security mechanism to achieve: Choose one answer 
+i. 
+Peer-entity Authentication 
+ii. 
+iii. 
+iv. 
+Data Origin Authentication 
+Data Integrity 
+Digital Signature 
+g) Public-Key Cryptography can be used to achieve the following security services / 
+mechanisms except one which is: Choose one answer 
+i. 
+Key Exchange 
+ii. 
+iii. 
+iv. 
+Data Origin Authentication 
+Data Integrity 
+Secure chat application 
+h) The Secure Hash Algorithm (SHA) depends on the concept of: Choose one answer 
+i. 
+Cipher Block Chain 
+ii. 
+iii. 
+iv. 
+Symmetric Block Cipher 
+Asymmetric Encryption 
+Message Authentication Code 
+i) X.509 Certificate of public key is digitally signed by: Choose one answer 
+i. 
+User Private Key 
+ii. 
+iii. 
+iv. 
+User Public Key 
+Certificate Authority Private Key 
+Certificate Authority Public Key 
+j) X.509 Certificate of public key does not contain one of the following: Choose one answer 
+i. 
+User Private Key 
+ii. 
+iii. 
+iv. 
+User Public Key 
+User Name and ID 
+Certificate Serial Number 
+Page 2    
+MPC6/1-1 
+CCY2001 Introduction to Cybersecurity                       
+k) Write the scientific term according to each of the following: 
+i. 
+ii. 
+iii. 
+iv. 
+v. 
+vi. 
+vii. 
+viii. 
+ix. 
+x. 
+A property in the encryption algorithm that makes each plaintext digit affect the value 
+of many ciphertext digits ………………… 
+A technique in the encryption algorithms in which each plaintext element is replaced 
+by a new corresponding ciphertext element……………… 
+Generate the message hash code and encrypt it with user private key is a security 
+mechanism that is called …………….. 
+The most secure way to distribute the public key is …………………..   
+Protocol for secure network communications designed to be relatively simple …….. 
+Protocol that encapsulate the whole datagram into another datagram to hide the 
+original datagram parameters …………….. 
+A trusted third party that generate session keys and distribute them to different entities 
+so they can communicate securely ………………. 
+A function that is seems to be irreversible without knowing a certain value ……….. 
+A security mechanism that use a secret code concatenated with the message and 
+inputted to a hash algorithm to obtain a secure hash code …………..  
+A property in the hash algorithm that makes it computationally infeasible to find any 
+pair of data inputs that gives the same hash code …………..  
+l) Which ones of the following sentences are right and which are wrong? If it’s wrong, 
+correct the sentence: 
+i. 
+ii. 
+iii. 
+iv. 
+v. 
+Although DES has been considered unsecure algorithm and possibly broken, a 
+modified version called Triple-DES are used till now and considered as secure.  
+The difference between the Key Translation Center (KTC) and the Key Distribution 
+Center (KDC) is that the KTC can translate the session key while the KDC can 
+distribute the session key. But no one of them can generate that key. 
+The life time of the symmetric key is related to how often you use that key. The more 
+you use it the more you can keep it. 
+Public-key certificate is the most trusted way to distribute public-keys because no one 
+can forge this certificate. So you can send it to any one over unsecure network. 
+The Secure Hash Algorithm (SHA-1) has been considered “broken algorithm”, so 
+NIST developed (SHA-2) and began the process to complement it with (SHA-3) for 
+certain applications. – Best Wishes – 
+Page 3    
+MPC6/1-1 
+CCY2001 Introduction to Cybersecurity                       
+You may use the following: 
+1- DES Substitution boxes: 
+Page 4    
+MPC6/1-1 
+CCY2001 Introduction to Cybersecurity                       
+2- AES Substitution Box: 
+3- ASCII Table: 
+Page 5    
+MPC6/1-1 
+CCY2001 Introduction to Cybersecurity                       

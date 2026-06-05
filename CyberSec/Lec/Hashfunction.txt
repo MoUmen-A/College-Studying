@@ -1,0 +1,248 @@
+Cybersecurity Fundamentals
+CCY2001: Introduction to Cybersecurity
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Topic 4
+Cryptography 
+Part 4
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 1
+Topic 4
+Cryptography 
+Part 4
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 2
+Cryptographic Hash Function
+A hash function H accepts a 
+variable-length block of data 
+M as input and produces a 
+fixed-size hash value (Code) 
+h = H(M)
+Cryptographic hash function is an algorithm for 
+which it is computationally infeasible to find 
+either: 
+a) Data object that maps to a pre-specified hash 
+result (the one-way property) 
+b) Two data objects that map to the same hash 
+result (the collision-free property)
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 3
+Message Authentication
+Message Authentication is a mechanism or service used to verify 
+the integrity of a message.
+Message authentication assures that data received are exactly as 
+sent (i.e., there is no modification, insertion, deletion, or replay). 
+When a hash function is used to provide message authentication, 
+the hash function value is often referred to as a Message Digest.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 4
+Message Authentication
+The essence of the use of a hash function for message 
+integrity is as follows:
+1. The sender computes a hash value as a function of the bits in 
+the message and transmits both the hash value and the message.
+2. The receiver performs the same hash calculation on the 
+message and compares this value with the incoming hash value.
+3. If there is a mismatch, the receiver knows that the message (or 
+possibly the hash value) has been altered.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 5
+Message 
+Authentication
+Attack
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 6
+Message 
+Authentication Code
+Also known as a keyed hash function.
+Typically used between two parties that share a secret key to 
+authenticate information exchanged between those parties.
+Takes as input a secret key and a data block and produces a hash value (MAC) 
+which is associated with the protected message
+• If the integrity of the message needs to be checked, the MAC function can be 
+applied to the message and the result compared with the associated MAC value
+• An attacker who alters the message will be unable to alter the associated MAC 
+value without knowledge of the secret key
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 7
+Message Authentication 
+Examples
+(a) The message plus concatenated hash
+code is encrypted using symmetric
+encryption. Because only A and B share
+the secret key, the message must have
+come from Aand has not been altered. The
+hash code provides the structure or
+redundancy
+required
+to
+achieve
+authentication. Because encryption is
+applied to the entire message plus hash
+code, confidentiality is also provided.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 8
+Message Authentication 
+Examples
+(b) Only the hash code is encrypted,
+using symmetric encryption. This reduces
+the
+processing burden for those
+applications
+that
+confidentiality.
+do not require
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 9
+Message Authentication 
+Examples
+(c) The technique assumes that the two
+communicating parties share a common
+secret value S. A computes the hash
+value over the concatenation of M and S
+and appends the resulting hash value to
+M. Because B possesses S, it can
+recompute the hash value to verify.
+Because the secret value itself is not
+sent, an opponent cannot modify an
+intercepted
+message and cannot
+generate a false message.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 10
+Message Authentication 
+Examples
+(d) Confidentiality can be added to the
+approach of method (c) by encrypting
+the entire message plus the hash code.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 11
+Digital Signature
+Operation is similar to that of the MAC
+The hash value of a message is encrypted with a user’s private key
+Anyone who knows the user’s public key can verify the integrity of 
+the message
+An attacker who wishes to alter the message would need to know 
+the user’s private key
+Implications of digital signatures go beyond just message 
+authentication
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 12
+Digital Signature 
+Examples
+(a) The hash code is encrypted, using public-key encryption with the sender’s
+Private key. This provides authentication. It also provides a digital signature,
+because only the sender could have produced the encrypted hash code. In fact,
+this is the essence of the digital signature technique.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 13
+Digital Signature 
+Examples
+(b) If confidentiality as well as a digital signature is desired, then the message
+plus the private-key-encrypted hash code can be encrypted using a symmetric
+secret key. This is a common technique.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 14
+Requirements for a Cryptographic Hash 
+Function
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 15
+Relationship Among 
+Hash Function 
+Properties
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 16
+General Structure of Secure Hash Code
+ Can use block ciphers as hash functions:
+ Using CV0 initial value
+ Compute: CVi = E(Yi-1 CVi-1)
+ Use final block CVL as the hash value
+ Similar to CBC (Cipher Block Chain) but without a key
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 17
+Secure Hash Algorithm (SHA)
+SHA was originally 
+designed by NIST and 
+published as a federal 
+information processing 
+standard in 1993
+Was revised in 1995 as 
+SHA-1. It produces 
+160-bit hash values
+In 2002 NIST produced 
+a revised version of the 
+standard that defined 
+three new versions of 
+SHA with hash value 
+lengths of 256, 384, 
+and 512
+(Collectively known as 
+SHA-2)
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 18
+Secure Hash Algorithm (SHA)
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 19
+Message Digest Generation Using SHA
+512
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 20
+SHA-512 Processing 
+of a Single 
+Block
+Ki .. 64-bits additive constants
+Wi .. 64-bits words generated 
+from 1024-bit messages
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 21
+SHA-512 
+Processing of 
+a Single 
+Block
+The table of the 80 
+additive constants 
+Ki for the 80 rounds
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 22
+Wi .. 64-bits 80-words generated from 1024-bit messages
+SHA-512 
+Processing of 
+a Single 
+Block
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 23
+SHA-512 Processing 
+of a Single 
+Round
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 24
+SHA
+512 
+Logic 
+& Algorithm
+The SHA-512 algorithm has the property
+that every bit of the hash code is a
+function of every bit of the input.
+The complex repetition of the basic function
+F produces results that are well mixed; that
+is, it is unlikely that two messages chosen
+at random, even if they exhibit similar
+regularities, will have the same hash code.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 25
+SHA
+3 Evolution of Secure Hash
+SHA-1 has not yet been "broken”
+• No one has demonstrated a technique for 
+producing collisions in a practical amount 
+of time
+• Considered to be insecure and has been 
+phased out for SHA-2
+NIST announced in 2007 a competition for the 
+SHA-3 next generation NIST hash function
+• Winning design was announced by NIST in 
+October 2012
+• SHA-3 is a cryptographic hash function that is 
+intended to complement SHA-2 as the 
+approved standard for a wide range of 
+applications
+SHA-2 shares the same structure and 
+mathematical operations as its 
+predecessors so this is a cause for 
+concern
+• Because it will take years to find a 
+suitable replacement for SHA-2 
+should it become vulnerable, NIST 
+decided to begin the process of 
+developing a new hash standard
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 26
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+CCY2001: Introduction to Cybersecurity
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 4 - 27

@@ -1,0 +1,258 @@
+Cybersecurity Fundamentals
+CCY2001: Introduction to Cybersecurity
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Topic 4
+Cryptography 
+Part 3
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 1
+Topic 4
+Cryptography 
+Part 3
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 2
+Public
+Key 
+Cryptosystem
+Plaintext
+The readable message or 
+data that is fed into the 
+algorithm as input
+Encryption 
+algorithm
+Performs various 
+transformations on the 
+plaintext
+Public key
+Private key
+Used for encryption or 
+decryption
+Used for encryption or 
+decryption
+Ciphertext
+The scrambled message 
+produced as output
+Decryption 
+algorithm
+Accepts the ciphertext and 
+the matching key and 
+produces the original 
+plaintext
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 3
+Public
+Key 
+Cryptosystem
+The concept of public-key cryptography evolved from an attempt to attack
+two of the most difficult problems associated with symmetric encryption:
+Key distribution
+• How to have secure communications in general without having to trust a Key 
+Distribution Center (KDC) with your key.
+Digital signatures
+• How to verify that a message comes intact from the claimed sender.
+Whitfield Diffie and Martin Hellman from Stanford University achieved a
+breakthrough in 1976 by coming up with a method that addressed both
+problems and was radically different from all previous approaches to
+cryptography
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 4
+Public
+Key 
+Cryptosystem
+Each user generates a pair of 
+keys to be used for the 
+encryption and decryption of 
+messages.
+Each user places one of the 
+two keys in a public register 
+or other accessible file. This 
+is the public key.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 5
+Public
+Key 
+Terminologies
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 6
+Conventional VS. Public
+Key Encryption
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 7
+Public
+Key 
+Applications
+Encryption/Decryption
+• The sender encrypts a message with the recipient’s 
+public key
+Digital Signature
+• The sender “signs” a message with its private key
+Key Exchange
+• Two sides cooperate to exchange a session key
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 8
+Public
+Key Cryptosystem
+:
+Secrecy
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 9
+Public
+Key Cryptosystem
+:
+Authentication
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 10
+Public
+Key Cryptosystem
+Authentication 
+:
+and Secrecy
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 11
+Public
+1
+st
+Key Requirements
+• It is computationally easy for a party B to generate a pair (public-key PUb, private 
+key PRb)
+2
+nd
+3
+rd
+• It is computationally easy for a sender A, knowing the public key and the message 
+to be encrypted, to generate the corresponding ciphertext 
+• It is computationally easy for the receiver B to decrypt the resulting ciphertext 
+using the private key to recover the original message
+4
+th
+• It is computationally infeasible for an adversary, knowing the public key, to 
+determine the private key
+5
+th
+6
+th
+• It is computationally infeasible for an adversary, knowing the public key and a 
+ciphertext, to recover the original message
+• The two keys can be applied in either order
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 12
+Public
+Key Requirements
+Need a trap
+door one
+way function:
+• A one-way function is one that maps a domain into a range such that every function 
+value has a unique inverse, with the condition that the calculation of the function is 
+easy, whereas the calculation of the inverse is infeasible
+•Y = f(X) easy 
+•X = f–1(Y) infeasible
+•A trap-door one-way function is a family of 
+invertible functions fk, such that
+•Y = fk(X) easy, if k and X are known
+•X = fk–1(Y) easy, if k and Y are known
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 13
+Rivest
+Shamir
+Adleman
+Developed in 1977 at 
+MIT by Ron Rivest, Adi
+Shamir & Len Adleman
+(RSA) Scheme
+Most widely used 
+general-purpose 
+approach to public-key 
+encryption
+Is a cipher in which the 
+plaintext and 
+ciphertext are integers 
+between 0 and n – 1 
+for some n
+A typical size for n is 
+1024 bits, or 309 
+decimal digits
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 14
+RSA Algorithm
+RSA makes use of an expression with exponentials
+Plaintext is encrypted in blocks with each block having a binary value less 
+than some number (n). 
+Encryption and decryption are of the following form, for some plaintext 
+block (M) and ciphertext block (C)
+C = Me mod n
+M = Cd mod n = (Me)d mod n = Med mod n 
+Both sender and receiver must know the value of (n). The sender knows 
+the value of (e), and only the receiver knows the value of (d).
+This is a public-key encryption algorithm with:
+Public key of PU={e,n} and Private key of PR={d,n} 
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 15
+RSA Algorithm Requirements
+For this algorithm to be satisfactory for public-key 
+encryption, the following requirements must be met:
+1.  It is possible to find values of e, d, n such that:
+Med mod n= M for all M < n
+2.  It is relatively easy to calculate:
+Me mod n and    Cdmod n for all values of M < n 
+3.  It is infeasible to determine d given e and n
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 16
+RSA Algorithm 
+Simple Example
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 17
+Exponentiation in Modular Arithmetic
+Recall
+Number 
+Theory
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 18
+RSA Algorithm
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 19
+RSA
+Detailed 
+Algorithm
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 20
+Copyrights ©Dr. Ehab Abousaif -Topic: 4 Cryptography –Part 3 -21
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51
+0 1 2 3 4 5 6 7 8 9
+Space
+. , / ? ! @ # $ % ^ & * ( )
+52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77
+_ = + ; ‘ : “ \ | [ ] { } < > ` ~ Just an example of 
+keyboard coding 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 22
+Attack on RSA
+We can identify three approaches to attacking RSA 
+mathematically:
+1.  Factor n into its two prime factors. This enables calculation 
+of ø(n) = (p – 1) x (q– 1), which in turn enables determination 
+of d = e-1 (mod ø(n))
+2.  Determine ø(n) directly without first determining p and q. 
+Again this enables determination of d = e-1 (mod ø(n))
+3.  Determine d directly without first determining ø(n)
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 23
+Attack on RSA
+The largest RSA modulus that was successfully factored using the 
+GNFS was 768-bits, or 232 decimal digits. 
+The General Number Field Sieve (GNFS) is the 
+most efficient classical algorithm known for factoring 
+integers larger than 10100.
+Factorizing the above 768-bits took the equivalent of almost 2000 
+years of computing on a signle-core 2.2 GHz computer.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 24
+RSA Factoring 
+Attack 
+Mitigation
+Increase the size of the modulus N
+Current standard for the size of N bits – 2048 bits
+• Equivalent decimal digits
+22048 = 10N
+log1022048 = log1010N
+2048 log102 = N
+N ≈ 616.5 i.e., 617 decimal digits
+This is the size the modulus must be if you want an SSL 
+(Secure Socket Layer) Certificate from a third party like 
+digicert.
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 25
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+CCY2001: Introduction to Cybersecurity
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Copyrights ©Dr. Ehab Abousaif - Topic: 4 Cryptography – Part 3 - 26

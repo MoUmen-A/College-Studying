@@ -1,0 +1,419 @@
+Cybersecurity Fundamentals
+CCY
+2001: Introduction to Cybersecurity
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Topic 
+7
+Network Endpoint Security
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 1
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 2
+Network Security
+Network Security Components
+Communications Security 
+Device Security:
+It deals with the protection of network devices, 
+such as routers and switches, and end systems 
+connected to the network, such as client systems 
+and servers.
+Firewall: A hardware and/or software capability 
+that limits access between a network and 
+devices attached to the network, in accordance 
+with a specific security policy.
+Intrusion Detection System (IDS).
+Intrusion Prevention System (IPS).
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 3
+Firewall
+▪ Firewall is a security mechanism that 
+can protect the premises network from 
+Internet-based attacks and to provide a 
+single choke point where security and 
+auditing can be imposed. 
+▪ Firewalls are also deployed internal to 
+the enterprise network to segregate 
+portions of the network.
+▪ The firewall provides an additional 
+layer of defense, insulating internal 
+systems from external networks or 
+other parts of the internal network. 
+▪ This follows the classic military 
+doctrine of “defense in depth,” which is 
+just as applicable to IT security.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 4
+Firewall
+Techniques
+of Operation
+■ Service control: Determines the types of Internet services that can be accessed, inbound or outbound. The 
+firewall may filter traffic based on IP address, protocol, or port number; may provide proxy software that 
+receives and interprets each service request before passing it on.
+■ Direction control: Determines the direction in which particular service requests may be initiated and 
+allowed to flow through the firewall.
+■ User control: Controls access to a service according to which user is attempting to access it. This feature is 
+typically applied to users inside the firewall perimeter (local users). It may also be applied to incoming traffic 
+from external users; the latter requires some form of secure authentication technology, such as the one 
+provided in IPsec.
+■ Behavior control: Controls how particular services are used. For example, the firewall may filter email to 
+eliminate spam, or it may enable external access to only a portion of the information on a local Web server. 
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 5
+Firewall
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 6
+Firewall
+Packet Filtering Firewall
+A packet filtering firewall applies a set of rules to each incoming and 
+outgoing IP packet and then forwards or discards the packet. The 
+firewall is typically configured to filter packets going in both directions.
+Filtering rules are based on information contained in IP packet:
+■■ Source IP address: The IP address of the system that originated the 
+IP packet (e.g., 192.178.1.1)
+■■ Destination IP address: The IP address of the system the IP packet 
+is trying to reach (e.g., 192.168.1.2)
+■■ Source and destination transport-level address: The transport
+level (e.g., TCP or UDP) port number, which defines applications such 
+as SNMP or TELNET
+■■ IP protocol field: Defines the transport protocol.
+■■ Interface: For a firewall with three or more ports, which interface 
+of the firewall the packet came from or which interface of the firewall 
+the packet is destined for.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 7
+Firewall
+Packet Filtering Firewall
+The packet filter is typically set up as a list of rules based on 
+matches to fields in the IP or TCP header. If there is a match to 
+one of the rules, that rule is invoked to determine whether to 
+forward or discard the packet. If there is no match to any rule, 
+then a default action is taken. 
+Two default policies are possible:
+■■ Default = discard: That which is not expressly permitted is  
+prohibited.
+■■ Default = forward: That which is not expressly prohibited is 
+permitted.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 8
+Firewall
+Packet Filtering Firewall
+A. Inbound mail is allowed (port 25 is for SMTP incoming), but only to a gateway host. 
+However, packets from a particular external host, SPIGOT, are blocked because that 
+host has a history of sending massive files in e-mail messages.
+B. This is an explicit statement of the default policy. All rule sets include this rule 
+implicitly as the last rule.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 9
+Firewall
+Packet Filtering Firewall
+C. This rule set is intended to specify that any inside host can send mail to 
+the outside. A TCP packet with a destination port of 25 is routed to the 
+SMTP server on the destination machine. 
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 10
+Firewall
+Packet Filtering Firewall
+One advantage of a packet filtering firewall is its simplicity. Also, packet filters 
+typically are transparent to users and are very fast. 
+However, packet filters have the following weaknesses:
+▪ Because packet filter firewalls do not examine upper-layer data, they cannot 
+prevent attacks that employ application-specific vulnerabilities or functions.
+▪ Most packet filter firewalls do not support advanced user authentication schemes. 
+Once again, this limitation is mostly due to the lack of upper-layer functionality by 
+the firewall.
+▪ Packet filter firewalls are generally vulnerable to attacks and exploits that take 
+advantage of problems within the TCP/IP specification and protocol stack, such as 
+network layer address spoofing. Spoofing attacks are generally employed by 
+intruders to bypass the security controls implemented in a firewall platform.
+▪ Finally, due to the small number of variables used in access control decisions, 
+packet filter firewalls are susceptible to security breaches caused by improper 
+configurations. In other words, it is easy to accidentally configure a packet filter 
+firewall to allow traffic types, sources, and destinations that should be denied based 
+on an organization’s information security policy.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 11
+Firewall
+Stateful Inspection Firewall
+A stateful inspection packet firewall tightens up the rules for TCP traffic 
+by creating a directory of outbound TCP connections, as shown in Table
+There is an entry for each currently established connection. The packet filter will now allow incoming traffic 
+to high-numbered ports only for those packets that fit the profile of one of the entries in this directory
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 12
+Firewall
+Application
+Level Proxy Firewall
+▪ An application-level proxy firewall, also called an Application 
+Level Gateway, acts as a relay of application-level traffic. 
+▪ The user contacts the gateway using a TCP/IP application and the 
+gateway asks the user for the name of the remote host to be 
+accessed. 
+▪ When the user responds and provides a valid user ID and 
+authentication information, the gateway contacts the application 
+on the remote host and relays TCP segments containing the 
+application data between the two endpoints. 
+▪ If the gateway does not implement the proxy code for a specific 
+application, the service is not supported and cannot be forwarded 
+across the firewall. 
+▪ Further, the gateway can be configured to support only specific 
+features of an application that the network administrator 
+considers acceptable while denying all other features.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 13
+Firewall
+Circuit
+Level Proxy Firewall
+▪ A fourth type of firewall is the circuit-level gateway or 
+circuit-level proxy. This can be a stand-alone system or it 
+can be a specialized function performed by an application
+level gateway for certain applications. 
+▪ As with an application gateway, a circuit-level gateway does 
+not permit an end-to-end TCP connection; rather, the 
+gateway sets up two TCP connections, one between itself and 
+a TCP user on an inner host and one between itself and a 
+TCP user on an outside host. 
+▪ Once the two connections are established, the gateway 
+typically relays TCP segments from one connection to the 
+other without examining the contents. 
+▪ The security function consists of determining which 
+connections will be allowed.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 14
+DMZ Networks
+(DeMilitarized Zone)
+▪ An external firewall is placed at the edge of a 
+local or enterprise network, just inside the 
+boundary router that connects to the Internet or 
+some wide area network (WAN). 
+▪ One or more internal firewalls protect the bulk 
+of the enterprise network. 
+▪ Between these two types of firewalls are one 
+or more networked devices in a region referred 
+to as a demilitarized zone (DMZ) network. 
+Systems that are externally accessible but need 
+some protections are usually located on DMZ 
+networks.
+▪ Typically, the systems in the DMZ require 
+external connectivity, such as a Web server, an 
+email server, or a domain name system (DNS) 
+server.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 15
+DMZ Networks
+(DeMilitarized Zone)
+▪ The external firewall provides a 
+measure of access control and 
+protection for the DMZ systems 
+consistent with their need for external 
+connectivity. 
+▪ The external firewall also provides a 
+basic level of protection for the 
+remainder of the enterprise network.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 16
+DMZ Networks
+(DeMilitarized Zone)
+▪ The internal firewall adds more stringent filtering 
+capability, compared to the external firewall, in order 
+to protect enterprise servers and workstations from 
+external attack.
+▪ The internal firewall provides two-way protection with 
+respect to the DMZ. First, the internal firewall protects 
+the remainder of the network from attacks launched 
+from DMZ systems. Such attacks might originate from 
+worms, rootkits, bots, or other malware lodged in a 
+DMZ system. Second, an internal firewall can protect 
+the DMZ systems from attack from the internal 
+protected network.
+▪ Internal firewalls can be used to protect portions of the 
+internal network from each other. For example, 
+firewalls can be configured so that internal servers are 
+protected from internal workstations and vice versa. 
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 17
+Intrusion Detection System (IDS)
+Intrusion
+: 
+Violations of security policy, usually characterized as attempts to affect the confidentiality, 
+integrity, or availability of a computer or network. These violations can come from 
+attackers accessing systems from the Internet or from authorized users of the systems who 
+attempt to overstep their legitimate authorization levels or who use their legitimate access to 
+the system to conduct unauthorized activity.
+Intrusion
+detection: 
+The process of collecting information about events occurring in a computer system or 
+network and analyzing them for signs of intrusions.
+Intrusion
+detection system: 
+Hardware or software products that gather and analyze information from various areas 
+within a computer or a network for the purpose of finding, and providing real-time or near
+real-time warning of, attempts to access system resources in an unauthorized manner.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 18
+Intrusion Detection System (IDS)
+An IDS comprises three logical components:
+Sensors
+: 
+Sensors are responsible for collecting data. The input for a sensor may be any part of a 
+system that could contain evidence of an intrusion. Types of input to a sensor include 
+network packets, log files, and system call traces. Sensors collect and forward this 
+information to the analyzer.
+Analyzers
+: 
+Analyzers receive input from one or more sensors or from other analyzers. The analyzer is 
+responsible for determining if an intrusion has occurred. The output of this component is 
+an indication that an intrusion has occurred. The output may include evidence supporting 
+the conclusion that an intrusion occurred. The analyzer may provide guidance about what 
+actions to take as a result of the intrusion.
+User
+interface: 
+The user interface to an IDS enables a user to view output from the system or control the 
+behavior of the system. In some systems, the user interface may report to a manager, 
+director, or console component.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 19
+Intrusion Detection System (IDS)
+Approaches to Intrusion Detection
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 20
+Intrusion Detection System (IDS)
+Approaches to Intrusion Detection
+Misuse detection is based on rules that specify 
+system events, sequences of events, or observable 
+properties of a system that are believed to be 
+indication of security incidents. 
+Misuse detectors use various pattern-matching 
+algorithms, operating on large databases of attack 
+patterns, or signatures. 
+▪ An advantage of misuse detection is that it is 
+accurate and generates few false alarms. 
+▪ A disadvantage is that it cannot detect novel or 
+unknown attacks.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 21
+Intrusion Detection System (IDS)
+Approaches to Intrusion Detection
+Anomaly detection searches for activity that is 
+different from the normal behavior of system 
+entities and system resources. 
+▪ An advantage of anomaly detection is that it is 
+able to detect previously unknown attacks 
+based on an audit of activity. 
+▪ A disadvantage is that there is a significant 
+trade-off between false positives and false 
+negatives.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 22
+Intrusion Detection System (IDS)
+Approaches to Intrusion Detection
+Although the typical behavior of an 
+intruder differs from the typical behavior 
+of an authorized user, there is an overlap 
+in these behaviors.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 23
+Intrusion Detection System (IDS)
+Approaches to Intrusion Detection
+▪ A loose interpretation of intruder behavior, 
+which will catch more intruders, will also 
+lead to a number of false positives, or 
+authorized users identified as intruders. 
+▪ On the other hand, an attempt to limit false 
+positives by a tight interpretation of intruder 
+behavior will lead to an increase in false 
+negatives, or intruders not identified as 
+intruders. 
+Thus, there is a compromise and art in the 
+practice of anomaly detection
+Here is the role of AI
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 24
+Intrusion Detection System (IDS)
+Intrusion detection systems (IDSs) can be classified as follows:
+Host-based IDS: 
+Monitors the characteristics of a single host and the events occurring within that host for 
+suspicious activity. This allows host-based IDSs to determine exactly which processes and 
+user accounts are involved in a particular attack on the OS. 
+Furthermore, unlike network-based IDSs, host-based IDSs can see the intended outcome 
+of an attempted attack, because they can directly access and monitor the data files and 
+system processes usually targeted by attacks.
+Network-based IDS: 
+Monitors network traffic for particular network segments or devices and analyzes 
+network, transport, and application protocols to identify suspicious activity.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 25
+Intrusion Detection System (IDS)
+Host
+Based 
+Intrusion 
+Detection System
+▪ Host-based IDSs add a specialized layer of security software to vulnerable or sensitive 
+systems; examples include database servers and administrative systems.
+▪ The host-based IDS monitors activity on the system in a variety of ways to detect 
+suspicious behavior. In some cases, an IDS can halt an attack before any damage is done, 
+but its primary purpose is to detect intrusions, log suspicious events, and send alerts.
+▪ The primary benefit of a host-based IDS is that it can detect both external and internal 
+intrusions, something that is not possible either with network-based IDSs or firewalls.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 26
+Intrusion Detection System (IDS)
+Host
+Based 
+Intrusion 
+Detection System
+Host-based IDSs use one or a combination of anomaly and misuse protection.
+For
+anomaly detection, two common strategies are:
+Threshold
+detection: 
+This approach involves defining thresholds, independent of user, for the frequency of 
+occurrence of various events.
+Profile
+based: 
+A profile of the activity of each user is developed and used to detect changes in the 
+behavior of individual accounts.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 27
+Intrusion Detection System (IDS)
+Network
+Based 
+Intrusion 
+Detection System (NIDS)
+▪ Network-based ID involves looking at the packets on the 
+network as they pass by some sensor. 
+▪ Packets are considered to be of interest if they match a 
+signature.
+▪ Three primary types of signatures are string signatures, port 
+signatures, and header condition signatures.
+▪ String signatures look for a text string that indicates a possible 
+attack.
+▪ Port signatures simply watch for connection attempts to well 
+known, frequently attacked ports.
+▪ Header signatures watch for dangerous or illogical 
+combinations in packet headers.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 28
+Intrusion Detection 
+System (IDS)
+Network
+Based 
+Intrusion 
+Detection System (NIDS)
+An NIDS sensor can only see the packets 
+that happen to be carried on the network 
+segment to which it is attached. 
+Accordingly, NIDS deployment is typically 
+set up as a number of sensors distributed on 
+key network points to gather traffic data and 
+feed information on potential threats to a 
+central NIDS manager.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 29
+Intrusion Detection System (IDS)
+Network
+Based 
+Intrusion 
+Detection System (NIDS)
+There are four types of locations for the sensors:
+1. Outside the main enterprise firewall. Useful for establishing 
+the level of threat for a given enterprise network. 
+2. In the network DMZ (inside the main firewall but outside 
+internal firewalls). This location can monitor for penetration 
+attempts that target Web and other services generally open to 
+outsiders.
+3. Behind internal firewalls, positioned to monitor major 
+backbone networks, such as those that support internal servers 
+and database resources.
+4. Behind internal firewalls, positioned to monitor LANs that 
+support user workstations. 
+Locations 3 and 4 can monitor for more specific attacks at 
+network segments, and attacks from inside the organization.
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 30
+Cybersecurity Fundamentals
+CCY
+2001: Introduction to Cybersecurity
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell:       
+01114757888
+Email:    ehabkamel@gmail.com
+Copyrights ©Dr. Ehab Abousaif - Topic: 7 Network Endpoint Security - 31

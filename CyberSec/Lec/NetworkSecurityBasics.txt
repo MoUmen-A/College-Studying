@@ -1,0 +1,257 @@
+Topic 6
+Network Security Basics
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell: 01114757888
+Email: ehabkamel@gmail.com
+CCY2001: Introduction to Cybersecurity
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 1
+Topic 6
+Network Security Basics
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 2
+Security Facilities in the TCP/IP Protocol Stack
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 3
+ One way to provide Web security is to use IP security (IPsec). The advantage of
+using IPsec is that it is transparent to end users and applications and provides a
+general-purpose solution.
+ Furthermore, IPsec includes a filtering capability so that only selected traffic need
+incur the overhead of IPsec processing.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 4
+Security Facilities in the TCP/IP Protocol Stack
+ Another relatively general-purpose solution is to implement security just above TCP. The
+example of this approach is the Secure Sockets Layer (SSL) and the follow-on Internet
+standard known as Transport Layer Security (TLS).
+ At this level, there are two implementation choices. For full generality, SSL (or TLS) could
+be provided as part of the underlying protocol suite and therefore be transparent to
+applications.
+ Alternatively, TLS can be embedded in specific packages. For example, virtually all
+browsers come equipped with TLS, and most Web servers have implemented the protocol.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 5
+Security Facilities in the TCP/IP Protocol Stack
+ Application-specific security services are embedded within the particular application.
+The advantage of this approach is that the service can be tailored to the specific needs
+of a given application.
+ S/MIME is an example of the security layer for the mail application protocol (SMTP).
+ Kerberos is another example Kerberos is a computer-network authentication protocol
+that allows nodes communicating over a non-secure network to prove their identity to
+one another in a secure manner. Kerberos provides strong authentication for
+client/server applications using secret-key cryptography.
+Transport Layer Security
+(TLS) is designed to make
+use of TCP to provide a
+reliable end-to-end secure
+service
+TLS is not a single protocol
+but rather two layers of
+protocols
+Transport Layer Security
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 6
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 7
+TLS Architecture
+ The main protocol is the Record Protocol.
+ Four higher-layer protocols are defined as
+part of TLS: the Handshake Protocol, the
+Change Cipher Spec Protocol, the Alert
+Protocol, and the Heartbeat Protocol.
+These TLS specific protocols are used in
+the management of TLS exchanges.
+ Http also can operate on top of TLS.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 8
+TLS Architecture
+The TLS Record Protocol provides two services for
+TLS connections:
+■■ Confidentiality: The Handshake Protocol defines a
+shared secret key that is used for conventional encryption
+of TLS payloads.
+■■ Message Integrity: The Handshake Protocol also
+defines a shared secret key that is used to form a message
+authentication code (MAC).
+TLS Record
+Protocol Operation
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 9
+TLS
+Architecture
+Handshake
+Protocol Action
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 10
+HTTPS
+Hyper Text Transfer Protocol Secure (HTTPS) is the secure version of HTTP.
+HTTPS encrypts all communications between the browser and the website. Web browsers
+such as Safari, Firefox, and Chrome also display a padlock icon in the address bar to
+visually indicate that a HTTPS connection is in effect.
+Data sent using HTTPS provides three important areas of protection:
+■■ Encryption: Encrypts the exchanged data to keep it secure from eavesdroppers. The encryption covers the
+URL of the requested document, the contents of the document, the contents of browser forms (filled in by
+browser user), the cookies sent from browser to server and from server to browser, and the contents of the
+HTTP header.
+■■ Data integrity: Data cannot be modified or corrupted during transfer, intentionally or otherwise, without
+being detected.
+■■ Authentication: Proves that your users communicate with the intended website. It protects against man-inthe-middle attacks and builds user trust, which translates into other business benefits.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 11
+Secure Shell (SSH)
+ Secure Shell (SSH) is a protocol for secure
+network communications designed to be
+relatively simple and inexpensive to
+implement.
+ SSH was focused on providing a secure
+remote logon facility to replace TELNET
+and other remote logon schemes that
+provided no security.
+ It has become the method of choice for
+remote login and X tunneling and is rapidly
+becoming one of the most pervasive
+applications for encryption technology
+outside of embedded systems.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 12
+Secure Shell (SSH)
+SSH Transport
+Layer Protocol
+Packet Formation
+Wireless LAN Security
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 13
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 14
+Wireless Network Threats
+■■ Accidental association: Company wireless LANs or wireless access points to wired
+LANs in close proximity (e.g., in the same or neighboring buildings) may create
+overlapping transmission ranges. A user intending to connect to one LAN may
+unintentionally lock on to a wireless access point from a neighboring network. Although
+the security breach is accidental, it nevertheless exposes resources of one LAN to the
+accidental user.
+■■ Malicious association: In this situation, a wireless device is configured to appear to be
+a legitimate access point, enabling the operator to steal passwords from legitimate users
+and then penetrate a wired network through a legitimate wireless access point.
+■■ Ad hoc networks: These are peer-to-peer networks between wireless computers with
+no access point between them. Such networks can pose a security threat due to a lack of a
+central point of control.
+■■ Nontraditional networks: Nontraditional networks and links, such as personal
+network Bluetooth devices, barcode readers, and handheld PDAs, pose a security risk in
+terms of both eavesdropping and spoofing.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 15
+Wireless Network Threats
+■■ Identity theft (MAC spoofing): This occurs when an attacker is able to eavesdrop on
+network traffic and identify the MAC address of a computer with network privileges.
+■■ Man-in-the middle attacks: In a broader sense, this attack involves persuading a user
+and an access point to believe that they are talking to each other when in fact the
+communication is going through an intermediate attacking device. Wireless networks are
+particularly vulnerable to such attacks.
+■■ Denial of service (DoS): In the context of a wireless network, a DoS attack occurs
+when an attacker continually bombards a wireless access point or some other accessible
+wireless port with various protocol messages designed to consume system resources.
+■■ Network injection: A network injection attack targets wireless access points that are
+exposed to nonfiltered network traffic, such as routing protocol messages or network
+management messages. An example of such an attack is one in which bogus
+reconfiguration commands are used to affect routers and switches to degrade network
+performance.
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 16
+Mobile Device
+Security Elements
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 17
+IEEE 802.11 Wireless LAN (WLAN)
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 18
+IEEE 802.11 Wireless LAN (WLAN)
+General IEEE 802
+MPDU Format
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 19
+IEEE 802.11 Wireless LAN (WLAN)
+IEEE 802.11
+Extended
+Service Set (ESS)
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 20
+IEEE 802.11 Wireless LAN (WLAN)
+IEEE 802.11 Services
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 21
+IEEE 802.11i
+WLAN Security
+Elements of
+IEEE 802.11i
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 22
+IEEE 802.11i WLAN Security
+IEEE 802.11i
+Phases of Operation
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 23
+IEEE 802.11i
+WLAN Security
+IEEE 802.11i Phases of
+Operation: Capability Discovery,
+Authentication, and Association
+IP Security
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 24
+IPSec provides security
+services at the IP layer by
+enabling a system to select
+required security protocols
+IPSec determines the
+algorithm(s) to use for the
+service(s), and put in place
+any cryptographic keys
+required to provide the
+requested services
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 25
+IP Security
+Two protocols are used to provide security:
+Authentication Header (AH)
+Encapsulating Security Payload (ESP)
+IPSec provides the following services:
+■■ Access control ■■ Connectionless integrity
+■■ Data origin authentication ■■ Rejection of replayed packets
+■■ Confidentiality (encryption)
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 26
+IP Security Modes
+Transport Mode
+• encrypt & optionally
+authenticate IP data
+• can do traffic analysis
+• good for ESP host to host
+traffic
+Tunnel Mode
+• encrypts entire IP packet
+• add new header for next
+hop
+• no routers on way can
+examine inner IP header
+• good for VPNs, gateway
+to gateway security
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 27
+IP Security Modes
+Transport Mode
+• encrypt & optionally
+authenticate IP data
+• can do traffic analysis
+• good for ESP host to host
+traffic
+Tunnel Mode
+• encrypts entire IP packet
+• add new header for next
+hop
+• no routers on way can
+examine inner IP header
+• good for VPNs, gateway
+to gateway security
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 28
+IP Security
+End-to-end IPsec
+Transport-Mode
+Encryption
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 29
+IP Security
+IPsec TunnelMode Protocol
+Operation for ESP
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 30
+IP Security
+Example of Virtual
+Private Network
+Implemented with
+IPsec Tunnel
+Mode
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell: 01114757888
+Email: ehabkamel@gmail.com
+CCY2001: Introduction to Cybersecurity
+Copyrights ©Dr. Ehab Abousaif - Topic: 6 Network Security Basics - 31

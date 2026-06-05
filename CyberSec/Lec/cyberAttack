@@ -1,0 +1,840 @@
+Topic 2
+Cyberattacks
+Cybersecurity Fundamentals:
+A Real World Perspective
+1
+st edition, CRC Press, 2020
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell: 01114757888
+Email: ehabkamel@gmail.com
+CCY2001: Introduction to Cybersecurity
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 1
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 2
+Topic 2
+Cyberattacks
+According to the information of University of Maryland
+research report, there is a hacker attack after every 39
+seconds (on an average) on a computer connected with
+the Internet. That means any computer connected to
+the Internet sustains 2,215 malicious attacks every day!
+WOW !!!
+What is the deal here !!!
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 3
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 4
+That’s it !!!
+Unfortunately NO
+Hackers always try out new and sophisticated ways to
+exploit the vulnerabilities in the computers and
+networks to strike. Newer formats and ways of
+cyberattacks are always being developed in the market
+to bypass the recognized security measures.
+now you can WOW !!!
+Cyberattack Objectives
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 5
+▪ The objectives of cyberattacks may
+vary from person to person and
+from organization to organization.
+▪ Many individual hackers attack the
+computers of other organizations or
+individuals to get financial benefits.
+▪ An organization may steal the
+information from its competitor to
+achieve competitive edge.
+▪ Enemy government sponsored
+organizations may steal information
+from other country to damage its
+capabilities or steal the information
+for countermeasure preparations.
+Cyberattack
+Objectives
+Achieving money gains
+Damaging the brand value of
+the other party
+Obtaining government and
+business secrets
+Warfare cyberattacks
+Inflicting damages through
+cyberterrorism
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 6
+Cyberattack
+Common
+Types
+Denial of Service (DoS/DDos)
+Man-in-the-Middle (MITM)
+Cryptojacking
+Structured Query Language (SQL) injection
+Spamming
+Cyberterrorism
+Path Traversal
+Zero-day exploitation
+Phishing
+Digital / Cyber Vandalism
+Cyberstalking
+Cyber Frauds and Forgery
+Denial of Service (DoS)
+• Denial of Service or DoS is an Internet security-related event in which the
+hackers attack a particular server running some Internet services to prevent it
+from working normal or to stop the services.
+Impact
+• The hacker exploits the server vulnerability and sends automated requests and
+messages to that server to respond. The server gets overwhelmed and choked
+and stops working normal, or the service stops working due to overloading.
+Means
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 7
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 8
+Denial of Service (DoS)
+• Inability in accessing a website
+• Delay in accessing online service
+• Huge delays in file opening on the websites
+• Increased volume of spam emails
+• Degradation of performance of services
+Symptoms
+• Routing the malicious traffic
+• Using load balancers to avoid heavy malicious traffic to overwhelm the server
+• Using Intrusion Detection Systems (IDS)
+• Using Intrusion Prevention Systems (IPS)
+• Using security firewalls
+Impact Mitigation
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 9
+Denial of Service (DoS)
+• DNS (Domain Name System) server attack
+• HTTP (Hypertext Transfer Protocol) server attack
+• ICMP (Internet Control Message Protocol) flooding
+• Network attack or buffer overflow attack
+• Large files download attack on the network or server
+• SYN flood attack on TCP handshake protocol
+• Ping of Death (PoD) attack
+• Shrew attack (between MITM and DoS)
+Major Types
+• Backscatter
+Side Effects
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 10
+Some More Details Denial of Service (DoS)
+• Computers use an ICMP echo-reply message system, which is known as a
+"ping," to test network connections. The system acts as a sonar between
+devices. It sends a pulse, which emits an echo to provide an operator with
+information about the network environment. When the connection works as
+intended, source machines receive a reply from target machines.
+• Ping commands are limited to a maximum size of 65,535 bytes.
+• Attackers use ping commands to develop a Ping of Death command. They can
+write a simple loop that allows them to execute the ping command with packet
+sizes that exceed the 65,535-byte maximum level.
+• Sending packets that are larger than 65,535 bytes violates the rules of IP.
+• To avoid this, attackers will send packets in fragments that their target system
+then attempts to piece together. When it does, the oversized packet will cause
+a memory overflow.
+Ping of Death (PoD)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 11
+Some More Details
+• The shrew attack specifically exploits a weakness in TCP’s retransmission
+timeout (RTO) mechanism.
+• Here’s how it works:
+• The attacker employs man-in-the-middle techniques.
+• They send short synchronized bursts of traffic to disrupt TCP connections on
+the same link.
+• When the client sends requests to the server the attacker sends a burst of
+requests at the same time to a bottleneck router, causing the router to
+suspend data transmission. Packets are dropped during RTO. After minRTO
+the client retransmits the lost packets, considerably slowing TCP
+transmission.
+• By using this method the attacker uses minimal resources to reduce costs and
+effort as well as making it harder to detect.
+Shrew Attack
+Denial of Service (DoS)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 12
+Distributed Denial of Service (DDoS)
+• Distributed denial of service or precisely DDoS is a type of DoS attack.
+• DDoS attack is more lethal than the DoS attack. The prevention of DDoS attacks
+is very difficult as compared to the normal DoS attacks.
+• The main difference is that the DoS attack is targeted from a specific origin of
+traffic, while in the DDoS attack case, multiple sources of traffic are used to
+attack the victim server (at the same time).
+Impact
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 13
+• The hacker uses controller machine to hack multiple vulnerable machines
+around the globe. Then, all those infected machines will be controlled by the
+software program running on the attacker’s server. That controller sends
+instructions to the infected machine on which the hacker has already
+established the control to send automated requests (traffic) to the targeted
+victim machine. Then, all those “zombies” start attacking the target from
+multiple Internet Protocol (IP) sources to bring the server to almost a halt.
+• It is more difficult to prevent DDoS attack than the usual DoS attack. In this
+attack, many computers from different parts become the part of this deadly
+attack without any approval and knowledge of the owner of the computer.
+Means
+Distributed Denial of Service (DDoS)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 14
+Phishing
+• A phishing attack is a fraudulent communication that appears to come from an
+authentic source, often via email or text messages.
+• The goal of phishing attack is to deceive users into revealing sensitive
+information, such as login credentials, credit card numbers, or personal data.
+• The impact of the phishing attack is not the attack itself, but how to use those
+sensitive information to steal, modify, or even destroy certain assets.
+Impact
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 15
+Phishing
+• Impersonation: Scammers pretend to be a trusted entity, like a bank, utility
+company, or online payment service. They might claim there’s a problem with
+your account or a need to confirm personal or financial information.
+• Urgency and Fear: Phishing messages often create a sense of urgency, urging
+recipients to take immediate action. For instance, they might threaten account
+suspension or claim unauthorized access.
+• Suspicious Links and Attachments: Scammers include links or attachments that
+lead to malicious websites or install malware. These links may appear
+legitimate but can compromise your security.
+• Spoofed Emails: Phishing emails may use logos and formatting similar to those
+of legitimate companies. However, generic greetings, misspellings, or unusual
+requests can give them away.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 16
+Phishing Cyberattacks Common Types
+• Be Skeptical: Verify unexpected emails or messages, especially if they ask for
+sensitive information or urge immediate action.
+• Check the Sender: Hover over links to see the actual URL before clicking.
+Ensure it matches the legitimate website.
+• Use Multi-Factor Authentication (MFA): Enable MFA wherever possible to add
+an extra layer of security.
+• Educate Yourself: Stay informed about common phishing tactics and signs.
+Impact Mitigation
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 17
+• There are three major modes of phishing used in the modern phishing
+activities as listed below:
+• Telephone calls commonly referred to as voice phishing, or vishing.
+• Emails referred to as general phishing.
+• Small text messages (SMS) referred to as smishing.
+• The core objective in all three modes of phishing is to steal the identity of the
+legitimate user by alluring via different modes of communications.
+Facts about Phishing
+Phishing Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 18
+• The hacker intercepts the normal connection between the user and the web
+server without any knowledge of both user and server.
+• The legitimate communication link between the two entities is exploited,
+intercepted, and decrypted to steal the personal information for malicious use.
+Impact
+Man-in-the-Middle (MITM) Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 19
+• In first step, the hacker scans the vulnerabilities of the system and network.
+• Once the vulnerabilities are known, the phishing action like emails / messages
+/ links are sent to users; those contain the wrong addresses of your services or
+bank accounts.
+• In the third step, they decrypt your information for stealing purpose.
+Means
+• Cross-Site Script (XSS)
+• DNS spoofing / HTTP spoofing
+• SSL (Secure Sockets Layer) hijacking
+• Email hijacking
+• Wi-Fi network eavesdropping
+• Stealing the cookies set on the browsers
+Major Types
+Man-in-the-Middle (MITM) Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 20
+Some More Details
+• Cross-site scripting (XSS) is a client-side code injection attack. In an XSS attack,
+the attacker attaches malicious code to a legitimate website. When a victim
+loads that website, the injected code executes in their web browser.
+• Client-side code runs on the user’s machine (in their browser). This code is
+typically written in JavaScript. Examples of client-side code include JavaScript
+used in interactive webpages and browser-based games.
+• JavaScript in an XSS attack can access sensitive data, such as cookies. Attackers
+can steal a user’s cookies and impersonate them online. It also can create HTTP
+requests, allowing attackers to send stolen data (like cookies) back to
+themselves.
+Cross-Site Script (XSS) (≈32%)
+Man-in-the-Middle (MITM)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 21
+Some More Details
+• DNS spoofing, also known as DNS cache poisoning, is a cyber attack that
+corrupts DNS server entries. The attacker manipulates DNS records to redirect
+users toward a malicious website instead of the correct IP address.
+• How DNS Spoofing Works:
+• DNS Server Compromise: The attacker directly hijacks a DNS server
+configured to return a malicious IP address.
+• Man-in-the-Middle (MITM): By exploiting weaknesses in an intermediate
+name server’s caching system, the attacker intercepts communications
+between users and a DNS server.
+• Consequences of DNS Spoofing are:
+• Data Theft: The attacker can steal sensitive data from users.
+• Malware Installation: The malicious website can secretly install worms or
+viruses on the user’s computer.
+DNS Spoofing
+Man-in-the-Middle (MITM)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 22
+Some More Details
+• HTTP spoofing, also known as IDN homograph attacks, is a deceptive
+technique used by attackers to deceive users to malicious domains that visually
+resemble legitimate ones.
+• The attacker registers a domain with IDN homoglyphs, which are characters
+from non-Latin alphabets (like Greek, Cyrillic, or Arabic) that closely resemble
+ASCII characters. (e.g., “іnvі׆tі” instead of “invicti”).
+• Victims receive phishing emails or visit fake websites that mimic the original
+ones, leading to potential data theft.
+Http Spoofing
+Man-in-the-Middle (MITM)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 23
+Some More Details
+• The attacker first intercepts the connection between the victim (the user being
+attacked) and the target (the page under attack) using another type of man-inthe-middle attack.
+• SSL hijacking is a type of attack where the attacker generates fake
+certificates for the domains of HTTPS sites that the victim attempts to visit. As
+a result, the victim assumes they have a secure connection to the target site,
+but in reality, they have a secure connection to a cloned or proxy site
+controlled by the attacker.
+• The challenge with SSL hijacking lies in that browsers only trust certificates
+signed by a trusted Certificate Authority (CA). To succeed, the attacker needs
+to add their CA to the trusted certificate store in the victim’s operating system,
+which often requires other attack vectors and vulnerabilities, such as phishing
+or cross-site scripting.
+SSL (Secure Sockets Layer) hijacking
+Man-in-the-Middle (MITM)
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 24
+SQL Injection (≈22%)
+• A successful SQL injection attack can result in unauthorized access to sensitive
+data, including: passwords, credit card details, user information …etc.
+• In severe cases, an attacker can establish a persistent backdoor into an
+organization’s systems, leading to long-term compromise that may go
+unnoticed for an extended period.
+Impact
+• SQL injection is a technique used by injecting web page inputs as statements
+through SQL commands. Basically, malicious users can use these instructions
+to manipulate the application’s web server.
+• SQL statements by the attacker are designed so that they can be executed
+while the web server is fetching content from the application server.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 25
+SQL Injection (≈22%) Cyberattacks Common Types
+• Manual testing against every entry point in the application can help detect SQL
+injection vulnerabilities
+• Submitting the single quote character (‘) and observing errors
+• Using SQL-specific syntax to evaluate base values and look for differences in
+application responses
+• Testing Boolean conditions like (OR 1=1) and (OR 1=2)
+• Employing payloads to trigger time delays or out-of-band network interactions
+within SQL queries
+• Using tools like Burp Scanner can efficiently identify most SQL injection
+vulnerabilities
+Impact Mitigation
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 26
+Path Traversal (≈11%)
+• A path traversal (or dot-dot-slash) attack, also known as directory traversal is
+a malicious attempt to trick a web application into displaying the contents of a
+directory other than the one requested by the user and gain access to sensitive
+files on a server.
+• The attacker may be able to access files that should only be accessible to the
+web server's owner, such as authentication data, application source code
+containing usernames and passwords, database credentials, and even private
+encryption keys.
+• Hackers will be able to write data to arbitrary files in some cases, allowing
+them to upload a back door to the site, to upload malicious files that are
+automatically executed, etc.
+Impact
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 27
+Path Traversal (≈11%)
+• Using a relative path: This attack adds a file or folder path relative to the
+current working directory. For example, if the current working directory is
+/home/user/public_html, an attacker can upload malicious code such as
+../../../../../../../../../../../../../../../etc/passwd to access the /etc/passwd file.
+• Encoding escaped characters: This attack encodes special characters using URL
+encoding. For example, the attacker can use %2e%2e/%2f to add a / after every
+two dots.
+• Using a Null Byte attack: This attack uses a Null Byte (\x00) to bypass a path's
+regular validation. For example, the attacker can add \x00 in the directory
+name to bypass the validation by breaking the regular expression. This is also
+known as Null Byte injection.
+• In general: The attacker exploits insufficient security validation of usersupplied file names. Characters representing “traverse to parent directory” are
+passed through to the operating system’s file system API.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 28
+Path Traversal (≈11%) Cyberattacks Common Types
+• Normalize the file path: If filePath is a relative path, convert it to an absolute
+path
+• Use indexes rather than actual portions of file names when using language files
+(ie value 5 from the user submission = Egyptian, rather than expecting the user
+to return “Egyptian”)
+• Ensure the user cannot supply all parts of the path – surround it with your path
+code
+• Avoid using high-privilege users
+• Update the version of your programming language and web server regularly
+• In General: make your code secure
+Impact Mitigation
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 29
+Cryptojacking
+• Cryptocurrencies like Bitcoin operate on a distributed database called
+a blockchain. To produce new blocks in the blockchain, individuals provide
+computing power. These individuals, known as miners, are rewarded with
+cryptocurrency for their efforts.
+• Cryptojackers want the benefits of cryptocurrency mining without incurring the
+huge costs. They avoid paying for expensive mining hardware or large
+electricity bills. Instead, they exploit other people’s devices to mine
+cryptocurrency without their knowledge.
+Impact
+• Cryptojacking embeds itself within a computer or mobile device and uses its
+resources to mine cryptocurrency. The most commonly mined cryptocurrency
+in personal computers is Monero, which appeals to cybercriminals because it is
+difficult to trace.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 30
+Cryptojacking Cyberattacks Common Types
+• Sluggish Performance: If your device suddenly slows down significantly, it
+could be due to cryptojacking
+• Overheating: Excessive mining can cause your device to overheat
+• Increased Energy Consumption: Cryptojacking consumes additional energy,
+leading to higher electricity bills
+• Unexplained CPU Usage: Monitor your CPU usage; unexpected spikes may
+indicate cryptojacking
+Symptoms
+• Regularly Update Software
+• Use Security Solutions
+• Be Cautious Online: Avoid suspicious websites and links
+• Monitor Resource Usage: Keep an eye on your device’s performance
+Impact Mitigation
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 31
+Spamming
+• Spamming in the IT field is the name of sending junk mails and messages to the
+users in bulk without getting approval from the users.
+• The hackers use spamming for spreading malware, viruses, phishing, Trojans,
+worms, and spyware.
+Impact
+• Spamming is a widespread form of malicious attacks used to send the
+unsolicited messages through different modes of messaging such as instant
+messages, emails, social network messages, ads, mobile phone messages, and
+social groups.
+• All these activities are directed to get marketing gains by attacking the users
+through unsolicited messages.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 32
+Cyberattacks Common Types
+• The word “spam” comes from the luncheon meat introduced around in the
+middle of the 20th century. That spam contained repeated layers of meat. So,
+the repeated layers of messages are known as the spamming.
+• Till the middle of 2018, the spam emails accounted for over 45% of all emails
+shared on the Internet.
+• In this spamming traffic, advertising, adult-related materials, and financerelated matters are the top three domains in the spamming email messages.
+• According to the research, more than 14.5 billion emails were sent out on the
+Internet on a daily basis in the starting months of the 2018.
+• The senders of the spam emails all around the world collectively earn about
+US$7,000 per day. Thus, it is still an attractive business for many individuals
+and businesses.
+Facts about Spamming
+Spamming
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 33
+Zero-Day Exploitation
+• A zero-day attack refers to a software-related security breach that exploits
+a vulnerability or weakness in a computer system or application. What makes
+it particularly dangerous is that the vulnerability is unknown to the system’s
+owners, developers, or anyone capable of addressing it. Until the vulnerability
+is fixed, attackers can exploit it in what is known as a zero-day exploit or zeroday attack.
+• Zero-day attacks can disrupt everything from personal passwords to critical
+infrastructure, affecting a wide range of users and systems.
+• In general, a zero-day attack occurs when a system is vulnerable, but the
+necessary security mechanisms have not been put in place to protect against it.
+It’s a race against time for both attackers and defenders, as the window of
+vulnerability remains open until a fix is implemented.
+Impact
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 34
+Zero-Day Exploitation
+• Discovery: A hacker identifies a zero-day vulnerability, which is an error in the
+software code that the target has yet to discover.
+• Exploit Creation: The attacker then develops a zero-day exploit, a method of
+attack that takes advantage of the existing vulnerability.
+• Attack: Using the exploit, the hacker can compromise the system, steal data, or
+cause other harm before the software vendor has a chance to release a patch.
+• Detecting zero-day attacks is a challenging task because they exploit unknown
+vulnerabilities.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 35
+Zero-Day Exploitation Cyberattacks Common Types
+• Use an Effective Web Application Firewall (WAF): It filters incoming traffic to
+web applications, preventing the exploitation of vulnerabilities. It acts as the
+first line of defense, blocking malicious traffic from targeting vulnerabilities.
+• Monitor Outbound and Inbound Traffic: Keep an eye on your network’s
+outbound traffic as well. Detecting unusual patterns can help identify potential
+zero-day attacks.
+• Outline a Clear Incident Response Plan: Be prepared to respond swiftly if a
+zero-day attack occurs. Having a well-defined plan ensures efficient
+coordination and minimizes damage.
+• Train Employees in Threat Mitigation: Educate your team about security best
+practices. Awareness helps prevent accidental exposure to zero-day exploits
+Impact Mitigation
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 36
+Zero-Day Exploitation Cyberattacks Common Types
+• Detecting zero-day attacks is a challenging task because they exploit
+unknown vulnerabilities. But, several strategies can help enhance defenses:
+• Statistics-Based Monitoring: Collect historical data from previously detected
+exploits. Set a standard level for safe behavior to detect zero-day threats in
+real time.
+• Signature-Based Detection: Use digital signatures from known exploits.
+Employ machine learning algorithms and artificial intelligence systems to
+identify variants of prior attacks.
+• Behavior-Based Monitoring: Observe software behavior for any malicious
+actions. Identify anomalies that might indicate a zero-day exploit.
+• Hybrid Detection: Combine the above methods for comprehensive
+protection against zero-day attacks.
+Facts about Zero-Day Exploitation
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 37
+Digital or Cyber Vandalism
+• In digital vandalism, the data, computer, or networks are either damaged or
+manipulated so that the genuine objectives of the IT system are changed
+badly.
+• When cyberspace is used for digital vandalism, that is cyber vandalism.
+• In a digital vandalism attack, the malware either removes the useful data from
+the websites or manipulates the information in such a way that the meaning of
+the information is reversed.
+• These acts can have significant consequences, including financial impacts,
+reputational harm, and even revenue loss for affected businesses.
+Impact
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 38
+• Website Defacement: This is the most common type of cyber vandalism. It
+involves altering the appearance of a website, often by replacing its content
+with unauthorized or offensive material.
+• Data Destruction: Cyber vandals may delete files, databases, or other critical
+data, causing significant disruptions to business operations.
+• Account Takeovers and Spam: Vandals may take over user accounts (specially
+social media), deface profiles, or send spam and viruses to compromise
+systems and spread chaos.
+• Malware Distribution: Cyber vandals use various forms of malware, such as
+viruses, worms, or ransomware, to infect systems, steal sensitive information,
+or cause widespread disruption. This type of vandalism can have severe
+consequences, including financial losses and lasting reputational damage.
+Means
+Digital or Cyber Vandalism Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 39
+• Implement Strong Security Policies: include password management, multifactor authentication, access controls, incident response plans, and guidelines
+for using company devices and networks.
+• Regularly Update Software and Systems: Keeping your software and systems
+updated with the latest patches and updates is crucial for closing vulnerabilities
+that cyber vandals may exploit.
+• Employee Training and Awareness: Provide regular training and awareness
+programs to help employees recognize potential cyber vandalism attempts,
+understand the importance of following security policies, and know what to do
+in case of a security breach.
+• Deploy the Latest Security Technologies.
+• Monitor and Audit for Potential Threats.
+Impact Mitigation
+Digital or Cyber Vandalism Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 40
+Cyberstalking
+• Cyberstalking is a form of harassing and threatening. It is also known as
+Cyberbullying.
+• In this form of cyberattack, the organizations, groups, or individuals are
+threatened to agree upon some undesirable conditions in relationship or
+business.
+Impact
+• The main components used in the communication to threaten the targeted
+entity include defaming, false allegations, slandering, and other forms of
+blackmailing.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 41
+Cyberterrorism
+• Cyberterrorism is a type of cybercrime to attack the computer systems,
+mission-critical data, or computer networks either to damage the cyber
+resources or to steal the critical information that can pose a great threat to the
+security of public lives, government systems, or even the defense systems of a
+country.
+Impact
+• The main examples of cyberterrorism include the disruption of public utilities
+such as water supplies, electricity, healthcare, and other such systems.
+• All traditional hacking tools such as phishing, worms, malwares, Trojan horses,
+and viruses can be used to pave the way for a large-scale and massive
+cyberattack that can result in severe loss and damage to the public lives,
+societies, government system, and other critical infrastructures.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 42
+Cyber Frauds and Forgery
+• In this form of crime, the digitally stored documents are forged to form the
+counterfeit documents. This crime is increased during the recent years due to
+the availability of high-tech devices like computer software, printers, scanners,
+cameras, and other tools.
+• Many documents used for the immigration, education, jobs, and security
+clearance were found fabricated with the help of modern cyber tools.
+• Cyber fraud encompasses a wide range of illegal activities conducted online.
+These include identity theft, phishing, hacking, and more.
+Impact
+• Exploit the vulnerabilities of the system.
+Means
+Cyberattacks Common Types
+Copyrights ©Dr. Ehab Abousaif
+- Topic: 2 Cyberattacks
+- 43
+Recent
+Cyberattacks
+EQUIFAX Data Theft
+VPNFilter Cyberattack
+WannaCry Ransomware Attack
+Petya Cyberattack
+US Elections Manipulation
+Shadow Network Attack
+GitHub DDoS Attack
+Under Armour Account Hack
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 44
+EQUIFAX Data Theft
+• Equifax is a consumer credit rating agency based in Atlanta, USA. The company
+handles over 820 million consumers and over 91 million companies around the
+world. The company has also a very huge database of employees working with
+more than 7,100 employees. The company has many details of the consumers
+such as salaries, personal information, credit card numbers, driving license
+numbers, medical records, and many other such critical information.
+• Between the mid of May 2017 and the end of July 2017, hackers got access to
+the Equifax database by exploiting the vulnerabilities present in the official
+website of the company, and started stealing the consumer information
+continuously for over 2 months without being noticed or caught. The company
+security team detected the malicious activity on July 29, 2017. But by that
+time, it was too late for the security team to contain the wide-scale damage
+wreaked on the company.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 45
+EQUIFAX Data Theft
+• More than 143 million consumers’ data were stolen. That information included
+consumer names, birth certificates, physical addresses, credit card information,
+driving license, medical information, and much more. The total number of
+stolen credit card numbers was about 209,000. More than 182,000 important
+documents of the people were stolen.
+• This huge data breach cost the company over US$4 billion according to a report
+published in the Time magazine.
+Impact
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 46
+VPNFilter Cyberattack
+• VPNFilter was a malware that originated from Russia.
+• Initially, Ukraine was the main target of this malware, but later, it affected over
+500,000 routers in more than 54 countries worldwide.
+• This malware was based on the man-in-the-middle (MITM) cyberattack.
+• It maintains its presence on the routers even the router is rebooted.
+• It is also known as the Internet of Things (IoT) attack. According to the FBI
+reports, VPNFilter malware was spread by a Russian group named Fancy Bear.
+• It affects the IoT routers and network-attached storage (NAS) via multistage
+infections.
+• The first Ukraine blackout in 2015 also used the first-stage malware of this new
+format of cyberattack.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 47
+VPNFilter Cyberattack
+• This malware has three fundamental stages to attack a networking device:
+• Stage one: A worm is installed on router that maintains its presence even
+after rebooting of the device.
+• Stage two: The body of the malware contains the code to effectively respond
+to the third-stage instructions.
+• Stage three: This stage contains multiple modules to run on the router
+devices. These modules are the instructions to the second-stage body of the
+code to change the routes, spy the routing information, stop the industrial
+automa-tion, and many other functions.
+• The attackers also change settings as per the need of the cyberattack to make
+it more lethal.
+Impact
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 48
+WannaCry Ransomware Attack
+• This attack was unleashed to the world in May 2017, when many of the
+computers from more than 150 countries were affected by this cyberattack.
+• This cyberattack is a type of ransomware attack that was initiated to extort
+money in the form of Bitcoin (a form of digital currency). Many countries and
+investigating agencies believe that the WannaCry attack was started by the
+North Korean authorities or the agencies working for North Korean
+government.
+• This ransomware attack affected between 200 and 300 thousand computers
+across the world. The hackers would encrypt the data files on the computers
+and would decrypt them for a ransom or extortion money ranging from
+US$300 to US$600. Hackers wanted that money through Bitcoin
+cryptocurrency to be transferred to their Bitcoin digital wallets.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 49
+• According to different news reports, the total impact of the WannaCry
+ransomware attack was equal to about US$4 billion.
+• WannaCry would use the EternalBlue exploit present in the implementation of
+server message block (SMB) protocol on Microsoft Windows operating system.
+The malicious code (a form of crypto worm) would encrypt the important data
+files on the computer and would ask for the extortion money to decrypt the
+files.
+• Once the demanded amount of ransom in the form of bitcoin was paid, the
+hacker would offer you the decryption key to decrypt the files.
+• The attack was stopped within a few days due to fast release of patch and the
+discovery of a kill switch, which would stop the malicious code to further
+propagate. Thus, the over effect was limited to a few billion dollars; otherwise,
+the damage could have been much worse than the present evaluation.
+Impact
+Recent Cyberattacks WannaCry Ransomware Attack
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 50
+• The newer version of this ransomware also surfaced in the month of August
+2018 in Taiwan. This new variant of WannaCry ransomware badly affected the
+operations of the company for a certain time. The name of that chip
+manufacturing company in Taiwan was Taiwan Semiconductor Manufacturing
+Company (TSMC). The production of the company was shut temporarily, when
+more than one thousand computers of the company were affected with
+WannaCry ransomware attack. The automation processes of the company
+were badly affected.
+Impact
+Recent Cyberattacks WannaCry Ransomware Attack
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 51
+Petya Cyberattack
+• Petya cyberattack was unleashed in the computer world on May 27, 2017, to
+target the main businesses such as power grids, gas stations, energy
+production companies, banks, airports, bus stations, and other
+communication-based systems.
+• The main target of this ransomware was Ukraine because more than 80% of its
+impact was noted in the Ukraine after one day of attack. Russia and Germany
+were other major countries where the impact of the Petya attacks was noticed
+extensively.
+• The new variant of the Petya would propagate through the EternalBlue exploit
+that would compromise the security of Microsoft Windows server message
+block (SMB), the same vulnerability as WannaCry ransomware.
+• Petya was named after the name of a Russian satellite shown in the James
+Bond’s film Golden Eye.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 52
+• The Petya malware would use a payload, which would infect the master boot
+record (MBR) of a computer. Then, it would modify the Windows Boot Loader
+by overwriting it. And at the third step, the malicious code would force the
+system to restart. When the system restarts, the data files are encrypted and
+damaged while restarting the system.
+• The estimated damages done by the Petya ransomware were about US$10
+billion. The main reason of this huge cost was the attack on energy companies
+and power grids. The services of those companies directly impact the services
+and performance of the other businesses. Thus, the impact swelled
+exponentially. The cost of Petya was much higher than that of WannaCry
+ransomware attack.
+Impact
+Recent Cyberattacks
+Petya Cyberattack
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 53
+US Elections Manipulation
+• Russian hackers with the instructions of the Russian government hacked the
+emails and other sources of information including online services to damage
+the credibility of the US elections. The main target of the Russian hackers was
+to meddle into the election systems and influence the voters so that the
+position of the Hillary Clinton is damaged and political instability is created.
+• Russian hackers hacked the Democratic National Committee (DNC) servers and
+the personal Gmail account of John Podesta who was the election campaign
+head of Hillary Clinton.
+• The hacking of the DNC server was done by the Russian military intelligence
+service (GRU).
+• The hacking of elections was already tested by the Russian hackers in the
+Ukraine elections in 2014. A powerful distributed denial-of-service (DDoS)
+attack was launched to disrupt the Ukrainian elections at that time.
+Victim / Impact
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 54
+Shadow Network Attack
+• The Shadow Network attack is highly sophisticated and powerful espionage
+attack originated from the China. It was a huge and comprehensive attack to
+spy on the Indian government’s secret information and Dalai Lama’s activities.
+• The Shadow Network attack exploited the Internet and social media services
+extensively to spy on the different organizations and office locations
+simultaneously. The major cloud-based and social services that were exploited
+included Yahoo Mail, Twitter, Blogspot, Baidu, Google Groups, and others.
+These websites were used to host malicious code (malware). When these
+websites were used, the malware infected the computers and started spying
+on the communication and data on the computers and local networks.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 55
+Shadow Network Attack Recent Cyberattacks
+• The Indian researchers found that many computers at the Office of His Holiness
+the Dalai Lama (OHHDL) were compromised with the Shadow Network
+malware.
+• More than 1,500 emails were copied from Dalai Lama office.
+• A large number of Indian government’s sensitive documents were stolen.
+• Indian missile system, Indian state security plans, and many other such
+documents were stolen from the computers.
+• The documents related to the Indian policy and relationship with the African
+countries, Middle Eastern countries, and Russia were also stolen.
+Impact
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 56
+GitHub DDoS Attack
+• GitHub DDoS attack that brought the entire service of the GitHub to standstill
+was the most powerful and lethal DDoS cyberattack in the history of the
+cybercrimes.
+• This attack is suspected to have originated from China. The attack was carried
+out on the GitHub services on February 28, 2018. During the attack, the server
+services were unavailable for about 5 minutes.
+• Conducted through the amplification vector that used the memcached over
+the UDP (User Datagram Protocol). Memcached is a general-purpose
+distributed memory-caching system.
+• Memcached instances were badly abused to conduct this attack.
+• IP spoofing was used to direct the memcached response to the targeted server.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 57
+GitHub DDoS Attack Recent Cyberattacks
+• Amplification factor of memcached is 51 thousand times, so each byte of
+sender data was amplified to 51 Kbytes and sent to the target.
+• At the peak time of the attack, the total data rate sent to the target was about
+1.35 Tbps.
+• 126.9 packets were sent per second to the target.
+• Akamai Prolexic helped GitHub to route traffic through its scrubbing centers to
+block the malicious traffic.
+• The attack lasted for about 8 minutes after the traffic was diverted through
+scrubbing center of Akamai Prolexic.
+• The impact of this attack on the software development community was huge
+because millions of software users use the GitHub services.
+Impact
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 58
+Under Armour Account Hack
+• Under Armour is a US-based manufacturer of popular brands of sports
+equipment, foot-wear, and casual apparels for leisure and sporting events. The
+company is headquartered in Baltimore, Maryland. The company has many
+commercial apps and brands that contribute extensively to the company’s
+business. Among such applications, MyFitnessPal is one of the most popular
+mobile applications in the United States.
+• MyFitnessPal has millions of users who use this application for maintaining
+their fitness. MyFitnessPal was created in 2005 by two brothers, but later, it
+was acquired by the Under Armour Corporation. The acquisition of the app
+cost the Under Armour US$475 million in 2015.
+Victim
+Recent Cyberattacks
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 59
+Under Armour Account Hack Recent Cyberattacks
+• The application MyFitnessPal was hacked and data of more than 150 million
+users were stolen in a cyberattack on the application database using SQL
+Injection in February 2018.
+• The attack took place in the last days of February 2018.
+• The company was able to know only in the last days of March 2018.
+• Under Armour announced publicly on March 30, 2018.
+• More than 150 million accounts were compromised.
+• The shares of Under Armour fell by over 4.6% in the trading.
+• The data stolen in the cyberattack included usernames, passwords, and email
+addresses.
+• The stolen data did not comprise driving license, credit card, or social security
+numbers.
+• It is one of the top five big data breaches till today.
+Impact
+Cybersecurity Fundamentals
+Dr. Ehab Abousaif
+PhD in Electrical and Computer Eng., University of Idaho, USA
+IEEE member, IMAPS member
+College of Computing and Information Technology, AASTMT
+Cell: 01114757888
+Email: ehabkamel@gmail.com
+CCY2001: Introduction to Cybersecurity
+Copyrights ©Dr. Ehab Abousaif - Topic: 2 Cyberattacks - 60

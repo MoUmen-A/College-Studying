@@ -1,0 +1,188 @@
+CCY2001   Introduction to Cybersecurity                      Page1/1                                                MPC6/1-1 
+      
+ 
+ 
+Arab Academy for Science, Technology and 
+Maritime Transport-College of Computing & 
+Information Technology - Heliopolis                      
+ Acad. Year : 2024/2025 
+Semester  
+Department 
+: 
+: 
+4 
+CS 
+No. of Pages : 5 Time Allowed :  120 Minutes 
+No. Of Questions : 4 Date :  23 / 6  / 2025 
+Examiner : Dr. Mohamed Elhamahmy 
+Dr. Ehab K. Abousaif 
+Dr. Mahmoud Shawky 
+    
+CCY2001   Introduction to Cybersecurity (Final Exam)                                        (40 Points) 
+Question One  (8 Points) 
+a) (4 Points)  
+Describe the Feistel Cipher structure for both encryption and decryption processes. Include a brief 
+explanation of how diffusion and confusion are achieved in this design. Optionally, you may include 
+a labeled diagram to support your explanation (a diagram is not mandatory but can earn additional 
+clarity points). 
+b) (4 Points)  
+In DES encryption algorithm, if the input 48-bits to the S-Boxes in certain round are All Ones, 
+perform the following operations and show the detailed steps: 
+i. Apply the substitution choice operation using the given S-Boxes to find the 32-bits output. 
+ii. Apply the permutation (P) operation using the given table (P) to the output from part (i).  
+Question Two                                                                                                  (12 Points) 
+You plan to securely communicate with a friend using a symmetric key encryption algorithm, 
+exchanging the symmetric key via RSA to ensure confidentiality. 
+a) (6 Points)  
+The symmetric key is derived from the first four letters of your last name, encoded as ASCII 
+decimal values (e.g., 'A' = 65). Your RSA key pair is private key PRA= {41,133} (exponent=41, 
+modulus=133) and public key PUA= {29,133} (exponent=29, modulus=133); your friend’s key 
+pair is private key PRB= {23,187} (exponent=23, modulus=187) and public key PUB= {7,187} 
+(exponent=7, modulus=187). Using RSA, encrypt the symmetric key to send to your friend, 
+ensuring confidentiality. Show all steps, including 
+i. Converting the first four letters of your last name to ASCII decimal values and forming the 
+symmetric key. 
+ii. Applying RSA encryption using your friend’s public key. Note: If authentication is required, 
+briefly explain how it could be achieved (e.g., using a digital signature). 
+b) (6 Points)  
+Given the following parameters: 
+Message: "Hello" 
+Hash function: A simplified hash function that converts the message to a numerical value 
+by summing the ASCII values of its characters modulo 100 (e.g., H=72, e=101, l=108, 
+l=108, o=111, sum=500, hash=500 mod 100 = 0). 
+i. Alice’s RSA key pair: Public key (e=5, n=35), Private key (d=5, n=35). Note: This is a 
+simplified key pair for demonstration; assume d and e are valid for this modulus. Calculate 
+the digital signature for the message "Hello." 
+ii. Describe how Bob verifies the digital signature using Alice’s public key and perform the 
+verification calculation for the signature computed in part (ii). Assume Bob receives the 
+message "Hello" and the signature without any tampering. 
+iii. If an attacker modifies the message to "Help" (hash value based on ASCII sum: H=72, 
+e=101, l=108, l=108, p=112, sum=501, hash=501 mod 100 = 1), explain whether Bob’s 
+verification will succeed or fail, and compute the verification steps to demonstrate the result. 
+Question Three                                                                                                  
+(8 Points) 
+a) Write the scientific term for each of the following: (2 Points) 
+i. 
+ii. 
+iii. 
+iv. 
+A property in the encryption algorithm that makes each plaintext digit affect the value of 
+many ciphertext digits ………………… 
+The most secure way to distribute the public key is …………………..   
+Protocol that encapsulates the whole datagram into another datagram to hide the original 
+parameters and provide secure communication over an insecure network …………….. 
+A security mechanism that uses a secret code concatenated with the message and inputted to 
+a hash algorithm to obtain a secure hash code …………..  
+b) Choose the best answer(s) for each of the following: (4 Points) 
+i) One of the following is not true about DES:  
+a. Based on Feistel Structure 
+b. Use a key of 56-bit length in each round 
+c. Has initial symmetric key of 64-bits 
+d. Has a good Avalanche effect 
+ii) One of the following is true about AES: 
+a. Its encryption algorithm needs more time than DES 
+b. The plaintext block size is varied according to AES-128, AES-192, and AES-256 
+c. Use fixed number of rounds independent of the key size 
+d. Use different algorithms for decryption 
+iii) Message Authentication Code is a security mechanism to achieve:  
+a. Peer-entity Authentication 
+b. Data Origin Authentication 
+c. Data Integrity 
+d. Digital Signature 
+iv) Applies rules to incoming/outgoing IP packets, forwarding or discarding them based on 
+source/destination IP addresses, port numbers, and protocols. 
+a. Application-Level Firewall 
+b. Packet Filtering Firewall 
+c. Internal Firewall 
+d. Circuit-Level Firewall 
+v) The Network-based Intrusion Detection System (NIDS)  
+a. Takes action to block or mitigate attacks 
+b. Examines user and software activity on each host on a network. 
+c. Monitors traffic at selected points on a network 
+d. Provides secure communication over an insecure network 
+vi) A security mechanism created by generating a hash value for a message and encrypting it 
+with the sender's private key:  
+a. Data Origin Authentication 
+b. Peer-Entity Authentication 
+c. Digital Signature 
+d. Message Authentication Code 
+vii) A system for managing digital certificates and public-key encryption: 
+a. Public-Key Infrastructure 
+b. Public-Key Cryptography 
+c. Public-Key Certificate 
+d. RSA 
+Page2/1                                                
+CCY2001   Introduction to Cybersecurity                      
+MPC6/1-1 
+viii) Certificate of public key (e.g. X.509) is digitally signed by: 
+a. User Private Key 
+b. User Public Key 
+c. Certificate Authority Private Key 
+d. Certificate Authority Public Key 
+c) Identify True or False and then correct the false: (2 Points) 
+i. 
+ii. 
+iii. 
+iv. 
+Although DES has been considered an insecure algorithm and possibly broken, a modified 
+version called Triple-DES is used till now and considered secure.  
+Hash functions are used for message authentication and the creation of digital signatures. They 
+take a fixed-size input (message) and produce a variable output. 
+The preimage resistance property of a hash algorithm is to be infeasible to find two different 
+messages that produce the same hash value. 
+The Intrusion Detection System acts as a barrier between a network and the outside world, 
+controlling traffic based on security policies. 
+Answer only one of the following questions (Question Four Or Question Five): 
+Question Four (Incident Response)                                                                             
+(12 Points) 
+Scenario: As a network security administrator for an e-commerce web application, you detect 
+suspicious activities, including repeated failed login attempts and unauthorized data transfers to 
+external servers. To secure the network, you plan to deploy an Intrusion Detection System (IDS), 
+an Intrusion Prevention System (IPS), a Firewall, and a Security Information and Event 
+Management (SIEM) system. 
+a) (4 Points)  
+Compare the IDS, IPS, and Firewall in terms of their primary functions (e.g., detection, prevention, 
+or filtering) and typical deployment scenarios (e.g., network placement or operational mode) within 
+an e-commerce network. 
+b) (4 Points)  
+Define an Incident Response (IR) plan and the IR process. Outline specific actions, based on the IR 
+process, to address the detected failed login attempts and unauthorized data transfers in the e
+commerce environment. 
+c) (4 Points)  
+Explain the role of a Security Information and Event Management (SIEM) system in supporting the 
+digital forensics process, particularly in investigating the suspicious activities (failed login attempts 
+and data transfers) detected in the scenario. 
+Question Five (Network and End-Points Security)                                                 
+(12 Points) 
+a) (4 Points)  
+Explain with suitable sketch the differences between IPsec Transport mode and Tunnel mode in 
+terms of: datagram structure, the devices that perform the security services, and the applications 
+for each mode. 
+b) (4 Points)  
+Suppose that you decide to communicate with a secure public server using TLS / SSL security 
+protocol. According to that, answer the following: 
+i. 
+ii. 
+TLS is not a single protocol; it’s a protocol suite containing different protocols working 
+together. State the names of these protocols and briefly explain the purpose for each one. 
+State and briefly explain the security services provided by TLS. Identify which protocol 
+performs these services and sketch its operation. 
+Page3/1                                                
+MPC6/1-1 
+CCY2001   Introduction to Cybersecurity                      
+c) (4 Points)  
+In symmetric key distribution using symmetric encryption, the trusted third party may be Key 
+Translation Center (KTC) or Key Distribution Center (KDC). Explain with suitable sketch the 
+difference between them showing the steps that could be performed to obtain a secure session key 
+between various entities. 
+****************Good Luck**************** 
+You may use the following: 
+ASCII Table:  
+DES Permutation function Table (P): 
+Page4/1                                                
+MPC6/1-1 
+CCY2001   Introduction to Cybersecurity                      
+DES Substitution Boxes: 
+Page5/1                                                
+MPC6/1-1 
+CCY2001   Introduction to Cybersecurity                      
