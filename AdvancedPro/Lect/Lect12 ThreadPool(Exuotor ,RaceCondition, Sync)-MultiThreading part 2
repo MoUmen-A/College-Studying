@@ -1,0 +1,124 @@
+MULTITHREADING AND
+PARALLEL
+PROGRAMMING
+Lecture 12 – Multithreading Part 2
+Dr. Mohammad Hashim
+1
+Thread Pools
+•A thread pool can be used to execute tasks efficiently.
+Recall that:
+• You learned how to define a task class by implementing java.lang.Runnable, and how to
+create a thread to run a task like this:
+•Runnable task = new TaskClass(task);
+•new Thread(task).start();
+•This approach is convenient for a single task execution, but it is not efficient for
+a large number of tasks because you have to create a thread for each task.
+•Starting a new thread for each task could limit throughput and cause poor
+performance.
+•Using a thread pool is an ideal way to manage the number of tasks executing
+concurrently.
+2
+Thread Pools in Java
+•Java provides the Executor interface for executing
+tasks in a thread pool and the ExecutorService
+interface for managing and controlling tasks.
+•ExecutorService is a sub-interface of Executor, as
+shown
+3
+Thread Pools (Executor & ExecutorService)
+•
+4
+*
+*
+*
+*
+Thread Pools (Executors)
+•
+5
+*
+*
+Thread Pools (Example)
+6
+Thread Pools
+Tip
+•If you need to create a thread for just one task, use the Thread
+class.
+•If you need to create threads for multiple tasks, it is better to use a
+thread pool.
+7
+Thread Synchronization
+•Thread synchronization is to coordinate the execution of
+the dependent threads.
+•A shared resource may become corrupted if it is accessed
+simultaneously by multiple threads.
+8
+Thread Synchronization
+Example
+9
+10
+11
+12
+Race condition
+■ In Step 1, Task 1 gets the balance from the account.
+■ In Step 2, Task 2 gets the same balance from the account.
+■ In Step 3, Task 1 writes a new balance to the account.
+■ In Step 4, Task 2 writes a new balance to the account.
+■ The effect of this scenario is that Task 1 does nothing
+because in Step 4 Task 2 overrides Task 1’s result.
+■ Obviously, the problem is that Task 1 and Task 2 are
+accessing a common resource in a way that causes a
+conflict.
+■ This is a common problem, known as a race condition, in
+multithreaded programs.
+13
+Race condition
+•Race condition, in multithreaded programs is that
+many tasks access a common resource in a way that
+causes a conflict
+•A class is said to be thread-safe if an object of the class does
+not cause a race condition in the presence of multiple
+threads.
+•As demonstrated in the preceding example, the Account
+class is not thread-safe.
+14
+The synchronized Keyword
+•To avoid race conditions,
+•it is necessary to prevent more than one thread from
+simultaneously entering a certain part of the program,
+known as the critical region.
+Example:
+•The critical region in Listing 30.4 is the entire deposit
+method.
+To solve it
+• You can use the keyword synchronized to synchronize the
+method so that only one thread can access the method at a
+time.
+15
+The synchronized Keyword
+•There are several ways to correct the problem in Listing 30.4.
+•One approach is to make Account thread-safe by adding the
+keyword synchronized in the deposit method in line 38, as follows:
+public synchronized void deposit(double amount)
+16
+The synchronized Keyword
+public synchronized void deposit(double amount)
+•synchronized method acquires a lock before it
+executes.
+•In the case of an instance method, the lock is on the
+object for which the method was invoked.
+•In the case of a static method, the lock is on the
+class.
+17
+The synchronized Keyword
+•If one thread invokes a synchronized instance
+method on an object,
+1. the lock of that object (respectively, class) is
+acquired first, then
+2. the method is executed, and
+3. finally the lock is released.
+18
+The synchronized Keyword
+• With the deposit method synchronized, If Task 1 enters the
+method, Task 2 is blocked until Task 1 finishes the method, as
+shown in Figure 30.12.
+19

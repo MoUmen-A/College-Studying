@@ -40,55 +40,56 @@ The Vigenere Autokey cipher is a variation of the Vigenere cipher where the plai
 
 **Step 1: Prepare the plaintext**
 - Take first 16 letters of your name (if less than 16, repeat)
-- Example: "MOHAMMED HOSAM" → "MOHAMMEDHOSAMMA"
+- Example: "Ahmed Moumen abdo" → "AHMEDMOUMENABDOA"
 - Convert each character to ASCII then to hexadecimal
 
 **Example ASCII-Hex Conversion:**
 ```
-M = 77 (decimal) = 4D (hex)
-O = 79 (decimal) = 4F (hex)
-H = 72 (decimal) = 48 (hex)
 A = 65 (decimal) = 41 (hex)
-M = 77 (decimal) = 4D (hex)
+H = 72 (decimal) = 48 (hex)
 M = 77 (decimal) = 4D (hex)
 E = 69 (decimal) = 45 (hex)
 D = 68 (decimal) = 44 (hex)
-H = 72 (decimal) = 48 (hex)
+M = 77 (decimal) = 4D (hex)
 O = 79 (decimal) = 4F (hex)
-S = 83 (decimal) = 53 (hex)
+U = 85 (decimal) = 55 (hex)
+M = 77 (decimal) = 4D (hex)
+E = 69 (decimal) = 45 (hex)
+N = 78 (decimal) = 4E (hex)
 A = 65 (decimal) = 41 (hex)
-M = 77 (decimal) = 4D (hex)
-M = 77 (decimal) = 4D (hex)
+B = 66 (decimal) = 42 (hex)
+D = 68 (decimal) = 44 (hex)
+O = 79 (decimal) = 4F (hex)
 A = 65 (decimal) = 41 (hex)
 ```
 
 **Step 2: Create State Array (4×4)**
 ```
 Initial State Array:
-| 4D | 4D | 53 | 41 |
-| 4F | 45 | 41 | 4D |
-| 48 | 44 | 4D | 41 |
-| 4D | 48 | 4F | 4D |
+| 41 | 48 | 4D | 45 |
+| 44 | 4D | 4F | 55 |
+| 4D | 45 | 4E | 41 |
+| 42 | 44 | 4F | 41 |
 ```
 
 **Step 3: Apply SubBytes Operation**
 - Use the AES S-Box substitution table
 - Each hexadecimal value is replaced according to the S-Box
 - The first hex digit indicates row, second indicates column
-- Example: `4D` → Row 4, Column D → (Look up in S-Box) → Result value
+- Example: `41` → Row 4, Column 1 → (Look up in S-Box) → Result value
 
 **Simplified S-Box Example (showing concept):**
 For each byte, look up the substitution:
 ```
-Example: 4D → S[4][D] (from standard S-Box)
+Example: 41 → S[4][1] (from standard S-Box)
 ```
 
 **Step 4: After SubBytes (Substituted State Array)**
 ```
-| Sub[4D] | Sub[4D] | Sub[53] | Sub[41] |
-| Sub[4F] | Sub[45] | Sub[41] | Sub[4D] |
-| Sub[48] | Sub[44] | Sub[4D] | Sub[41] |
-| Sub[4D] | Sub[48] | Sub[4F] | Sub[4D] |
+| Sub[41] | Sub[48] | Sub[4D] | Sub[45] |
+| Sub[44] | Sub[4D] | Sub[4F] | Sub[55] |
+| Sub[4D] | Sub[45] | Sub[4E] | Sub[41] |
+| Sub[42] | Sub[44] | Sub[4F] | Sub[41] |
 ```
 
 **Step 5: Apply ShiftRows Operation**
@@ -100,10 +101,10 @@ The ShiftRows operation shifts each row:
 
 **Result after ShiftRows:**
 ```
-| Sub[4D] | Sub[4D] | Sub[53] | Sub[41] |  (Row 0 - no shift)
-| Sub[45] | Sub[41] | Sub[4D] | Sub[4F] |  (Row 1 - shift left by 1)
-| Sub[4D] | Sub[41] | Sub[48] | Sub[44] |  (Row 2 - shift left by 2)
-| Sub[4D] | Sub[4D] | Sub[48] | Sub[4F] |  (Row 3 - shift left by 3)
+| Sub[41] | Sub[48] | Sub[4D] | Sub[45] |  (Row 0 - no shift)
+| Sub[4D] | Sub[4F] | Sub[55] | Sub[44] |  (Row 1 - shift left by 1)
+| Sub[4E] | Sub[41] | Sub[4D] | Sub[45] |  (Row 2 - shift left by 2)
+| Sub[41] | Sub[42] | Sub[44] | Sub[4F] |  (Row 3 - shift left by 3)
 ```
 
 **Key Concepts:**
@@ -126,7 +127,7 @@ The ShiftRows operation shifts each row:
 
 **Step 1: Prepare the DES Key**
 - Convert first 8 letters to ASCII decimal
-- Example: "MOHAMMED" → M(77) O(79) H(72) A(65) M(77) M(77) E(69) D(68)
+- Example: "AHMEDMOU" (from Ahmed Moumen) → A(65) H(72) M(77) E(69) D(68) M(77) O(79) U(85)
 - Combine into a single number (or encrypt in blocks)
 
 **Step 2: Achieve Both Secrecy and Authentication**
@@ -146,13 +147,27 @@ Let's say DES key M = 100 (simplified for example)
 
 Step 1: Sign with your private key (authentication)
 S = 100^41 mod 133
-  = [perform modular exponentiation]
-  = [result value]
+  = (100^32 × 100^8 × 100^1) mod 133
+
+  *Detailed Square-and-Multiply Step:*
+  - 100^1 mod 133 = 100
+  - 100^2 mod 133 = 10000 mod 133 = 25
+  - 100^4 mod 133 = 25^2 mod 133 = 625 mod 133 = 93
+  - 100^8 mod 133 = 93^2 mod 133 = 8649 mod 133 = 4
+  - 100^16 mod 133 = 4^2 mod 133 = 16
+  - 100^32 mod 133 = 16^2 mod 133 = 256 mod 133 = 123
+
+  *Final Calculation:*
+  S = (123 × 4 × 100) mod 133
+  S = 49200 mod 133 = 123
+  → Signature S = 123
 
 Step 2: Encrypt with friend's public key (secrecy)
-C = S^7 mod 187
-  = [perform modular exponentiation]
-  = [final ciphertext to send]
+C = 123^7 mod 187
+  = (123^4 × 123^2 × 123^1) mod 187
+  = (137 × 169 × 123) mod 187
+  = 183
+  → Final ciphertext C = 183
 ```
 
 **Step 4: What Your Friend Receives and Does**
