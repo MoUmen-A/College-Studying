@@ -63,7 +63,7 @@ D. Hibernate replaces JPA in Spring Data.
 **Guide answer:**
 B
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - JPA = specification; Hibernate = implementation.
 - Hibernate implements JPA annotations and runtime behavior.
 
@@ -85,7 +85,7 @@ D. In `Course`: `@JoinTable(...)` only
 **Guide answer:**
 B
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Owner side defines `@JoinTable`.
 - `joinColumns` refer to owner (`student_id`), `inverseJoinColumns` to other side (`course_id`).
 
@@ -103,7 +103,7 @@ The JPA annotation used to mark a Java class as a persistent entity is _________
 **Guide answer:**
 `@Entity`
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Exact annotation name.
 - Placed on the entity class.
 
@@ -117,7 +117,7 @@ To let Hibernate automatically create or update database tables based on entity 
 **Guide answer:**
 `update` (or `create`)
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - `update` keeps schema in sync; `create` recreates tables.
 - Default alternatives: `none`, `validate`, `create-drop`.
 
@@ -135,7 +135,7 @@ Briefly explain what `save()` does in `JpaRepository` and how it decides between
 **Guide answer:**
 `save()` persists an entity; if the entity's ID is null (or not present), JPA treats it as new and issues an INSERT; if the entity has a non-null ID that exists in the database, JPA issues an UPDATE. Thus `save()` acts as insert-or-update depending on identity.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - ID-null ⇒ insert; ID-present ⇒ update.
 - `save()` delegates to the persistence context / entity manager.
 
@@ -149,7 +149,7 @@ What is the "owner" side of a JPA relationship and why does it matter?
 **Guide answer:**
 The owner side is the entity that owns the database foreign-key or join table mapping (where `@JoinColumn` or `@JoinTable` is declared). It matters because changes to the relationship (persisting/updating links) are only reflected in the database when performed on the owner side; the inverse side (with `mappedBy`) is read-only in terms of database mapping.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Owner contains `@JoinColumn` / `@JoinTable`.
 - Only owner updates propagate DB mapping changes.
 - `mappedBy` indicates inverse side and points to owner field name.
@@ -168,7 +168,7 @@ T/F: `@OneToMany` must always include a `@JoinColumn` on the same side to create
 **Guide answer:**
 False. In a one-to-many / many-to-one pair, the foreign key column belongs to the many side (owner), which typically uses `@ManyToOne` with `@JoinColumn`. The `@OneToMany` side is usually the inverse and uses `mappedBy` instead.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Many side is owner; `@JoinColumn` normally on many side.
 - `@OneToMany(mappedBy=...)` is common.
 
@@ -182,7 +182,7 @@ T/F: Setting `spring.jpa.hibernate.ddl-auto=update` in production guarantees zer
 **Guide answer:**
 False. `update` attempts to modify schema non-destructively, but it may not handle complex migrations safely; for production it's recommended to use controlled migrations (Flyway, Liquibase) and backups.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - `update` is convenient but not a replacement for migration tools.
 - Risk: incompatible field changes, data loss in some cases.
 
@@ -211,7 +211,7 @@ Or using Thymeleaf `th:if`/`th:unless`:
 <span th:unless="${student.department != null}">No Department</span>
 ```
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Use `th:text` with conditional or `th:if`/`th:unless`.
 - Correctly access `student.department.name` when not null.
 
@@ -219,6 +219,7 @@ Or using Thymeleaf `th:if`/`th:unless`:
 Trying to access `student.department.name` directly without null check (causes NPE-like rendering issues).
 
 ### Q10 — Application (multi-part) | Bloom's: Apply / Analyse | Difficulty: Hard | Marks: 12
+**Question:**
 **(a)** Describe how you would model a many-to-many relationship between `Student` and `Course` in JPA, including annotations and the join table. (Marks: 6)
 
 **(b)** Give a short code snippet for the `Student` side showing annotations. (Marks: 4)
@@ -251,7 +252,7 @@ public class Student {
 - JPQL: `@Query("SELECT s FROM Student s JOIN s.courses c WHERE c.id = :courseId") List<Student> findByCourseId(@Param("courseId") Long courseId);`
 - Or load Course and call `course.getStudents()` if relationship is bidirectional and fetched appropriately.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Owner side defines `@JoinTable`.
 - Snippet must show `@ManyToMany` + `@JoinTable`.
 - Use JPQL join or repository method to fetch students by course id.
@@ -273,7 +274,7 @@ Compare `@ManyToOne` with `@OneToMany` in JPA: describe which side is the owner,
 - Annotations: owner uses `@ManyToOne` + `@JoinColumn`; inverse uses `@OneToMany(mappedBy="...")`.
 - Use-cases: `@ManyToOne` example—Student → Department; `@OneToMany` example—Department listing students.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Owner vs inverse; DB column location.
 - Practical example mapping.
 
@@ -288,9 +289,9 @@ Contrast `spring.jpa.hibernate.ddl-auto = update` with a migration tool approach
 - `ddl-auto=update`: Advantage—automatic and convenient during development; quick schema alignment. Risk—may not handle complex migrations safely, can be unpredictable in production, potential for data loss. Use in development or prototyping.
 - Migration tools (Flyway/Liquibase): Advantage—explicit, versioned migrations, repeatable and auditable; safe for production changes. Risk—requires writing migration scripts and ops discipline. Recommended approach for staging/production with CI/CD.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Safety and reproducibility are primary differences.
-- Production → use migration tools; development → `update` acceptable.
+- Production ⇒ use migration tools; development ⇒ `update` acceptable.
 
 **Common mistakes to avoid:**
 Assuming `update` handles all schema-change scenarios safely.
@@ -313,7 +314,7 @@ Explain the role of the repository abstraction in Spring Data JPA. Discuss how r
 
 **Conclusion:** Use repository derivation for straightforward queries to speed development and readability; adopt `@Query` (or a custom repository implementation) when complexity, performance, or clarity demands explicit query control.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Purpose of repository abstraction.
 - How method derivation maps to queries.
 - Criteria for custom `@Query`.
@@ -337,5 +338,4 @@ Overusing `@Query` for trivial lookups; over-relying on derived names that becom
 - Not covered (explicitly): Fetch types (`LAZY` vs `EAGER`) and N+1 query problem — Why testable: impacts performance and mapping decisions; Suggested question type: Compare & contrast or Application.
 
 ---
-
 *Generated from `AdvancedPro/Lect/Lect10_Hibernate_ORM_Vs_JPA_Thymleaf_SpringBoot.md`.*

@@ -33,7 +33,7 @@ D. Prototype
 **Guide answer:**
 C
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Singleton is the default scope if nothing is specified.
 - Only one instance is created and shared across the entire application.
 
@@ -52,7 +52,7 @@ D. To prevent Cross-Site Scripting (XSS) attacks in the user session.
 **Guide answer:**
 B
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Controller is created at startup, but Session doesn't exist yet.
 - Proxy acts as a placeholder that resolves the real bean at runtime.
 
@@ -70,7 +70,7 @@ When extracting a generic Object from a manual `HttpSession` and casting it to a
 **Guide answer:**
 `@SuppressWarnings("unchecked")`
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Exact annotation name.
 
 **Common mistakes to avoid:**
@@ -83,7 +83,7 @@ If data is only useful for the brief moment it takes to load a single page or pr
 **Guide answer:**
 Request
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Destroyed right after the HTTP response.
 
 **Common mistakes to avoid:**
@@ -100,7 +100,7 @@ Explain the mechanism of a Proxy object at runtime when an HTTP request hits a m
 **Guide answer:**
 When a request hits the controller and invokes a method on the injected dependency, the call doesn't go to the real object immediately. Instead, it hits the Proxy first. The Proxy intercepts the call, performs a dynamic lookup to find the specific bean instance belonging to the current user's session or request, and then delegates the call to that real instance.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Interception of the method call.
 - Dynamic lookup of the correct user/thread instance.
 - Delegation to the real object.
@@ -115,7 +115,7 @@ Briefly explain the structural security/data leakage issue that occurs when usin
 **Guide answer:**
 Because a Singleton creates only one shared instance of the bean for the entire application, any state (like a List of Tasks) saved inside it is shared across all browsers/users. Consequently, a task added by User A is completely visible and modifiable by User B, which is a severe data leakage and privacy issue.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Singleton means one shared instance.
 - Shared state leads to visible data across different users.
 
@@ -133,7 +133,7 @@ T/F: In a typical web application, classes containing only application logic and
 **Guide answer:**
 False. If a class contains only logic and no user-specific state, it should be a Singleton (the default). Creating thousands of copies of a pure logic class wastes memory needlessly.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Logic-only classes do not need private state.
 - Singleton saves memory.
 
@@ -147,7 +147,7 @@ T/F: When a Session-scoped proxy is injected into a Singleton controller, the Sp
 **Guide answer:**
 False. Spring Boot does not crash in this scenario precisely because it uses a Proxy. The Proxy acts as a temporary empty shell at startup to satisfy the dependency injection requirements, resolving the real object only when a request actually happens.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Proxies prevent the startup crash.
 - Resolves mapping when an active request is available.
 
@@ -170,7 +170,7 @@ You are building an e-commerce website. Determine the most appropriate Spring be
 2. **Session:** `ShoppingCart` data needs to be isolated per user and persist across multiple HTTP requests as they navigate the site.
 3. **Request:** `PaymentErrorLogger` is only relevant for the duration of that single form submission and should be discarded once the response is sent.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Correct scopes: Singleton, Session, Request.
 - Justifications matching the lifecycle/shared rules.
 
@@ -188,9 +188,9 @@ Compare managing user data manually via `HttpSession` attributes versus using Sp
 **Guide answer:**
 Managing data manually via `HttpSession` requires developers to explicitly interact with the session object (e.g., `session.getAttribute()`, `session.setAttribute()`), handle null checks, and cast objects back to their correct types (often requiring `@SuppressWarnings("unchecked")`). 
 
-In contrast, Spring's Session scope handles this transparently. Developers can inject the session-scoped bean directly into controllers using `@Autowired` and interact with it as a normal Java object. Spring manages the lifecycle, lookup, and background binding, leading to cleaner code devoid of manual HTTP attribute manipulation.
+In contrast, Spring's Session scope handles this transparently. Developers can inject the session-scoped bean directly into controllers using `@Autowired` and interact with it as a normal Java object. Spring manages the lifecycle, lookup, and background binding, leading to clean code devoid of manual HTTP attribute manipulation.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Manual: requires `getAttribute()`, casting, and potential warnings.
 - Spring: uses Dependency Injection, treats session data as regular beans.
 - Developer experience: Spring is cleaner and more abstracted.
@@ -219,7 +219,7 @@ In Spring Boot, mismatched scopes (like a Singleton depending on a Session objec
 **Conclusion:** 
 Spring's Proxy mechanism allows developers to seamlessly mix long-lived stateless Singletons with short-lived stateful user data, maintaining architectural cleanliness without sacrificing application stability.
 
-**Key points to include:**
+**Key points to include for Full Marks:**
 - Startup phase: no active session available.
 - Proxy creation: placeholder injected into Controller.
 - Runtime phase: interception, dynamic lookup, and delegation.
