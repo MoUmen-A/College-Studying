@@ -74,6 +74,46 @@ B
 **Common mistakes to avoid:**
 Thinking a separate thread is launched by calling `run()`.
 
+### Q12 — Multiple choice | Bloom's: Remember | Difficulty: Easy | Marks: 2
+**Question:**
+Which of the following statements correctly identifies the Java priority constants in the `Thread` class and the default priority assigned to the `main` thread?
+
+A. `MIN_PRIORITY` is 0, `NORM_PRIORITY` is 5, `MAX_PRIORITY` is 10; the main thread's default is 0.  
+B. `MIN_PRIORITY` is 1, `NORM_PRIORITY` is 5, `MAX_PRIORITY` is 10; the main thread's default is 5.  
+C. `MIN_PRIORITY` is 1, `NORM_PRIORITY` is 5, `MAX_PRIORITY` is 10; the main thread's default is 1.  
+D. `MIN_PRIORITY` is 0, `NORM_PRIORITY` is 1, `MAX_PRIORITY` is 2; the main thread's default is 1.  
+
+**Guide answer:**
+B
+
+**Key points to include for Full Marks:**
+- `MIN_PRIORITY` = 1
+- `NORM_PRIORITY` = 5
+- `MAX_PRIORITY` = 10
+- Main thread default priority is `Thread.NORM_PRIORITY` (5).
+
+**Common mistakes to avoid:**
+Assuming the scale starts at 0 (it is 1 to 10).
+
+### Q13 — Multiple choice | Bloom's: Understand | Difficulty: Easy | Marks: 2
+**Question:**
+In Java/Operating Systems, a process runs independently from other processes with its own memory and resources. What is the immediate consequence of this isolation?
+
+A. When one process crashes, all other running processes on the system also crash.  
+B. When one process crashes, other running processes are unaffected and usually keep running.  
+C. Processes share the same data space, leading to frequent interference.  
+D. A process cannot be split into smaller units of execution.  
+
+**Guide answer:**
+B
+
+**Key points to include for Full Marks:**
+- Independent resource allocation prevents cross-process crashes.
+- Processes run in separate address spaces.
+
+**Common mistakes to avoid:**
+Confusing process memory isolation with thread shared memory.
+
 ---
 
 ## Fill-in-the-blank
@@ -104,6 +144,33 @@ starvation (or contention)
 
 **Common mistakes to avoid:**
 Writing "deadlock" (which is mutual waiting, not priority starvation).
+
+### Q14 — Fill-in-the-blank | Bloom's: Remember | Difficulty: Easy | Marks: 2
+**Question:**
+If all runnable threads have equal priorities, each is assigned an equal portion of the CPU time in a circular queue. This scheduling mechanism is known as ____________ scheduling.
+
+**Guide answer:**
+round-robin (or time slicing)
+
+**Key points to include for Full Marks:**
+- Naming round-robin.
+- Understood as equal CPU time division.
+
+**Common mistakes to avoid:**
+Writing "preemptive", which executes based on priority level hierarchy, not circular equal time slices.
+
+### Q15 — Fill-in-the-blank | Bloom's: Remember | Difficulty: Easy | Marks: 2
+**Question:**
+When running multiple threads on a CPU, the operating system rapidly switches between threads to give each one a small time slice. This rapid switching process is called ____________.
+
+**Guide answer:**
+context switching
+
+**Key points to include for Full Marks:**
+- Correct terminology: "context switching".
+
+**Common mistakes to avoid:**
+Writing "parallelism" (which is physical simultaneous execution on separate cores).
 
 ---
 
@@ -136,6 +203,21 @@ Why is it mandatory by the Java compiler to place the `Thread.sleep()` method in
 
 **Common mistakes to avoid:**
 Vaguely writing `Exception` instead of identifying `InterruptedException`.
+
+### Q16 — Short answer | Bloom's: Apply / Analyse | Difficulty: Medium | Marks: 5
+**Question:**
+According to the lecture, when invoking `Thread.sleep()` in a loop, what is the programmatic difference between wrapping the entire loop in a `try-catch` block versus putting the `try-catch` block inside the loop?
+
+**Guide answer:**
+- **Try-catch outside the loop:** If the thread is interrupted while sleeping, the `InterruptedException` is thrown and caught outside the loop. The loop terminates immediately, and the thread stops executing its task.
+- **Try-catch inside the loop:** If the thread is interrupted, the exception is caught inside the loop, the catch block runs, but the loop continues to its next iteration. The thread may continue to execute even though it is being interrupted.
+
+**Key points to include for Full Marks:**
+- If try-catch is outside: thread interrupts and terminates loop execution.
+- If try-catch is inside: thread catches exception but continues executing subsequent loop iterations.
+
+**Common mistakes to avoid:**
+Assuming both structures have the same termination behavior.
 
 ---
 
@@ -174,6 +256,24 @@ A single-core CPU can physically execute only one thread at a given time. The il
 
 **Common mistakes to avoid:**
 Confusing single-core timeslicing with multi-core physical parallelism.
+
+### Q17 — True / False + justify | Bloom's: Understand | Difficulty: Easy | Marks: 3
+**Question:**
+**Statement:** The `Runnable` interface is used to define a task, and it contains both the `run()` method to specify task execution and the `start()` method to launch the thread.
+
+State True or False, and justify your reasoning.
+
+**Guide answer:**
+False.  
+The `Runnable` interface only contains the `run()` method. It does not contain the `start()` method. The `start()` method belongs to the `Thread` class, which is used to instantiate and execute threads wrapped around a `Runnable` task.
+
+**Key points to include for Full Marks:**
+- State False.
+- Explain that `Runnable` only defines the `run()` method.
+- Identify that `start()` is a method of the `Thread` class.
+
+**Common mistakes to avoid:**
+Stating "True" because both `run()` and `start()` are related to multithreading.
 
 ---
 
@@ -231,6 +331,57 @@ public static void main(String[] args) {
 **Common mistakes to avoid:**
 Calling `t1.run()` to try and start it again; missing the exact class name `IllegalThreadStateException`.
 
+### Q18 — Application (multi-part) | Bloom's: Apply / Create | Difficulty: Hard | Marks: 10
+**Question:**
+Create a Java program to show task execution yielding and priority configuration.
+**(a)** Write a class `YieldTask` that implements the `Runnable` interface. Inside the `run()` method, loop from 1 to 50, print the current number, and invoke `Thread.yield()` after each print statement. (4 marks)
+
+**(b)** Write a `main` method that creates two threads (`t1` and `t2`) executing the same instance of `YieldTask`. Set `t1` to have `Thread.MIN_PRIORITY` and `t2` to have `Thread.MAX_PRIORITY`, and start both. (4 marks)
+
+**(c)** Explain if setting `t2` to `Thread.MAX_PRIORITY` guarantees that it will complete its entire loop before `t1` executes any print statement, referencing the scheduler rules from the lecture. (2 marks)
+
+**Guide answer:**
+**(a)**
+```java
+public class YieldTask implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(Thread.currentThread().getName() + " - " + i);
+            Thread.yield();
+        }
+    }
+}
+```
+
+**(b)**
+```java
+public class YieldTest {
+    public static void main(String[] args) {
+        YieldTask task = new YieldTask();
+        Thread t1 = new Thread(task, "Thread-Min");
+        Thread t2 = new Thread(task, "Thread-Max");
+        
+        t1.setPriority(Thread.MIN_PRIORITY); // priority 1
+        t2.setPriority(Thread.MAX_PRIORITY); // priority 10
+        
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+**(c)**
+No, setting priorities is only a hint to the JVM/OS thread scheduler. The underlying operating system has ultimate control and can ignore priorities. Therefore, there is no guarantee that `t2` will finish first, and `t1` may still execute concurrently.
+
+**Key points to include for Full Marks:**
+- Implement `Runnable` and call `Thread.yield()` correctly.
+- Use `t1.setPriority(Thread.MIN_PRIORITY)` and `t2.setPriority(Thread.MAX_PRIORITY)`.
+- Explain that priority is merely a hint to the scheduler, and the OS is in control.
+
+**Common mistakes to avoid:**
+- Forgetting that priority is only a hint, not an absolute guarantee.
+- Implementing `Thread.yield()` incorrectly inside the loop.
+
 ---
 
 ## Compare & contrast
@@ -256,6 +407,22 @@ Compare and contrast the `yield()` and `sleep(long)` methods in Java. Your answe
 
 **Common mistakes to avoid:**
 Stating that `yield()` pauses execution for a guaranteed duration.
+
+### Q19 — Compare & contrast | Bloom's: Analyse | Difficulty: Medium | Marks: 6
+**Question:**
+Based on the JVM thread scheduler rules in the lecture, compare and contrast **Preemptive Scheduling** versus **Time Slicing (Round-Robin)** scheduling.
+
+**Guide answer:**
+- **Preemptive Scheduling:** The scheduler picks the highest priority task from the ready queue and executes it. It continues to run until it enters a waiting/dead state, or a higher priority task is added to the ready queue. Low-priority tasks can be completely blocked from execution if high-priority tasks are always running.
+- **Time Slicing (Round-Robin):** A task executes for a predefined time slice (quantum) and then reenters the pool of ready tasks. The scheduler then selects another task to execute based on priority and queue ordering. This guarantees that all threads of the same priority level get equal execution opportunities in a circular queue.
+
+**Key points to include for Full Marks:**
+- Preemptive: highest priority task runs until dead/waiting/preempted.
+- Time Slicing: task runs for a predefined slice, then reenters the pool.
+- Mention queue type (circular queue for same priority).
+
+**Common mistakes to avoid:**
+Thinking preemptive scheduling allocates equal time quantums (it doesn't; that is time-slicing).
 
 ---
 
@@ -291,6 +458,34 @@ Mitigating starvation requires active thread cooperation. Programmers cannot rel
 
 **Common mistakes to avoid:**
 Confusing starvation with deadlock (deadlocked threads are waiting for each other, starved threads are waiting for the CPU).
+
+### Q20 — Essay / long answer | Bloom's: Evaluate / Create | Difficulty: Hard | Marks: 12
+**Question:**
+Discuss the concept of responsiveness in multithreaded applications as explained in the lecture. In your essay:
+1. Explain how multithreading makes an application more responsive, using the example of a word processor.
+2. Explain the physical difference between running threads on a single-core CPU versus a multi-core CPU.
+3. Define the terms "contention" and "starvation," and discuss the programmatic methods a programmer should use to avoid these conditions.
+
+**Guide answer:**
+**1. Responsiveness in Applications:**
+Multithreading allows an application to remain interactive by splitting tasks. In a word processor, a single-threaded program would freeze while printing or saving a file, preventing the user from typing. In a multithreaded program, one thread handles background tasks (saving/printing) while another thread handles UI input, keeping the program responsive.
+
+**2. Single-Core vs. Multi-Core Execution:**
+- **Single-Core:** A single core can execute only one thread at a time. The operating system uses context switching (rapidly swapping between threads using time slices) to create the illusion of simultaneous execution.
+- **Multi-Core:** Multi-core processors have multiple central processing units. Threads can run truly in parallel (simultaneously) on different physical cores.
+
+**3. Contention, Starvation, and Mitigation:**
+- **Contention / Starvation:** A situation where a lower or same-priority thread never gets a chance to run because there is always a higher-priority thread executing, or a thread of the same priority does not yield CPU control.
+- **Mitigation Methods:** To avoid starvation, higher-priority threads must periodically invoke `Thread.sleep(long)` or `Thread.yield()`. This temporarily moves the active thread out of the running state or yields its time slice, giving lower or equal-priority threads an opportunity to execute.
+
+**Key points to include for Full Marks:**
+- UI interactivity / word processor print example.
+- Single-core context switching vs. multi-core physical parallelism.
+- Definition of contention/starvation.
+- Programmatic use of sleep/yield as cooperative scheduling mechanisms.
+
+**Common mistakes to avoid:**
+Confusing thread starvation (lack of CPU allocation) with deadlock (threads blocking on locked resources).
 
 ---
 
