@@ -1,0 +1,47 @@
+# CCS2304 Advanced Programming Applications
+## JDBC – Java Database Connectivity (Lect. #1)
+
+---
+
+### What is JDBC?
+* A common programming interface for writing programs that access information stored in databases, spreadsheets, and flat files.
+* JDBC stands for **Java Database Connectivity**.
+* It is a Java API that can access any kind of tabular data, especially data stored in a Relational Database.
+* JDBC works with Java on a variety of platforms, such as Windows, Mac OS, and various versions of UNIX.
+
+### JDBC Architecture
+The JDBC API supports both two-tier and three-tier processing models for database access.
+* **Two-Tier Model:** A Java applet or application talks directly to the database. This requires a JDBC driver that can communicate with the particular database management system (DBMS) being accessed.
+* **Three-Tier Model:** Commands are sent to a "middle tier" of services, which then sends the commands to the database. The middle tier processes the data and sends it back to the user interface.
+
+### JDBC Core Components
+The JDBC API includes the following interfaces and classes:
+* **DriverManager:** This class manages a list of database drivers. It matches connection requests from the Java application with the proper database driver using communication sub-protocols.
+* **Driver:** This interface handles the communications with the database server. You will rarely interact directly with Driver objects. Instead, you use `DriverManager`.
+* **Connection:** This interface represents a physical connection session with a specific database. All SQL statements are executed and results are returned within the context of a Connection.
+* **Statement:** You use objects created from this interface to submit raw SQL statements to the database. Some specialized interfaces accept parameters in addition to executing stored procedures.
+* **ResultSet:** These objects hold data retrieved from a database after you execute a SQL query using Statement objects. It acts as an iterator to allow you to move through its data.
+* **SQLException:** This standard class handles any errors that occur in a database application.
+
+---
+
+### Key Steps to Connecting to a Database
+
+#### Step 1: Loading the Driver
+* You must register the driver in your program before using it.
+* Loading the driver causes it to register itself with the `DriverManager`.
+* **Example:** `Class.forName("com.mysql.cj.jdbc.Driver");`
+
+#### Step 2: Establishing a Connection
+* Use the `DriverManager.getConnection()` method to create a connection object.
+* **Syntax:** `Connection conn = DriverManager.getConnection(URL, user, password);`
+* **Database URL Formats:**
+  * MySQL: `jdbc:mysql://hostname:port/databaseName`
+  * Oracle: `jdbc:oracle:thin:@hostname:port:databaseName`
+
+#### Step 3: Creating and Executing a Statement
+* Once a connection is established, create a statement object to run queries.
+* **Example:**
+  ```java
+  Statement stmt = conn.createStatement();
+  ResultSet rs = stmt.executeQuery("SELECT * FROM Student");

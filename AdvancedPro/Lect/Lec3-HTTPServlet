@@ -1,0 +1,207 @@
+CCS 2304: 
+Advanced Programming Applications
+Lecture 2: HTTPServlet
+Dr. Mohammad Hashim
+Lecturer Computer Science
+Dept. of Mathematics, Faculty of Science.
+Ain Shams University 
+The HttpServlet class
+ The HttpServlet class extends the GenericServlet class 
+and implements Serializable interface. 
+ It is a part of the javax.servlet.http package.
+ It provides http specific methods such as 
+ doGet, doPost, doPut, doDelete, doHead, doTrace etc. 
+ The functionality of this class makes it easier to build 
+servlets that work with HTTP requests and responses.
+ Some of its important methods are listed at the next 
+slide:
+ A subclass of HttpServlet must override at least one 
+method, usually one of doGet, doPost, doPut, 
+doDelete.
+3
+Methods of HttpServlet class
+ protected void service(HttpServletRequest req, 
+HttpServletResponse res)
+ receives the request from the service method and sends the request to the 
+doXXX() method depending on the incoming http request type.
+ protected void doGet(HttpServletRequest req, 
+HttpServletResponse res) 
+ handles the GET request. It is invoked by the web container.
+ protected void doPost(HttpServletRequest req, 
+HttpServletResponse res) 
+ handles the POST request. It is invoked by the web container.
+ protected void doHead(HttpServletRequest req, 
+HttpServletResponse res) 
+ handles the HEAD request. It is invoked by the web container.
+4
+GET method vs. POST method
+6
+Getting the parameters (HttpServletRequest)
+ Most of the interesting methods are inherited from the super 
+interface ServletRequest
+ public Enumeration getParameterNames()
+ Returns an Enumeration of the parameter names
+ If no parameters, returns an empty Enumeration
+ public String getParameter(String name)
+ Returns the value of the parameter name as a String
+ If the parameter doesn’t exist, returns null
+ If name has multiple values, only the first is returned
+ public String[] getParameterValues(name)
+ Returns an array of values of the parameter name
+ If the parameter doesn’t exist, returns null
+7
+8
+The RequestDispatcher
+interface
+Servlet 
+Collaboration
+The sendRedirect () 
+method
+The Cookie
+class
+9
+RequestDispatcher in Servlet
+ It is one of the way of servlet collaboration.
+ The RequestDispatcher interface provides the facility 
+of sending the request to another resource 
+ html, 
+ servlet or 
+ jsp. 
+ This interface can also be used to include the content of 
+another resource also. 
+ There are two methods defined in the 
+RequestDispatcher interface.
+10Methods of RequestDispatcher
+interface
+1. public void forward(ServletRequest request, 
+ServletResponse response) throws 
+ServletException, IOException
+Forwards a request from a servlet to another resource 
+(servlet, JSP file, or HTML file) on the server.
+11
+Methods of RequestDispatcher
+interface
+2. public void include(ServletRequest request, 
+ServletResponse response) throws 
+ServletException, IOException
+Includes the content of a resource (servlet, JSP page, or 
+HTML file) in the response.
+12
+Example 1: Validating Password
+13Example of RequestDispatcher
+interface
+ In this example, we are validating the password entered by 
+the user. 
+ If password is valid, it will forward the request to the 
+WelcomeServlet, 
+ otherwise, will show an error message: “sorry username or 
+password error!”. 
+ In this program, we are checking for hardcoded information.
+ In this example, we have created following files:
+ index.html file: for getting input from the user.
+ Login.java file: a servlet class for processing the response. If 
+password is valid, it will forward the request to the welcome servlet.
+ WelcomeServlet.java file: a servlet class for displaying the 
+welcome message.
+14
+The index.html file
+<form action=“Login" method="post">  
+Name:<input type="text" name="userName"/><br/>  
+Password:<input type="password" 
+name="userPass"/><br/>  
+<input type="submit" value="login"/>  
+</form>
+15
+The Login.java file
+public class Login extends HttpServlet {
+public void doPost(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+PrintWriter out = response.getWriter();
+String n=request.getParameter("userName"); String p=request.getParameter("userPass");
+if (p.equals("Password") {
+RequestDispatcherrd = request.getRequestDispatcher(“WelcomeServlet”);
+rd.forward(request, response);  out.print(“Thank you”) ;
+}
+else{
+out.print("Sorry UserName or Password Error!");
+RequestDispatcherrd = request.getRequestDispatcher(“/index.html”);
+rd.include(request, response);
+}
+} }
+out.print(“Thank you”) ;
+16
+The WelcomeServlet.java file
+public class WelcomeServlet extends HttpServlet {
+public void doPost(HttpServletRequest request, HttpServletResp
+onse response)
+throws ServletException, IOException {
+PrintWriter out = response.getWriter();
+String n=request.getParameter("userName");
+out.print("Welcome "+n);
+}
+}
+17
+Example -Running 
+18
+The sendRedirect () method
+19
+sendRedirect() method in servlet
+The sendRedirect( ) method of 
+HttpServletResponse interface can be used to 
+redirect response to another resource, it may be 
+servlet, jsp or html file.
+It works at client side because it uses the URL bar 
+of the browser to make another request. So, it can 
+work inside and outside the server.
+20Difference between forward() and 
+sendRedirect() method
+21
+Example 2: Google Searcher
+ Creating custom google search using 
+sendRedirect
+ In this example, we are using sendRedirect
+method to send request to google server with the 
+request data.
+<html>
+<body>
+</body>
+</html>
+<form action="MySearcher">
+<input type="text" name=“keyWord">
+<input type="submit" value="Google Search">
+</form>
+22
+The MySearcher.java file
+public class MySearcher extends HttpServlet {
+protected void doGet(HttpServletRequest request, HttpServle
+tResponse
+response) throws ServletException, IOException {
+String name=request.getParameter("keyWord");
+response.sendRedirect("https://www.google.com/search?q=
+"+name);
+}
+}
+23
+The Cookie class
+24
+Cookies in Servlet
+ Acookie is a kind of information that is stored at client 
+side.
+ A cookie is a small piece of information that is persisted 
+between the multiple client requests.
+ A cookie has a name, a single value, and optional 
+attributes such as a comment, path and domain 
+qualifiers, a maximum age, and a version number
+25
+Advantage and Disadvantages of 
+Cookies
+Advantage of Cookies
+ Simplest technique of maintaining the state.
+ Cookies are maintained at client side.
+Disadvantage of Cookies
+ It will not work if cookie is disabled from the browser.
+ Only textual information can be set in Cookie object.
+26
+Cookies self-study Resources
+To handle cookies in your servlet code, the following 
+resources give good guidelines for self-learning:

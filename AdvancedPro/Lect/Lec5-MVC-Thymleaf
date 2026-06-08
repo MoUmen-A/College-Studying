@@ -1,0 +1,15 @@
+ResultSet
+ResultSet objects provide access to the tables generated as results of executing Statement queries.
+
+Only one ResultSet per Statement can be open at the same time
+
+The table rows are retrieved in sequence
+
+A ResultSet maintains a cursor pointing to its current row
+
+The next() method moves the cursor to the next row
+
+ResultSet Methods
+boolean next() - activates the next row (first call activates first row; returns false if no more rows)
+
+void close() - disposes of the ResultSet, allows you to re-use the Statement that created it
