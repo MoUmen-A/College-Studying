@@ -1,0 +1,143 @@
+QueuesLike stacks, queue is also a list. With a queue, however, insertion is done at one end whereas deletion is performed at the other end. (FIFO).It is "First In, First Out (FIFO)" order.Like customers standing in a check-out line in a store, the first customer in is the first customer served.A queue is also a list. However, insertion is done at one end, while deletion is performed at the other end.Primary operations:Enqueue: insert an element at the rear (end) of the queueDequeue: remove an element from the front of the queueQueue ApplicationsPrint Queue: When jobs are sent to a printer, in order of arrival.Customers at ticket counters e.g. Bank QueueQueue ADTQueue ADT OperationsLength: Returns the number of elements.Enqueue: Adds an element to the end of the queue.Dequeue: Removes the element at the front of the queue.Front: Returns the front element.isEmpty: Returns whether the queue is empty.isFull: Returns whether the queue is empty. (in case of static array implementation)Implementation of QueueJust as stacks can be implemented as:ArraysLinked listsDynamic queues have the same advantages over static queues as dynamic stacks have over static stacksWe will explore implementations based on array and linked listImplementation of Queue Using Arrays & Linked List📌 Extracted from image: Visual comparison of Queue representationsLinked List Representation:5 -> 6 -> 8 -> 2
+^              ^
+Front          Rear
+Array Representation:[ 3 | 5 | 6 | 8 ]
+  ^           ^
+Front       Rear
+Queue ADT: Linked List ImplementationC++// queuelist.cpp
+class Node {
+ public:
+    int data;
+    Node* next;
+    Node(int d) : data(d), next(nullptr) {}
+};
+
+class Queue {
+private:
+    Node* front;
+    Node* rear;
+    int size;
+public:
+    Queue();
+    ~Queue();
+    void enqueue(int data);
+    int dequeue();
+    int length();
+    bool isEmpty();
+};
+C++// queuelist.cpp
+Queue::Queue() : front(nullptr), rear(nullptr), size(0) {}
+
+Queue::~Queue() {
+    while (!isEmpty()) {
+        dequeue();
+    }
+}
+
+int Queue::length() {
+    return size;
+}
+
+bool Queue::isEmpty() {
+    return size == 0;
+}
+C++// queuelist.cpp
+void Queue::enqueue(int data) {
+  Node* newNode = new Node(data);
+  if (isEmpty()) {
+    front = rear = newNode;
+  }
+  else {
+    rear->next = newNode;
+    rear = newNode;
+  }
+  size++;
+}
+C++// queuelist.cpp
+int Queue::dequeue() {
+  if (isEmpty()) {
+    //  "Queue is empty."
+    return -1; 
+  }
+    Node* temp = front;
+    front = front->next;
+    int data = temp->data;
+    delete temp;
+    size--;
+    if(isEmpty()) {
+        rear = nullptr;
+        front = nullptr;
+    }
+    return data;
+}
+Complexity Analysis (Linked List)What will hold the data of the Queue?Linked ListTime & SpaceEnqueueTime: $O(1)$Space: $O(1)$DequeueTime: $O(1)$Space: $O(1)$Queue using ArraysThere are several different algorithms to implement Enqueue and DequeueNaïve WayWhen enqueuing, the front index is always fixed, and the rear index moves forward in the array.📌 Extracted from image: Naïve Enqueue Array stateEnqueue(5):[ 5 ]
+ ^
+ Rear, Front
+Enqueue(6):[ 5 | 6 ]
+  ^   ^
+Front Rear
+When enqueuing, the front index is always fixed, and the rear index moves forward in the array.Enqueue(5): $\text{Rear}=0, \text{Front}=0$Enqueue(6): $\text{Rear}=1, \text{Front}=0$When dequeuing, the front index is fixed, and the element at the front the queue is removed. Move all the elements after it by one position. (Inefficient!!!)📌 Extracted from image: Naïve Dequeue Array stateInitial Array:[ 5 | 6 ]  -> Rear = 1, Front = 0
+After Dequeue():[ 6 ]      -> Rear = 0, Front = 0
+After Second Dequeue():[ ]        -> Rear = -1?? Front = 0
+A Better WayWhen enqueued, the rear index moves forward.When dequeued, the front index also moves forward by one element📌 Extracted from image: Flexible index array stateInitial State:[ 5 | 6 | 7 ] -> Rear = 2, Front = 0
+After Dequeue():[ _ | 6 | 7 ] -> Rear = 2, Front = 1
+After Enqueue(3):[ _ | 6 | 7 | 3 ] -> Rear = 3, Front = 1
+Problem?The problem here is that the Rear index cannot move beyond the last element in the array.Solution?Circular ArrayQueue using Circular ArraysWhen an element moves past the end of a circular array, it wraps around to the beginning, e.g.How?How to detect an empty or full queue, using a circular array algorithm?Use a counter of the number of elements in the queue.📌 Extracted from image: Circular array index wrapping exampleInitial State (Array of size 8, elements at indices 4, 5, 6):[ _ | _ | _ | _ | 5 | 6 | 7 | _ ] -> Rear = 6, Front = 4
+After Enqueue(4) wrapping around to index 0:[ 4 | _ | _ | _ | 5 | 6 | 7 | _ ] -> Rear = 0, Front = 4
+Queue ADT: Circular Array ImplementationC++// QueueArray.cpp
+const int MAX_SIZE = 100; // Define the maximum size of the queue
+
+class Queue {
+private:
+    int data[MAX_SIZE];
+    int front;
+    int rear;
+    int size;
+public:
+    Queue();
+    ~Queue();
+    void enqueue(int data);
+    int dequeue();
+    int length() ;
+    bool isEmpty() ;
+    bool isFull() ;
+};
+C++// QueueArray.cpp
+Queue::Queue() : front(-1), rear(-1), size(0) {}
+
+Queue::~Queue() {
+}
+
+int Queue::length()  {
+    return size;
+}
+
+bool Queue::isEmpty()  {
+    return size == 0;
+}
+
+bool Queue::isFull()  {
+    return size == MAX_SIZE;
+}
+C++// QueueArray.cpp
+void Queue::enqueue(int data) {
+    if (isFull()) {
+        //  "Queue is full. Cannot enqueue.";
+        return;
+    }
+    rear = (rear + 1) % MAX_SIZE;
+    data[rear] = data;
+    size++;
+}
+
+int Queue::dequeue() {
+    if (isEmpty()) {
+        // "Queue is empty. Cannot dequeue.";
+        return -1;
+    }
+    int temp = front;
+    front = (front + 1) % MAX_SIZE;
+    size--;
+    return data[temp];
+}
+Complexity Analysis (Array)What will hold the data of the Queue?An arrayTime & SpaceEnqueueTime: $O(1)$Space: $O(1)$DequeueTime: $O(1)$Space: $O(1)$AssignmentsReverse a Queue:Write a function to reverse a queue without using any other data structure, such as a stack.Palindrome Checker:Write a function to check if a string is a palindrome using a queue and a stack for comparison.Examples:rotator is palindromedata is not palindrome

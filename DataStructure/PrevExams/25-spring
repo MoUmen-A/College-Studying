@@ -1,0 +1,33 @@
+Exam Date: 14/6/2025   Answer all questions. Show your work so that partial credits may be assigned.   Question 1 (10 Marks)   1- Choose the correct answer   a) In delete operation of BST, we need in-order successor (or predecessor) of a node when the node to be deleted has both left and right child as non-empty. Which of the following is true about in-order successor needed in delete operation?   In-order Successor is always a leaf node.   In-order successor is always either a leaf node or a node with empty left child.   In-order successor may be an ancestor of the node.   In-order successor is always either a leaf node or a node with empty right child.   b) What is common in the three different types of traversals (Inorder, Preorder and Postorder)?   Root is visited before right subtree   Left subtree is always visited before right subtree   Root is visited after left subtree   All of the above   None of the above   c) What will be the contents of the stack after the following operations (top shown last)? push(2), push(4), pop(), push(6), push(8)   [2, 4, 6, 8]   [2, 6, 8]   [2, 6]   [8, 6, 2]   d) Which of the following statements is false?   A tree with $n$ nodes has $(n-1)$ edges.   A labeled rooted binary tree can be uniquely constructed given its postorder and preorder traversal results.   A complete binary tree with $n$ internal nodes has $(n+1)$ leaves.   The maximum number of nodes in a binary tree of height $h$ is $2^{(h+1)} - 1$.   e) The postfix expression of the infix expression $(A+B)*(C-D)$ is:   $AB+CD-*$   $AB+*CD-$   $A+B*C-D$   $ABCD +-*$   f) Which of the following is the worst-case time complexity for reversing a singly linked list?   $O(1)$   $O(n)$   $O(\log n)$   $O(n \log n)$   2- Tree Construction   Given the following two traversals, construct only ONE binary tree (sketch BT).   Note that: there is no weight for letters (i.e., the value of letter B is not necessarily greater than the value of letter A).   Preorder: CFHGBEADJI   Inorder: HFBGCAJDIE   3- Code Completion   The following function is used to modify the list by moving the last element to the front of the list and returning the modified list. There is a missing line/lines to make this function correct.   C++node* mystery (node* head)
+{ 
+    node *p, *q;
+    if ((head == NULL || (head->link == NULL)))
+        return head;
+    q = NULL; 
+    p = head;
+    while (p->link != NULL)
+    { 
+        q = p;
+        p = p->link;
+    }
+    // ------Missing line/lines here----
+    
+    return head;
+}
+[Note: Fixed typographical scanning artifacts like l=NULL and linkj to standard code notation equivalents != NULL and link for syntactic completeness]   Question 2 (10 Marks)   1. Cousins Function   Given a BST, write a member function bool cousin (node* t1, int a, int b) to check if the two given nodes are cousins or not? Cousin nodes are those nodes that have the same grandparent but different parents.   📌 Extracted from image: Figure 1 (Binary Search Tree)       5
+      / \
+     2   12
+    / \  / \
+   1  3 9  21
+          /  \
+         19  25
+For example, as shown in Fig. 1, node 3 and node 9 are called cousins as they have different parents but same grandparent node 5.   2. Stack Modification Function   Write the Non-member function void MoveNegEnd(Stack S) that places all negative elements of the stack at the end without changing the order of the positive and the negative elements.   📌 Extracted from image: Figure 2 (Stack Transformation Examples)Original Stack (left) vs. Transformed Stack (right):OriginalTransformed55-3997-4107-310-4(Top of stack contains 5, bottom contains 10)   3. Queue Reversal Print   Write a member function void queueList::PrintReversed() that prints the elements of a queueList in a reversed order without destroying the contents of the queue. For example, if the numbers 5, 6, 2, 7, 3 are inserted into the queue, the function prints 3, 7, 2, 6, 5.   4. Doubly Linked List Average Deletion   Using ADT doubly linked list, implement a void NewDelete (List& L) method which deletes all nodes that have values greater than the average of all values in the list. You should firstly implement a method for getting average float avg(List L).   Question 3 (10 Marks)   You are given an initially empty AVL tree:   Insertion: Insert the keys: 15, 20, 10, 8, 12, 17, 25, 19, 30, 16. After each insertion, draw the AVL tree and indicate whether it causes a Single Rotation (S), Double Rotation (D), or No Rotation (N). If a rotation occurs, specify its type (LL, RR, LR, RL) and the imbalanced node.   Deletion: Delete the keys: 20, 15, 8. After each deletion, update the AVL tree and state whether it triggers a Single Rotation (S), Double Rotation (D), or No Rotation (N). If rebalancing occurs, mention the rotation type and the affected node.   Note: Your answer should clearly show all intermediate AVL tree states and include details for all rotations and rebalancing operations.   Question 4 (10 Marks)   1. Graph Traversals   Given the following graph represented by adjacency lists:   Vertex: Neighbors
+50:     [20, 65, 80]
+20:     [10, 50, 40]
+10:     [20]
+40:     [20]
+65:     [50, 70]
+70:     [65]
+80:     [50, 90]
+90:     [80]
+  Assume that neighbors are visited in increasing numerical order. What is the DFS, and BFS traversal order starting from vertex 50?   2. Dijkstra's Shortest Path   Consider a directed, weighted graph. Use Dijkstra's algorithm to compute the shortest path from source $s$ to all other vertices. Step through the algorithm manually. For each vertex, update the distance as needed. Cross out previous values when they change and indicate the selected vertex in each step.   

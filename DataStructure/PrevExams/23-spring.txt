@@ -1,0 +1,30 @@
+Question 1 [10 Points / Total: 40 Points]   Put ( $\checkmark$ ) or ( $\times$ ) for each one of the following statements. Correct the wrong one.   On social media sites, we use directed graphs to track the data of the users, like showing preferred post suggestions, recommendations, etc. ( )   Queue data structure is used to evaluate expressions in infix, postfix, and prefix notations. ( )   Web browsers use stack to keep track of the web pages you visit. ( )   Circular Queue data structure is used to enable undo and redo operations in various applications like text editors, graphic design tools, and software development environments. ( )   AVL tree can be used in navigation systems where both forward and backward traversal is required. ( )   BST data structure is used to store function calls and their states, which helps in the efficient implementation of recursive function calls. ( )   Queues can be used to manage and allocate resources, such as printers or CPU processing time. ( )   The breadth-first search algorithm uses a stack to explore nodes in a graph. ( )   Binary search tree is used for storing hierarchical data, like folder structure, organization structure, XML/HTML data. ( )   Binary search tree is used to implement efficient search algorithms. ( )   Question 2 [10 Points]   2.1 Polynomial Representation using Array-Based List   A list could be used as a simple representation of a polynomial, $P(x)$. Each term in the polynomial expression consists of two parts: one is the coefficient and the other is the exponent as shown in the below table:   Term IndexCoefficient (coeff)Exponent / Power (pow)05.6   2   17   1   289   0   Consider the following declaration, implement a new version of array-based ADT list called PolyList to store and make processes on a polynomial. Assume any extra function if needed.   C++struct term
+{
+  float coeff;
+  int pow;
+};
+
+class polyList
+{
+private:
+  term *poly;
+  int last;
+  int capacity;
+
+public:
+  polyList(int size)
+  {
+    poly = new term[size];
+    last = -1;
+    capacity = size;
+  }
+};
+[Note: Restructured structure definition fields into clear standard declarations standard syntax]   Implement only the following functions:   a) void insertAtEnd(float coeff, int pow); that inserts a new term at the end of the list.   b) void display (); that displays the polynomial on the form (for example: 5.6 x^2 + 7 x + 89)   c) void differentiate (); that differentiates the polynomial, for example the polynomial $6x^2+7x+89$ will be $12x+7$.   d) int order(); that returns the order of polynomial. (for example, poly $6x^2+7x+89$ is of order 2)   e) Write a suitable main function to insert the above polynomial, display it, differentiate it, then display the differentiated polynomial.   2.2 Stack-Based Decimal to Binary Conversion   Using the ADT stack, implement the function void Dec2Bin(int x) that converts a decimal number $x$ into its binary representation. Apply your algorithm on $x=19$ by drawing the stack after each step. Finally, write the binary representation of $x$.   Question 3 [10 Points]   Given the following directed weighted graph:   📌 Extracted from image: Graph diagram with nodes A, B, C, D, E, F, GDirected edges and weights:
+* $A \rightarrow B = 2$, $A \rightarrow C = 7$, $A \rightarrow E = 12$ * $B \rightarrow D = 2$ * $C \rightarrow B = 3$, $C \rightarrow D = 1$, $C \rightarrow E = 2$ * $D \rightarrow F = 2$ * $E \rightarrow A = 4$, $E \rightarrow G = 7$ * $F \rightarrow G = 2$ * $G \rightarrow D = 1$   3.1. Adjacency Matrix Write the adjacency matrix that represents this graph.   3.2. Dijkstra's Algorithm Apply Dijkstra's algorithm to calculate shortest paths from A to every other vertex. Show your steps in a manual execution table tracking known vertices, distances, and paths. List the vertices in the order in which you marked them known.   3.3. Specific Shortest Path What is the shortest path and its length from A to F?   3.4. Depth-First Search Sequence Which sequence, for a given graph, corresponds to a depth-first search? The search starts at vertex A and the ascending order is assumed for the edges emanating from each vertex.   Question 4 [10 Points]   4.1. Queue Implementation Implement the link-based ADT Queue.   4.2. AVL Tree Manipulations Consider the AVL tree shown in the figure below. Answer each one of the following operations on the original AVL tree.   📌 Extracted from image: AVL Tree Diagram          40
+         /  \
+       20    60
+      /  \   / \
+     10  30 50 150
+        /  \     \
+       25  35    160
+    a) Draw the AVL tree after adding 37.   b) Draw the AVL tree after adding 33.   c) Draw the BST after deleting the value 40.   d) Print the values of the BST using Postorder, Inorder, and Preorder traversal.
