@@ -36,31 +36,48 @@
 ## Question 1.2 — Tree Construction from Traversals
 
 **Given:**
-- Preorder: `C F H G B E A D J I`
-- Inorder:  `H F B G C A J D I E`
+- Preorder: `C F H G B E A D J I` (Root -> Left -> Right)
+- Inorder:  `H F B G C A J D I E` (Left -> Root -> Right)
 
 **Construction process:**
 1. Preorder[0] = **C** → root of the tree.
-2. Find C in Inorder → index 4. Everything to the left (`H F B G`) = left subtree; everything to the right (`A J D I E`) = right subtree.
-3. Left subtree preorder: `F H G B` → root = **F**. In inorder left: `H F B G` → F splits it: left=`H`, right=`B G`.
-4. Continue recursively...
+2. Find C in Inorder → index 4.
+   - Left subtree inorder: `H F B G`
+   - Right subtree inorder: `A J D I E`
+3. Left subtree (nodes: H, F, B, G):
+   - Preorder for left: `F H G B` → Root is **F**.
+   - Find F in `H F B G`: Left is `H`, Right is `B G`.
+   - Node **H**: left child of F.
+   - Right of F (nodes: B, G):
+     - Preorder for these is `G B` → Root is **G**.
+     - Find G in `B G`: Left is `B`, Right is empty.
+     - Node **B**: left child of G.
+4. Right subtree (nodes: A, J, D, I, E):
+   - Preorder for right: `E A D J I` → Root is **E**.
+   - Find E in `A J D I E`: Left is `A J D I`, Right is empty.
+   - Left of E (nodes: A, J, D, I):
+     - Preorder is `A D J I` → Root is **A**.
+     - Find A in `A J D I`: Left is empty, Right is `J D I`.
+   - Right of A (nodes: J, D, I):
+     - Preorder is `D J I` → Root is **D**.
+     - Find D in `J D I`: Left is `J`, Right is `I`.
+     - Node **J**: left child of D.
+     - Node **I**: right child of D.
 
 **Resulting tree:**
 ```
            C
           / \
-         F   A
+         F   E
         / \   \
-       H   B   D
-            \   \
-             G   J
-                  \
-                   I
-                    \
-                     E
+       H   G   A
+          /     \
+         B       D
+                / \
+               J   I
 ```
 
-*(Verify: Preorder of this tree = C F H B G A D J I E — matches. Inorder = H F B G C A J D I E — matches. ✓)*
+*(Verify: Preorder of this tree = C F H G B E A D J I — matches. Inorder = H F B G C A J D I E — matches. ✓)*
 
 ---
 
@@ -248,43 +265,214 @@ void NewDelete(List& L) {
 
 ### Insertions: 15, 20, 10, 8, 12, 17, 25, 19, 30, 16
 
-| Insert | Tree state (compact) | BF at imbalanced node | Rotation | Type |
-|--------|----------------------|----------------------|----------|------|
-| 15 | `15` | — | — | **N** |
-| 20 | `15(R:20)` | — | — | **N** |
-| 10 | `15(L:10, R:20)` | — | — | **N** |
-| 8 | `10(L:8) under 15` | BF(15)=+2 (left‑heavy, 8<10<15) | **LL at 15** → right rotation | **S (LL)** |
-| After LL: | `10(L:8, R:15(R:20))` | — | — | — |
-| 12 | `10(L:8, R:15(L:12,R:20))` | — | — | **N** |
-| 17 | `15(L:12,R:20(L:17))` | — | — | **N** |
-| 25 | `15(L:12,R:20(L:17,R:25))` | — | — | **N** |
-| 19 | Insert 19 under 17 (right child). BF(20)=-2 (right‑heavy), 19<20 but 19>17 → **RL at 20** | BF(20)=−2 | **RL at 20** → left‑right double | **D (RL)** |
-| After RL: | `15(L:12,R:19(L:17,R:20(R:25)))` | — | — | — |
-| 30 | Insert 30 as right child of 25. BF check: balanced everywhere. | — | — | **N** |
-| 16 | Insert 16 under 17 (left child). BF(19)=+2 (left‑heavy, 16<17<19) → **LR at 19** | BF(19)=+2 | **LR at 19** → left‑right double | **D (LR)** |
+**1) Insert 15, 20, 10**
+No rotations needed.
+```
+      15
+     /  \
+   10    20
+```
 
-**Final AVL tree after all insertions:**
+**2) Insert 8**
+Imbalance at 15. BF(15) = +2 (left-heavy). Inserted in left subtree of left child → **LL (Single Right) Rotation**.
+```
+      15 (+2)                  10 (0)
+     /  \                     /  \
+   10    20     ---LL--->    8   15 (0)
+   /                              \
+  8                                20
+```
+
+**3) Insert 12, 17, 25**
+No rotations needed.
+```
+         10
+       /    \
+      8      15
+            /  \
+          12    20
+               /  \
+             17    25
+```
+
+**4) Insert 19**
+Inserted as right child of 17. Imbalance at 20. BF(20) = -2 (right-heavy). Inserted in left subtree of right child → **RL (Double) Rotation**.
+```
+         10
+       /    \
+      8      15
+            /  \
+          12    20 (-2)
+               /  \
+             17    25
+               \
+               19
+
+---RL Rotation at 20--->
+Step 1: LL at 17                 Step 2: RR at 20
+        20                                19 (0)
+       /  \                              /  \
+     19    25         --->             17    20 (0)
+     /                                         \
+   17                                           25
+```
+Tree after 19:
+```
+         10
+       /    \
+      8      15
+            /  \
+          12    19
+               /  \
+             17    20
+                     \
+                      25
+```
+
+**5) Insert 30**
+Inserted as right child of 25. Tree remains balanced.
+```
+         10
+       /    \
+      8      15
+            /  \
+          12    19
+               /  \
+             17    20
+                     \
+                      25
+                       \
+                        30
+```
+
+**6) Insert 16**
+Inserted as left child of 17. Imbalance at 19. BF(19) = +2 (left-heavy). Node 16 is in right subtree of left child (17) → **LR Double Rotation at 19**.
+```
+         10
+       /    \
+      8      15
+            /  \
+          12    19 (+2)
+               /  \
+             17    20
+            /        \
+          16          25
+                       \
+                        30
+```
+LR at 19 (Step 1: RR at 17, Step 2: LL at 19):
+```
+---LR at 19--->
+           17
+         /    \
+       10      20
+      /  \    /  \
+     8   15  19   25
+        /  \        \
+      12    16       30
+```
+**Final AVL Tree after all Insertions:**
 ```
            17
-          /  \
-        10    20
-       /  \  /  \
-      8   12 19  25
-           \  /    \
-           15 (no child from 17‑subtree perspective)
-                   30
+         /    \
+       10      20
+      /  \    /  \
+     8   15  19   25
+        /  \        \
+      12    16       30
 ```
-*(Exact shape depends on rotation sequence; the above is one valid balanced arrangement.)*
-
----
 
 ### Deletions: 20, 15, 8
 
-| Delete | Action | Rotation | Type |
-|--------|--------|----------|------|
-| 20 | 20 has two children → in‑order successor = 25 (leftmost in right subtree of 20). Copy 25, delete original 25. Recheck balance → node becomes right‑heavy → **RR at 17** | **RR at 17** | **S (RR)** |
-| 15 | 15 is a leaf → remove directly. Recheck balance → balanced. | — | **N** |
-| 8 | 8 is a leaf → remove directly. BF(10)=−1 (right heavy) but within ±1 → balanced. | — | **N** |
+**Starting Tree for Deletions:**
+```
+           17
+         /    \
+       10      20
+      /  \    /  \
+     8   15  19   25
+        /  \        \
+      12    16       30
+```
+
+**1) Delete 20**
+20 has two children. In-order successor is 25.
+Copy 25 to 20, delete 25. 30 moves up to 25's old spot.
+```
+           17
+         /    \
+       10      25
+      /  \    /  \
+     8   15  19   30
+        /  \        
+      12    16       
+```
+Check BFs:
+25: left 19 (ht 1), right 30 (ht 1) -> 0.
+17: left 10 (ht 3), right 25 (ht 2) -> +1.
+Balanced. **No rotations needed (Type: N)**.
+
+**2) Delete 15**
+15 has two children. In-order successor is 16.
+Copy 16 to 15, delete 16.
+```
+           17
+         /    \
+       10      25
+      /  \    /  \
+     8   16  19   30
+        /           
+      12           
+```
+Check BFs:
+16: left 12 (ht 1), right empty -> +1.
+10: left 8 (ht 1), right 16 (ht 2) -> -1.
+17: left 10 (ht 3), right 25 (ht 2) -> +1.
+Balanced. **No rotations needed (Type: N)**.
+
+**3) Delete 8**
+8 is a leaf. Remove directly.
+```
+           17
+         /    \
+       10      25
+         \    /  \
+         16  19   30
+        /           
+      12           
+```
+Check BFs:
+10: left empty (ht 0), right 16 (ht 2) -> -2! **Imbalance at 10.**
+10 is right-heavy (-2). Right child (16) has BF=+1 (left-heavy).
+Signs differ -> **RL (Right-Left) Double Rotation at 10**.
+
+RL Rotation at 10:
+Step 1: LL (Right Rotation) at 16. Pivot is 12.
+```
+      10                           10
+        \                            \
+         16        ---LL--->          12
+        /                              \
+      12                                16
+```
+Step 2: RR (Left Rotation) at 10. Pivot is 12.
+```
+         17                              17
+       /    \                          /    \
+     10      25        ---RR--->     12      25
+       \    /  \                    /  \    /  \
+       12  19   30                10   16  19   30
+         \
+         16
+```
+**Final AVL Tree after Deletions:**
+```
+           17
+         /    \
+       12      25
+      /  \    /  \
+    10   16  19   30
+```
 
 ---
 
