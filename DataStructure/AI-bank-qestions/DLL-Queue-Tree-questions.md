@@ -480,8 +480,9 @@ True or False? Justify with a small example.
 *(From 25-spring Q1.d)*
 
 **Guide answer:**
-**TRUE.**
-In a Complete Binary Tree (or any **Full Binary Tree**), the number of leaf nodes is always exactly one more than the number of internal nodes: **leaves = internal nodes + 1**.
+**FALSE.**
+
+In a **Complete Binary Tree**, the formula `leaves = internal nodes + 1` does NOT always hold. This formula applies to **Full Binary Trees** (where every node has 0 or 2 children), not to Complete Binary Trees. In a Complete Binary Tree, the last level may be partially filled from left to right, which can break the formula.
 
 Example with 3 internal nodes (A, B, C) → 4 leaf nodes:
 ```
