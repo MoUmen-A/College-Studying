@@ -1,0 +1,569 @@
+MARIE: An
+Introduction
+to a Simple Computer
+
+CPU Basics
+• The computer’s CPU fetches, decodes, and executes
+program instructions.
+• The two principal parts of the CPU are the
+datapath and the control unit.– The datapath consists of an arithmetic
+(registers)
+that are‐logic unit and storage
+interconnected by a data bus that is also 
+connected to main memory.– Various CPU components perform sequenced
+according to signals provided by its
+operations 
+control unit.
+units
+CPU Basics
+• Registers
+the CPU.
+hold data that can be readily
+• They can be implemented using D flip‐flops.– A32‐bit register requires 32 D flip‐flops.
+• The arithmetic‐logic unit (ALU) carries out
+arithmetic operations as directed
+accessed by
+logical and
+by the control unit.
+• The control unit determines which actions to
+according to the values in a program
+status
+register.
+carry out
+counter register and a
+The Input/Output Subsystem
+• Acomputer communicates with the outside world
+its input/output (I/O) subsystem.
+• I/O devices connect to the CPU through various
+through
+interfaces.
+• I/O can be memory‐mapped—where the I/O device
+like main memory from the CPU’s point of view.
+behaves
+• Or I/O can be instruction‐based, where the CPU has a specialized
+I/O instruction set.
+Memory Organization
+Memory Organization
+MARIE Arch.
+• The MARIE architecture has the following 
+characteristics:– Binary, two's complement data representation.– Stored program, fixed word length data and 
+instructions.– 4K words of word‐addressable main memory.– 16‐bit data words.– 16‐bit instructions, 4 for the opcode and 12 for the 
+address.– A 16‐bit arithmetic logic unit (ALU).
+0
+4K-1
+8– Seven registers for control and data movement.
+MARIE Arch.
+MARIE’s seven registers are:
+• (1) Accumulator, AC, a 16‐bit register that holds 
+a conditional operator (e.g., "less than") or one 
+operand of a two‐operand instruction.
+• (2) Memory address register, MAR, a 12‐bit
+register that holds the memory address of an 
+instruction or the operand of an instruction.
+• (3) Memory buffer register, MBR, a 16‐bit
+register that holds the data after its retrieval 
+from, or before its placement in memory.
+9
+MARIE Arch.
+MARIE’s seven registers are:
+• (4) Program counter, PC, a 12‐bit register that 
+holds the address of the next program 
+instruction to be executed.
+• (5) Instruction register, IR, which holds an 
+instruction immediately preceding its execution.
+• (6) Input register, InREG, an 8‐bit register that 
+holds data read from an input device.
+• (7) Output register, OutREG, an 8‐bit register, 
+that holds data that is ready for the output 
+device.
+10
+Instruction Set Arch.
+• This is the format of a MARIE instruction:
+• Each instruction for MARIE consists of 16 bits. 
+• The most significant 4 bits, bits 12–15, make up the opcode that specifies the instruction to 
+be executed 
+• The least significant 12 bits, bits 0–11, form an address, which allows for a maximum 
+memory size of 212–1 
+11
+Register Transfer Notation
+• The RTL for the LOAD instruction is:
+MAR  X
+MBR  M[MAR]
+AC  MBR
+• These two operations are on separate lines to indicate that they cannot occur during the 
+same cycle
+• Because off a special connection between the MBR and the AC, the transfer of the data from 
+the MBR to the AC can occur immediately after the data is put into the MBR, without 
+waiting for the bus. 
+• Similarly, “Store X” instruction stores the contents of the AC in memory location X:
+MAR ← X, MBR ← AC
+M[MAR] ← MBR
+12
+Register Transfer Notation
+• Similarly, the RTL for the ADD instruction is:
+MAR  X
+MBR  M[MAR] 
+AC  AC + MBR
+• Subt X
+Similar to Add, this instruction subtracts the value stored at address X from the accumulator and places the 
+result back in the AC:
+MAR  X
+MBR  M[MAR] 
+AC  AC - MBR 
+13
+Instruction Processing
+• Thefetch‐decode‐execute cycle is the series of steps that a
+computer carries out when it runs a program.
+• Wefirst have to fetch an instruction from memory, and place
+it into the IR.
+• Onceinthe IR, it is decoded to determine what needs to be
+done next.
+• If amemory value (operand) is involved in the operation, it is
+retrieved and placed into the MBR.
+• Witheverything in place, the instruction is executed.
+14
+Instruction Processing, detailed steps
+• Fetching phase:
+• Copy the contents of the PC to the MAR: 
+MAR  PC.
+• Go to main memory and fetch the instruction found at the address in the MAR, placing 
+this instruction in the IR; increment PC by 1: 
+IR  M[MAR] and then PC  PC+1 
+• Because MARIE is word-addressable, the PC is incremented by one, which results in the 
+next word’s address occupying the PC.
+• If MARIE were byte-addressable, the PC would need to be incremented by 2 to point to 
+the address of the next instruction.
+15
+Instruction Processing, detailed steps
+• Decoding phase:
+• Copy the rightmost 12 bits of the IR into the MAR; decode the leftmost four bits to 
+determine the opcode,
+MAR  IR[11–0], and decode IR[15–12].   
+• Execution phase:
+• Use the address in the MAR to go to memory to get data, placing the data in the MBR 
+(and possibly the AC), and then execute the instruction.
+MBR  M[MAR] and execute the actual instruction 
+16
+Extending Instruction Set
+• So far, all of the MARIE instructions that we have discussed
+use a direct addressing mode.
+• This means that the address of the operand is explicitly stated
+in the instruction.
+• It is often useful to employ an indirect addressing, where the
+address of the address of the operand is given in the
+instruction.
+Extending Instruction Set 
+instruction set.
+• We have included three indirect addressing mode instructions in the MARIE
+• The first two are LOADI X and STOREI X where specifies the address
+of the operand to be loaded or stored.
+• The ADDI instruction is a combination of  LOADI X and ADDX:
+• In RTL :
+LOADI X
+STOREI X
+ADDI X
+A Discussion on Decoding
+• A computer’s control unit keeps things synchronized, making sure that bits 
+flow to the correct components as the components are needed.
+• There are two general ways in which a control unit can be implemented: 
+hardwired control and 
+microprogrammed control.
+• With microprogrammed control, a small program is placed into read‐only 
+memory in the microcontroller.
+• Hardwired controllers implement this program using digital logic 
+components.
+Instruction Formats
+• Byte ordering, or endianness, is another major architectural
+consideration.
+• If we have a two-byte integer, the integer may be stored so
+that the least significant byte is followed by the most
+significant byte or vice
+versa.– In little endian machines, the least significant byte is followed by
+the most significant byte.– Big endian machines store the most significant byte first (at the
+lower address).
+As an example, suppose we have thehexadecimal number 0x12345678.
+L
+M
+Instruction Formats
+• The principal advantage of postfix notation is that
+parentheses are not used.
+• For example, the infix expression,
+Z = (X  Y) + (W  U)
+becomes:
+Z = X Y  W U  +
+in postfix notation.
+Instruction Formats
+• Example: Convert the infix expression (2+3)– 6/3 to postfix:
+Instruction Formats
+• Example: Use a stack to evaluate the postfix expression 2 3 + 6 3 /- :
+1
+2
+5
+3
+4
+Instruction Formats
+• Let's see how to evaluate an infix expression using
+different instruction formats.
+• With a
+three-address ISA, (e.g., mainframes), the
+infix expression,
+Z = X  Y + W  U
+might look like this:
+MULT R1,X,Y 
+MULT R2,W,U 
+ADD Z,R1,R2
+Instruction Formats
+• In a
+two-address ISA, (e.g., Intel, Motorola), the infix
+expression,
+Z = X  Y + W  U
+• might look like this:
+LOAD R1,X 
+MULT R1,Y 
+LOAD R2,W 
+MULT R2,U 
+ADD R1,R2 
+STORE Z,R1
+Instruction Formats
+• In a
+one-address ISA, like MARIE, the infix
+expression,
+Z = X  Y + W  U
+• lookslike this:
+LOAD X 
+MULT Y
+STORE TEMP 
+LOAD W 
+MULT U
+ADD TEMP 
+STORE Z
+Instruction Formats
+• In a stack ISA, the postfix expression,
+Z = X Y  W U  +
+• might look like
+this:
+PUSH X 
+PUSH Y 
+MULT 
+PUSH W 
+PUSH U 
+MULT 
+ADD
+POP Z
+Instruction Formats
+• Asystem has 16
+registers and 4K of
+memory.
+• Weneed 4 bits to
+access one of the
+registers. We
+need 12 bits for a
+memory address.
+also
+• If the system is to have
+16-bit instructions, we
+have two choices for our
+Three More Possibilities for a 16-Bit Instruction Format
+instructions:
+Instruction Formats
+• If we allow the length of
+the opcode to
+vary,
+we could create a very
+rich instruction 
+set:– 15 instructions with three addresses– 14 instructions with two addresses– 31 instructions with one address– 16 instructions with zero addresses
+5.2 Instruction Formats
+• Example: Given 8-bit instructions, is it possible to allow the following to be
+encoded?– 3instructions with two 3-bit operands– 2instructions with one 4-bit operand– 4instructions with one 3-bit operand
+• Weneed:– 3 23  23 =192bits for the 3-bit operands– 224=32bits forthe 4-bit operands– 423=32bits forthe 3-bit operands
+• Total: 256 bits.
+• With a total of 256 bits required, we can exactly encode our 
+instruction set in 8 bits!
+Addressing
+• Immediate addressing is where the data is part of the
+instruction.
+• Direct addressing is where the address of the data is given in
+the instruction.
+• Register addressing is where the data is located in a register.
+• Indirect addressing gives the address of the address of the
+data in the instruction.
+• Register indirect addressing uses a register to store the
+address of the address of the data.
+Addressing
+• Indexed addressing uses a register (implicitly or explicitly)
+as an
+offset, which is added to the
+operand
+address in the
+to determine the effective address of the data.
+• Based addressing is similar except that a base 
+register is used instead of an index register.
+• The difference between these two is that an index register
+holds an offset relative to the address given in the instruction,
+a base register holds a base address where the address field
+represents a displacement from this base.
+Addressing 
+• For the instruction shown, what value is loaded
+into the accumulator for each addressing mode?
+Instruction Pipelining
+• Some CPUs divide the fetch-decode- execute cycle into 
+smaller steps.
+• These smaller steps can often be executed in parallel to 
+increase throughput.
+• Such parallel execution is called 
+instruction pipelining.
+• Instruction pipelining provides for instruction level 
+parallelism (ILP)
+Instruction Pipelining
+• For every clock cycle, one small step is carried out, and the 
+stages are overlapped.
+S1. Fetch instruction.
+S2. Decode opcode.
+S3. Calculate effective
+address of operands.
+S4. Fetch operands.
+S5. Execute.
+S6. Store result.
+Instruction Pipelining
+• Thetheoretical speedup offered by a pipeline can be 
+determined as follows:– Lettpbethetimeperstage.Each instruction representsa task,
+T, in the pipeline.– Thefirst task (instruction) requires k  tp time to completein a k-stage
+pipeline. The remaining (n– 1) tasks emergefrom thepipeline oneper
+cycle. So the total time to complete theremainingtasks is (n– 1)tp.– Thus,to completen tasks using a k-stage pipeline requires:
+(k  tp) + (n–1)tp = (k+ n–1)tp.
+Instruction Pipelining
+• If we take the time
+required to complete n tasks without a pipeline
+and divide it by the time
+it takes to complete n tasks using a
+pipeline
+, we find:
+• If we take the limit as n approaches infinity, (k + n– 1)
+approaches n, which results in a theoretical speedup of:
+Types of Memory
+• There are two
+kinds of main memory: random access memory
+(RAM) and read-only-memory (ROM).
+• There
+are two types of RAM: dynamic RAM (DRAM) andstatic
+RAM(SRAM).
+• DRAMconsists of capacitors
+that slowly leak their charge over time.
+Thus, they must be refreshed every few milliseconds to prevent data
+loss.
+• DRAMis“cheap” memory owing to its simple design.
+• SRAM consists of circuits similar to the 
+D flip-flop .
+• SRAM is very fast memory and it doesn’t need to be refreshed like 
+DRAM does. It is used to build cache memory
+.
+Types of Memory
+• SRAM is faster and much more expensive than DRAM; however,
+designers
+use DRAM because it is much denser (can store many
+bits
+per chip), uses less power, and generates less heat than
+SRAM
+.
+• ROMalsodoesnot need to berefreshed, either. In
+fact, it
+needs very little charge to retain its memory.
+• ROMisused to store permanent
+, or semi-permanent data that
+persists even while the system is turned off.
+The Memory Hierarchy
+• This leads us to some definitions.– Ahit is when data is found at a given memory level.– Amiss is when it is not found.– The hit rate is the percentage of time data is found at a given
+memory level.– The miss rate is the percentage of time it is not.– Miss rate = 1– hit rate.– The hit time is the time
+level.– The miss penalty is the time
+required to access data at a given memory
+required to process a miss, including
+the time that it takes to replace a block of memory plus the time it
+takes to deliver the data to the processor.
+6.4 The Cache Memory 
+• The simplest cache mapping scheme is direct mapped
+cache.
+• In a direct mapped cache consisting of N blocks of cache,
+block X of main memory maps to cache block
+Y= X mod N.
+• Thus, if we have 10 blocks of cache, block 7 of cache may
+hold blocks 7, 17, 27, 37, . . . of main memory.
+• With direct mapped cache consisting of 4 blocks of 
+cache, block X of main memory maps to cache block Y = 
+X mod 4.
+6.4 The Cache Memory 
+• To perform direct mapping, the binary main memory address is
+partitioned into the fields shown below.– The offset field uniquely identifies an address within a specific block.– The block field selects a unique block of cache.– The tag field is whatever is left over.
+The Format of a Main Memory Address Using Direct Mapping– The sizes of these fields are determined by characteristics of both memory
+and cache.
+The Cache Memory 
+• Suppose instead of placing memory blocks in specific cache 
+locations based on memory address, we could allow a block to
+go anywhere in
+cache.
+• In this way, cache would have to fill up before any blocks are
+evicted.
+• This is how fully
+associative cache works.
+• Amemory address is partitioned into only two fields: the tag
+and the offset.
+6.4 The Cache Memory 
+• Set associative cache combines the ideas of
+direct mapped cache and fully associative
+cache.
+• An N-way set associative cache mapping is like
+direct
+mapped cache in that a memory
+reference maps to a particular location in cache.
+• Unlike direct mapped cache, a memory
+reference maps to a set of several cache
+blocks, similar to the way in which fully 
+associative cache works.
+• Instead of mapping
+anywhere in the entire
+cache, a memoryreference can map only to
+the subset of cache
+slots.
+The Cache Memory 
+• Example : Suppose a byte-addressable memory contains 1MB and
+cache consists of 32 blocks, where each block contains 16 bytes.
+Using direct mapping, fully associative mapping, and a 4-way set
+associative mapping, determine where the main memory address
+0x326A0 maps to in cache.– First note that a main memory address has 20 bits. The main memory
+address for direct mapped cache is shown.– If we represent our main memory address 0x326A0 in binary and place the 
+bits into the format, we get:– So this address maps to cache block 01010 (or block 10).
+The Cache Memory 
+• Example :.– If we are using fully associative cache, we 
+have:– Butbecause it is fully associative, it could map
+anywhere.– If we are using 4-way set associative cache, we have:– If we divide the main memory address into these fields, 
+we get:
+The Cache Memory 
+• With fully associative and set associative cache, a replacement policy is
+invoked when it becomes necessary to evict a block from cache.
+• An optimal
+replacement policy would be able to look
+into the future to
+see which
+blocks won’t be needed for the longest period of time.
+• Although it is impossible to implement an optimal replacement algorithm, it 
+is instructive to use it as a benchmark for assessing the efficiency of any
+other scheme we come up with.
+• The replacement policy - A least recently used (LRU) algorithm keeps 
+track of 
+the last time that a block was assessed and evicts the 
+block that has been unused for the longest period of time.
+• The disadvantage of this approach is its complexity: LRU has to maintain an 
+access history for each block, which ultimately slows down the cache.
+The Cache Memory 
+•
+First-in, first-out (FIFO) is a popular cache replacement
+policy.
+• InFIFO, the block that has been in the cache the longest,
+regardless of when it was last used.
+• A
+random replacement policy does what its name implies: It picks
+a block at random and replaces it with a new block.
+• Randomreplacement cancertainly evict a block that will be needed
+often or needed soon, but it never thrashes.
+The Cache Memory 
+• The performance of hierarchical memory is measured by its effective
+access time (EAT).
+• EAT is a weighted average that takes into account the hit ratio and
+relative access times of successive level of memory.
+• TheEATfor atwo-level memory is given by:
+EAT =H  AccessC + (1–H)  AccessMM
+where H is the cache hit rate and AccessC and AccessMM are the
+access times for cache and main memory, respectively.
+The Cache Memory 
+• For example, consider a system with a main memory access time
+rate of99%.
+of 200ns supported by a cache having a 10ns access time and a 
+hit
+• Suppose access to cache and main memory occurs
+concurrently (the accesses overlap).
+• The EATis:
+EAT = H  AccessC + (1 – H)  AccessMM
+0.99(10ns) + 0.01(200ns) = 9.9ns + 2ns = 11ns
+Virtual Memory
+• A physical address is the actual memory address of physical 
+memory.
+• Programs create virtual addresses that are mapped to physical 
+addresses by the memory manager.
+• Page faults occur when a logical address requires that a page 
+be brought in from disk
+.
+• Memory fragmentation occurs when the paging process 
+results in the creation of small, unusable clusters of memory 
+addresses.
+
+Virtual Memory
+• Information concerning the location of each page, whether 
+on disk or in memory, is maintained in a data structure 
+called a page table (shown below).
+• There is one page table for each active process.
+• When a process generates a virtual 
+address, the operating system 
+translates it into a physical memory 
+address.
+• To accomplish this, the virtual address is 
+divided into two fields: A page field, 
+and an offset field.
+• The page field determines the page location 
+of the address, and the offset indicates the 
+location of the address within the page.
+• The logical page number is translated 
+into a physical page frame through a 
+lookup in the page table.
+Virtual Memory
+0
+0
+1
+2
+000010111011110
+6-bit page # 10-bit offset
+Process
+page table
+16-bit logical address
+0001100111011110
+16-bit physical address
+(a) Paging
+000101
+000110
+011001
+0001001011110000
+4-bit segment # 12-bit offset
+Process segment table
+Length Base
+16-bit logical address
+001011101110 0
+1
+0000010000000000
+0111100111100010000000100000 +
+Virtual Memory
+• If the valid bit is zero in the page table entry
+for the logical address, this means that the
+page is not in memory and must be
+fetched from disk.– This is a page fault.– If necessary, a page is evicted from memory
+and is replaced by the page retrieved from
+disk, and the valid bit is set to 1.
+• If the valid bit is 1, the virtual page
+number is replaced by the physical
+frame number.
+• Thedata is then accessed by adding the
+offset to the physical frame number.
+Virtual Memory
+Effective Access Time Using Paging
+• Effective access time (EAT) takes all levels of memory into
+consideration.
+• Thus, virtual memory is also a factor in the calculation, and we
+also have to consider page table access time.
+• Suppose a main memory access takes 200ns, the page fault
+rate is 1%, and it takes 10ms to load a page from disk. We have:– EAT=0.99(200ns + 200ns)+ 0.01(10ms) = 100, 396ns
+Virtual Memory
+• Bothpagingandsegmentation can cause fragmentation
+.
+• Pagingis subject to internal fragmentation because a  process may not
+need the entire range of addresses contained within the page. Thus,
+there may be many pages containing unused fragments of memory.
+• Segmentationissubjectto external fragmentation, whichoccurs when
+contiguous chunks of memory become broken up as segments are
+allocated and deallocated over time.
