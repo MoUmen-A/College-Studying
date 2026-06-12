@@ -1,0 +1,120 @@
+CS333 Web Programming                                                   Page  1/2                                                                            MPC6/1-1 
+ 
+ 
+Arab Academy for Science, Technology and 
+Maritime Transport-College of Computing & 
+Information Technology--Heliopolis                       
+ Acad. Year : Fall 2022/2023 
+Semester  
+Department : 
+: 
+5 
+Computer Science 
+No. of Pages : Two  Time Allowed : 120 Minutes 
+No. Of Questions : Four Date : 25 / 1 / 2023 
+Examiner : Dr. Mohamad Hashim    
+CS333  Web Programming  (Final Exam)             (40 Points) 
+Answer the following questions 
+Question One                (5 Points)  
+Choose the Correct Answer: 
+1) All of the following are examples of HTML block-level element EXCEPT 
+A. <h1> B. <p> C. <td> D. <div> 
+ 
+2) The HTML element that is used to embed a separate HTML document in an HTML page is: 
+A. <embed> B. <iframe> C. <form> D. <link> 
+ 
+3) JavaScript is responsible for the ---------- phase in the web application. 
+A. structural B. presentational C. behavioral D. database connectivity 
+ 
+4) The PHP comment is ----------   
+A. # B. // C. /*       */ D. all of them 
+ 
+5) In JavaScript, the function ---------- is used to display a dialog-box containing a message with [OK / 
+Cancel] buttons 
+A. confirm ( ) B. prompt ( ) C. alert ( ) D. none of them 
+ 
+Question Two                  (12 Points)  
+a) What is the output of the following codes? Explain your answers 
+ php
+function Q2( ) { 
+global $a, $b; 
+$z = $b/$a; 
+++$b; 
+return $z; 
+    } 
+$a = “10”; $b = 15; $c = Q2($a, $b); $d = 10; 
+echo “c = $c <br>”;  
+echo “b = $b”;  
+If ($d === $a)echo “Identical”; 
+else echo “Not Identical”;  
+ 
+ js
+var A = “JavaScript”;  
+var B = “WebProgramming”;  
+var C = [29,5,3,8,11,32]; 
+document.write (A.indexOf(“a”) + "<br>"); 
+document.write (A.charAt(6) + "<br>"); 
+document.write (B.slice(2,6) + "<br>"); 
+document.write (C.slice(-2) + "<br>");  
+document.write (C.join(“‒” ) + "<br>"); 
+B.toUpperCase(); 
+document.write (B.lastIndexOf (‘M’)); 
+
+
+b) Each of the following HTML statements contains some errors. Explain the errors then correct them   
+1. <input name = “country” value = “Your country here. ”> 
+2. <checkbox name = “color” value = “purple”> 
+3. <input type = “radiobutton” value = “Ahly”> 
+<input type = “radiobutton” value = “Zamalek”>   
+4. <p style = “red”> Hello! </p> 
+5. <img text = “Egypt Flag” width = “100” length =“60”> Egypt.jpg </img> 
+6. <div style = color: circular-gradient (blue)> </div> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Question Three                      
+(11 Points) 
+Given a “university” database that has one table “students” as shown in the following diagram, also 
+given the following HTML form  
+name = “sid” 
+name = “name” 
+name = “mail” 
+name = “dept” 
+Write a PHP script to do the following when the client clicks on this button: 
+a) Connect to the database. 
+b) Validate the input of gpa (should be a positive number and less than 4). 
+c) Insert the entered data into the “students” table. 
+d) Display all students with gpa >3.1 in CS department (whose deptId = 10). 
+Question Four                      
+name = “gpa” 
+(12 Points) 
+Write the HTML code to design the following web page; then write a JavaScript program that do the 
+following: 
+When the user clicks on the Total button, the 
+receipt value is calculated based on the checked 
+items and the entered quantities, then a 
+confirmation message should appear as shown:   
+• If the user chooses “Ok” then the total value is 
+displayed after the Total button. 
+• If the user chooses “Cancel” then any input 
+quantities should be removed.  
+Note that:  
+o Let the id’s of the checkboxes are: a, b and c, and the id’s of the inputs are x, y and z. 
+o If the user chooses the checkbox a; then a.checked = true; else a.checked = false. 
+Best Wishes 
+Page  
+2 
+MPC6/1
+2
+2
+CS333 Web Programming                                                   
+/
