@@ -1,0 +1,6720 @@
+WebProgramming
+Prepared By Dr. Walid M. Aly
+1
+Web Programming CS433
+lec0
+Lecturer Contact Info
+• Dr. MohamedMagdy– College of Computing and Information Technology
+(CCIT),AAST– Office # 405– mmagdy@aast.edu
+2
+Web Programming CS433
+lec0
+Description
+This course is an introduction of technologies
+used to develop and maintain websites on the
+WWW.
+We will cover a variety of client-side and
+server-side technologies.
+3
+Web Programming CS433
+lec0
+Course Group Home Page
+https://groups.yahoo.com/groups/CS614
+4
+Web Programming CS433
+lec0
+Textbook
+Robert W. Sebesta, Programming the World Wide Web, Publisher: Addison Wesley
+5
+Web Programming CS433
+lec0
+Basic Information
+You use your Browser to display the web pages stored at a distant web server by writing
+the URL of the page .
+All communications between browsers and servers use Hypertext Transfer Protocol (HTTP)
+The two main web servers worldwide are Apache&IIS (Microsoft Product)
+This course is about applying your programming skills to the development of
+dynamic Web pages and applications.
+Client
+Server
+6
+Web Programming CS433
+lec0
+WebProgramming
+Client Side Technologies
+Download program with Web page, execute on
+client machine
+ simple, generic, but insecure
+HTML&XHTML
+CSS
+JavaScript
+JavaApplets
+XML
+The CS333 WebProgrammer’s Toolbox:
+HTML
+XHTML
+Server Side Technologies
+Can store and execute program on Web
+server, link from Web page
+ more complex, requires server
+privileges, but secure
+Perl
+CGI
+JSP
+PHP
+ASP
+CSS
+JavaScript
+PHP
+7
+Web Programming CS433
+lec0
+HTML DemoPage
+HTML
+• HTML:HyperTextMarkupLanguage
+• CurrentVersion :HTML5
+CSS
+•CSS : Cascaded Style Sheets
+•CSS Seprates the content from the formatting rules
+<html>
+<body>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+</body>
+</html>
+lec0
+Web Programming CS433
+8
+JavaScript
+• Aclient-side HTML-embedded scripting language.
+• Provides a way to access elements of HTML documents
+and dynamically change them.
+Javascript Demo1
+Javascript Demo2
+lec0
+Web Programming CS433
+PHP
+• PHP:Personal HomePage Tools/Hypertext PreProcessor
+• Awidelyusedfree software for server-side scripting language
+• Greatfor form processing and database access through the Web
+A simple Demonstration for a dynamic web page using PHP:
+Database: courses
+Table :cs_ courses
+lec0
+Web Programming CS433
+AJAX
+• AJAXisanacronym for Asynchronous JavaScript And XML.
+• RichInternet Applications (RIAs)– Webapplications that approximate the look, feel and usability of desktop applications– Twokeyattributes—performance and rich GUI
+• AJAX is not a programming language, but simply a development technique for
+creating interactive web applications.
+• Thetechnology uses JavaScript to send and receive data between a web browser
+and a web server.
+• The AJAX technique makes web pages more responsive by exchanging data
+with a server behind the scenes, instead of reloading an entire web page each
+time a user makes a change.
+• With AJAX, web applications can be faster, more interactive, and more user
+friendly.
+Web Programming CS433
+lec0
+WebProgramming CS433 lec0 12
+AssessmentScheme
+• ProjectBased
+• Assignment one: 15marks(HTML5-CSS)
+• 7thweekExam:15marks
+• Assignment 2: 10marks(HTML5-JS)
+• 12thweekExam:10marks
+• Assignment 3: 5marks(HTML5-JS-PHP-MySQL)
+• Assignment 4: 5marks(HTML5-JS-PHP-MySQL-AJAX)
+• FinalExam:40marks
+OralAssessments/Presentation
+Showcase
+SingleStudent orgroups
+of 2Students
+Questions?
+Web Programming CS433
+13
+lec0
+WebProgramming
+CS333-CS644
+Dr Walid M. Aly
+Lecture 1
+Dr Walid M. Aly
+1
+Web Programming CS333-CS644
+lec1
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+HTML
+• HyperTextMarkupLanguage (HTML) isaplatformindependent markup
+languagefordescribingthecontentofWebpages–hypertextreferstothefactthatWebpagesaremorethanjusttext
+• cancontainmultimedia,providelinks
+• HTML isnotaprogramming language, it isamarkuplanguageandvery
+easytolearn
+• Current Version:HTML5
+• HTML5isnotyetanofficialstandard,andnobrowsershavefullHTML5
+support.Butallmajorbrowsers(Safari,Chrome,Firefox,Opera,Internet
+Explorer)continuetoaddnewHTML5featurestotheirlatestversions.
+2
+HyperTex
+t
+HTML4-XHTML
+• Current fully implemented version :HTML 4
+• XHTML:Extensible
+HyperText
+Markup
+Language , XHTML is a stricter HTML4 and is
+still used frequently today.
+• Thetrend is clearly to HTML5.
+Dr Walid M. Aly
+3
+Web Programming CS333-CS644
+lec1
+What is HTML5?
+• HTML5isthenewstandard for HTML, XHTML.
+• Mostmodernbrowsers have some HTML5support.
+• HTML5 reduce the need for external plugins (like
+Flash) and offers More markup to replace scripting
+• Someofthemostinteresting new features in HTML5:– New form controls, like calendar, date, time, email, url,
+search– Thevideo and audio elements for media playback– Canvas– Improvement of local storage
+lec1
+4
+Web Programming CS333-CS644
+Dr Walid M. Aly
+HTML5Support
+Support for HTML5 features varies by browser.
+The HTML5 Test website (http://html5test.com/) scores each browser based on its
+support for the latest features of these evolving standards.
+http://html5test.com/results/desktop.html
+http://html5test.com/results/mobile.html
+lec1
+Dr Walid M. Aly
+Web Programming CS333-CS644
+http://www.quora.com/Jokes/What-are-some-good-Internet-Explorer-jokes
+lec1
+Dr Walid M. Aly
+6
+Web Programming CS333-CS644
+Editing HTML
+• We’ll create HTML documents by typing HTML markup
+text in a text editor and saving it with the .html or .htm
+filename extension.
+• Computers called web servers store HTML5 documents.
+• Clients (such as web browsers running on your local
+computer or smartphone) request specific resources
+such as HTML5 documents from web servers.
+• Servers respond by sending the requested file
+• Thefilename of your homepage preferred to be
+index.html– If a browser does not request a specific file in a
+directory, normal Web server response is to return
+index.html
+lec1
+Dr Walid M. Aly
+7
+Web Programming CS333-CS644
+Editing HTML
+• Creating HTML documents– Anysimpleeditors can be used: notepad-wordpad-TextPad-notepad++
+• Authoringtools (e.g. Microsoft Expression Web, Netscape Composer, Dreamwaver)
+• so,whyarewelearning low-level HTML using a basic text
+editor?– maywantlow-level control– maycareabout size/readability of pages– maywantto"steal" page components and integrate into
+existing pages– maywantfeatures such as scripts or applets
+Dreamweaver
+Microsoft Expression Web
+Dr Walid M. Aly
+Web Programming CS333-CS644
+lec1
+HTMLValidation
+• You must use proper HTML, CSS3 and JavaScript
+syntax to ensure that browsers process your
+documents properly.
+• Use :http://validator.w3.org/ to validate your
+HTML5code
+9
+Dr Walid M. Aly
+Web Programming CS333-CS644
+lec1
+WebProgramming CS333-CS644 DrWalidM.Aly lec1 10
+<!DOCTYPEhtml>
+<html>
+<head>
+………….
+……………
+</head>
+<body>
+…………….
+…………..
+</body>
+</html>
+Head
+Body
+HTMLfileBasicStructure
+ AnHTMLfilehas 2basicparts:Head&Body
+ HTML5Elementsaredefinedbytags(markers)
+ Anhtmlpagewillhave tagslike<html>and<head>and<body>
+First HTML5 Example
+<!DOCTYPE html>
+<!-- main.html-->
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Welcome</title>
+</head>
+<body>
+<p>Welcome to HTML5!</p>
+</body>
+</html>
+main.html
+Web Programming CS333-CS644
+lec1
+11
+Dr Walid M. Aly
+Notes on First HTML5 Example
+The document type declaration
+(DOCTYPE) is required in every
+HTML5 documents so that browsers
+render the page in standards mode.
+Commentsstart with <!-- and end with-->.
+The head section contains
+information
+about the HTML5
+document, such as the character set
+(UTF-8), and the title. (if you skip the
+charset, you will get a warning
+validation)
+in
+The body section contains the
+page’s content, which the
+browser displays when the user
+visits the web page.
+lec1
+<!DOCTYPE html>
+<!-- main.html-->
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Welcome</title>
+</head>
+<body>
+<p>Welcome to HTML5!</p>
+</body>
+</html>
+main.html
+12
+Dr Walid M. Aly
+Web Programming CS333-CS644
+HTMLBasic Syntax
+• Elementsaredefined by tags (markers)
+• Tagformat:– Openingtag: <name>– Closing tag: </name>
+• Theopeningtagandits closing tag together specify a container for the
+content they enclose– E.g. <p>Hello </p>
+• Thecontainer and its content together are called an element
+• Notalltags have content– Ifataghasnocontent (void tag), its form is <name />– E.g. <hr />
+• HTML5 does not require empty elements to be
+closed. But if you want stricter validation, or you
+need to make your document readable by XML
+parsers, you should close all HTML elements.
+<!DOCTYPE html>
+<html>
+<body>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+</body>
+</html>
+If a tag has attributes, they appear between its name and the right bracket of the
+opening tag. All attribute values must be enclosed in quotes
+E.g. <img src = “spurs.jpg” />
+Browsers ignore all unrecognized tags, line breaks, HTML might be frustrating to programmers
+Dr Walid M. Aly
+Web Programming CS333-CS644
+lec1
+HTMLTitle Tag
+• The<title> tag defines the title of the document, it can only appear in head
+section
+• Mandatoryfor having a valid HTML5 page.
+• Thetitle element:
+• defines a title in the browser toolbar
+• provides a title for the page when it is added to favorites
+• displays a title for the page in search-engine results
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title> My Web Page</title>
+</head>
+<body>
+</body>
+</html>
+TitleDemo.html
+Dr Walid M. Aly
+14
+Web Programming CS333-CS644
+lec1
+Basic Text Markup
+lec1
+Dr Walid M. Aly
+15
+Web Programming CS333-CS644
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+HTMLParagraphs
+• HTMLparagraphsaredefinedwiththe<p>tag.
+• Thepelementautomaticallycreatessomespacebeforeandafteritself.Thespaceis
+automaticallyappliedbythebrowser,
+16
+<!DOCTYPEhtml>
+<html>
+<head>…..</head>
+<body>
+<p>WelcometoCS433</p>
+<p>Itisawebprogrammingcourse</p>
+</body>
+</html>
+Addingalinebreak
+…………..
+<body>
+<p>Thisis line1.<br/>thisisline2
+Thisisline3.</p>
+</body>
+……
+Thisisline1.
+thisisline2Thisisline3.
+<br/>tagdefinesalinebreak
+simple.html
+HTMLHeadings– Six sizes, 1- 6, specified with <h1> to <h6>
+• 1, 2, and 3use font sizes that are larger than the default font size
+• 4usesthe default size
+• 5and6usesmaller font sizes
+H1 headings should be used as main headings
+The heading tag always break the current line, their content always appear on a new line .
+Browsers usually insert some vertical space before and after all headings
+<body>
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+</body>
+lec1
+Dr Walid M. Aly
+Web Programming CS333-CS644
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+FontStyles
+18
+<body>
+<strong>Thistextisbold</strong><br/>
+<em>Thistextisitalic</em><br/>
+<strong><em>Thistextisboldanditalic
+</em></strong><br/>
+Y<sub>x</sub><br/>
+X<sup>2</sup>
+</body>-setinitalics-<em> or <i>-setinboldface-<strong> or <b>-Subscript<sub>-Superscript<sup>-underline<ins>,<u>-strikethrough<del>
+<body>
+<p><ins>thistextisundelined</ins></p>
+<p><del>thistextisstriked<del></p>
+</body>
+WebBrowser and HTML
+Web browsers do not detect carriage returns (line breaks), tabs, extra spaces
+embedded in an HTML source code document.
+HTML
+There
+Hello
+There
+Browser
+Hello
+Hello There
+Hello There
+lec1
+19
+Web Programming CS333-CS644
+Dr Walid M. Aly
+WebProgramming CS333-CS644 DrWalidM.Aly lec1 20
+HTMLOutputTips
+BeawarethatwithHTML,youcannotchangetheoutputbyaddingextraspacesorextralinesin
+yourHTMLcode.Thebrowserwillremoveextraspacesandextralineswhenthepageis
+displayed.
+<!DOCTYPEhtml>
+<html>
+<head>
+<metacharset="utf-8">
+<title>
+Demo1
+</title>
+</head>
+<body>
+<h1>My Page</h1>
+<p>
+Thisisline1
+Thisisline2
+</p>
+</body>
+</html> Demo1.html
+WebProgramming CS333-CS644 DrWalidM.Aly lec1 21
+<html>
+<head>
+<title>
+Demo1
+</title>
+</head>
+<body>
+<h1> My&nbsp;&nbsp;&nbsp;&nbsp; Page</h1>
+<p>
+Thisisline1<br/>
+Thisisline2
+</p>
+</body>
+</html>
+Demo2.html
+Use&nbsptoaddspaceand<br/>toaddextraline
+Using&nbspand<br/>toformatoutput
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+PreservingwhitespacewithHTML<pre>Tag
+22
+<html>
+<head>
+<title>MyWebPage</title>
+</head>
+<pre>
+Arab
+Academy
+forScience&Technology
+</pre>
+</body>
+</html>
+The<pre>tagdefinespreformattedtext..
+Textinapreelementisdisplayedinafixed-widthfont(usuallyCourier),anditpreserves
+bothspacesandlinebreaks.
+Arab
+Academy
+forScience&Technology
+The<hr/>tagcreatesahorizontallineinanHTMLpage
+<p>Thehrtagdefinesahorizontalrule:</p>
+<hr/>
+Addingahorizontalline
+Character Entities
+• HTML providesacollection of special characters that are
+sometimes needed in a document but can not be typed as
+themselves
+HTML
+Hello &nbsp &nbsp &nbsp &nbspThere
+<p>x<10 </p> <p>x &lt;10</p>
+Browser
+Hello There
+Dr Walid M. Aly
+23
+Web Programming CS333-CS644
+lec1
+HTMLImages
+Images are inserted into a document with the <img> tag
+Theimgelement’s src attribute specifies an image’s location
+Every img element must have an alt attribute, which contains text that is
+displayed if the client cannot render the image
+Widthandheight are optional attributes
+If omitted, the browser uses the image’s actual width and height
+Images are measured in pixels
+ Inthe following example ,the image file is in the same folder as html document,
+so only the file name is required(relative path)
+<body>
+<p>
+<img src="AASTMT_Logo.gif" alt=“logo” width="104" height="142" />
+</p>
+</body>
+Dr Walid M. Aly
+Web Programming CS333-CS644
+lec1
+24
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+HTMLLists
+• ThemostcommonHTMLlistsareorderedandunorderedlists:
+• Use<ul>,<ol><li>
+25
+1.Coffee
+2.Milk
+<ol>
+<li>Coffee</li>
+<li>Milk</li>
+</ol>
+<ul>
+<li>Coffee</li>
+<li>Milk</li>
+</ul>
+• Coffee
+• Milk
+ListDemo.html
+Listscanbenested
+Other formatexistsforlist
+Linking on the Web
+Source
+Document 1
+Here is a link to document 2
+Anchor
+Link
+(reference) Destination
+Document 2
+This is document 2.
+A link has two ends-- called anchors-- and a direction. The link starts at the "source"
+anchor and points to the "destination" anchor, which may be any Web resource (e.g., an
+image, a video clip, a sound bite, a program, an HTML document, an element within an
+HTML document, etc.).
+Web Programming CS333-CS644
+lec1
+Dr Walid M. Aly
+Hypertext Links
+• Hypertext is the essence of the Web!
+• Ahyperlink links to other resources, such as HTML5
+documents and images.
+• Alink is specified with the href (hypertext reference)
+attribute of <a> (the anchor tag)
+• Thecontent of <a> is the visual link in the document
+• Webbrowserstypically underline text hyperlinks and
+color them blue by default.
+• Thelink specify a certain url (uniform resource locator
+to be directed to.
+<a href="http://www.aast.edu">click to visit AAST</a>
+Links.html
+Dr Walid M. Aly
+Web Programming CS333-CS644
+lec1
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+TargetswithinDocuments-TheidAttribute
+• The idattributespecifies thenameofananchor tocreatea
+bookmarkinsideanHTMLdocument.
+• Bookmarks arenot displayed inany special way. They are
+invisibletothereader.
+28
+Example:createalinktoyour anchorfromanotherpage:
+<ahref="http://www.myPage.com/Page1.htm#home">GoToPage</a>
+Example:Createalinktothe“TopofPage"insidethesamedocument:
+<h2id="home">Topofpage</a>
+…………………
+…………………
+<ahref="#home">GoToTop</a>
+Linkingtoananchor
+Links.html
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+Animageasalink
+<ahref="http://www.aast.edu">
+<imgsrc="AASTMT_Logo.gif"alt="HTMLtutorial"width="32"height="32"/>
+</a>
+29
+Createamailtolink
+<p>
+Thisisanemaillink:
+<ahref="mailto:someone@example.com?Subject=Hello%20again">SendMail</a>
+</p>
+Spacesbetweenwordsshouldbereplacedby%20toensurethatthebrowserwilldisplay
+thetextproperly.
+Links.html
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+ThetargetAttribute
+• The target attribute specifies where to open the linked
+document.
+• Theexamplebelowwillopenthelinkeddocument inanew
+browserwindoworanewtab:
+30
+<ahref="http://www.w3schools.com/" target="_blank“>VisitW3Schools!</a>
+Value Description
+_blank Openthelinkeddocumentinanewwindowortab
+_self Openthelinkeddocumentinthesameframeasitwasclicked(thisis
+default)
+<h4>Linked list</h4>
+<ul>
+<li><ahref="http://www.yahoo.com/">Yahoo</a></li>
+<li><ahref="http://www.google.com/">Google </a></li>
+<li><ahref="http://www.bing.com/">Bing</a></li>
+</ul>
+CreatingalinkedList
+Links.html
+HTML<map>Tag
+The <map> tag is used to define a client-side image-map. An image-map is an image with
+clickable areas.
+<!DOCTYPE html>
+<html>
+<body>
+<p>Click on the sun or on one of the planets to watch it closer:</p>
+<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap“ >
+<mapname="planetmap">
+<area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+<area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+</body>
+</html>
+Imagemapdemo.html
+shape rect-circle-poly : Specifies the shape of an area (default: whole region)
+coords coordinates Specifies the coordinates of an area
+Dr Walid M. Aly
+31
+Web Programming CS333-CS644
+lec1
+HTML <area> coords attribute
+❑The<area> tag defines an area inside an image-map (an image-map is an image
+with clickable areas).
+❑The<area> element is always nested inside a <map> tag
+lec1
+32
+Web Programming CS333-CS644
+Dr Walid M. Aly
+WebProgramming CS333-CS644 DrWalidM.Aly lec1
+• Onewaythatsearchenginescatalogpagesisbyreadingthe
+metaelement’scontents.–Thenameattributeidentifiesthetypeofmetaelement–Thecontentattribute
+• Ofakeywordsmetaelement:providessearchengineswithalistof
+wordsthatdescribeapage,whicharecomparedwithwordsinsearch
+requests
+• Ofadescriptionmetaelement:providesathree-tofour-line
+descriptionofasiteinsentenceform,usedbysearchenginestocatalog
+yoursite.Thistextissometimesdisplayedaspartofthesearchresult
+33
+metaElements
+<head>
+<metacharset="utf-8">
+<title>Welcome</title>
+<metaname="keywords"content="webpage,design, HTML5,tutorial">
+<metaname="description"content="Thiswebsitewill
+helpyoulearnthebasicsofHTML5andwebpagedesign
+throughtheuseofinteractiveexamplesand instruction.">
+</head>
+block level and inline
+HTMLelements can be divided into two categories : block level and inline elements.
+a block element can never be within an inline element , inline element must be within a block
+element
+HTMLblock level elements
+1. HTMLblock level elements can appear in the body of an HTML page.
+2. It may contain other block level
+3.It can contain inline elements.
+4. A block element takes up the full width available, and has a line break before and after
+it.
+Example:
+<p> <h1>, <h2>, <h3>, <h4>, <h5>, <h6> ,<ol>, <ul>, <pre>,<div>,<table>, <form>
+HTMLinline elements
+1. inline element is usually used to format contents in block element
+2. It can contain data and other inline elements.
+3. Aninline element only takes up as much width as necessary, and does not
+force line breaks.
+4. Example:
+<b>,< i>,<a>,<label>,<img>,<br>,<span>,<input>
+lec1
+<body>
+<p>
+Hello
+<i>there </i>
+</p>
+<body>
+34
+Web Programming CS333-CS644
+Dr Walid M. Aly
+Good Programming Practice
+The World Wide Web Consortium (W3C) recommends lower case in HTML4/5 and
+demand lower case in XHTML
+lec1
+Dr Walid M. Aly
+35
+Web Programming CS333-CS644
+Useful links
+• W3Schools– http://www.w3schools.com/
+• HTMLTutorial at w3Schools– Http://www.w3schools.com/html/default.asp
+• HTML5Tags
+http://www.w3schools.com/html5/html5_reference.asp
+36
+Dr Walid M. Aly
+Web Programming CS333-CS644
+lec1
+WebProgramming
+CS333-CS644
+Dr Walid M. Aly
+Lecture 2
+HTML
+1
+Web Programming CS333-CS644
+lec2
+HTMLtitle Attribute
+In HTML5, the title attribute can be used on any HTML
+element to be displayed as a tooltip (it will validate on any
+HTMLelement. However, it is not necessarily useful)
+• Syntax– <element title="text">– text:A tooltip text for an element
+<a href="http://www.aast.edu" title="AASTMT">click to visit AAST</a>
+<p title="Free Web tutorials"“ >www.w3schools.com </p>
+titleAttribDemo.HTML
+2
+Web Programming CS333-CS644
+lec2
+Tables
+• Tablesaredefined with the <table> tag.
+• Thesummaryattributesummarizes the table’s
+contents and is used by speech devices to make the
+table more accessible to users with visual impairments
+• Tablesaregiven titles with the <caption> tag
+• Atablecanbesplit into three distinct sections:– Head(theadelement)
+• Table titles
+• Columnheaders– Body(tbodyelement)
+• Primary table data– TableFoot (tfoot element)
+• Calculation results
+• Footnotes
+• Abovebodysection in the code, but displays at
+the bottom in the page
+lec2
+<table>
+<caption>…..</caption>
+<thead>
+……………………………
+</thead>
+<tfoot>
+……………………………
+</tfoot>
+<tbody>
+……………………………
+……………………………
+</tbody>
+</table>
+Web Programming CS333-CS644
+3
+WebProgramming CS333-CS644 lec2
+HTMLTables
+• Atableisdividedintorows(withthe<tr>tag),
+• Theborderlegacyattributesetstheborderfortable,howeversettingbordershouldbedoneusingCSS
+• Headerinformationinatablearedefinedwiththe<th>tag.
+• Eachrowisdividedintodatacells(withthe<td>tag).tdstandsfor"tabledata,"andholdsthecontentofadata
+cell.A<td>tagcancontaintext,links,images,lists,forms,othertables,etc.
+4
+<tableborder="1">
+<caption>Monthlysavings</caption>
+<thead>
+<tr>
+<th>Month</th>
+<th>Savings</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>Total</th>
+<th>150L.E.</th>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>January</td>
+<td>L.E.100</td>
+</tr>
+<tr>
+<td>February</td>
+<td>L.E. 50</td>
+</tr>
+</tbody>
+</table> TablesDemo.html
+Layout using Tables
+• Asinglesource file
+• The code can be confusing, especially
+when you are putting data tables
+inside your formatting table
+• Coding for tables like this can very
+difficult, the code is not easily
+maintainable
+• Changing the structure of the site can
+involve major rewrite of the code in
+table
+• You have to scroll the whole page to
+move around ,
+• no borders are used but you have to
+be careful with padding cells which can
+waste screen spaces
+• averycleanlook
+Web Programming CS333-CS644
+lec2
+rowspan and colspan attributes
+• Table cells are sized to fit the data they contain
+• Youcancreate larger data cells by using these attributes:– rowspan–setinthe<th>or<td>tagtospecify that the
+cell must span some number of rows– colspan–setinthe<th>or<td>tagtospecify that the
+cell must span some number of columns
+<tr>
+<th colspan = "3"> Fruit Juice Drinks
+</th>
+</tr>
+<tr>
+<th> Orange </th>
+<th> Apple </th>
+<th> Screwdriver </th>
+</tr>
+lec2
+Web Programming CS333-CS644
+WebProgramming CS333-CS644 lec2
+HTMLForms
+• Aformis theusualway informationiscommunicatedfroma
+browsertoaserver.
+• HTMLhastagstocreateacollectionofobjectsthat implement
+thisinformationgathering–Theseobjectsarecalledcontrolsorwidgets (e.g., radiobuttons
+andcheckboxes)
+• WhentheSubmitbuttonofaformisclicked,theform’svalues
+aresenttotheserver
+FormDemo.html
+WebProgramming CS333-CS644 lec2
+StartingtheForm
+• Theformelementbracketsallotherelementsincludedwithin
+your formandspecifies themethodandactiontobeused
+whensubmittingformdata.
+• Themethodattribute specifies theHTTPmethodused to
+submittheformdata.Twovaluesareallowed:postandget.
+thepostmethodisnormallyusedtosendformresponses.
+• Theactionattributespecifiestheagentusedtoprocessthe
+formdatawhenitissubmitted.
+8
+<formmethod="post"action="/cgi-bin/FormSend.jsp">
+</form>
+WebProgramming CS333-CS644 lec2
+CreatingInputControls
+9
+<formmethod="post"action="/cgi-bin/FormSend.pl">
+<p>FirstName/Initial:
+<inputtype="text"name="First_Name"size="25">
+LastName:<inputtype="text"name="Last_Name"
+size="25">
+</p>
+</form>
+CreatingTextBoxes
+Textboxprovidesaboxofaspecificsizeintowhichvisitorstypetheirinformation,
+Defaultsizeis20
+Themaxlengthattributecanbeusedtolimittheamountoftextthat
+canbeinputinatextbox. Excesscharacterswillbeignored
+thevalueattributeisusedsetadefaultvalueforatextbox
+Usetype="password" createsapasswordtextbox
+Using Label Element- Widgets should be placed in label elements
+<label> Phone: <input type = "text"
+name = "phone" />
+</label>
+lec2
+10
+Web Programming CS333-CS644
+WebProgramming CS333-CS644 lec2
+CreatingRadioButtons
+11
+Tipuse&nbsp inyoucodetoaddasinglespace
+<p>Whatisyouragegroup?</p>
+<p><inputtype="radio"name="Age"value="Under-13">Under13&nbsp&nbsp
+<inputtype="radio"name="Age" value="13-19">13to19&nbsp&nbsp
+<inputtype="radio"name="Age" value="20-34">20to34&nbsp&nbsp
+<inputtype="radio"name="Age" value="35-49">35to49&nbsp&nbsp
+<inputtype="radio"name="Age" value="50-64">50to64&nbsp&nbsp
+<inputtype="radio"name="Age“ value="Over-65">Over65</p>
+Aradiobuttoncontrolisacircularbuttonthatisblankwhenunselected,butfilledwhen
+selected.Youcanselectonlyoneradiobuttoninalistatatime.
+InitiallySelectingaRadioButton
+YoucanspecifythataradiobuttonshouldbeselectedinitiallybyincludingaCHECKED
+attributeintheINPUTelement.
+<inputtype="radio"name="Age_Group"value="20-34"checked>20to34;
+Creating Check Boxes
+Check boxes work in a fashion that is similar to radio buttons, except that they are
+displayed as square boxes (instead of as round buttons) and visitors can select as many as
+they want
+<p>What is your field? (<i>Multiple items may be selected.</i>)</p>
+<p>
+<input type="checkbox" name="Field“ value="Fin" checked>Finance &nbsp &nbsp
+<input type="checkbox" name="Field" value="Manu"> Manufacturing &nbsp &nbsp
+<input type="checkbox" name="Field" value="Agri"> Agriculture &nbsp &nbsp
+<input type="checkbox" name="Field" value="Other"> Other &nbsp &nbsp
+</p>
+12
+Web Programming CS333-CS644
+lec2
+Creating List Menus
+• Theselect and option elements are used together to create a
+list menu, with the select element indicating the content is a
+list
+<p>How did you find out about my site?</p>
+<select name="Where">
+<option selected>Google
+<option>Yahoo
+<option>Infoseek
+<option>Friend
+<option>Other
+</select>
+13
+Other attributes can optionally be used with the select element: size and multiple.
+Web Programming CS333-CS644
+lec2
+- After clicking the
+menu:- After changing size to 2:
+Web Programming CS333-CS644
+lec2
+Creating Text Area Boxes
+• TheTEXTAREAelement lets you create a text area box. A
+text area box differs from a text box in that it lets visitors
+enter several lines of text.
+<p>Comments:</p>
+<p><textarea name="Comments" rows="5" cols="50">
+</textarea></p>
+15
+Web Programming CS333-CS644
+lec2
+Hidden Inputs
+Formscan contain visual and nonvisual components.
+Nonvisual components, called hidden inputs, store any data
+that you specify, such as e-mail addresses and HTML5
+document file names that act as links. this data can be
+changed by JavaScript
+<input type="hidden" name="country" value=“USA" />
+A hidden field often stores a default value, or can have its value
+changed by a JavaScript:
+lec2
+16
+Web Programming CS333-CS644
+Submit and Reset Buttons
+• Botharecreated with <input>
+<input type = "reset" value = "Reset Form">
+<input type = "submit” value = "Submit Form">
+• Resetclears all controls to their initial states
+• Submithastwoactions:
+1. Encode the data of the form
+2. Request that the server execute the server-resident
+program specified as the value of the action attribute
+of <form>
+• ASubmitbuttonis required in every form.
+lec2
+Web Programming CS333-CS644
+<fieldset> <legend>
+The <fieldset> tag is used to group related elements in a form and draws a box around the
+related elements.
+The <legend> tag defines a caption for the <fieldset> element.
+<form>
+<fieldset>
+<legend>Personal Information:</legend>
+Name: <input type="text"><br>
+Email: <input type="text"><br>
+Date of birth: <input type="text">
+</fieldset>
+</form>
+fieldsetDemo.html
+18
+Web Programming CS333-CS644
+lec2
+Adding General Buttons
+input type="button"
+Defines a clickable button (mostly used with a JavaScript to activate a script)
+<input type="button" value="Click me" onclick="msg()" />
+19
+Web Programming CS333-CS644
+lec2
+HTML5newInput elements
+ HTML5 has several new input types for forms.
+These new features allow better input control and
+validation.
+ Not all major browsers support all the new input
+types. However, you can already start using them;
+If they are not supported, they will behave as
+regular text fields.
+lec2
+Web Programming CS333-CS644
+Validation
+• ThenewHTML 5 input types are self validating on the client side, eliminating
+the need to add complicated JavaScript code to your web pages to validate user
+input, reducing the amount of invalid data submitted and consequently
+reducing Internet traffic between the server and the client to correct invalid
+input.
+• When a user enters data into a form then submits the form the browser
+immediately checks the self-validating elements to ensure that the data is
+correct
+Web Programming CS333-CS644
+Copyright © Pearson, Inc. 2013. All Rights
+Reserved.
+lec2
+New formcontrols
+• Several new input types for forms– allow for better input control and validation
+• Input Type :email-- used for input fields that should contain an e-mail address– Thevalue of the email field is automatically validated when the form
+is submitted– <input type="email" name="user_email" />
+• Input Type : url
+used for input fields that should contain a URL address– Thevalue of the url field is automatically validated when the form is
+submitted– <input type="url" name="user_url" />
+HTML5FormDemo.html
+22
+Web Programming CS333-CS644
+lec2
+Input Type :number
+The number type is used for input fields that should contain a numeric value.
+You can also set restrictions on what numbers are accepted:
+Points: <input type="number" name="points" min="1" max="10" />
+Input Type : range
+The range type is used for input fields that should contain a value from a range of numbers.
+The range type is displayed as a slider bar.
+You can also set restrictions on what numbers are accepted:
+<input type="range" name="points" min="1" max="10" />
+HTML5FormDemo.html
+HTML5is not yet an official standard, and no browser has full HTML5 support
+lec2
+23
+Web Programming CS333-CS644
+Input Type: date
+<form>
+Enter a date before 1980-01-01:
+<input type="date" name="bday" max="1979-12-31"><br>
+Enter a date after 2000-01-01:
+<input type="date" name="bday" min="2000-01-02"><br>
+<input type="submit" value="Send">
+</form>
+InputDateDemo.html
+Web Programming CS333-CS644
+lec2
+24
+input Type color
+• Thecolorinput type enables the user to enter a color.
+• Atthetimeofthis writing, old browsers render the color input type as a
+text field in which the user can enter a hexadecamal code or a color name.
+• InBrowsers implementing this input ,when you click a color input,
+browsers display a color picker similar to the Microsoft Windows color
+dialog shown.
+autofocus Attribute
+HTML5FormDemo.html
+The autofocus attribute—an optional attribute that can be used in only one input element
+on a form—automatically gives the focus to the input element, allowing the user to begin
+typing in that element immediately.
+<label>Color:
+<input type = "color" autofocus />
+(Hexadecimal code such as #ADD8E6)
+</label>
+lec2
+Web Programming CS333-CS644
+<input type="email" />
+<input type="url" />
+<input type="number" /> <input type="tel" />
+26
+Web Programming CS333-CS644
+lec2
+placeholder Attribute
+The placeholder attribute specifies a short hint that describes the expected value of an input
+field (e.g. a sample value or a short description of the expected format).
+The hint is displayed in the input field when it is empty, and disappears when the field gets
+focus.
+Note: The placeholder attribute works with the following input types: text, search, url, tel,
+email, and password.
+<Label>First Name<input type="text" name="fname" placeholder="First name" /><Label />
+required Attribute
+The required attribute forces the user to enter a value before submitting the form.
+You can add required to any of the input types.
+<label>Email:
+<input type = "email" placeholder = name@domain.com required />
+</label>
+lec2
+27
+Web Programming CS333-CS644
+Note on Validation
+• If you want to disable client side validation for a
+form in HTML5 add anovalidate attribute to the
+form element.
+• Ex:
+<form method="post" action="/foo" novalidate>...</form>
+• Toadd acustommessagetovalidation use the title attribute
+<input required title="First Name is Required!" />
+customMessage.html
+28
+Web Programming CS333-CS644
+lec2
+autocomplete Attribute
+The autocomplete attribute specifies whether or not an input field should have
+autocomplete enabled.
+Autocomplete allows the browser to predict the value. When a user starts to type
+in a field, the browser should display options to fill in the field, based on earlier
+typed values.
+Value
+on
+off
+Description
+Default. Specifies that autocomplete is on (enabled)
+Specifies that autocomplete is off (disabled)
+AutoCompleteDemo.html
+29
+Web Programming CS333-CS644
+lec2
+HTML5 <datalist> Tag
+ The <datalist> tag specifies a list of pre-defined options for an <input> element.
+ The <datalist> tag is used to provide an "autocomplete" feature on <input> elements.
+ Userswill see a drop-down list of pre-defined options as they input data.
+ Use the <input> element's list attribute to bind it together with a <datalist> element.
+<datalist id="browsers">
+<option value="Internet Explorer">
+<option value="Firefox">
+<option value="Chrome">
+<option value="Opera">
+<option value="Safari">
+</datalist>
+<input type="text" id="browser" list="browsers"
+placeholder="select your browser"/>
+lec2
+dataliastDemo.html
+30
+Web Programming CS333-CS644
+HTML5 <video>
+• Until HTML5, there has never been a standard for showing a video or movie
+on aweb page.
+• Today, most videos are shown through a plugin (like flash). However,
+different browsers may have different plugins.
+• HTML5 defines a new element which specifies a standard way to include
+video: the <video> element.
+• Currently, there are 3 supported video formats for the video element: Ogg,
+MPEG4 and WebM
+<video width="320" height="240" controls="controls">
+<source src="movie.mp4" type="video/mp4" />
+<source src="movie.ogg" type="video/ogg" />
+Your browser does not support the video tag.
+</video>
+HTML5MultimediaDemo.html
+The control attribute adds video controls, like play, pause, and volume.
+The <video> element allows multiple <source> elements. <source> elements can link to
+different video files. The browser will use the first recognized format.
+31
+Web Programming CS333-CS644
+lec2
+HTML5 <audio>
+• Mostaudioare played through a plugin (flash)– However, not all browsers have the same plugins
+• HTML5specifies a standard way to include audio, with the
+audio element
+• Ogg,mp3,wavaretheonlysupported audio formats.
+• Theaudioelement can play sound files, or an audio stream
+<audio controls="controls">
+<source src="music1.ogg" type="audio/ogg" />
+<source src="music1.mp3" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio>
+HTML5MultimediaDemo.html
+32
+Web Programming CS333-CS644
+lec2
+HTML5 <meter> Tag
+• The<meter>tagdefines a scalar measurement within a known range, or
+a fractional value. This is also known as a gauge.
+• Examples: Disk usage, the relevance of a query result, etc.
+<meter value="2" min="0" max="10"></meter><br />
+<meter value="0.6"></meter>
+HTML5 <progress> Tag
+<progress value="22" max="100"></progress>
+ttribute Value
+maxNe
+w
+valueNe
+w
+number
+number
+Description
+Specifies how much work the
+task requires in total
+Specifies how much of the
+task has been completed
+33
+Web Programming CS333-CS644
+lec2
+summary Element and details Element
+• The summary element displays a right-pointing
+arrow next to a summary or caption when the
+document is rendered in a browser When
+clicked, the arrow points downward and reveals
+the content in the details element.
+<details>
+<summary>AAST.</summary>
+<p> …………….</p>
+</details>
+SummaryDemo.html
+lec2
+Web Programming CS333-CS644
+Text-Level Semantics: mark Element and
+wbr Element
+• Themarkelement highlights the text that’s
+enclosed in the element.
+• Thewbrelement indicates the appropriate
+place to break a word when the text wraps to
+multiple lines.
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+<p>
+To learn AJAX, you must be familiar with the XML<wbr>Http<wbr>Request Object
+<p/>
+lec2
+Web Programming CS333-CS644
+Page-Structure Elements
+• HTML5 introduces several new page-structure elements that
+meaningfully identify areas of the page as headers, footers, articles,
+navigation areas, asides, figures and more
+• The header element creates a header for this page that contains
+both text and graphics.
+• The footer element describes a footer—content that usually appears
+at the bottom of the content or section element.
+• The section element describes a section of a document, usually with
+a heading for each section—these elements can be nested
+• Thenavelement groups navigation links.
+lec2
+SectionElements.html
+36
+Web Programming CS333-CS644
+• The figure element describes a figure (such as an image,
+chart or table) in the document so that it could be moved to
+the side of the page or to another page.
+• The figcaption element provides a caption for the image in
+the figure element.
+• The article element describes standalone content that
+could potentially be used or distributed elsewhere, such as a
+news article, forum post or blog entry.
+• The aside element describes content that’s related to the
+surrounding content (such as an article) but is somewhat
+separate from the flow of the text. For example, an aside in
+a news story might include some background history.
+lec2
+Web Programming CS333-CS644
+Absolute Path and Relative Path
+• Web pages consist of web links. The links can send users either to
+external sites or to pages on the same site which is internal links.
+Internal links can be created by using either absolute path or relative
+path.
+• Relative path is a path relative to the current page's path location.
+Current page is the page that contains the URL link.
+<img src=“images/pic1.jpeg”>
+• Absolute path is a path that starts with domain URL. Absolute path can
+be a full path or take the form of a short version. The short version
+always starts with a forward slash, which is the part of a full URL
+without the domain name part.– Ex:Absolute path (full):
+<img src=“http://www.mywebsite.com/files/images/pic1.jpeg”>– Ex:Absolute path (short version): <img src=“/files/images/pic1.jpeg”>
+lec2
+38
+Web Programming CS333-CS644
+Recommendation
+• When you link to a page on your own website,
+always use the short version of an absolute path
+or use relative path. This speeds up page load
+time because you have told web server that the
+linked page is located on the same site.
+• Another advantage of avoiding the use of full
+version of absolute path is that if you ever need
+to change domain name for your site, the links
+are not going to break. This is because you didn't
+hard code your old domain name into the links
+with full version of absolute path.
+• Whenyoulink to a page on another website, you
+can only use full absolute path. That is a full URL.
+39
+Web Programming CS333-CS644
+lec2
+WebProgramming CS333-CS644 lec2 40
+Type Level AbsolutePath(fullversion) AbsolutePath(short
+version) RelativePath
+Directory Current http://www.site.com/products/sales/july/ /products/sales/july/
+File Current http://www.site.com/products/sales/july/index.html /products/sales/july/index.html
+Directory 1LevelUphttp://www.site.com/products/sales/ /products/sales/ ../
+File 1LevelUphttp://www.site.com/products/sales/summary.html /products/sales/summary.html ../summary.html
+File 1LevelUphttp://www.site.com/products/sales/services/index.html /products/sales/services/index.h
+tml ../services/index.html
+Directory 2LevelUphttp://www.site.com/products/ /products/ ../../
+File 2LevelUphttp://www.site.com/products/demo.html /products/demo.html ../../demo.html
+File 2LevelUphttp://www.site.com/products/category/index.html /products/category/index.html ../../category/index.html
+Directory 1Level
+Down http://www.site.com/products/sales/july/images/ /products/sales/july/images/ images/
+File 1Level
+Down http://www.site.com/products/sales/july/images/product1.jpg /products/sales/july/images/pro
+duct1.jpg images/product1.jpg
+Thefollowingtableshowsyouexamplesofthevariouspaths.Weassumecurrentpageis
+index.htmlandit isindirectory july locationis:
+Thelocationofdirectoryis:http://www.site.com/products/sales/july
+AbsolutePathandRelativePathExamples
+Resources
+Android Apps
+41
+Web Programming CS333-CS644
+lec2
+WebProgramming
+Dr Walid M. Aly
+Lecture 3
+CSS
+08:50
+Dr Walid M. Aly
+1
+Web Programming
+lec3
+Example of pages created using CSS
+08:50
+lec3
+2
+Dr Walid M. Aly
+Web Programming
+Motivation to invent CSS
+• HTMLwasneverintended to contain tags for formatting a document.
+• HTMLwasintendedtodefine the content of a document, like:– <h1>This is a heading</h1>– <p>This is a paragraph.</p>
+• Formatting tags like <font>, and color attributes were added to the
+HTML3.2 specification.
+• Development of large web sites, where fonts and color information
+were added to every single page, became a long and expensive
+process.
+• A mixture of content and appearance in a data set is difficult to
+maintain or modify.
+• XHTML necessarily mixes style and content, but css help the
+separation.
+08:50
+lec3
+3
+Web Programming
+Dr Walid M. Aly
+CSS
+• CSS: Cascaded Style Sheets
+• CSS provides the means to control and change
+presentation of HTML documents separately
+from declaring content
+• Style sheets allow you to impose a standard
+style on a whole document, or even a whole
+collection of documents
+• Current version :CSS3
+08:50
+Dr Walid M. Aly
+Web Programming
+lec3
+The 3Levels of Cascaded Style Sheets
+1.
+Inline- specified for a specific occurrence of a tag and apply only to that tag-Inline style sheets appear in the tag itself– Inline level is not recommended
+<p style="font-family:courier">This is a paragraph.</p>
+2. Document-level style sheets- in the style element and apply to the whole
+document in which they appear-Document-level style sheets appear in the head of the document
+<head> <title> Font properties </title>
+<style type = "text/css">
+h2 {font-family: 'Times New Roman'; font-size: 24pt; font-weight: bold}
+h3 {font-family: 'Courier New'; font-size: 18pt}
+</style>
+</head>
+3- External style sheets- separate style sheet files (.CSS files) and can be applied to any
+number of documents and are saved as separate files, The link to an external style
+sheet must appear in the head of the document
+08:50
+lec3
+Dr Walid M. Aly
+Web Programming
+CSS cascade hierarchy
+The closest level style sheet has precedence
+08:50
+lec3
+Web Programming
+Dr Walid M. Aly
+Inline Style Specification
+• Style sheet appears as the value of the style attribute
+• Inline styling is useful for applying a unique style to a single HTML element
+• Thestyle attribute can contain any CSS property
+• Generalform:
+style = "property_1: value_1;
+property_2: value_2;
+Examples:
+Formatting a paragraph
+…
+property_n: value_n;”
+<p style="color:red; font-style:italic;
+font-weight:bold; font-family:Arial;">
+This is an example of a paragraph </p>
+Nonunderlined Link
+InLineDemo.html
+<a href=http://www.aast.edu style="text-decoration:none;">
+Visit AAST
+</a>
+08:50
+lec3
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec3 08:50
+CSSProperties
+http://www.htmldog.com/reference/cssproperties/
+http://www.w3schools.com/cssref/
+Afulllistofpropertiescanbeacquiredfromtheinternet:
+• Therearealotofdifferentpropertiesindifferentcategories:
+Properties Category
+background-image,background-color,….. ,background BackgroundProperties
+font-family,font-size,……,font FontProperties
+list-style-image,…,.. ListProperties
+color,text-align,text-shadow TextProperties
+p
+{
+font-size:10px;
+}
+h1
+{
+color:red;
+}
+Document Style Specification
+• Style sheet appears as a list of rules that are the content
+of a <style> tag
+• Thestyle tag apperas in the <head> section
+• The<style>tagcaninclude the type attribute, set
+to "text/css“,not required for HTML5
+<style type = "text/css">
+rule list
+</style>
+• Formoftherules:
+selector {property_1:value_1;
+property_2:value_2; …; property_n:value_n;}
+• Different type of selectors exist.
+08:50
+lec3
+Web Programming
+Dr Walid M. Aly
+1-Simple Selector
+ACSSrule has two main parts: a selector, and one or more
+declarations.
+In simple selector , The selector is a tag name or a list of tag
+names, separated by commas.
+All occurrences of this tag will be affected.
+h1 {font_size: 24pt;}
+h2, h3 {font_size: 20pt;}
+Web Programming
+08:50
+lec3
+p {color:red;text-align:center;}
+p
+{
+color:red;
+text-align:center;
+}
+Dr Walid M. Aly
+10
+Example :Simple Selector with Document Style Specification
+<!DOCTYPE html>
+<html >
+<head> <title> Font properties </title>
+<meta charset = "utf-8">
+<style type = "text/css">
+h2 {font-family: 'Times New Roman'; font-size: 24pt; font-weight: bold;color:red;}
+h3 {font-family: 'Courier New'; font-size: 18pt;}
+</style>
+</head>
+<body>
+<h2> Chapter 1 Introduction </h2>
+<h3> 1.1 The Basics of Computer Networks </h3>
+</body>
+</html>
+SimpleSelectorDemo.html
+08:50
+lec3
+11
+Dr Walid M. Aly
+Web Programming
+2-Tag Class Selector
+• Usedtoallow different occurrences of the same tag to have
+different style specifications according to a certain class.
+• Classes are defined in the content of a style tag.
+• Astyle class has a name, which is attached to a tag name
+p.narrow {property/value list}
+p.wide {property/value list}
+• The class you want on a particular occurrence of a tag is
+specified with the class attribute of the tag
+<p class = "narrow"> ... </p>
+...
+<p class = "wide"> ... </p>
+Any other tags than <p> will ignore the narrow and wide classes
+08:50
+lec3
+Web Programming
+Dr Walid M. Aly
+Example :Tag class Selector with Document Style Specification
+<!DOCTYPE html>
+<html>
+<head> <title> Class Selector Demo</title>
+<style type = "text/css">
+p.big {font-size: 20pt; font-style: italic; font-family: 'Times New Roman';}
+p.small {font: bold 10pt 'Courier New'; color:green}
+</style>
+</head>
+<body>
+<p class = "big">
+If a job is worth doing, it's worth doing right.
+</p>
+Font
+Shorthand
+<p class = "small">
+Twowrongs don't make a right, but they certainly
+can get you in a lot of trouble.
+</p>
+</body></html>
+08:50
+ClassSelectorDemo.html
+lec3
+Dr Walid M. Aly
+13
+Web Programming
+3-Generic class Selectors
+• Ageneric class can be defined if you want the same style
+to apply to more than one kind of tag
+• Ageneric class must be named, and the name must
+begin with a period
+.really-big { … }
+• Useinbodyofdoclike normal style class
+<h1 class = "really-big"> … </h1>
+...
+<p class = "really-big"> … </p>
+08:50
+lec3
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec3 08:50
+Using Generic classSelectors
+……..
+<head>
+<styletype="text/css">
+.para1
+{
+text-align:center;
+color:red;
+}
+</style>
+</head>
+<body>
+<pclass="para1">HelloWorld!</p>
+<p>Thisparagraphisnotaffectedbythestyle.</p>
+<h1class="para1">>Test</h1>
+</body>
+</html>
+GenericClassSelectorDemo.html
+WebProgramming DrWalidM.Aly lec3 08:50
+4-idSelectors
+• id selector allow the
+applicationof astyle toone
+specificelement
+• Generalform:
+#specific-id
+{property-value
+list}
+e.g. #section3 {font
+size: 20}
+• InHMTLdoc:
+<h2 id = “section3”>
+3. Properties for sale
+</h2>
+……..
+<head>
+<styletype="text/css">
+#para1
+{
+text-align:center;
+color:red;
+}
+</style>
+</head>
+<body>
+<pid="para1">HelloWorld!</p>
+<p>Thisparagraphisnotaffectedbythestyle.</p>
+</body>
+</html>
+IDSelectorDemo.html
+Yourcodewillnotpassvalidationifyouusethesameidonmorethanoneelement
+Youcanalsodeclarewiththeidselector,thetageex:p#format1
+5-Selectors with Pseudo Classes
+• Pseudo classes are styles that apply when something happens,
+rather than because the target element simply exists
+• Syntax:
+selector:pseudo-class {property:value;}
+• Example:
+a:link { color: red }
+a:visited { color: blue }
+a:hover { color: lime }
+p:first-line {font-size: large}
+p:first-letter {color : blue}
+• hoverclass applies when the mouse cursor is over the element
+• focusclass applies when an element has focus
+08:50
+lec3
+Dr Walid M. Aly
+Web Programming
+…..
+<head> <title> Pseudo Demo </title>
+<style type = "text/css">
+input:hover {background: pink; color: red;}
+input:focus {background: lightblue; color: blue;}
+a:link { color: red }
+a:visited { color: blue }
+a:hover { color: lime }
+p:first-line {font-size: 50}
+p:first-letter {color : blue}
+</style></head>
+<body>
+<p>this example <br/>shows how <br/>the pesuedo classes work</p>
+<form action = "">
+<Label> Your name:<input type = "text" /></Label>
+</form>
+<h3>
+<a href="http://www.aast.edu"/> visit AAST web site </a>
+</h3></body></html>
+pseudo.html
+lec3
+Dr Walid M. Aly
+Web Programming
+08:50
+6-Contextual selectors– List element hierarchy and this will apply style only to
+child elements in specified position in body of document
+p em {color:red}
+P b {color:blue}
+<p>
+Hello
+<em>there </em>
+<b>student </b>
+</p>
+<b> <em> arechild of <p>
+Hello there student
+08:50
+Dr Walid M. Aly
+19
+Web Programming
+lec3
+7-Universal Selectors
+Definition and Usage
+The * selector selects all elements.
+The * selector can also select all elements inside another element
+* {
+css declarations;
+}
+• * {color: red;}–- Applies to all elements in the document
+Select all elements inside <div> elements and set their background color
+to yellow:
+div * {
+background-color: yellow;
+}
+08:50
+lec3
+20
+Web Programming
+Dr Walid M. Aly
+External style sheets
+• Anexternal style sheet is ideal when the style is applied to
+many pages..
+• Eachpagemustlink to the style sheet using the <link> tag. The
+<link> tag goes inside the head section
+• Styles are saved in external .css files.
+• External style sheets are in separate files, potentially on any
+server on the Internet– A<link>tagisusedtospecify that the browser is to fetch and
+use an external style sheet file
+<link rel = "stylesheet" type = "text/css"
+href = "http://www.wherever.org/example.css" >
+ You can have more than link tag in the head tag
+which means you can have more than one style
+sheets
+08:50
+lec3
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec3 08:50
+ExampleSimpleSelectorwithonExternal-levelstylesheets
+22
+p.big{font-size:14pt;
+font-style:italic;
+font-family:'TimesNewRoman';
+}
+p.small{font:bold10pt'CourierNew';}
+h2{font-family:'TimesNewRoman';
+font-size:24pt;font-weight:bold}
+h3{font-family:'CourierNew';
+font-size:18pt}
+<!DOCTYPEhtml>
+<html>
+<head><title>Externalstylesheets</title>
+<linkrel="stylesheet" type="text/css"
+href="styles.css"/>
+</head>
+<body>
+………
+</body>
+</html>
+Styles.css
+The <div> tag
+• The<div>tagdefines logical divisions defined in your Web page.
+• <div> gives the chance to define the style of whole sections of HTML. You could define a
+section of your page as a call out and give that section a different style from the
+surrounding text.
+• divtagscannot becontained within any other element
+• theyhavestyle , id and classattributes
+• divtagis used mainly with CSS
+<head>
+<style type="text/css">
+.colorMode1 {color:red;}
+</style></head>
+<body>
+<p> this is not formatted </p>
+<div class="colorMode1">
+</div>
+<p> this is a line </p>
+<p> this is another line </p>
+<h1> this is another line </h1>
+<p> this is not formatted </p>
+</body></html>
+08:50
+lec3
+Dr Walid M. Aly
+DivDemo.html
+Web Programming
+The <span> tag
+• Instead of the HTML div tag, defined for block-level
+content, the HTML span tag is used as in-line they have
+style , id and class attributes
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.colorMode1 {color:red;}
+.colorMode2 {color:blue;}
+</style></head>
+<body>
+<p> this is not formatted </p>
+<div class="colorMode1">
+<p> this is a line </p>
+<p> this is <span class="colorMode2"> another </span> line </p>
+<h1> this is another line </h1>
+</div>
+<p> this is not formatted </p>
+</body></html>
+08:50
+SpanDemo.html
+lec3
+Dr Walid M. Aly
+Web Programming
+CSS div Tips
+•Combing 2 classes :The class names may occur in any order
+<style type="text/css">
+div.format1{
+background-color:red;
+}
+div.format2{
+border: solid 4px black;
+width:250px;
+}
+<div class="format1 format2">
+Testing combining classes</div>
+Another way is by nesting div tags.
+<div class="format3">
+<div class="format4">
+Testing combining classes
+</div>
+</div>
+08:50
+CombinibgClasses.html
+Dr Walid M. Aly
+Web Programming
+lec3
+Conflict Resolution- A conflict occurs when there are two or more values for the same property on the same element- Sources of conflict:
+1. Conflicting values between levels of style sheets
+2. Within one style sheet
+3. Inheritance can cause conflicts
+4. Property values can come from style sheets written by the document author, the browser user, and the browser
+defaults- Resolution mechanisms:
+1. Precedence rules for the different levels of style sheets
+2. Source of the property value
+3. The specificity of the selector used to set the property value
+4. Property value specifications can be marked to indicate their weight (importance)
+08:50
+lec3
+Dr Walid M. Aly
+Web Programming
+WebProgramming DrWalidM.Aly lec3 08:50-Arulethathasthe!important directivewillalwaysbeappliednomatterwherethatrule
+appears
+p{color:red!important;}
+ConflictResolution(continued)-Conflictresolutionisamultistageprocess,calledthecascade:
+1.Gatherallofthestylespecsfromthedifferentlevelsofstylesheets
+2.Allavailablespecs,fromallsources,aresortedbyoriginandweight,usingthe
+followingrules,whicharegiveninprecedenceorder:
+a.Importantdeclarationswithuserorigin
+b.Importantdeclarationswithauthororigin
+c.Normaldeclarationswithauthororigin
+d.Normaldeclarationswithuserorigin
+e.Anydeclarationswithbrowserorigin
+Conflict Resolution (continued)
+3. If any conflicts remain, sort them by specificity:
+a. id selectors
+b. Class and pseudo-class selectors
+c. Contextual selectors
+d. Universal selectors
+4. If there are still conflicts, resolve them by precedence to the most recently
+seen specification
+p { color: red; }
+p { color: black; }
+08:50
+lec3
+the paragraph text will be black
+Dr Walid M. Aly
+Web Programming
+CSS Validation
+http://jigsaw.w3.org/css-validator/
+Note: If you want to validate your CSS style sheet embedded in an (X)HTML document, you
+should first check that the (X)HTML you use is valid.
+29
+08:50
+Dr Walid M. Aly
+Web Programming
+lec3
+h1
+{
+Font-size:12pt;
+color:red;
+}
+Web Programming CS433
+08:49
+1
+lec4
+Dr Walid M. Aly
+WebProgramming
+CS433
+Dr Walid M. Aly
+Lecture 4
+CSS Values &Properties
+http://www.w3.org/TR/CSS2/propidx.html
+08:49
+Dr Walid M. Aly
+2
+Web Programming CS433
+lec4
+Values of CSS Properties
+i-CSS Length Values
+• Length values have a numerical value, and must be followed by a unit of
+measurement. Eg: 14pt, The units can be:
+In(inch) , cm (centimeter), mm (millimeter)
+em :used to specify font sizes, 1em is equal to the
+current font size. The default text size in browsers
+is 16px. So, the default size of 1em is 16px. 2em
+means 2times the size of the current font
+ex:height of x letter,pt (1/72 inch),
+px(pixels)
+ii-CSS Color Values
+ Color name, e.g. white
+ Hex form:#XXXXXX, e.g. #FFFFFF
+ rgb(n1, n2, n3), e.g. rgb(255, 255, 255)
+white
+black
+FFFFFF
+000000
+08:49
+lec4
+<head>
+<style type = "text/css">
+p.double {font-size:2em; color:red;}
+</style>
+</head>
+<body>
+<h1>
+<p>
+this is the first line
+</p>
+<p class="double">
+this line is in double size
+</p>
+…..
+PropertiesValueDemo1.html
+3
+Dr Walid M. Aly
+Web Programming CS433
+iii-URL values
+URLs have a straightforward form:url(protocol://server/pathname)
+body{background: url(http://www.htmlhelp.com/stripe.gif)}
+body {background: url(stripe.gif)}
+iv-Keyword values
+Manydifferent properties can take keyword values. A keyword value is usually a single word that is translated
+into a numerical value by a browser.
+The keywords available for a specific property will be appropriate to that particular property.
+Text-align:center
+v-Percentage values
+Instead of using a unit of measurement many properties can also take percentage values.
+Percentage values are relative to other values, as defined for each property.
+color:rgb(0%,80%,0%)
+08:49
+lec4
+PropertiesValueDemo.html
+4
+Dr Walid M. Aly
+Web Programming CS433
+Example: Use a Combination of Percent and Em
+<html>
+<head>
+<style type = "text/css">
+body {font-size:100%;}
+h1 {font-size:2.5em;}
+h2 {font-size:1.875em;}
+p {font-size:0.875em;}
+</style>
+</head>
+<body>
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<p>This is a paragraph.</p>
+<p>Specifying the font-size in percent and em displays the same size in all
+major browsers, and allows all browsers to resize the text!</p>
+</body>
+</html>
+08:49
+txtSizeDemo.html
+lec4
+Dr Walid M. Aly
+5
+Web Programming CS433
+Inheritance
+• Children of an element are element defined within it(parents).
+• Someproperty values are inherited by the children of an element.
+• Eachproperty defines whether it is inherited or not.
+Example
+<h1 style="color:red;">
+How <em>are</em> you ?
+</h1>
+The color property is inherited, If no color has been assigned to the em
+element, the emphasized ”are" will inherit the color of the parent element, so if
+h1 has the color red, the em element will likewise be in red.
+The value of any property will be calculated by a browser in the following order:
+1. if there is a cascaded style value of the property use it else,
+2. if the value is inherited is use it else,
+3. usethe default value of the browser
+08:49
+PropertiesValueDemo.html
+Dr Walid M. Aly
+6
+Web Programming CS433
+lec4
+The inherit CSS Property Value
+Even though certain characteristics are inherited automatically in CSS, there may be situations in
+which you want to increase the weight of the inherited property. Specifying a value of inherit for any
+CSS property that’s applied to an element will cause the element to gain its parent’s computed
+value for the property in question. By specifying in the author style sheet that a property should
+inherit its value, you can increase its weigh
+in the case of anchor elements, the color property is commonly set to
+blue in the user agent style sheet. If you wanted to reinforce the
+importance of the inherited value, you could use the value inherit in an
+author or user style
+p {
+color: #000;
+}
+p a:link {
+color: inherit;
+}
+When you’re using shorthand notation such as background, you can’t mix inherit with other values.
+p {
+X
+background: #fff inherit left top;
+}
+08:49
+lec4
+Dr Walid M. Aly
+7
+Web Programming CS433
+• font-family
+Font Properties– Valueis a list of font names- browser uses the first in the list it has–-ex:font-family: Arial, Helvetica, Futura– If the font name has more than one word, the whole
+name should be delimited by single quotes.
+• font-size– Possible values: a length number or a keyword, such as smaller, xx-large,
+etc.– ex:font-size:10pt
+• font-style– italic, normal– ex:font-style: italic
+• font-weight-degreesofboldness– bolder, lighter, bold, normal– ex:font-weight:bold
+• font-variant- In a small-caps font, all lowercase letters are converted to uppercase
+letters. in a smaller font size than the original uppercase letters in the text.– normal,small-caps– ex:font-variant- : small-caps
+Web Programming CS433
+• font-forspecifying a list of font properties– ex:font: bolder 14pt ‘Arial Helvetica’– thelast element should be the font family preceded by the font size and
+08:49
+these two values are mandatory .
+lec4
+Dr Walid M. Aly
+8
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+Exampleonformattingfont
+9
+/*styles.css-anexternalstylesheet
+forusewithfonts2.html
+*/
+p.big{font-size:14pt;
+font-style:italic;
+font-family:'TimesNewRoman';
+}
+p.small{font:bold10pt'CourierNew';}
+h2{font-family:'TimesNewRoman';
+font-size:24pt;font-weight:bold}
+h3{font-family:'CourierNew';
+font-size:18pt}
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+10
+………
+<head><title>Externalstylesheets</title>
+<linkrel="stylesheet" type="text/css"
+href="styles.css"/>
+</head>
+<body>
+<pclass="big">
+Ifajobisworthdoing,it'sworthdoingright.
+</p>
+<pclass="small">
+Twowrongsdon'tmakearight,buttheycertainly
+cangetyouinalotoftrouble.
+</p>
+<h2>Chapter1Introduction</h2>
+<h3>1.1TheBasicsofComputerNetworks</h3>
+</body>
+</html> Font2.html
+CSS cursor property is used to change the mouse cursor icon for a
+few different HTML elements. Below is a list of the most commonly
+accepted cursors:
+• default- Display the normal mouse cursor icon
+• wait-Themouseicon to represent the computer "thinking"
+• crosshair- A cross hair reticle
+• text- An"I" shaped icon that is displayed when selecting text
+• pointer- A hand icon that you see when you hover over an HTML
+link
+• help-Aquestion mark (usually)
+• Aurlvalue : example :cursor:url(cursorPic.cur);
+08:49
+lec4
+Dr Walid M. Aly
+Web Programming CS433
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+cursorDemo.html
+Style1.css
+p{cursor:wait}
+h4{cursor:help}
+h5{cursor:crosshair}
+h2{cursor:url(cursorPic.cur);}
+<!DOCTYPEhtml>
+<html>
+<title>CSSCursorCode</title>
+<linkrel="stylesheet"type="text/css"
+href="style1.css"/>
+</head>
+<body>
+<p>thisispelement</p>
+<h4>thisish4element</h4>
+<h5>thisish5element</h5>
+<h2>thisish2element</h2>
+</body>
+</html>
+CSS Text
+Text Color
+The color property is used to set the color of the text.
+body {color:blue;}
+h1 {color:#00ff00;}
+h2 {color:rgb(255,0,0);}
+Text Alignment
+The text-align property specifies the horizontal alignment of text in an element
+Values of center/left/right can be used
+< h1 style="text-align:center">
+Center-aligned heading</h1>
+< p>This is a paragraph.</p>
+< /body>
+< /html>
+Text Indentation
+The text-indentation property is used to specify the indentation of the first line of a text.
+08:49
+p {text-indent:50px;}
+13
+Web Programming CS433
+lec4
+Dr Walid M. Aly
+Text-Decoration
+• Thetext-decoration property is used to specify some special features of text.
+• Theavailable values are line-through, overline, underline,blink and none, which is
+the default. Many browsers implicitly underline links. The none value can be used
+to avoid this underlining.
+h1 {text-decoration:overline;}
+h2 {text-decoration:line-through;}
+h3 {text-decoration:underline;}
+h4 {text-decoration:blink;}
+vertical-align property
+• Thevertical-align property sets the vertical alignment of an
+element. Eg: vertical-align:sub
+• sub Aligns the element as it was subscript
+• super Aligns the element as it was superscript
+• baseline: Align the baseline of the element with the baseline
+of the parent element. This is default
+08:49
+Dr Walid M. Aly
+14
+Web Programming CS433
+lec4
+Example: Formatting Text using CSS
+<!DOCTYPE html>
+<html>
+<head> <title> Text decoration </title>
+<style type = "text/css">
+p.through {text-decoration: line-through}
+p.over {text-decoration: overline}
+p.under {text-decoration: underline}
+</style>
+</head>
+<body>
+<p class = "through">
+This illustrates line-through
+</p>
+<p class= "over">
+This illustrates overline
+</p>
+<p class = "under">
+This illustrates underline
+</p>
+</body></html>
+08:49
+Decoration.html
+lec4
+15
+Web Programming CS433
+Dr Walid M. Aly
+CSS Background and Colors
+A number of CSS properties can be used to set the color and background of a webpage
+• color
+specify the foreground color
+• background-color
+specify the back ground color
+• background-image
+. specify the back ground image
+. values : url , none
+•background-size
+You can specify the size in pixels or in percentages
+Web Programming CS433
+08:49
+h1{
+color:red;
+}
+body {
+background-color:#b0c4de;
+}
+body {
+background-image:url('paper.gif');
+}
+lec4
+The background-color property makes the "old" bgcolor attribute obsolete.
+if you set the background color, you should set the background-image to none
+Dr Walid M. Aly
+16
+• background-repeat
+Possible values: repeat (default), no repeat, repeat-x, or repeat-y
+no-repeat
+repeat-y
+08:49
+repeat-x
+repeat
+lec4
+17
+Web Programming CS433
+Dr Walid M. Aly
+Background- Shorthand property
+background: #00ff00 url('smiley.gif') no-repeat fixed center;
+When using the shorthand property the order of the property values is:
+background-color
+background-image
+background-repeat
+background-attachment:Sets whether a background image is fixed or scrolls with the rest of
+the page [scroll-fixed]
+background-position:Sets the starting position of a background image
+[left top-left center-left bottom-right top-right center-right bottom-center top-center center
+center bottom]
+It does not matter if one of the property values is missing, as long as the ones that are
+present are in this order.
+08:49
+lec4
+Dr Walid M. Aly
+Demo.html
+18
+Web Programming CS433
+CSS Example : Color & Background Color
+<!DOCTYPE html>
+<html>
+<head><title>Color</title>
+<META content=text/html;charset=utf-8 http-equiv=Content-Type>
+<style type=text/css>
+body {
+background-color: grey
+}
+P.redback {
+background-color: red;
+color: blue
+}
+</STYLE>
+<body>
+<h3>Background Color </h3>
+<P class=redback>Hello there! </P>
+<p>some other text with default colour </p></body></html>
+color.html
+08:49
+Dr Walid M. Aly
+19
+Web Programming CS433
+lec4
+CSS Example : Background image
+…
+<html >
+<head> <title> Background images </title>
+<style type = "text/css">
+body {
+background-image: url(‘photo1.jpg’);
+background-repeat: no-repeat;
+background-size:100% 100%;
+}
+</style>
+</head>
+<body>
+<h1>
+Agreat holiday location
+</h1>
+</body>
+</html>
+08:49
+lec4
+Background images.html
+20
+Web Programming CS433
+Dr Walid M. Aly
+The Box Model
+
+Each element in a document is considered to be a rectangular box consisting
+of content area, padding, a border and margins
+Content- The content of the box, where text and images appear
+Padding- Clears area around the content. The padding is affected
+by the background color of the box
+Border- A border that goes around the padding and content. The
+border is affected by the background color of the box
+Margin- Clears area around the border. The margin does not have
+a background color, it is completely transparent
+08:49
+Dr Walid M. Aly
+Web Programming CS433
+lec4
+Content
+• Themain contentproperty are width , height
+• widthandheight properties of an element set the width and height of the
+content area.
+• ifthesetting of the 2 dimensions made the content exceed boundaries, the
+element is made larger except if the overflow property is set to scroll /auto
+overflow
+The value of the overflow property can be :
+• visible: The overflow is not clipped. It renders outside the element's box.
+This is default
+• hiddenTheoverflow is clipped, and the rest of the content will be
+invisible
+• scroll :The overflow is clipped, but a scroll-bar is added to see the rest of
+the content
+• auto:If overflow is clipped, a scroll-bar should be added to see the rest
+of the content
+08:49
+Width.html
+22
+Dr Walid M. Aly
+Web Programming CS433
+lec4
+Borders
+• border-stylevalues:none,dotted, dashed, and double, groove, solid
+• border-width values: thin, medium (default), thick, or a length value in
+pixels
+• border-color–anycolor
+• border : short hand property for setting all
+values the order should be width-style-color
+ex: border:5pxsolid red;
+Margins
+• Thespacebetweentheborder of an element and its neighbor element
+• Themarginsaround an element can be set with margin-left, etc.
+just assign them a length value, or using margin shorthand property
+<img src = "c210.jpg" style = “margin-bottom:
+0.35in;" />
+MarginDemo.html
+p {
+margin-top: 100px;
+margin-bottom: 100px;
+margin-right: 150px;
+margin-left: 50px;
+}
+08:49
+p {
+margin: 100px 50px;
+}
+boxModelDemo html
+Dr Walid M. Aly
+23
+Web Programming CS433
+lec4
+Padding
+ Controlled by: padding-left, padding-right, padding-top ,padding-bottom,padding
+ default value is zero
+ Ex padding-top:25px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:50px;
+The padding property can have from one to four values.
+• padding:25px50px75px100px;– toppaddingis 25px– rightpadding is 50px– bottompaddingis 75px– leftpadding is 100px
+• padding:25px50px75px;– toppaddingis 25px– rightandleft paddings are 50px– bottompaddingis 75px
+• padding:25px50px;– topandbottompaddingsare 25px, right and left paddings are 50px– padding:25px;–all four paddings are 25px
+08:49
+boxModelDemo html
+Dr Walid M. Aly
+24
+Web Programming CS433
+lec4
+CSS Element Positioning
+• Theposition of any element is dictated by a number of properties:
+position, left,top, z-index– position :Thepossiblevalues of position are:
+static,,absolute,relative,andfixed
+if position is set to static
+Elements renders in order, as they appear in the document flow. This is
+default.
+if position is set to absolute-left, top : Sets the left, top margin edge for a positioned box, the top
+and left property values are measured from the upper-left corner of the
+ancestor element
+left
+top
+element
+absPos.html
+08:49
+<p style = "position: absolute; left:
+50px; top: 100px;">
+absPos2.html
+lec4
+25
+Web Programming CS433
+Dr Walid M. Aly
+CSS Element Positioning
+if position is set to relative-left, top,bottom,right :are offsetsfromits
+normal position-If no offsets properties are specified, the element is
+placed exactly where it would have been placed if no
+positionproperty were given.
+if position is set to fixed-The element is positioned relative to the browser
+window, it is not affected with scrolling the page
+left
+bottom
+top
+element
+right
+08:49
+Superscript effect
+.super{ position: relative; top:-1ex}
+Suberscript effect
+.sub{ position: relative; bottom:-1ex}
+FixedPositionDemo.html
+lec4
+26
+Web Programming CS433
+Dr Walid M. Aly
+CSS Element Positioning.......
+• z-index :
+Sets the stack order of an element thus providing layers. elements that have
+higher z index values are displayed in front of elements with lower z-index, this
+allows
+you to design your page in layers.
+<div style="position:relative; font-size:50px; z-index:2;">LAYER 1</div>
+<div style="position:relative; top:-50; left:5; color:red; font-size:80px; z-index:1">LAYER 2</div>
+<div style="position:relative; font-size:50px; z-index:3;">LAYER 1</div>
+<div style="position:relative; top:-50; left:5; color:red; font-size:80px; z-index:4">LAYER 2</div>
+08:49
+lec4
+27
+Dr Walid M. Aly
+Web Programming CS433
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+img
+{
+position:absolute;
+left:0px;
+top:0px;
+z-index:-1;
+}
+</style>
+</head>
+<body>
+<h1>This is a heading</h1>
+<img src="w3css.gif" width="100"
+height="140" />
+<p>Because the image has a z-index of-1, it
+will be placed behind the text.</p>
+</body>
+</html>
+28
+08:49
+Dr Walid M. Aly
+Web Programming CS433
+lec4
+the float property- Sometimes we want text to flow around another element-- The float property has the possible values, left, right, and none (the default)- If we have an element we want on the right, with text flowing on its left, we use the
+default text-align value (left) for the text and the right value for float on
+the element we want on the right
+<img src = "c210.jpg"
+style = "float: right" />-- Some text with the default alignment- left
+Clear Property
+No floating elements allowed on the left or the right side of a specified element
+Values :left, right , both, none.
+08:49
+lec4
+Dr Walid M. Aly
+Web Programming CS433
+<html>
+<head>
+<style>
+img
+{
+float:right;
+}
+</style>
+</head>
+<body>
+<p>In the paragraph below, we have added an image
+with style <b>float:right</b>. The result is that the
+image will float to the right in the paragraph.</p>
+<p>
+<img src="logocss.gif" width="95" height="84" />
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+</body>
+</html>
+Web Programming CS433
+08:49
+float:none
+;
+lec4
+Dr Walid M. Aly
+30
+CSS direction Property
+The direction property specifies the text direction/writing direction.
+Value
+ltr
+rtl
+Description
+The writing direction is left-to-right. This is default
+The writing direction is right-to-left
+div
+{
+direction:rtl;
+}
+directionDemo.html
+08:49
+lec4
+31
+Web Programming CS433
+Dr Walid M. Aly
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+CSSdisplayProperty
+• Thedisplaypropertycanhavevalueslike:inline,block,none
+• ChangingHowanElementisDisplayed
+• none:Theelementwillnotbedisplayedatall
+• Changinganinlineelementtoablockelement,orviceversa,canbeusefulfor
+makingthepagelookaspecificway.
+32
+li{display:inline;} span{display:block;}
+<styletype="text/css">
+li{display:inline;}
+</style>
+</head>
+<body>
+<p>Displaythislinklistasahorizontalmenu:</p>
+<ul>
+<li><ahref=“…….“>HTML</a></li>
+<li><ahref=“…..">CSS</a></li>
+<li><ahref=“………..>JavaScript</a></li>
+<li><ahref=“…………..”>XML</a></li>
+</ul>
+</body>
+</html>
+p{display:inline;}
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+Howtocontrolthelayoutonyourwebpages?
+33
+The3waystoformatawebpageare:
+I. UsingCSS(CascadingStyleSheets)
+II. UsingTables
+III. UsingFrames
+http://www.thewebseye.com/website-layout.htm
+Webdesigners are increasinglyusingCSS as
+standardtobothformatandpositionelements
+onawebpagehowevertables andframesare
+stillinuse.
+Using CSS to format layout
+34
+Web Programming CS433
+08:49
+lec4
+Dr Walid M. Aly
+Home Page.html
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+35
+body
+header
+nav
+main
+side
+footer
+HomePage.html
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+36
+<divid="footer">
+<p>……….</p>
+</div>
+</body>
+</html>
+<!DOCTYPEhtml>
+<html>
+<head><title>DemoPage</title>
+<linkrel="stylesheet" type="text/css"
+href="styles.css"/>
+</head>
+<body>
+<divid="header"><h1>Cloud
+computing</h1></div>
+<divid="nav">
+<ul>
+<li><a
+href="http://en.wikipedia.org/wiki/Cloud_computing">Cloud
+artilceonWikipedia</a></li>&nbsp&nbsp&nbsp
+<li><ahref="http://www.ibm.com/cloud-computing">Cloud
+artilceon IBM</a></li>
+</ul>
+</div>
+<divid="main">
+<h2>Introduction</h2>
+<p>
+…..
+</p>
+</div>
+<divid="sidebar">
+<h2>Navigate</h2>
+<ul>
+<li><ahref="#">Link1</a></li>
+<li><ahref="#">Link2</a></li>
+</ul>
+</div>
+WebProgramming CS433 DrWalidM.Aly lec4 08:49
+37
+html{
+background:Aquamarine;
+}
+body{
+width:900px;
+margin:auto;
+background:LawnGreen;
+}
+#header{
+padding:5px10px;
+background:gray;
+color:red
+}
+#nav{
+padding:5px10px;
+background:yellow;
+}
+#main{
+width:600px;
+height:600px;
+padding:10px;
+background:YellowGreen;
+}
+#sidebar{
+float:right;
+width:250px;
+padding:10px;
+height:600px;
+background:red;
+}
+#footer{
+clear:both;
+padding:5px10px;
+background:#cc9;
+}
+#navul{
+margin:0;
+padding:0;
+}
+#navli{
+display:inline;
+}
+Styles.css
+WebUsability
+You Do not
+Have to Think!
+http://bavarianbrathaus.info/
+http://www.libertyvan.com/
+http://dh.ncl.ac.uk/
+http://www.siphawaii.com/
+08:49
+http://nwokillers.weebly.com/our-beliefs.html
+http://himclothing.com/
+38
+Web Programming CS433
+lec4
+Dr Walid M. Aly
+WebProgramming
+Dr Walid M. Aly
+Lecture 5
+Java Script Basics
+08:49
+Dr Walid M. Aly
+1
+Web Programming
+lec5
+Whatis JavaScript?
+• Originally developed by Netscape, as Mocha/ LiveScript
+• Becameajoint venture of Netscape and Sun in 1995,
+renamed JavaScript
+JavaScript is the most popular scripting language on the
+internet, and works in all major browsers, such as
+Internet Explorer, Firefox, Chrome, Opera, and Safari.
+JavaScript was designed to add interactivity to HTML
+pages.
+A scripting language is a lightweight programming
+language.
+JavaScript is usually embedded directly into HTML pages.
+JavaScript is an interpreted language (means that scripts
+execute without preliminary compilation)
+Everyone can use JavaScript without purchasing a
+2
+Web Programming
+license.
+08:49
+Demo2.html
+lec5
+Demo3.html
+Dr Walid M. Aly
+Embedding in HTML docs
+• Either directly, as in
+<script>-- JavaScript script
+</script>
+• Orindirectly, as a file specified in the src attribute of <script>, as in
+<script src = “myScript.js”>
+</script>
+any code within script tags is ignored– External scripts cannot contain <script> tags
+ Ajava script can appear in the HTML Page at the head
+section or the body Section
+ Itis not possible to hide Javascript from the user,
+since their browser needs to download it to execute
+it. The only other option is obfuscation.
+Old examples may have type="text/javascript" in the
+<script> tag.
+This is no longer required. JavaScript is the default
+scripting language in all modern browsers and in HTML5.
+08:49
+lec5
+<head>
+Java script
+</head>
+<body>
+Java script
+</body>
+3
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec5 08:49
+alertFunction
+• Alertfunctionisusedtodisplayoutputmessagetouser
+• Argumentpassedtofunctionisthemessagetobeshown
+4
+…….
+<body>
+<h1>MyFirstWebPage</h1>
+<script>
+alert(“Welcometomysite”);
+</script>
+</body>
+</html>
+Demo1.html
+alert(‘Welcometomysite ‘);
+alert(9+1);
+alert(9);
+alert("3+5="+(3+5));
+alert("Welcome"+"tojavascript");
+alert(“welcome”);
+alert(“welcomeagain”);
+Alert(“hello”);
+x
+alert("Welcome"+"\n"+"tojavascript");
+JavaScript and Java
+• JavaScript and Java are only related through
+syntax of their expressions ,assignments and
+control statements.
+• JavaScript is dynamically typed, ex: variable type
+is not declared
+• JavaScript’s support for objects is very different
+• JavaScript is interpreted– Source code is embedded inside HTML doc, there is
+no compilation
+08:49
+lec5
+5
+Web Programming
+Dr Walid M. Aly
+JavaScript Execution
+• JavaScript scripts are executed entirely by the
+browser
+• Transfer of some load from server to client
+• Userinteractions through forms– Events easily detected with JavaScript– E.g. validate user input (However, HTML5 can help in validation)
+• Oncedownloaded there is no exchange of
+information with the server
+08:49
+lec5
+6
+Web Programming
+Dr Walid M. Aly
+Syntactic Characteristics
+• Identifier :– begin with a letter or underscore or $, followed by any number of letters,
+underscores, and digits, no space allowed.– Identifiers are case sensitive and should not be a keyword
+Ex: sum=10;
+• Comments:– Single line Comment //– MultiLine Comment /* … */
+Ex
+//document.write(“Hello World”);
+08:49
+lec5
+Web Programming
+Dr Walid M. Aly
+JavaScript Variables
+• All primitive values have one of the five types: Number, String,
+Boolean, Undefined, or Null
+• JavaScript is dynamically typed– any variable can be used for
+anything (primitive value or reference to any object)
+• Theinterpreter determines the type of a particular occurrence of a
+variable
+• Variables can be either implicitly or explicitly declared using the
+var keyword
+• Variables implicitly declared should be initialized
+• Variables declared outside a function, become GLOBAL, and all
+scripts and functions on the web page can access it.
+implicitly
+sum = 0;
+today= “Monday”;
+flag= false;
+08:49
+explicitly
+var sum = 0;
+var today= “Monday”;
+var flag= false,
+lec5
+8
+Web Programming
+Dr Walid M. Aly
+Java script literals
+• All numeric values are stored in double-precision floating
+point.
+• String literals are delimited by either ' or “, You can use
+quotes inside a string, as long as they don't match the
+quotes surrounding the string: ex: var answer = "It's
+alright";
+• Boolean values are true and false
+• TheonlyNull value is null, if an attempt is made
+to use a value that is null , a runtime
+error will occur
+• TheonlyUndefined value is undefined ,it is the
+default value for the variables that are
+declared but not assigned
+08:49
+lec5
+9
+Web Programming
+Dr Walid M. Aly
+Java Script Object Orientation
+• JavaScript is NOT an object-oriented
+programming language–Rather object-based
+ JavaScript objects are collections of
+ properties (like the fields of classes in Java)
+ methods
+08:49
+lec5
+10
+Web Programming
+Dr Walid M. Aly
+The document Object
+• JavaScript models the HTML document with the document object
+• Thedocumentobject is a property of window object and can be accessed as
+document or window.document
+• Thedocumentobjecthasamethod,write,whichdynamically creates content– Theparameter of the write method is a string, often concatenated from
+parts, some of which are variables or any HTML tags
+document.write("Hello world1");
+document.write("<h1>Hello world2</h1>");
+document.write("Hello", "<br/>" ,"world3");
+document.write("Answer: ", result, "<br>");– Theparameter is sent to the browser, so it can be anything that can appear in an
+HTML document (any HTMLtags)
+If the HTML code have attributes, use the escape character \” , or single quotation
+document.write(“<img src=\”image.png\” />”);
+document.write(“<img src=‘image.png’ />”);
+DocumentObjectDemo.html
+http://www.w3schools.com/jsref/dom_obj_document.asp
+08:49
+lec5
+11
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec5 08:49
+12
+<!DOCTYPEhtml>
+<html>
+<head>
+<title>Helloworld</title>
+</head>
+<body>
+<script>
+document.write("Hello","<br/>"+"fellowWebprogrammers!");
+</script>
+</body>
+</html>
+hello.html
+The window Object
+• Themodelforthebrowser display window is the Window object
+• Thedocumentobject is a window prperty and can be accessed by
+window.document or simply document
+• TheWindowobjecthasthree basicmethods for creating dialog boxes:– alert– confirm– prompt
+Calling these methods is done by window.methodName() or simply methodname(….)
+1.
+Alert
+window.alert(“The sum is:” + sum + ”\n");– Parameteris plain text, not HTML– Opensadialogboxwhich displays the parameter string
+and an OK button
+• Itwaits for the user to press the OK button
+http://www.w3schools.com/jsref/obj_window.asp
+08:49
+lec5
+13
+Web Programming
+Dr Walid M. Aly
+The window Object.....
+2. Confirm
+var question = window.confirm("Do you
+want to continue this download?");– Opensadialogboxanddisplays the parameter and two
+buttons, OK and Cancel– ReturnsaBooleanvalue, depending on which button
+was pressed (it waits for one)
+confirmDemo.html
+08:49
+lec5
+14
+Web Programming
+Dr Walid M. Aly
+The Window Object.....
+3. Prompt
+window.prompt("What is your name?", “ ");– Opensadialogboxanddisplays its string parameter, along with a
+text box and two buttons, OK and Cancel– Thesecondparameter is for a default response if the user presses
+OKwithout typing a response in the text box (waits for OK)– Iftheuser clicks "OK" the box returns the input value as a
+string. If the user clicks "Cancel" the box returns null.
+If the second argument is omitted , IE shows the word “undefined” , Google chrome shows an
+empty string
+08:49
+lec5
+15
+Web Programming
+Dr Walid M. Aly
+Example: using prompt function
+<!DOCTYPE html>
+<html>
+<head>
+<title> Demo </title>
+</head>
+<body>
+<script type = "text/javascript" >
+name= window.prompt("what is your name");
+window.alert("Hello " + name);
+document.write("Hello ",name);
+</script>
+</body>
+</html>
+08:49
+greeting.html
+lec5
+Dr Walid M. Aly
+16
+Web Programming
+JavaScript Operators- All operations are in double precision
+JavaScript Arithmetic Operators
+Arithmetic operators are used to perform arithmetic between variables and/or values.
+Given that y=5, the table below explains the arithmetic operators:
+JavaScript Assignment Operators
+Assignment operators are used to assign values to JavaScript variables.
+Given that x=10 and y=5, the table below explains the assignment operators:
+08:49
+lec5
+17
+Web Programming
+Dr Walid M. Aly
+JavaScript Operators………..
+Adding Strings and Strings
+The + operator can also be used to add string variables or text values together.
+txt1="What a very ";
+txt2="nice day";
+txt3=txt1+txt2;
+After the execution of the statements above, the variable txt3 contains "What a very nice day".
+Adding Strings and Numbers
+The rule is: If you add a number and a string, the result will be a string!
+x=5+5;
+document.write(x);
+x="5"+"5";
+document.write(x);
+x=5+"5";
+document.write(x);
+10
+55
+55
+08:49
+lec5
+Dr Walid M. Aly
+18
+Web Programming
+JavaScript Operators………..
+JavaScript Comparison and Logical Operators
+Comparison and Logical operators are used to test for true or false.
+Comparison Operators
+x=5;
+if (age<18) document.write("Too young");
+Logical Operators
+Conditional Operator
+variablename=(condition)?value1:value2
+greeting=(visitor=="PRES")?"Dear President ":"Dear ";
+08:49
+lec5
+19
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec5 08:49
+20
+if(condition)
+{
+codetobeexecutedifconditionis
+true
+}
+if(condition)
+{
+codetobeexecutedifconditionistrue
+}
+else
+{
+codetobeexecutedifconditionisnottrue
+}
+if(condition1)
+{
+codetobeexecutedifcondition1is
+true
+}
+elseif(condition2)
+{
+codetobeexecutedifcondition2is
+true
+}
+else
+{
+codetobeexecutedifneither
+condition1
+norcondition2istrue
+}
+Conditionalif-else
+if(answer==10)
+{
+window.alert“CorrectAnswer”);
+}
+Example : Simple Question
+var inCorrect= “;“هباجألا ريغ هحيحا
+var correct=“; "هباجألا هحيحا
+var answer=window.prompt;(“ ”,”(” 5اأ لأهح جمج 5 و
+if (answer!=10)
+{
+flag=window.confirm “;((”هجألا أطخ! لأوح اغم هأغا
+if(flag)
+answer=window.prompt;(“ ”,” (“اأ لأهح جمج 5 و 5؟
+}
+if (answer==10)
+document.write(correct);
+else
+document.write(inCorrect);
+08:49
+simpleQuestion.html
+lec5
+21
+Web Programming
+Dr Walid M. Aly
+Conditional switch
+statement
+switch(n)
+{
+case 1:
+execute code block 1
+break;
+case 2:
+execute code block 2
+break;
+default:
+code to be executed if n is different from case 1 and 2
+}
+ The expression n can be a number or acharacter or a String
+ Use the switch statement to select one of many blocks of code to be executed
+ a single expression n (most often a variable), that is evaluated once. The value of the
+expression is then compared with the values for each case in the structure. If there is a
+match, the block of code associated with that case is executed. Use break to prevent the
+code from running into the next case automatically.
+ Use the default keyword to specify what to do if there is no match
+08:49
+lec5
+22
+Web Programming
+Dr Walid M. Aly
+Example : simple switch case Demo
+….
+<body>
+<script type = "text/javascript" >
+var country = prompt("Enter the name of country\n" +"to display its capital city" );
+switch (country) {
+case "Egypt":
+window.alert("Cairo");
+break;
+case "France":
+window.alert("Paris");
+break;
+case "England":
+window.alert("London");
+break;
+default: window.alert("unknown City");
+}
+</script>
+</body>
+</html>
+08:49
+simpleSwitchCaseDemo.html
+lec5
+23
+Web Programming
+Dr Walid M. Aly
+Example : dynamic setting of table border
+<script type = "text/javascript" >
+var bordersize;
+bordersize = prompt("Select a table border size \n" +
+"0 (no border) \n" +
+"1 (1 pixel border) \n" +
+"4 (4 pixel border) \n" +
+"8 (8 pixel border) \n");
+switch (bordersize) {
+case "0": document.write("<table>");
+break;
+case "1": document.write("<table border = '1'>");
+break;
+case "4": document.write("<table border = '4'>");
+break;
+case "8": document.write("<table border = '8'>");
+break;
+default: document.write("Error- invalid choice: ",
+bordersize, "<br />");
+document.write("<table>");
+}
+</script>
+<caption> Clubs </Caption>
+<tr><th> Club Name </th>
+<th> Establishment Year </th>
+</tr>
+<tr> <td> zamalek</td><td> 1911 </td> </tr>
+</table>
+08:49
+lec5
+24
+Web Programming
+DynamicBorders.html
+Dr Walid M. Aly
+Loops
+• Java script has the following structure for loop– for loops– while– do-while
+Javascript supports break & continue
+08:49
+lec5
+25
+Dr Walid M. Aly
+Web Programming
+Loops
+For Loops
+for(variable=startvalue;variable<=endvalue;variable=variable+increment)
+{
+code to be executed
+}
+Note: The increment parameter could also be negative, and the <= could be any comparing
+statement
+<script type="text/javascript">
+for (i=0;i<=5;i++)
+{
+document.write("The number is " + i);
+document.write("<br />");
+}
+</script>
+08:49
+forDemo.html
+lec5
+Dr Walid M. Aly
+26
+Web Programming
+WebProgramming DrWalidM.Aly lec5 08:49
+27
+<scripttype="text/javascript">
+for(i=1;i<=6;i++)
+{
+document.write("<h"+i+">Thisisheading"+i);
+document.write("</h"+i+">");
+}
+</script>
+Example:printingdifferentHeaders
+printingHeaders.html
+while
+Loops...........
+while (variable<=endvalue)
+{
+code to be executed
+}
+do-while
+do
+{
+code to be executed
+}
+while (variable<=endvalue);
+<script type="text/javascript">
+var i=0;
+while(i<=10)
+{
+document.write("<li>" + "Hello "+ i + " </li>");
+i++;
+}
+</script>
+whileDemo.html
+The <= could be any comparing operator.
+08:49
+28
+Dr Walid M. Aly
+Web Programming
+lec5
+WebProgramming DrWalidM.Aly lec5 08:49
+Functions
+functionfunctionname(var1,var2,...,varX)
+{
+somecode
+}
+functionhello()
+{
+window.alert(“HelloWorld!”);
+}
+❑Weplace functiondefinitionsintheheadorbodyoftheHTMLdocumentwithinajavascript
+orinexternaljsfiles.
+❑JavaScriptfunctionscanbecalledbeforetheyaredeclared(JavaScriptDeclarationsare
+Hoisted)
+❑Functionnamesarecasesensitive(unlikePHP)
+Syntax
+Afunctionisablockofcodethatwillbeexecutedbyaneventorbyacalltothe
+function.
+<scripttype="text/javascript">
+hello();
+</script>
+Whenusingdocument.write()insideafunction,theentireHTML
+pagewillbeoverwritten
+WebProgramming DrWalidM.Aly lec5 08:49
+3030 FunctioncallDemo1.html FunctioncallDemo2.html FunctioncallDemo3.html script
+<!DOCTYPEhtml>
+<html>
+<head>
+<scripttype="text/javascript">
+functionhello(){
+window.alert("HelloWorld!");
+}
+</script>
+<title>FunctionCallDemo1.html</title>
+</head>
+<body>
+<scripttype="text/javascript">
+hello();
+</script>
+</body>
+</html>
+Example:callingamethod
+Functions– parameters
+• Thereis no type checking of parameters, nor is the number of
+parameters checked– excess actual parameters are ignored, excess formal parameters
+are set to undefined
+function m(a, b) {
+document.write(“a=“+a);
+document.write(“b=“+b);
+}
+// A test driver for function params
+m(“Ahmed");
+m(“Ahmed", “Mohamed");
+m(" Ahmed", “Mohamed“,“Aly");
+parametersDemo.html
+it is not possible to overload functions in Javascript
+08:49
+lec5
+31
+Web Programming
+Dr Walid M. Aly
+The return Statement
+The return statement is used to specify the value that is returned from the function.
+functions that are going to return a value must use the return statement.
+If there is no return or if return has no parameter, undefined is returned
+<head>
+<script type="text/javascript">
+function product(a,b)
+{
+return a*b;
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write(product(4,3));
+</script>
+Note: product(3); returns NAN , as undefined multiplied by any number =NAN
+08:49
+lec5
+32
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec5 08:49
+CallingFunctionautomaticallywithevents
+• Eventmodelinhtmlissimpleandbasedonattributes.
+33
+HTMLdocumentationshowswhicheventattributesarevalidwithwhichtags
+http://www.w3schools.com/tags/ref_eventattributes.asp
+Attribute Value Description
+onload script Scripttoberunwhenadocumentload
+onunload script Scripttoberunwhenadocumentunload
+onclick script Scripttoberunonamouseclick
+onsubmit script Scripttoberunwhenaformissubmitted
+onfocus script Scripttoberunwhenanelementgetsfocus
+onblur script Scripttoberunwhenanelementlosesfocus
+onmouseover script Scripttoberunwhenmousepointermovesoveran
+element
+onclick="displaymessage()” Example
+WebProgramming DrWalidM.Aly lec5 08:49
+Example:clickingabuttondisplaysamessage
+……..
+<head>
+<scripttype="text/javascript">
+functiondisplaymessage()
+{
+alert("HelloWorld!");
+}
+</script>
+</head>
+<body>
+<form>
+<inputtype="button"value="Clickme!"onclick="displaymessage()"/>
+</form>
+</body>
+</html>
+34
+simpleEventFuctionDemo.html
+<ahref="#"onclick="alert('Hello!');">clickme</a>
+<inputtype="button"value="Clickme!"onclick="alert('FirstHello!');alert('SecondHello!!')“/>
+simpleEventDemo2.html
+<ahref=“JavaScript:m()“>clickme</a>
+Event attributes
+Web Programming
+08:49
+Dr Walid M. Aly
+lec5
+WebProgramming DrWalidM.Aly lec5 08:49
+VariablescopeinJavaScript
+• Variablesdeclaredinfunctionsusingthekeyword vararelocalvariables
+• Variablesdeclaredinfunctionswithoutthekeyword varareglobal
+• Variablesdeclaredoutsideofafunctionhaveglobalscope.Inthiscase,a
+functioncanaccessnotonlyitslocallydeclaredvariablesbutalsothose
+variablesthataredeclaredoutsideofthefunction—globalvariables
+36
+<script>
+functionm1()
+{x=10;}
+</script>
+<script>
+functionm2()
+{document.write(x);}
+</script>
+<script>m1();m2();</script>
+<script>
+functionm1()
+{varx=10;}
+</script>
+<script>
+functionm2()
+{document.write(x);}
+</script>
+<script>m1();m2();</script>
+10
+varcounter=0;
+functionadd(){
+counter+=1;
+}
+add();add();add();
+//thecounteris
+//nowequalto3
+Function Expressions
+• AJavaScript function can also be defined using
+an expression. A function expression can be
+stored in a variable:
+var x = function (a, b) {return a * b};
+var z = x(4, 3);
+The function above is actually an anonymous function (a function
+without a name).
+Functions stored in variables do not need function names. They are
+always invoked (called) using the variable name.
+08:49
+lec5
+37
+Web Programming
+Dr Walid M. Aly
+Self-Invoking Functions
+• Functionexpressions can be made "self-invoking".
+• Aself-invoking expression is invoked (started) automatically, without being called.
+• Functionexpressions will execute automatically if the expression is followed by ().
+• Youcannotself-invoke a function declaration.
+• You have to add parentheses around the function to indicate that it is a function
+expression:
+(function () {
+var x = "Hello!!";
+})();
+// I will invoke myself
+08:49
+lec5
+38
+Web Programming
+Dr Walid M. Aly
+JavaScript Nested Functions
+JavaScript supports nested functions. Nested functions have access to the
+scope "above" them.
+function add() {
+var counter = 0;
+counter += 1;
+}
+add();add();add();
+// the counter should now be 3, //but
+it does not work !
+function add() {
+var counter = 0;
+function plus() {counter += 1;}
+plus();
+return counter;
+}
+08:49
+lec5
+39
+Web Programming
+Dr Walid M. Aly
+JavaScript Closures
+Aclosure is a function having access to the parent scope, even after the parent function has
+closed.
+var add = (
+function () {
+var counter = 0;
+return function () {return counter += 1;}
+}
+)
+();
+add();add();add();
+// the counter is now 3
+• The variable add is assigned the return value of a self-invoking function.
+• The self-invoking function only runs once. It sets the counter to zero (0), and returns a
+function expression.
+• This way add becomes a function. The "wonderful" part is that it can access the counter in
+the parent scope.
+08:49
+lec5
+40
+Web Programming
+Dr Walid M. Aly
+JavaScript variable Scope
+Local JavaScript Variables
+Global JavaScript Variables
+08:49
+Automatically Global
+ Local variables are deleted when the function is
+completed.
+ Global variables are deleted when you close the
+page.
+ In HTML, the global scope is the window object: All
+global variables belong to the window object.
+lec5
+41
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec5 08:49
+Exampleofeffectofvaronvariablescope
+42
+external=5;
+functionfirsttry()
+{
+varexternal=6;
+alert("firstTry:"+external);
+}
+functionsecondtry()
+{
+external=7;
+alert("secondTry:"+external);
+}
+alert(external);//Prints5
+firsttry();//Prints6
+alert(external);//Prints5
+secondtry();//Prints7
+alert(external);//Prints7
+JavaScript Validation
+http://www.jslint.com/
+08:49
+Error Console
+lec5
+43
+Web Programming
+Dr Walid M. Aly
+WebProgramming
+Dr Walid M. Aly
+Lecture 6
+Java Script Objects
+08:49
+Dr Walid M. Aly
+1
+Web Programming
+lec6
+Java Script Object Orientation
+• Javascript has some very useful built-in JavaScript objects.
+• Weusedtill now2objects window & document
+• JavaScript objects are collections of properties and
+methods , which are like the members of classes in Java
+• objects are created with constructor.
+• Properties are the values associated with an object.– Example a property that store the number of characters in a
+String
+• Methods are the actions that can be performed on
+objects.– Example amethods that change a String to upper case
+http://www.w3schools.com/jsref/default.asp
+08:49
+lec6
+2
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec6 08:49
+JavaScriptObjects
+Description Object
+.Thewindowobjectrepresentsanopenwindowinabrowser Windowobject
+.Thenavigatorobjectcontainsinformationaboutthebrowser Navigatorobject
+Thescreenobjectcontainsinformationaboutthevisitor'sscreen. Screenobject
+ThehistoryobjectcontainstheURLsvisitedbytheuser Historyobject
+ThelocationobjectcontainsinformationaboutthecurrentURL Locationobject
+3
+Description Object
+.usedtostoremultiplevaluesinasinglevariable Arrayobject
+usedtoconvertanon-BooleanvaluetoaBooleanvalue Booleanobject
+usedtoworkwithdatesandtimes. Dateobject
+allowsyoutoperformmathematicaltasks Mathobject
+TheNumberobjectisanobjectwrapperforprimitive
+numericvalues
+Numberobject
+.usedtomanipulateastoredpieceoftext Stringobject
+.describesapatternofcharacters RegExpobject
+.usedwithallthebuilt-inJavaScriptobjects Global
+Java Script Object Orientation...
+• Objects are created using constructors and the new keyword– today=new Date();– String objects are created directly
+• txt=“ Hello World”;
+• Properties are accessed by objectName.property– var txt="Hello World!";
+document.write(txt.length);– Methodsarecalled by objectName.method name
+• varday=today.getDay()
+• varstr="Hello world!";
+document.write(str.toUpperCase());
+08:49
+lec6
+Dr Walid M. Aly
+4
+Web Programming
+JS Global
+The JavaScript global properties and functions can be used with all the
+built-in JavaScript objects.
+• JavaScript Global Properties
+Infinity , NaN, and undefined
+JavaScript Global Functions
+isNaN() : Determines whether a value is an illegal number
+parseFloat()Parses a string and returns a floating point number
+parseInt() Parses a string and returns an integer
+eval():evaluate an expression
+http://www.w3schools.com/jsref/jsref_obj_global.asp
+globalDemo.html
+08:49
+Dr Walid M. Aly
+5
+Web Programming
+lec6
+WebProgramming DrWalidM.Aly lec6 08:49
+Example:usingaglobalfunction:parseFloat
+6
+functionAdder(){
+varinput1=window.prompt("EnterFirstNumber:");
+varinput2=window.prompt("EnterSecondNumber:");
+varnum1=parseFloat(input1);
+varnum2=parseFloat(input2);
+varresult=num1+num2;
+window.alert("Sum="+result);
+}
+simpleCalculater.html
+JavaScript window Object
+•The window object model the browser window
+•Wealready used the method alert, confirm and prompt of this object
+•The window objects has a property location and a method setTimeout
+location
+the Location object for the window
+The location object model the current URL.
+•setTimeout(code,millisec)
+• Calls a function or evaluates an expression after a specified number of milliseconds
+• TheIDvaluereturned by setTimeout() is used as the parameter for the clearTimeout()
+method
+Parameter
+Description
+function
+milliseconds
+Required. The function that will be executed
+Required. The number of milliseconds to wait before executing the code
+Return Value: A Number, representing the ID value of the timer that is set. Use this value
+with the clearTimeout() method to cancel the timer
+08:49
+lec6
+7
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec6 08:49
+8
+<head>
+<scripttype="text/javascript">
+functiondelayer(){
+window.location="http://www.maktoob.com"
+}
+</script>
+</head>
+<bodyonLoad="window.setTimeout('delayer()',5000)">
+<h2>Preparetoberedirected!</h2>
+<p>Thispageisatimedelayredirect,pleaseupdateyourbookmarkstoournew
+location!</p>
+</body>
+RedirectDemo.html
+Example :RedirectionusingWindowObject
+RedirectDemo2
+functiongo(){
+a=window.confirm("Areyousureyouwanttoexit");
+if(a)
+window.location="http://www.maktoob.com";
+}
+<inputtype="button"value="Yahoo."onclick="go()">
+Example:Usingabuttonasalinktoexecuteredirection
+WebProgramming DrWalidM.Aly lec6 08:49
+JavaScriptMathObject
+9
+The Math object allows you to perform mathematical tasks.
+MathObjectMethods
+Method Description
+abs(x) Returnstheabsolutevalueofx
+acos(x) Returnsthearccosineofx,inradians
+asin(x) Returnsthearcsineofx,inradians
+atan(x) Returnsthearctangentofxasanumericvaluebetween-PI/2andPI/2radians
+atan2(y,x) Returnsthearctangentofthequotientofitsarguments
+ceil(x) Returnsx,roundedupwardstothenearestinteger
+cos(x) Returnsthecosineofx(xisinradians)
+exp(x) ReturnsthevalueofEx
+floor(x) Returnsx,roundeddownwardstothenearestinteger
+log(x) Returnsthenaturallogarithm(baseE)ofx
+max(x,y,z,...,n) Returnsthenumberwiththehighestvalue
+min(x,y,z,...,n) Returnsthenumberwiththelowestvalue
+pow(x,y) Returnsthevalueofxtothepowerofy
+random() Returnarandomnumberbetween0(inclusive)and1(exclusive)
+round(x) Roundsxtothenearestinteger
+sin(x) Returnsthesineofx(xisinradians)
+sqrt(x) Returnsthesquarerootofx
+tan(x) Returnsthetangentofanangle
+varx=Math.PI;
+vary=Math.sqrt(16);
+document.write(Math.round(4.7));
+document.write(Math.random());
+Example : Random link using Math Object
+<body>
+<script type="text/javascript">
+var r=Math.random();
+if (r>0.5)
+{
+document.write("<a href='http://www.w3schools.com'>Learn Web evelopment!</a>");
+}
+else
+{
+document.write("<a href='http://www.wikipedia.org/'>Visit Wikipedia!</a>");
+}
+</script>
+</body>
+RandomLink.html
+08:49
+lec6
+Dr Walid M. Aly
+10
+Web Programming
+JavaScript String Object
+• TheString object is used to manipulate a stored piece
+of text.
+• String objects are created directly or with new String().– var txt = new String(“Ahmed");– var txt = “Ahmed";
+• Thenumberofcharacters in a string is stored in the
+lengthproperty
+var str = “Ahmed”;
+var len = str.length;
+08:49
+lec6
+11
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec6 08:49
+StringObjectMethods
+12
+Method Description
+charAt() Returnsthecharacteratthespecifiedindex
+indexOf() Returnsthepositionofthefirstfoundoccurrenceofaspecifiedvalueina
+stringor-1
+lastIndexOf() Returnsthepositionofthelastfoundoccurrenceofaspecifiedvalueinastring
+match() Searchesforamatchbetweenaregularexpressionandastring,andreturns
+thematchesornull;
+replace() Searchesforamatchbetweenasubstring(orregularexpression)anda
+string,andreplacesthematchedsubstringwithanewsubstring
+substring() Extractsthecharactersfromastring,betweentwospecifiedindicesor
+startingfromoneindex
+toLowerCase() Convertsastringtolowercaseletters
+toUpperCase() Convertsastringtouppercaseletters
+<scripttype="text/javascript">
+varstr="HelloWorld!";
+document.write(str.indexOf("World")+"<br/>");
+document.write(str.indexOf("world")+"<br/>");
+document.write(str.match("World")+"<br/>");
+document.write(str.match("world")+"<br/>");
+document.write(str.replace("World","AAST")+"<br/>");
+</script>
+StringDemo1.html
+Hello
+World
+WebProgramming DrWalidM.Aly lec6 08:49
+13
+Return the first and last character of a string:
+<script>
+varstr="Helloworld!";
+document.write("Firstcharacter:"+
+str.charAt(0)+"<br/>");
+document.write("Lastcharacter:"+
+str.charAt(str.length-1));
+</script>
+Firstcharacter:H
+Lastcharacter:!
+<script>
+varstr="Helloworld!";
+document.write(str.substring(3)+"<br/>");
+document.write(str.substring(3,7));
+</script>
+Extractcharactersfromastring:
+loworld!
+low
+HelloWorld!
+HelloWorld!
+Split function
+The split() method is used to split a string into an array of substrings, and returns the
+new array.
+<script type="text/javascript">
+var str="How are you doing today?";
+document.write(str.split() + "<br />");
+document.write(str.split(" ") + "<br />");
+document.write(str.split("") + "<br />");
+document.write(str.split(" ",3));
+</script>
+<script type="text/javascript">
+var str="name=Ahmed Aly";
+values=str.split("=");
+document.write(values[0]+"<br/>");
+document.write(values[1]);
+</script>
+08:49
+How areyou doing today?
+How areyou doing today?
+How,are,you,doing,today?
+H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+How,are,you
+name
+AhmedAly
+14
+Web Programming
+lec6
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec6 08:49
+StringHTMLWrapperMethods
+15
+Method Description
+anchor() Createsananchor
+big() Displaysastringusingabigfont
+blink() Displaysablinkingstring
+bold() Displaysastringinbold
+fontcolor() Displaysastringusingaspecifiedcolor
+fontsize() Displaysastringusingaspecifiedsizefrom1to7
+italics() Displaysastringinitalic
+link() Displaysastringasahyperlink
+small() Displaysastringusingasmall font
+strike() Displaysastringwithastrikethrough
+sub() Displaysastringassubscripttext
+sup() Displaysastringassuperscripttext
+TheHTMLwrappermethodsreturnthestringwrappedinsidetheappropriateHTMLtag.
+Example: creating a link using link()
+Display the text: "Free Web Building Tutorials!" as a hyperlink:
+<script>
+var str = "Free Web Building Tutorials!";
+document.write(str.link("http://www.w3schools.com"));
+</script>
+08:49
+lec6
+16
+Dr Walid M. Aly
+Web Programming
+Example : Using String HTML Wrapper Methods
+<script >
+var word="Hello";
+document.write(word.fontcolor("red"));
+document.write("<br/>");
+document.write(word.bold());
+document.write("<br/>");
+document.write(word.italics().strike());
+document.write("<br/>");
+word=word.fontsize(7);
+word=word.fontcolor("green");
+document.write(word);
+</script>
+17
+Dr Walid M. Aly
+Web Programming
+08:49
+lec6
+WebProgramming DrWalidM.Aly lec6 08:49
+JavascriptNavigatorObject
+• TheNavigatorobjectcontainsinformationaboutthevisitor'sbrowser
+name,version,andmore.
+18
+Property Description
+appCodeName Returnsthecodenameofthebrowser
+appName Returnsthenameofthebrowser
+appVersion Returnstheversioninformationofthebrowser
+cookieEnabled Determineswhethercookiesareenabledinthe
+browser
+platform Returnsforwhichplatformthebrowser iscompiled
+Method Description
+javaEnabled() SpecifieswhetherornotthebrowserhasJava
+enabled
+Example : Using navigator Object
+<script type="text/javascript">
+var BrowserName=navigator.appName;
+document.write("You are using the Browser :"+ BrowserName +"<br/>");
+var BrowserVersion= navigator.appVersion;
+document.write("Your Browser Version :"+ BrowserVersion+"<br/>");
+if( navigator.cookieEnabled)
+document.write("cookies are enabled"+"<br/>");
+else
+document.write("cookies are not enabled"+"<br/>");
+if( navigator.javaEnabled())
+document.write("Your Browser support java "+"<br/>");
+else
+document.write("Your Browser does not support java"+"<br/>");
+</script>
+08:49
+lec6
+NavigatorDemo.html
+Dr Walid M. Aly
+19
+Web Programming
+JavaScript Date Object
+Some examples of creation of a date:
+var today = new Date()
+var d1 = new Date("October 13, 1975 11:13:00")
+var d2 = new Date(79,5,24)
+var d3 = new Date(79,5,24,11,33,0)
+• Localtimemethodsof Date:– getDate–returns the day of the month (1-31)– getMonth–returns the month of the year (0– 11)– getDay–returns the day of the week (0– 6), where Sunday is equivalent to zero– getFullYear– returns the year– getHours–returns the hour (0– 23)– getMinutes– returns the minutes (0– 59)– setDate()-Sets the day of the month (from 1-31)– setFullYear()-Sets All data year , month ,day– setHours()-Sets the hour (from 0-23)– setMinutes()-Set the minutes (from 0-59)– setSeconds()-Sets the seconds (from 0-59)
+Whenanobject of class Date is printed to screen , a description of date is shown
+d=new Date(); document.write(d);
+08:49
+lec6
+20
+Web Programming
+Dr Walid M. Aly
+Example : dynamic day greeting
+<script >
+//If the time is less than 10, you will get a "Good morning" greeting.
+//Otherwise you will get a "Good day" greeting.
+var d = new Date();
+var time = d.getHours();
+if (time < 10)
+{
+document.write("Good morning!");
+}
+else
+{
+document.write("Good day!");
+}
+</script>
+08:49
+gereeting.html
+lec6
+Dr Walid M. Aly
+21
+Web Programming
+WebProgramming DrWalidM.Aly lec6 08:49
+22
+gereeting2.html
+…..
+<scripttype="text/javascript" >
+functiongetGreeting(hour)
+{
+if(hour<10)
+return"GoodMorning";
+if(hour<17)
+return"GoodAfternoon";
+else
+return"GoodEvening";
+}
+</script>
+<h1>Hello</h1>
+<scripttype="text/javascript" >
+vartoday=newDate();
+varhour=today.getHours();
+varmessage=getGreeting(hour);
+document.write(message);
+</script>
+Example:dynamicdaygreetingusingafunction
+JavaScript Array Object
+• Array elements can be primitive values or references to other
+objects
+• theelements of an array need not have the same type.
+Create an Array
+An array can be defined in three ways.
+var myCars=new Array();
+myCars[0]=“Matrix ";
+myCars[1]="Volvo";
+myCars[2]="BMW";
+var myCars=new Array(" Matrix ","Volvo","BMW"); // condensed array
+var myCars=[" Matrix ","Volvo","BMW"]; // literal array
+•If you specify numbers or true/false values inside the array then the variable type will be
+Number or Boolean, instead of String.
+08:49
+lec6
+Dr Walid M. Aly
+23
+Web Programming
+Access an Array
+• Youcan refer to a particular element in an array by referring
+to the name of the array and the index number. The index
+number starts at 0.
+document.write(myCars[0]);
+alert(mycars[0));
+If you print the array, all elements are printed
+• ArrayLength– Length is dynamic- the length property stores the length
+• length property is writeable
+myList.length = 150;– Thelength of an array is the highest subscript to which an element has
+been assigned, plus 1
+myList[122] = “Hello"; // length is 123– Assigning a value to an element that does not exist creates that element
+08:49
+lec6
+24
+Dr Walid M. Aly
+Web Programming
+WebProgramming DrWalidM.Aly lec6 08:49
+25
+Method Description
+concat() Joinstwoormorearrays,andreturnsacopyofthejoined
+arrays
+join(separator) Joinsallelementsofanarrayintoastring,Theelementswillbe
+separatedbyaspecifiedseparator.Thedefaultseparatoriscomma(,)
+pop() Removesthelastelementofanarray,andreturnsthat
+element
+push() Addsnewelementstotheendofanarray,andreturnsthe
+newlength
+reverse() Reversestheorderoftheelementsinanarray
+slice() Selectsapartofanarray,andreturnsthenewarray
+sort() Sortstheelementsofanarray
+Arraymethods
+arrayDemo.html
+Indexing in JavaScript Arrays
+• Many programming languages support arrays with named
+indexes.
+• Arrays with named indexes are called associative arrays (or
+hashes).
+• JavaScript does not support arrays with named indexes.
+• InJavaScript, arrays always use numbered indexes.
+08:49
+lec6
+26
+Web Programming
+Dr Walid M. Aly
+WebProgramming DrWalidM.Aly lec6 08:49
+27
+<scripttype="text/javascript" >
+vararr1=newArray();
+arr1[0]="Ahmed";
+arr1[1]="Mohamed";
+arr1[2]="Taerk";
+document.write("arr1="+arr1);
+document.write("<br/><br/>");
+vararr2=newArray();
+arr2[0]="AKram";
+document.write("arr2="+arr2);
+document.write("<br/><br/>");
+///concat
+vararr=arr1.concat(arr2);
+document.write("arrfromconcatarr1,arr2="+arr);
+document.write("<br/><br/>");
+//join
+x=arr.join(":");
+document.write("stringfromjoinwith:="+x);
+document.write("<br/><br/>");
+//pop
+x=arr.pop();
+document.write("elementfrompopis"+x);
+document.write("<br/><br/>");
+document.write("arrafterpop="+arr);
+document.write("<br/><br/>");
+//push
+x=arr.push("Aly");
+document.write("lengthafterpushis"+x);
+document.write("<br/><br/>");
+document.write("arrafterpush="+arr);
+document.write("<br/><br/>");
+</script>
+Example :Return the name of the weekday (not just a number)
+<script type="text/javascript">
+var d=new Date();
+var weekday=new Array();
+weekday[0]="Sunday";
+weekday[1]="Monday";
+weekday[2]="Tuesday";
+weekday[3]="Wednesday";
+weekday[4]="Thursday";
+weekday[5]="Friday";
+weekday[6]="Saturday";
+document.write("Today is " + weekday[d.getDay()]);
+</script>
+08:49
+dateDayDemo.html
+lec6
+Dr Walid M. Aly
+28
+Web Programming
+WebProgramming DrWalidM.Aly lec6 08:49
+JavaScriptNumberObject
+29
+varnum=newNumber(value);
+TheNumberobjectisanobjectwrapperforprimitivenumericvalues.
+TheNumberObjecthassomeusefulproperties
+MethodsinNumber canbecalleddirectlyyprimitivevalues
+NumberObjectProperties
+Property Description
+MAX_VALUE ReturnsthelargestnumberpossibleinJavaScript
+MIN_VALUE ReturnsthesmallestnumberpossibleinJavaScript
+NEGATIVE_INFINITY Representsnegativeinfinity(returnedonoverflow)
+POSITIVE_INFINITY Representsinfinity(returnedonoverflow)
+NumberObjectMethods
+Method Description
+toFixed(x) Formatsanumberwithxnumbersofdigitsafterthedecimalpointbyrounding
+toPrecision(x) Formatsanumbertoxlengthbyrounding,Adecimalpointwithzerosare
+added(ifneeded),tocreatethespecifiedlength.
+varnum=10;varresult=num.toFixed(2);//resultwillequal10.00
+num=930.9805;result=num.toFixed(3);//resultwillequal930.981
+num=500.2349;result=num.toPrecision(4);//resultwillequal500.2
+num=5000.2349;result=num.toPrecision(4);//resultwillequal5000
+num=555.55;result=num.toPrecision(2);//resultwillequal5.6e+2
+num=555.55;result=num.toPrecision(6);//resultwillequal555.550
+DOM
+WebProgramming
+CS333/CS614
+Dr Walid M. Aly
+Lecture 7
+DOM&JavaScript
+http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-37041454
+08:49
+Dr Walid M. Aly
+1
+Web Programming CS333–CS614
+lec7
+The HTML Document Object Model :DOM
+DOM
+• HTML DOM is an abstract model that defines the interface
+between HTML documents and application programs.
+• It defines language-agnostic interfaces which abstract HTML
+documents as objects and mechanisms to manipulate this
+abstraction.
+• HTML DOMLevel 2 was published in late 2000. It introduced
+the "getElementById" function, DOM 3 (April 2004).
+• HTML DOM defines a standard way for accessing and
+manipulating HTML documents.– Alanguage that supports the DOM must have a binding to
+the DOM constructs
+08:49
+lec7
+2
+Dr Walid M. Aly
+2
+Web Programming CS333–CS614
+DOM
+DOMNodes
+• Everypiece of an HTML document (element,attribute,text,…) is
+modeled in the web browser by a DOM node
+• TheNodeobject represents a node in the HTML document.
+• AnodeinanHTMLdocumentis:
+• TheDocument
+• Anelement
+• Anattribute
+• Text
+08:49
+Dr Walid M. Aly
+3
+Web Programming CS333–CS614
+lec7
+DOM
+DOMNodes
+• Nodes are related to each other through child
+parent relationships
+• An html element inside another element is said
+to be its child, the containing element is known
+as parent
+• Anode can have multiple children but only one
+parent
+• Nodes with the same parent are known as
+siblings
+08:49
+lec7
+4
+Dr Walid M. Aly
+Web Programming CS333–CS614
+DOM
+JavaScript and HTML DOM– In the JavaScript binding, HTML elements are represented as
+objects and element attributes are represented as properties– e.g., <input type = "text" name = "address">
+• would be represented as an Input Text object with two properties,
+typeandname,withthe values "text" and "address"
+• JavaScript document Object– Each HTML document loaded into a browser window
+becomes a Document object.– The JavaScript document object provides access to all
+HTMLelements in a page, from within a script.– The Document object is also part of the Window object, and
+can be accessed through the window.document property.
+DHTMLDemo1.HTML
+08:49
+lec7
+5
+Dr Walid M. Aly
+Web Programming CS333–CS614
+DOM
+JavaScript Execution Environment
+• TheWindowobject provides the largest
+enclosing referencing environment for scripts
+• Implicitly defined Window properties:–document-areference to the Document
+object that the window displays–frames-anarray of references to the
+frames of the document
+08:49
+lec7
+Dr Walid M. Aly
+6
+Web Programming CS333–CS614
+DOM
+HTMLDOMObjectsReference
+Input Text object
+Link object
+Meta object
+Object object
+Option object
+Select object
+Style object
+Table object
+th object
+tr object
+Frameset object
+Image object
+Input Button object
+Input Checkbox object
+Input File object
+Input Hidden object
+Input Password object
+Input Radio object
+Input Reset object
+Input Submit object
+td object
+08:49
+lec7
+Document object
+Event object
+HTMLElement object
+Anchor object
+Area object
+Base object
+Body object
+Button object
+Form object
+Frame/IFrame object
+Textarea object
+Dr Walid M. Aly
+7
+Web Programming CS333–CS614
+HTMLDOMHTMLElementObject
+DOM
+An HTML element is everything from the start tag to the end
+Tag
+<p> Hello World </p>
+<a href=www.cnn.com> cnn </a>
+<p><b>Cloud Computing</b></p>
+The HTMLElement collections, properties, and methods can be used on all HTML elements.
+HTMLElement Properties
+innerHTML
+style
+Sets or returns the HTML contents (+text) of an
+element
+Sets or returns the style attribute of an element
+HTMLElement Methods
+focus ()
+blur()
+select()
+Gives focus to an element
+Removes focus from an element
+select element
+08:49
+lec7
+Dr Walid M. Aly
+8
+Web Programming CS333–CS614
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+HTMLDocumentObject
+9
+Property Description
+anchors[] Returnsacollectionofall<a>elementsinthedocumentthathavea
+nameattribute
+forms[] Returnsanarrayofall theformsinthedocument
+images[] Returnsanarrayofall theimagesinthedocument
+title The titleofthedocument
+Body Returnsthebodyelementofthedocument
+links Returnsacollectionofall<a>and<area>elementsinthedocument
+thathaveahrefattribute
+Method Description
+getElementById() Accessesthefirstelementwiththespecifiedid
+DHTMLDemo1.HTML
+EveryDocument objecthas:-forms-anarrayofreferencestotheformsofthedocument
+EachformsobjecthasanHTMLelementsarray,whichhasreferences
+totheform’selements- PropertyarraysforHTMLelementslikelinks,&images
+http://www.w3schools.com/jsref/dom_obj_document.asp
+TheDocumentobjectcanalsousethepropertiesandmethodsoftheNodeobject.
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+HTMLDOMFormObject
+10
+Collection Description
+elements[] Returnsanarrayofallelementsinaform
+Property Description
+action Setsorreturnsthevalueoftheactionattributeinaform
+length Returnsthenumberofelementsinaform
+method Setsorreturnsthevalueofthemethodattributeinaform
+name Setsorreturnsthevalueofthenameattributeinaform
+MethodDescription
+reset() Resetsaform
+submit()Submitsaform
+Event Theeventoccurswhen...
+onreset Theresetbuttonisclicked
+onsubmitThesubmitbuttonisclicked
+document.forms[0].submit()
+document.forms[0].reset()
+document.forms[0].action=“the_other_script.pl”;
+DOM
+Element Access in JavaScript
+• Thereare several ways to do it
+1. DOMaddress– Usetheimplicit arrays,– eachformhas animplicit array elements storing the elements in
+form– Example (a document with just one form and one widget):
+<form action = "">
+<input type = "button" name = "pushMe">
+</form>– Var element=document.forms[0].elements[0]– Problem: document changes
+08:49
+lec7
+Dr Walid M. Aly
+11
+Web Programming CS333–CS614
+DOM
+Element Access in JavaScript
+2. Element names– requires the element and all of its ancestors (except
+body) to have name attributes– Example:
+<form name = "myForm" action = "">
+<input type = "button" name = "pushMe">
+</form>– var element=document.myForm.pushMe– Problem:nameattribute is not valid starting from XHTML 1.1
+08:49
+lec7
+12
+Web Programming CS333–CS614
+Dr Walid M. Aly
+DOM
+Element Access in JavaScript
+3. Access using I.D.
+i- using getElementById Method
+The method returns a reference to the object with the specified ID– Example:
+<form action = "">
+<input type = "button" id = "pushMe">
+</form>– var element=document.getElementById("pushMe")
+• Formelements often have ids and names both set to the same
+value
+08:49
+lec7
+Dr Walid M. Aly
+13
+Web Programming CS333–CS614
+DOM
+3. Access using I.D………
+ii-you can pass the id as string to a function,
+The function will receive it as a reference to the object with the specified ID
+Example:
+<form action = "">
+<input type = "button" id = "pushMe">
+…………………………
+onclick=m(pushMe);
+</form>
+function m(elm)
+{
+//elm here is a reference to the button
+}
+08:49
+lec7
+14
+Web Programming CS333–CS614
+Dr Walid M. Aly
+DOM
+HTMLDocument Object….
+Method
+createAttribute()
+createElement()
+Description
+Creates an attribute node
+Creates an Element node
+createTextNode()
+appendChild()
+Creates a Text node (inner html)
+Adds a new child node, to
+the specified node, as the
+last child node
+http://www.w3schools.com/jsref/dom_obj_core_document.asp
+08:49
+lec7
+15
+Web Programming CS333–CS614
+Dr Walid M. Aly
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+Example:Addingaparagraphelement
+16
+<!DOCTYPEhtml>
+<html>
+<body>
+<p>Clickthebuttontoaddaparagraphelement.</p>
+<div id="div1">
+<p>initialline</p>
+</div>
+<buttononclick="myFunction()">Tryit</button>
+<script>
+functionmyFunction()
+{
+varpara=document.createElement("p");
+varnode=document.createTextNode("Thisisnew.");
+para.appendChild(node);
+div2=document.getElementById("div1");
+div2.appendChild(para);
+}
+</script></body></html> addElementDemo.html
+DOM
+Example: Adding a list item element
+<!DOCTYPE html>
+<html>
+<body>
+<ul id="myList"><li>Coffee</li><li>Tea</li></ul>
+<p id="demo">Click the button to append an item to the list</p>
+<button onclick="myFunction()">Try it</button>
+<script>
+function myFunction()
+{
+var node=document.createElement(li");
+var textnode=document.createTextNode("Water");
+node.appendChild(textnode);
+document.getElementById("myList").appendChild(node);
+}
+</script>
+</body>
+</html>
+08:49
+lec7
+addElementDemo2.html
+17
+Web Programming CS333–CS614
+Dr Walid M. Aly
+DOM
+HTMLDOMTextObject
+ The Text object represents a single-line text input field in an HTML form.
+ For each <input type="text"> tag in an HTML form, a Text object is created.
+The Text object can also use the properties/methods of:
+ The Node object
+ The Element object
+Text Object Properties
+value
+Sets or returns the value of the value attribute of the text
+field
+08:49
+lec7
+18
+Web Programming CS333–CS614
+Dr Walid M. Aly
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+19
+Example:accessingatextfield
+DOMDemo1.html
+……..
+<head>
+<scripttype="text/javascript" >
+functiongreeting(){
+name=document.form1.txt1.value;
+window.alert("Hello"+name);
+}
+</script>
+<body>
+<formname="form1">
+<inputtype="text"name="txt1">
+<inputtype="button"value="ClickMe"onclick="greeting();" >
+</form>
+….
+SelectDemo.html
+DOM
+Example: Calculator
+Calculater.html
+<form name="Calc">
+<input type="text" name="txt1" size="16">
+<input type="button" value=" 1 " OnClick="Calc.txt1.value += '1'">
+<input type="button" value=" 2 " OnCLick="Calc.txt1.value += '2'">
+<input type="button" value=" 3 " OnClick="Calc.txt1.value += '3'">
+<input type="button" value=" + " OnClick="Calc.txt1.value += ' + '">
+<input type="button" value=" 4 " OnClick="Calc.txt1.value += '4'">
+< input type="button" value=" 5 " OnCLick="Calc.txt1.value += '5'">
+<input type="button" value=" 6 " OnClick="Calc.txt1.value += '6'">
+<input type="button" value="- " OnClick="Calc.txt1.value += '- '">
+<input type="button" value=" 7 " OnClick="Calc.txt1.value += '7'">
+<input type="button" value=" 8 " OnCLick="Calc.txt1.value += '8'">
+<input type="button" value=" 9 " OnClick="Calc.txt1.value += '9'">
+<input type="button" value=" x " OnClick="Calc.txt1.value += ' * '">
+<input type="button" value=" c " OnClick="Calc.txt1.value = ''">
+<input type="button" value=" 0 " OnClick="Calc.txt1.value += '0'">
+<input type="button" value=" = " OnClick="Calc.txt1.value = eval(Calc.txt1.value)">
+<input type="button" name="div" value=" / " OnClick="Calc.txt1.value += ' / '">
+08:49
+lec7
+20
+Web Programming CS333–CS614
+Dr Walid M. Aly
+DOM
+Example: Money Exchanger
+<script >
+function calculate() {
+var input1=window.document.form1.txt1.value;
+var output=(parseFloat(input1))/6;
+output=output.toFixed(2);
+window.document.form1.txt2.value=output+"$";
+}
+</script>
+…
+<body>
+<h3> Transfer from L.E. to $ </h3>
+<form name="form1">
+Value in L.E.<input type="text" size="4" name="txt1"/>
+<input type="button" value="Transfer " onclick="calculate()"/>
+Value in $ <input type="text" disabled="disabled" size="4" name="txt2" />
+</form>
+moneyExchanger.html
+08:49
+lec7
+Dr Walid M. Aly
+21
+Web Programming CS333–CS614
+DOM
+Example :Log In demo
+function login(){
+var username=document.myForm.userName.value;
+var password=document.myForm.pass.value;
+if ((username.length==0)||(password.length==0))
+{ window.alert("Empty user name or password!");}
+else {
+switch(password)
+{
+case "12345" :
+window.location="page1.html";
+break;
+case "1234" :
+window.location="page2.html";
+break;
+case "123":
+window.location="page3.html";
+break;
+default:
+window.alert("Invalid Password");
+document.myForm.pass.select();
+}// end switch case
+}
+Web Programming CS333–CS614
+08:49
+lec7
+Logindemo.html
+Dr Walid M. Aly
+22
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+Example:DynamicClock
+23
+functionclock()
+{
+date=newDate();
+time=date.toLocaleTimeString();
+document.form1.txt1.value=time;
+today=date.toDateString()
+document.form1.txt2.value=today;
+window.setTimeout("clock()",1000);
+}
+DynamicClock.html
+• toLocaleTimeString():–ReturnthetimeportionofaDateobjectas
+astring,usinglocaleconventions–ConvertthetimeportionofaDateobject
+toastring:
+• toLocaleDateString():–ReturntheDateobjectasastring,using
+localeconventions–toTimeString()–ConvertthetimeportionofaDateobject
+toastring–toDateString()–ConvertsthedateportionofaDateobject
+intoareadablestring
+JavaScriptDateObject
+DOM
+Window setInterval() Method
+Syntax
+setInterval(function,milliseconds)
+Parameter
+Description
+function
+milliseconds
+Required. The function that will be executed (anonymous or name)
+Required. The intervals (in milliseconds) on how often to execute the code
+Return Value:
+A Number, representing the ID value of the timer that is set. Use this value
+with the clearInterval() method to cancel the timer
+• The setInterval() method calls a function or evaluates an expression at specified intervals (in
+milliseconds).
+• The setInterval() method will continue calling the function until clearInterval() is called, or the
+window is closed.
+• TheIDvaluereturned by setInterval() is used as the parameter for the clearInterval() method.
+• Example– Alert "Hello" every 3 seconds (3000 milliseconds):
+• setInterval(function(){ alert("Hello"); }, 3000);
+08:49
+lec7
+Dr Walid M. Aly
+24
+Web Programming CS333–CS614
+DOM
+WindowclearInterval() Method
+• Definition and Usage– TheclearInterval() method clears a timer set with the setInterval() method.– TheIDvaluereturned by setInterval() is used as the parameter for the
+clearInterval() method.
+Example
+Toggle between two background colors once every 300 milliseconds, until it is stopped by
+clearInterval():
+var myVar = setInterval(function(){ setColor() }, 300);
+function setColor() {
+var x = document.body;
+x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+}
+function stopColor() {
+clearInterval(myVar);
+}
+toggleBackGround.html
+08:49
+lec7
+Dr Walid M. Aly
+25
+Web Programming CS333–CS614
+Example: Dynamic Clock2
+DOM
+<!DOCTYPE html>
+<html>
+<body>
+<p>A script on this page starts this clock:</p>
+<p id="demo"></p>
+<button onclick="myStopFunction()">Stop time</button>
+<script>
+var myVar = setInterval( myTimer , 1000);
+//var myVar = setInterval( myTimer() , 1000); will not work
+//var myVar = setInterval( ‘myTimer()’ , 1000); o.k.
+function myTimer() {
+var d = new Date();
+var t = d.toLocaleTimeString();
+document.getElementById("demo").innerHTML = t;
+}
+function myStopFunction() {
+clearInterval(myVar);
+}
+</script>
+</body>
+</html>
+08:49
+DynamicClock2.html
+lec7
+26
+Dr Walid M. Aly
+Web Programming CS333–CS614
+DOM
+Example :Automatic Filling of text input
+<head>
+<script type = "text/javascript" >
+function getFullName() {
+firstname=document.form1.firstName.value;
+lastname=document.form1.lastName.value;
+name=firstname+" "+lastname;
+document.form1.fullName.value=name;
+}
+</script>
+<body onload="document.form1.firstName.focus()">
+<form name="form1">
+<table>
+<tr><td > First Name </td>
+<td> <input type="text" name="firstName" onchange="getFullName();" > </td>
+</tr>
+<tr><td> Last Name </td>
+<td> <input type="text" name="lastName" onchange="getFullName();"> </td>
+</tr>
+<tr><td> Full Name</td>
+<td> <input type="text" name="fullName"> </td>
+</tr>
+</table></form>
+08:49
+lec7
+27
+Dr Walid M. Aly
+OnChangeDemo.html
+Web Programming CS333–CS614
+DOM
+Accessing a check box/radio
+button
+• Foreachinstance of an <input type="checkbox"> tag in an HTML form, a
+Checkbox object is created.
+• Foreachinstance of an <input type="radio"> tag in an HTML form, a radio
+object is created.
+• YoucanaccessaCheckbox / radio button object by searching through the
+elements[] array of a form, or by using document.getElementById().
+Property Description
+checked
+value
+Sets or returns the checked state of a checkbox/radio button
+Sets or returns the value of the value attribute of a
+checkbox/radio button
+Reading the state of a checkbox
+if (document.form1.checkbox1.checked) {
+user_input = document.form1.checkbox1.value; }
+Setting the state of a checkbox
+document.form1.checkbox1.checked = true
+ Checkboxes and radio button have an implicit array, which has their name
+checkBocDemo1.html
+08:49
+checkBocDemo2.html
+lec7
+radioDemo1.html
+28
+Web Programming CS333–CS614
+Dr Walid M. Aly
+DOM
+HTMLDOMSelect Object
+Collection
+options
+Description
+Returns a collection of all the options in a drop-down
+list
+Property
+length
+selectedIndex
+Description
+Returns the number of options in a dropdown list
+Sets or returns the index of the selected option in a dropdown list
+<select>
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="mercedes">Mercedes</option>
+<option value="audi">Audi</option>
+</select>
+http://www.w3schools.com/jsref/dom_obj_select.asp
+08:49
+lec7
+Dr Walid M. Aly
+29
+Web Programming CS333–CS614
+DOM
+Example : Reading value from Select
+<script type="text/javascript">
+function ShowCity(elm){
+var val = elm.options[elm.selectedIndex].value;
+window.alert("City Population : " +val);}
+</script>
+///////////////////////////////////////////////////
+<title>Millionaire Cities</title>
+</head>
+<body>
+<h3>Millionaire Cities</h3>
+Select City <select name="Query" id="Query" style="width:273px;">
+<option value="20,464,000">New York</option>
+<option value="5,232,000">Milan</option>
+<option value="11,547,000">Lagos</option>
+<option value="17,311,000">Beijing</option>
+<option value="10,755,000">Paris</option>
+<option selected="selected" value="37,126,000">Tokyo</option>
+<option value="17,816,000">Cairo</option>
+<option value="14,374,000">Calcutta</option>
+<option value="20,186,000">Sao Paulo</option>
+<option value="5,427,000">Madrid</option>
+</select>
+<input type="submit" name="cmdShow" value="View Population“ onclick="ShowCity(Query);" id="cmdShow" />
+</body>
+08:49
+SelectReadDemo.html
+lec7
+Dr Walid M. Aly
+30
+Web Programming CS333–CS614
+DOM
+Validation
+Validation is A good use of JavaScript, because it finds errors in
+form input before it is sent to the server for processing
+• Thingsthatmustbedone:
+1. Detect the error and produce an alert message
+2. Put the element in focus (the focus function)- puts the
+cursor in the element
+3. Select the element (the select function)- highlights the text
+in the element
+• AWhole form can be checked before submitting using the
+onsubmit event
+• Toprevent the form submitting data , the event handler
+for onsubmit must return false
+31
+08:49
+Dr Walid M. Aly
+Web Programming CS333–CS614
+lec7
+DOM
+Example Text Field Validation
+function check() {
+data=document.form1.txt1.value;
+if(isNaN(data))
+window.alert( " Please Enter a number");
+else if(data.length==0)
+window.alert( " You did not eneter a Value ");
+else
+window.alert( " Data is correct , Thanks ");
+}
+</script>
+<form name="form1">
+<input type="text" name="txt1">
+<input type="button" value="Send" onclick="check();" >
+</form>
+08:49
+TextValidation.html
+lec7
+Dr Walid M. Aly
+32
+Web Programming CS333–CS614
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+HTMLDOMFormObject
+33
+Collection Description
+elements[] Returnsanarrayofallelementsinaform
+Property Description
+action Setsorreturnsthevalueoftheactionattributeinaform
+length Returnsthenumberofelementsinaform
+method Setsorreturnsthevalueofthemethodattributeinaform
+name Setsorreturnsthevalueofthenameattributeinaform
+MethodDescription
+reset() Resetsaform
+submit()Submitsaform
+Event Theeventoccurswhen...
+onreset Theresetbuttonisclicked
+onsubmitThesubmitbuttonisclicked
+document.forms[0].submit()
+document.forms[0].reset()
+document.forms[0].action=“the_other_script.pl”;
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+Example:comparingpasswords
+34
+pswd_chk.html
+<formid="myForm" action=""onsubmit="returnchkPasswords();">
+<p>
+Yourpassword
+<inputtype="password" id="initial" size="10"/>
+<br/><br/> Verifypassword
+<inputtype="password" id="second" size="10"/>
+<br/><br/>
+<inputtype="reset"name="reset"/>
+<inputtype="submit"name="submit"/>
+</p>
+</form>
+DOM
+function chkPasswords () {
+var init = document.getElementById("initial");
+var sec = document.getElementById("second");
+if (init.value == "") {
+alert ("You did not enter a password \n" +
+"Please enter one now");
+init.focus();
+return false;
+}
+if (init.value != sec.value) {
+alert("The two passwords are not the same \n" +
+"Please re-enter both now");
+init.focus();
+init.select();
+return false; }
+else
+{
+window.alert("Submitting Information");
+return true;
+}
+}
+08:49
+lec7
+Dr Walid M. Aly
+35
+Web Programming CS333–CS614
+Example: Email Validation
+DOM
+<head>
+<script type = "text/javascript" >
+function check() {
+email=document.form1.txt1.value;
+x=email.indexOf("@");
+if(x==-1)
+window.alert( email+“: Invalid Email");
+else
+window.alert( email+" :valid Email");
+}
+</script>
+<body>
+<form name="form1">
+<input type="text" value="email" name="txt1">
+<input type="button" value="Check Email" onclick="check();" >
+</form>
+</body>
+</html>
+08:49
+EmailValidation.html
+lec7
+36
+Dr Walid M. Aly
+Web Programming CS333–CS614
+DOM
+The JavaScript this keyword
+• In JavaScript this always refers to the “owner” of
+the function we're executing, or rather, to the
+object that a function is a method of.– <input type=button id=“bt1” onclick=“m(this)” />
+• In previous example this refer to the button with id=“bt1:– <form action=" " name="demoform" onsubmit=
+"return valid(this.menu,this.choicetext)">
+• In previous example this refer to the form with name
+=“demoform”:
+08:49
+lec7
+Dr Walid M. Aly
+37
+Web Programming CS333–CS614
+DOM
+Example :Select Validation
+<form action="" onsubmit="return valid(this.menu,this.choicetext)">
+<div>
+<select name="menu">
+<option value="0" selected>(please select:)</option>
+<option value="1">one</option>
+<option value="2">two</option>
+<option value="3">three</option>
+<option value="other">other, please specify:</option>
+</select>
+<input type="text" name="choicetext"></div>
+<div><input type="submit" value="submit"></div>
+</form>
+08:49
+lec7
+ComboBoxValidation.html
+38
+Web Programming CS333–CS614
+Dr Walid M. Aly
+DOM
+<script >
+//check if user chose to enter a value
+function last_choice(selection) {
+return selection.selectedIndex==selection.length- 1; }
+Function valid(menu,txt) {
+//check if user did not make a selection
+if(menu.selectedIndex == 0) {
+alert('You must make a selection from the menu');
+return false;}
+//check if user did not write a value in text input
+if(txt.value == '') {
+if(last_choice(menu)) {
+alert('You need to type your choice into the text box');
+return false; }
+else {
+return true; }
+}//end if
+else {
+//check if user entered text although he did not select last option
+if(!last_choice(menu)) {
+alert('Incompatible selection');
+return false; }
+else {
+return true; }
+}
+}
+Web Programming CS333–CS614
+08:49
+lec7
+39
+Dr Walid M. Aly
+</script>
+DOM
+Note on HTML5Validation
+• If you want to disable client side validation for a
+form in HTML5 add anovalidate attribute to the
+form element.
+• Ex:
+<form method="post" action="/foo" novalidate>...</form>
+08:49
+lec7
+Dr Walid M. Aly
+40
+Web Programming CS333–CS614
+WebProgramming CS333–CS614 DrWalidM.Aly lec7
+DOM
+08:49
+1-inlineeventregistrationmodel:eventhandlersareaddedasattributestotheHTML
+elementstheywereworkingon,like:
+<inputtype=“Button” onClick=“m1()“>
+2-Traditionaleventregistrationmodel:Theonclick,onmouseoverandallotherevent
+propertiesoftheHTMLelementarecompletelyaccessiblethroughJavaScript.
+AfteryouhaveproperlyaccessedtheHTMLelementthroughaDOM
+youcanwriteyourfunctionintothepropertyofyourchoice,like:
+element.onclick=doSomething;
+notethatintheregistrationofaneventhandleryoudonotuseparentheses
+Toremovetheeventhandler,simplymaketheonclickmethodempty:
+element.onclick=null;
+Thehandlercanbealsoananonymousfunction
+element.onclick=function(){startDragDrop();spyOnUser()}
+ReviewofEventRegistrationmodel
+DOM
+“If an element and oneofits ancestors have an event handler for the
+sameevent, which oneshouldfire first?”
+If the user clicks on element2 he causes a click event in both element1 and
+element2. But which event fires first?
+08:49
+lec7
+Dr Walid M. Aly
+Web Programming CS333–CS614
+DOM
+3-The W3C event registration model :Advanced event registration models
+object.addEventListener (eventName, function, useCapture);
+ toregister doSomething() function to the onclick of an element you do:
+element.addEventListener('click',doSomething,false)
+ wecanaddasmanyevent listeners as we want to the element.
+element.addEventListener('click',startDragDrop,false)
+element.addEventListener('click',spyOnUser,false)
+ You can also use anonymous functions
+element.addEventListener('click',
+function () {
+this.style.backgroundColor = '#cc0000'
+}
+,false)
+ Astothe true or false that is the last argument of addEventListener, it is meant to state
+whether the event handler should be executed in the capturing (true) or in the bubbling
+phase
+Web Programming CS333–CS614
+08:49
+Ref:http://www.quirksmode.org/js/events_advanced.htm
+l
+lec7
+Dr Walid M. Aly
+WebProgramming
+CS333/CS614
+Dr Walid M. Aly
+Lecture 8
+DHTML
+08:49
+Dr Walid M. Aly
+1
+Web Programming CS333-CS614
+lec8
+Dynamic HTML
+• DHTML document is an HTML document whose
+tag attributes, tag contents, or element style
+properties can be changed after the document is
+still being displayed by a browser
+• Such changes are made with an embedded script
+(JavaScript) that accesses the elements of the
+document as objects in the associated DOM
+structure
+2
+08:49
+Dr Walid M. Aly
+Web Programming CS333-CS614
+lec8
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+Documentobjectproperties
+3
+Properties Description
+anchors Returnsacollectionofall<a>elementsinthedocumentthathavea
+nameattribute
+forms Returnsanarrayofall theformsinthedocument
+images Returnsanarrayofall theimagesinthedocument
+title Pagetitle
+body Returnsthebodyelementofthedocument
+getElementById()Accessesthefirstelementwiththespecifiedid
+innerHTML SetsorreturnstheHTMLcontents(+text)ofan
+element
+style Setsorreturnsthestyleattributeofanelement
+HTMLElementProperties
+TheDocumentobjectprovidesaccesstoallHTMLelementsinapage,fromwithinascript.
+DocumentObject
+HTMLElementObject
+Documentobjectmethod
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+Example:accessinganchors
+4
+<!DOCTYPEhtml>
+<html>
+<body>
+<aname="html“href=“page1.html”>HTMLTutorial</a><br/>
+<aname="css“href=“page.html“>CSSTutorial</a><br/>
+<aname="xml“href=“page1.html”>XMLTutorial</a><br/>
+<p>Numberofanchors:
+<scripttype="text/javascript">
+document.write(document.anchors.length,"<br/>");
+document.write(document.anchors[1].innerHTML);
+</script></p>
+</body>
+</html> anchorsDemo.html
+Example : Toggle Header
+<body>
+<h1 id="aheader" > Java Programming </h1>
+<form>
+<input type="button" value="Toggle Header" onclick="m()">
+</form>
+<script>
+function m()
+{
+var x=document.getElementById("aheader");
+var y=x.innerHTML;
+if (y==" Java Programming ")
+x.innerHTML="Web Programming";
+else
+x.innerHTML=“ Java Programming ";
+}
+</script>
+08:49
+toggleHeader.html
+lec8
+5
+Web Programming CS333-CS614
+Dr Walid M. Aly
+HTMLDOMImageObject
+• TheImageobject represents an embedded image.
+Image Object Properties
+property
+src
+Description
+Sets or returns the value of the src attribute of an image
+08:49
+lec8
+6
+Web Programming CS333-CS614
+Dr Walid M. Aly
+<body>
+Example: Roll over links with image
+buttons
+<a href="http://www.yahoo.com" >
+<img id="img1" onmouseover="imgChange ('2.png')"
+onmouseout="imgChange ('1.png')" src="1.png“/>
+</a>
+<script>
+function imgChange ( img )
+{
+element=document.getElementById("img1");
+element.src= img;
+}
+</script>
+</body>
+08:49
+Rolloverbutton.html
+lec8
+Dr Walid M. Aly
+7
+Web Programming CS333-CS614
+Example :selectInputDemo
+<body>
+<form name ="myForm" action = "" >
+<select name="cars" onchange="m1()">
+<option value="Matrix">Matrix</option>
+<option value="Golf">Golf</option>
+<option value="mercedes">Mercedes</option>
+</select></form>
+<br/><br/>
+<img id="image1" src="matrix.jpg" />
+<script type = "text/javascript" >
+function m1() {
+element=document.myForm.cars;
+var x=document.getElementById("image1");
+x.src= element.value+".jpg"
+}
+</script>
+</body>
+08:49
+selectInputDemo1.html
+lec8
+8
+Dr Walid M. Aly
+Web Programming CS333-CS614
+Moving Elements
+• The position of any element is dictated by a number
+of CSS properties: position, left, top, z
+index– position :The possible values of position are:
+static,absolute,relative,andfixed
+• If position is set to either absolute or
+relative, the element can be moved after it is
+displayed
+• Just change the top and left property values th
+a script
+left
+bottom
+top
+element
+08:49
+right
+9
+Dr Walid M. Aly
+Web Programming CS333-CS614
+lec8
+HTMLElement Object
+HTMLElement Properties
+style
+Sets or returns the style attribute of an
+element
+http://www.w3schools.com/jsref/dom_obj_all.asp
+08:49
+lec8
+10
+Dr Walid M. Aly
+Web Programming CS333-CS614
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+11
+HTMLDOMStyleObject
+HTMLDOMStyleproperties
+TheStyleobjectrepresentsanindividualstyleattribute
+TheStyleobjectcanbeaccessedfromthedocumentorfromtheelementstowhichthatstyle
+isapplied.
+property Description
+color Setsorreturnsthecolorofthetext
+font Setsorreturnsfont-style,font-variant,font-weight,font-size, line-height,and
+font-familyinonedeclaration
+fontFamily Setsorreturnsthefontfacefortext
+fontSize Setsorreturnsthefontsizeofthetext
+fontStyle Setsorreturnswhetherthestyleofthefont isnormal, italicoroblique
+left Setsorreturnstheleftpositionofapositionedelement
+top Setsorreturnsthetoppositionofapositionedelement
+visibility Setsorreturnswhetheranelementshouldbevisible
+document.getElementById("id").style.property="value"
+Ref:http://www.w3schools.com/jsref/dom_obj_style.asp
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+12
+<scripttype="text/javascript" src="mover.js">
+</script>
+<formaction="">
+<label>xcoordinate:
+<inputtype="text" id="leftCoord"size="3"/></label>
+<label>ycoordinate:
+<inputtype="text" id="topCoord"size="3"/></label>
+inputtype="button" value="Moveit"
+onclick="moveIt('div1',
+document.getElementById('topCoord').value,
+document.getElementById('leftCoord').value)"/>
+</form>
+<divid="div1" style="position:absolute;top:115px;left:0;">
+<imgsrc="AAST.jpg“/>
+</div>
+Mover.html
+Example:MovinganElement
+functionmoveIt(movee,newTop,newLeft){
+MyDiv=document.getElementById(movee)
+myStyle=MyDiv.style;
+myStyle.top=newTop+"px";
+myStyle.left=newLeft+"px“;}
+Mover.js
+Element Visibility
+• Thevisibilityproperty of an element
+controls whether it is displayed
+• Thevaluesarevisibleandhidden
+• Toshow/hide an element– if (styleX.visibility == "visible"
+styleX.visibility = "hidden";
+else
+styleX.visibility = "visible";
+08:49
+lec8
+13
+Web Programming CS333-CS614
+Dr Walid M. Aly
+<!DOCTYPE html>
+<html>
+<head>
+<title> Visibility control </title>
+<script type = "text/javascript" src = "showHide.js" >
+</script>
+</head>
+<body>
+<form action = "">
+<div id = "saturn" style = "position: relative; visibility: visible;">
+<img src = "saturn.jpg“/>
+</div>
+<p>
+<br />
+<input type = "button" value = "Toggle Saturn“ onclick = "flipImag()" />
+</p>
+</form>
+</body>
+</html>
+showHide.html
+08:49
+lec8
+14
+Web Programming CS333-CS614
+Dr Walid M. Aly
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+15
+functionflipImag(){
+dom=document.getElementById("saturn").style;
+//Flipthevisibilityadjectivetowhateveritisnotnow
+if(dom.visibility=="visible")
+dom.visibility="hidden";
+else
+dom.visibility="visible";
+}
+showHide.js
+Example : Dynamic Appearance of Text Input
+<form action=" " name="demoform" onsubmit= "return valid(this.menu,this.choicetext)">
+<select name="menu" onchange="process_choice(this,document.demoform.choicetext)">
+<option value="0" selected>(please select:)</option>
+<option value="1">one</option>
+<option value="2">two</option>
+<option value="3">three</option>
+<option value="other">other, please specify:</option>
+</select>
+<input type="text" name="choicetext" disabled="disabled" style="visibility:hidden">
+<p><input type="submit"> </p>
+</form>
+08:49
+Comboboxdemo.html
+lec8
+Dr Walid M. Aly
+16
+Web Programming CS333-CS614
+HTMLDOM TextObject
+Text Object Properties
+Property
+disabled
+Description
+Sets or returns whether the text field is disabled, or not
+A disabled element is unusable and un-clickable.
+Disabled elements are usually rendered in gray by default in browsers.
+values: true/false
+Note: Setting a form element to disabled will stop it going to the server,
+08:49
+lec8
+17
+Web Programming CS333-CS614
+Dr Walid M. Aly
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+18
+functionprocess_choice(selection,textfield){
+if(last_choice(selection)){
+activate(textfield);}
+else{
+textfield.disabled=true;
+textfield.style.visibility='hidden';
+textfield.value='';}}
+functionactivate(field){
+field.disabled=false;
+field.style.visibility='visible';
+field.focus();}
+functionlast_choice(selection){
+returnselection.selectedIndex==selection.length
+1;}
+Changing Colours- Background color is controlled by
+the backgroundColor CSS
+property- Foreground color is controlled by
+the color CSSproperty
+08:49
+lec8
+19
+Web Programming CS333-CS614
+Dr Walid M. Aly
+<head>
+<title> Dynamic colors </title>
+<script type = "text/javascript" src = "dynColors.js" >
+</script>
+</head>
+<body>
+<p style = "font-family: Times; font-style: italic; font-size: 24pt" >
+This small page illustrates dynamic setting of the
+foreground and background colors for a document
+</p>
+<form action = "">
+<p><label>Background color:
+<input type = "text" name = "background" size = "10"
+onchange = "setColor('background', this.value)" />
+</label>
+<br />
+<label>
+Foreground color:
+<input type = "text" name = "foreground" size = "10"
+onchange = "setColor('foreground', this.value)" />
+</label>
+<br />
+</p>
+</form></body></html>
+Web Programming CS333-CS614
+08:49
+lec8
+dynColors.html
+20
+Dr Walid M. Aly
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+functionsetColor(where,newColor){
+if(where=="background")
+document.body.style.backgroundColor=newColor;
+else
+document.body.style.color=newColor;
+}
+21
+dynColors.js
+Changing Fonts- Wecanchange the font properties of any element that contains text by
+using the mouseover and mouseout events to trigger a script that
+makes the changes
+onmouseover = "this.style.color = 'red'; this.style.font = 'italic 16pt Times';"
+onmouseout = "this.style.color = 'blue'; this.style.font = 'normal 16pt Times';
+dynFont.html
+08:49
+lec8
+22
+Dr Walid M. Aly
+Web Programming CS333-CS614
+<!DOCTYPE html>
+<html>
+<head>
+<title> Dynamic fonts </title>
+<style type = "text/css">
+.regText {color: blue; font: 16pt 'Times New Roman';}
+</style>
+</head>
+<body>
+<p class = "regText"
+onmouseover = "this.style.color = 'red';
+this.style.fontStyle = 'italic';
+this.style.fontSize = '24pt';"
+onmouseout = "this.style.color = 'blue';
+this.style.fontStyle = 'normal';
+this.style.fontSize = '16pt';">
+Welcome to AAST
+</p>
+</body>
+</html>
+08:49
+lec8
+Dr Walid M. Aly
+23
+Web Programming CS333-CS614
+Dynamic Content
+• Thecontent of an XHTML element is
+addressed with the value property of its
+associated JavaScript object
+dynValue.html
+08:49
+lec8
+Web Programming CS333-CS614
+Dr Walid M. Aly
+<body>
+<form action = "">
+<p style = "font-weight: bold">
+<span style = "font-style: italic">
+Customer information
+</span>
+<br /><br />
+<label>
+Name:
+<input type = "text" onmouseover = "messages(0)"
+onmouseout = "messages(2)" />
+</label>
+<br />
+<label>
+Email:
+<input type = "text" onmouseover = "messages(1)"
+onmouseout = "messages(2)" />
+</label>
+08:49
+lec8
+25
+Dr Walid M. Aly
+Web Programming CS333-CS614
+dynValue.html
+<textarea id = "adviceBox" rows = "3" cols = "50"
+style = "position: absolute; left: 250px; top: 0px">
+This box provides advice on filling out the form
+on this page. Put the mouse cursor over any input
+field to get advice.
+</textarea>
+<input type = "submit" value = "Submit" />
+<input type = "reset" value = "Reset" />
+</p>
+</form>
+</body>
+</html>
+08:49
+lec8
+Dr Walid M. Aly
+26
+Web Programming CS333-CS614
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+27
+varhelpers=["Yournamemustbeintheform:\n\
+firstname,middleinitial.,lastname",
+"Youremailaddressmusthavetheform:\
+user@domain",
+"Thisboxprovidesadviceonfillingout\
+theformonthispage.Putthemousecursoroverany\
+inputfieldtogetadvice"]
+//Theeventhandlerfunctiontochangethevalueofthe textarea
+functionmessages(adviceNumber){
+document.getElementById("adviceBox").value=helpers[adviceNumber];
+}
+dynValue.js
+HTMLDOMEvents
+• Wheneveranevent fires, the computer places appropriate data about the event
+into the event object, event object (event ) is created automatically
+MouseEvent Object
+ The coordinates of the element that caused an event are available in the properties of the
+MouseEvent object
+ clientXandclientY arerelativeto upper left corner of the browser display window
+ screenXandscreenYarerelativetothe upper left corner of the whole client screen
+KeyboardEvent Object
+shiftKey
+Returns whether or not the "SHIFT" key was pressed when an event
+was triggered
+keyCode Returns the ascii code for the pressed key
+The onkeypress attribute fires Keyboard event object when the user presses a key (on the
+keyboard).
+08:49
+lec8
+28
+Web Programming CS333-CS614
+Dr Walid M. Aly
+Reacting to a Mouse Click
+• We will use event handlers for onmousedown and onmouseup
+to change the visibility attribute of the message
+• Amouseclick can be used to trigger an event , no matter where the
+mouse cursor is in the display
+08:49
+lec8
+Dr Walid M. Aly
+Web Programming CS333-CS614
+……….
+<head>
+<title> Sense events anywhere </title>
+<script type = "text/javascript" src = "anywhere.js" >
+</script>
+</head>
+<body onmousedown = "displayIt(event);"
+onmouseup = "hideIt();">
+<p>
+<span id= "message"
+style = "color: red; visibility: hidden;
+position: relative;
+font-size: 20pt; font-style: italic;
+font-weight: bold;">
+Please don't click here!
+</span>
+<br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br />
+</p>
+</body>
+</html>
+08:49
+lec8
+anywhere.html
+30
+Web Programming CS333-CS614
+Dr Walid M. Aly
+//
+// Display a message when the mouse button is pressed,
+// nomatter where it is on the screen
+// The event handler function to display the message
+function displayIt(evt) {
+var dom = document.getElementById("message");
+dom.style.left = (evt.clientX- 130) + "px";
+dom.style.top = (evt.clientY- 25) + "px";
+dom.style.visibility = "visible";
+}
+// The event handler function to hide the message
+function hideIt() {
+document.getElementById("message").style.visibility =
+}
+08:49
+lec8
+"hidden";
+anywhere.js
+Web Programming CS333-CS614
+Dr Walid M. Aly
+31
+Reacting to a Keyboard press
+Detecting the use of caps lock
+ We can, indirectly infer the use of caps lock
+by the input data we receive when the user
+type
+ IF the input character is an uppercase
+letter A to Z, AND the Shift key
+is not
+pressed, THEN we can deduce the use of caps
+lock.
+08:49
+lec8
+32
+Dr Walid M. Aly
+Web Programming CS333-CS614
+WebProgramming CS333-CS614 DrWalidM.Aly lec8 08:49
+33
+<script>
+functioncapLock(e){
+kc=e.keyCode
+sk=e.shiftKey;
+if(((kc>=65&&kc<=90)&&!sk)||((kc>=97&&kc<=122)&&sk))
+document.getElementById('divMayus').style.visibility='visible';
+else
+document.getElementById('divMayus').style.visibility='hidden';
+}
+</script>
+<inputtype="password"name="txtPassword"onkeypress="capLock(event)"/>
+<divid="divMayus"style="visibility:hidden">CapsLockison.</div>
+Detectingtheuseofcapslock…..
+detectCapsLockOn.html
+Theletteriscapitalandyoudidnotpressshiftkey
+Or
+Theletterissmallandyoupressshiftkey
+WebProgramming
+CS333/CS614
+Dr Walid M. Aly
+Lecture 9
+PHP
+08:49
+Dr Walid M. Aly
+1
+Web Programming CS433/ CS614
+lec9
+World Wide Web
+HTTP Server
+HTML data
+Software on
+Server
+Database
+HTTP
+HTTP Server
+HTML data
+Software
+on Server
+08:49
+Client
+HTTP
+Web Programming CS433/ CS614
+lec9
+Dr Walid M. Aly
+Origins and uses of PHP
+• PHPisanacronym for Personal Home Page, or PHP:
+Hypertext Preprocessor
+• PHPisageneral-purpose server-side scripting
+language
+• Phpis interpreted, open-source product and free
+• PHPisused for form handling, file processing, and
+database access
+• PHPsyntax is similar to that of JavaScript
+• Phpsupport more than 15 database system
+• Official site :www.php.net
+• PHP7 released 3 Dec 2015
+08:49
+lec9
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+What doyouNeed?
+• DownloadPHP– DownloadPHPforfree here: http://www.php.net/downloads.php
+• DownloadMySQLDatabaseserver– DownloadMySQLforfree here: http://www.mysql.com/downloads/
+• Download awebserverwithPHPsupport– ApacheServer
+Alternatively
+You can downalod a bundle of Apache+MySQL+PHP packages
+EasyPHP :http://www.easyphp.org/
+PHP Triad for Windows
+XAMPP: http://www.apachefriends.org/en/xampp.html
+In each web server, locate the folder to place your html and php files
+In EsayPHP: the folder is www.
+In XAMPP, PHP Triad :the folder is htdocs.
+08:49
+lec9
+4
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+Basic PHP Syntax
+• phpcodeiswritten in normal text files between <?php and ?>
+tags
+• APHPfile normally contains HTML tags.
+• Youcanhavemorethanonephpscript in our page
+• PHPstatements terminated with ;
+<html>
+<body>
+<h1>…</h1>
+<?php
+…………….
+?>
+……………
+</body>
+</html>
+08:49
+lec9
+<html>
+<body>
+<?php
+…………….
+?>
+……………
+<?php
+…………….
+?>
+</body>
+</html>
+Dr Walid M. Aly
+5
+Web Programming CS433/ CS614
+PHP execution– The server determines that a document includes PHP
+script by the file name extension .php– When a browser requests a document that include
+PHP script, the web server that provides the
+document calls its PHP processor– the server executes the PHP code, substitutes output
+into the HTML– the resulting page is then downloaded to the client– user never sees the PHP code, only the output in the
+page
+6
+08:49
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+lec9
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+7
+PHPexecution……
+<!-- hello.php-->
+<html>
+<head>
+<title>Server-side Hello</title>
+</head>
+<body>
+<table border=1 align="center">
+<tr><td>
+<?php print("Hello and welcome to <i>my</i> page!"); ?>
+</table>
+</body>
+</html>
+<!-- hello.php-->
+<html>
+<head>
+<title>Server-side Hello</title>
+</head>
+<body>
+<table border=1 align="center">
+<tr><td>
+Hello and welcome to <i>my</i> page!
+</table>
+</body>
+</html>
+theserverexecutes
+theprintstatement,
+substitutesoutput,
+downloadsresulting
+page
+Test Your Environment
+• Start the webserver.
+• Browsetheaddress :http://localhost
+You should see the welcome page which is usually the index.html page
+• copyasimplehtmlfile to your Apache folder, example page1.html
+• Browsetheaddress :http:/localhost/page1.html
+• copyasimplephpfile to your browser, example phptest.php
+Browse the address :http:/localhost/phptest.php
+online PHP Interpreter: http://www.tutorialspoint.com/execute_php_online.php
+<?php
+echo “Hello World”
+?>
+phptest.php
+http://127.0.0.1 or http://localhost
+08:49
+lec9
+8
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+EmbeddingHTMLPHPusingalanguageconstruct:include
+• PHP/HTMLcodecanbeembeddedinanHTMLdocumentexternallyusinginclude
+• Theincludedfilecanbe.htmlor.php
+• If the file does not exist, a warning message in shown and
+script continues
+• If use require instead of include, missing file will cause a
+message to be shown and script stops executing
+<html>
+<body>
+<?phpinclude("menu.php");?>
+<p>Thisismyhomepagethatusesacommon
+menutosavemetimewhenIadd
+newpagestomywebsite!</p>
+</body>
+</html>
+<ahref="/default.php">Home</a>
+<ahref="/tutorials.php">Tutorials</a>
+<ahref="/references.php">References</a>
+<ahref="/examples.php">Examples</a>
+<ahref="/about.php">AboutUs</a>
+<ahref="/contact.php">ContactUs</a>
+menu.php
+……………
+<?php
+include("menu.php");
+?>
+……………
+http://localhost/includeDemo/includeTest.php
+test.php
+The echo language construct
+echo is used to print output to the HTML file
+The argument of the echo function can have variables , values of these
+variables will be displayed
+Argument of the echo function can be HTML Tags
+The echo statement can be used with or without parentheses: echo or echo()
+<?php
+echo “Hello World”
+?>
+Hello World
+<?php
+$x=10;
+echo “x= $x”;
+?>
+x=10
+08:49
+<?php
+$x=10;
+echo $x;
+?>
+http://localhost/phptest3.php
+<?php
+echo “Hello <br/> World”;
+?>
+10
+Hello
+World
+lec9
+http://localhost/HelloWorld.php
+<html>
+<body>
+<?php
+$x=“Hello World”;
+?>
+<h1> <?php echo $x ?></h1>
+</body>
+</html>
+Hello World
+10
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+The PHP print Statement
+• echoandprintare moreor less the same. They are both used to output data to the
+screen.
+• Theprintstatement can be used with or without parentheses: print or print().
+• Thedifferences are small:– echohasnoreturnvalue while print has a return value of 1 so it can be used in expressions.– echocantakemultiple parameters (although such usage is rare) while print can take one argument.– echoismarginally faster than print.
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+print "<h2>" . $txt1 . "</h2>";
+print "Study PHP at " . $txt2 . "<br>";
+print $x + $y;
+?>
+08:49
+lec9
+Dr Walid M. Aly
+11
+Web Programming CS433/ CS614
+PHP Variables
+• AllPHPvariables should start with a $.
+• Phpvariables are global and can be accessed from any
+php script in same page
+• Therearenotypedeclarations
+• Variable names are case sensitive.
+• Anunassigned(unbound) variable has the value NULL
+• Theunsetlanguageconstruct sets a variable to NULL
+• The IsSet language construct is used to determine
+whether a variable is NULL , ex :IsSet($fruit)
+• If an unbound variable is used in an expression, NULL is
+forced to a value that is dictated by the context of the
+use. If the context specifies a number, NULL is coerced to
+0; if the context specifies a string, NULL is coerced to the
+empty string.
+08:49
+<html>
+<body>
+<?php
+$x=12;
+$y=“Hello”;
+?>
+<?php
+echo $x;
+?>
+</body>
+</html>
+12
+Web Programming CS433/ CS614
+lec9
+Dr Walid M. Aly
+PHP String Variables
+• Astringvariable is used to store and manipulate text.– Youcanusesingleordoublequotes
+• TheConcatenation Operator– Theconcatenation operator (.) is used to put two string values together, using (+) is
+not allowed, it will return 0
+• Thestrlen() function is used to return the length of a string.
+• Thestrpos() function is used to search for a character/text within a string.– Ifamatchis found, this function will return the character position of the first match.
+If no match is found, it will return FALSE
+<?php
+$txt="Hello World";
+echo $txt;
+?>
+Hello World
+<?php
+$txt1="Hello World!";
+$txt2="What a nice day!";
+echo $txt1 . " " . $txt2;
+?>
+Hello World! What a nice day!
+<?php
+echo strpos("Hello world!","world");
+?>
+6
+08:49
+lec9
+<?php
+echo strlen("Hello world!");
+?>
+12
+13
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+PHP Programming
+• Single line Comments are using // or #
+• Selection– if,else,elseif– switch(same like JavaScript)
+• Loops– while, (same like JavaScript)– do-while,(same like JavaScript)– for(same like JavaScript)– foreach
+• Comparison Operators– ==,!=,<>,<=,>=,>,<
+• Logic Operator– && ( keyword and can be uses)– || ( keyword or can be uses)– !
+08:49
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+lec9
+PHP Arrays
+Numeric array- An array with a numeric index
+Associative array- An array where each ID key is associated with a value
+Numeric array
+• ArrayDeclaration– $x=array();
+$x[0]=10;$x[1]=12;
+• Arrays can bedeclared dynamically
+$x[0]=10; $x[1]=12;
+• Arrays can bedeclared and initialized
+$list2 = array (17, 24, 45, 90);
+$cars=array("Saab","Volvo","BMW","Toyota");
+08:49
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+lec9
+Associative PHP Arrays
+Not like the arrays of any other programming language
+APHParray is really a mapping of keys to values, where the
+keys can be numbers (to get a traditional array) or strings (to
+get a hash
+Syntax
+array(key => value)
+$arr1 = array(0 => "apples", 1 => "oranges", 2 => "grapes“)
+$arr2 = array(“Ahmed” => 24,“Aly” => 41, “Taerk” => 17);
+echo $arr2[“Aly”];
+08:49
+lec9
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+PHP Array Function: extract()
+• Theextract() function imports variables into the local symbol table from an array.
+• Thisfunction uses array keys as variable names and values as variable values.
+• Foreachelementit will create a variable in the current symbol table.
+• Thisfunction returns the number of variables extracted on success.
+<?php
+$a ='Original';
+$my_array = array("a" => "Cat","b" => "Dog", "c" => "Horse");
+extract($my_array);
+echo "\$a = $a; \$b = $b; \$c = $c";
+?>
+$a = Cat; $b = Dog; $c = Horse
+08:49
+lec9
+Dr Walid M. Aly
+17
+Web Programming CS433/ CS614
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+FormHandlingusingPHP
+• Formscouldbehandledbythesamedocumentthatcreatesthe
+form,orbyAseparatedocument.–Thedocumenttohandletheformisspecifiedasthevalueofthe
+actionattribute
+• Clientcanrequest thePHPwebpageatserverusingtheget–whichisthedefaultmethodorpostmethods
+• PHPbuildsanarrayoftheformvalues sendtothePHPwebpage.–$_GETfortheGETmethod–$_POSTforthePOSTmethod–$_REQUEST:containsthecontentsof$_GET,$_POST–Arraysubscriptsaretheinput(widget)names <formaction=“myPage.php"method="get">
+Firstname:<inputtype="text"name="fname"/><br/>
+Lastname:<inputtype="text"name="lname"/><br/>
+<inputtype="submit"value="Submit"/>
+</form>
+Thedatawrittenbyuseratthefirsttextboxisaccessedat: $_GET[“fname”]
+Difference between "GET" and "POST"
+• "GET" : form data is to be encoded (by a
+browser) into a URL
+http://localhost/Welcome1/welcome.php?fname=Ahmed+Aly&age=21
+• "POST" : form data is to appear within a
+message body.
+http://localhost/Welcome2/Welcome.php
+08:49
+lec9
+Dr Walid M. Aly
+19
+Web Programming CS433/ CS614
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+20
+<html>
+<body>
+<formaction="welcome.php"method=“get">
+Name:<inputtype="text"name="fname"/>
+Age:<inputtype="text"name="age"/>
+<inputtype="submit"/>
+</form>
+</body>
+</html>
+<html>
+<body>
+Welcome
+<?php
+echo$_GET["fname"];
+?>
+!<br/>
+Youare
+<?php
+echo$_GET["age"];
+?>
+yearsold.
+</body>
+</html>
+Example1:FormHandlingusingPHPandgetmethod
+Welcome.html
+Welcome.php http://localhost/Welcome1/Welcome.html
+http://localhost/Welcome1/welcome.php?fname=Ahmed+Aly&age=21
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+21
+<html>
+<body>
+<formaction="welcome.php"method="post">
+Name:<inputtype="text"name="fname"/>
+Age:<inputtype="text"name="age"/>
+<inputtype="submit"/>
+</form>
+</body>
+</html>
+<html>
+<body>
+Welcome
+<?php
+echo$_POST["fname"];
+?>
+!<br/>
+Youare
+<?php
+echo$_POST["age"];
+?>
+yearsold.
+</body>
+</html>
+Example2:FormHandlingusingPHPandpostmethod
+Welcome.html
+Welcom.php
+http://localhost/Welcome2/Welcome.html
+Example 3 : controlling Login using PHP
+LogIn.html
+http://localhost/login/login.html
+Web Programming CS433/ CS614
+22
+Whentheform is submitted , the form data are submitted to the “ log.php” page and the
+browser interpret the page then send it to client
+08:49
+lec9
+Dr Walid M. Aly
+Log.php
+<?php
+$user=$_POST["x"];
+$pass=$_POST["y"];
+if($user=="CS433" && $pass=="123")
+{
+echo " <h1>Java Secrets </h1>";
+echo "Welcome to our website";
+}
+else
+{
+echo "invalid user name or password";
+}
+?>
+Web Programming CS433/ CS614
+08:49
+log.php
+23
+lec9
+Dr Walid M. Aly
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+Example4:ReadingRadioButton
+24
+http://localhost/favourateClub/radioDemo.html
+radioDemo.php
+<?php
+$club=$_GET["clubs"];
+switch($club)
+{
+case"Zamalek":
+echo"$club";
+include "Zamelk.php";
+break;
+case"Elahly":
+echo"$club";
+include "Elahly.php";
+break;
+case"Elasmaely":
+echo"$club";
+include "Elasmaely.html";
+break;
+}
+?>
+<formname="calc" action="radioDemo.php">
+<input name="clubs"type="radio"
+checked="checked"value="Zamalek">Zamaelk
+<input name="clubs"type="radio"
+value="Elahly">Elahly
+<input name="clubs" type="radio"
+value="Elasmaely">Elasmaely
+<br/>
+<inputtype="submit"value="chooseyour
+favouriteteam">
+</form>
+Handling CheckBoxes in php
+• Since more than one Checkbox can be selected from one
+group , the group values must have an array as its name.
+• If you have several checkboxes for the same topic, put
+square brackets ([]) at the end of the name:
+<input type="checkbox" name="condition[]" value="abc"> ABC
+<input type="checkbox" name="condition[]" value="def"> DEF
+<input type="checkbox" name="condition[]" value="ghi"> GHI
+<input type="checkbox" name="condition[]" value="jkl"> JKL
+ Then,in your PHP code you can access all of those values from an array
+$condition[index]
+ Ifa user clicks 'ABC' and 'GHI,' index 0 will contain abc and index 1 will contain ghi. This
+method makes it easier to deal with forms that have a lot of variables
+08:49
+lec9
+25
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+Example5:HandlingcheckboxinaPHPformprocessor
+26
+<formaction="checkBoxDemo.php">
+<inputtype="checkbox"name="vehicle[]"value="Bike"/>Ihaveabike<br/>
+<inputtype="checkbox"name="vehicle[]"value="Car"/>Ihaveacar
+<br/>
+<inputtype="submit"value="Submit"/>
+</form>
+<?php
+$data=$_GET["vehicle"];
+if(empty($data)){
+echo("Youdidn'tselectanyvalue.");
+}
+else{
+$N=count($data);
+echo("Youselected$Nvalu(s):");
+for($i=0;$i<$N;$i++){
+echo($data[$i]."");
+}
+}
+?>
+Theempty() function isusedto
+checkwhetheradefinedvariable
+has a valuewhich is anempty
+string, empty array, zero or
+NULL. Returns true if it is and
+false if it is not empty or
+undefined.
+Thecount() functioncounts
+theelementsofanarray
+PHP Functions
+• TherealpowerofPHPcomesfromits functions.
+• InPHP,thereare morethan 700 built-in functions.
+PHP die() Function
+The die() function prints a message and exits the current script.
+PHP sleep() Function
+The sleep() function delays execution of the current script for a specified number of seconds.
+08:49
+27
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+lec9
+Creating your own Functions
+syntax
+function function_name([formal_parameters])
+{
+…
+}
+• Functions need NOT bedefined before calling
+• Function overloading is not supported
+• Thereturnstatementisused to return a value
+• Function names are NOTcase sensitive
+<?php
+function m()
+{
+echo (“Hello”);
+}
+?>
+<?php
+m();
+?>
+08:49
+lec9
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+Function parameters
+• If the caller sends too many actual
+parameters, the function ignores the extra
+ones
+• If the caller does not send enough
+parameters,
+the
+unmatched
+parameters are unbound
+formal
+• Thedefault parameter passing method is pass
+by value (one-way communication)
+08:49
+lec9
+<html>
+<body>
+<?php
+function m($x,$y)
+{
+$z=$x*$y;
+return $z;
+}
+?>
+<?php
+m();
+?>
+</body>
+</html>
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+Scope and Lifetime of function Variables
+• Variables defined in a function have local scope
+• Variables defined outside function have global scope
+• global variables must be declared global inside a function if they are going to be
+used in that function.
+This script will not produce any output
+because the echo statement refers to a
+local version of the $a variable, and it has
+not been assigned a value within this
+scope
+08:49
+The above script will output 3. By
+declaring $a and $b global within the function,
+all references to either variable will refer to
+the global version.
+lec9
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+ScopeandLifetimeoffunctionVariables
+• Todeclareoraccessnon-localvariableinafunctioncandeclareanyof
+theirvariablestobeglobal;global $sum;
+<?php
+functionfoo(){
+$variable_a='value';//Localvariable.
+}
+functionbar(){
+print$variable_a;//Printsnothing.
+}
+functionfoo(){
+global$variable_b;//Globalvariable
+$variable_b='value';
+}
+functionbar(){
+global$variable_b;
+print$variable_b;//Prints'value'.
+}
+?>
+Static PHP variables
+• When a function is completed, all of its variables are
+normally deleted. However, sometimes you want a local
+variable to not be deleted.
+• To do this, use thestatic keyword when you first declare
+the variable
+<?php
+function myTest()
+{
+static $x=0;
+echo $x;
+$x++;
+}
+myTest();
+myTest();
+myTest();
+?>
+$x=3
+The variable is still local to the function.
+08:49
+lec9
+32
+Web Programming CS433/ CS614
+Dr Walid M. Aly
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+MaindifferencesbetweenJS&PHP
+• PHPandJavaScripttaketwoverydifferentapproachesto
+declaringvariablesinfunctions.
+• InPHP,allvariablesarelocalinscopeunlessdeclaredasglobal.
+• JavaScriptisopposite,allvariablesareglobalunlessdeclared
+withthevarkeyword.
+33
+BothJavaScriptandPHParecasesensitiveintheirvariables.PHPisnotcase-sensitivein
+functionorclassdeclarations,butJavaScriptiscasesensitiveforthesealso.
+WebProgrammingCS433/CS614 DrWalidM.Aly lec9 08:49
+ScopeandLifetimeoffunctionVariables...
+34
+<html>
+<body>
+<?php
+$u=12;
+functionm($x,$y)
+{
+global$u;
+$z=$x*$y+$u;
+return$z;
+}
+?>
+<?php
+$sum=m(4,5);
+echo"$sum";?>
+</body></html>
+Toaccessavariabledeclared inphpscriptinpage,the functionmust
+declareitwiththekeywordglobalotherwise itwillnotbeaccessed
+<html>
+<body>
+<?php
+$u=12;
+functionm($x,$y)
+{
+$z=$x*$y+$u;
+return$z;
+}
+?>
+<?php
+$sum=m(4,5);
+echo"$sum";
+?>
+</body></html>
+x
+functionDemo2.php
+http://127.0.0.1/functionDemo2.php
+PHP Reference
+• PHPArray
+PHP Calendar
+PHP Date
+PHP Directory
+PHP Error
+PHP Filesystem
+PHP Filter
+PHP FTP
+PHP HTTP
+PHP Libxml
+PHP Mail
+PHP Math
+PHP Misc
+PHP MySQL
+PHP SimpleXML
+PHP String
+PHP XML
+PHP Zip
+35
+08:49
+Dr Walid M. Aly
+Web Programming CS433/ CS614
+lec9
+links
+• PHPtutorial– http://www.tizag.com/phpT/index.php
+• Comparing JavaScript & PHP
+• http://www.lullabot.com/articles/learning-javascript
+php-comparison
+08:49
+Dr Walid M. Aly
+36
+Web Programming CS433/ CS614
+lec9
+WebProgramming
+Dr Walid M. Aly
+Lecture 10
+PHP
+08:49
+Dr Walid M. Aly
+1
+Web Programming CS433/CS614
+lec10
+Purpose of Server-Side Scripting
+• database access
+ Webpagecan serve as front-end to a database
+makerequests from browser,
+passed on to Web server,
+calls a program to access the database,
+sends the results back to the browser
+08:49
+lec10
+Dr Walid M. Aly
+Web Programming CS433/CS614
+Architectures for Database Access
+08:49
+lec10
+Dr Walid M. Aly
+Web Programming CS433/CS614
+Architectures for Database Access
+• PHP&DatabaseAccess– PHPsupports more than 15 databases– AnAPIfor each specific database system (e.g.
+MySQLAPI)– Convenient for Web access to databases, because
+PHP is run on the Web server– Mostwebservers supports php& MYSQL
+08:49
+lec10
+Dr Walid M. Aly
+Web Programming CS433/CS614
+MySQLi
+• TheMySQLi Extension(MySQLImproved) is arelational
+database driver used in the PHP programming language to
+provide an interface with MySQL databases.
+• MySQLi is an improved version of the older PHP MySQL
+driver, offering various benefits.
+• The developers of the PHP programming language
+recommend using MySQLi when dealing with MySQL server
+versions 4.1.3 and newer (takes advantage of new
+functionality)
+5
+08:49
+Dr Walid M. Aly
+Web Programming CS433/CS614
+lec10
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+mysqli_connect()
+6
+Parameter Description
+servername CanbeeitherahostnameoranIPaddress.PassingtheNULLvalueorthe
+string"localhost"tothisparameter,thelocalhostisassumed
+username TheMySQLusername
+password IfnotprovidedorNULL,theMySQLserverwillattempttoauthenticate
+theuseragainstthoseuserrecordswhichhavenopasswordonly.
+dbname Ifprovidedwillspecifythedefaultdatabasetobeusedwhenperforming
+queries.
+port Ifprovided,SpecifiestheportnumbertoattempttoconnecttotheMySQL
+server.
+socket Ifprovided,Specifiesthesocketornamedpipethatshouldbeused.
+Beforeyoucanaccessdatainadatabase,youmustcreateaconnection
+tothedatabase.
+thisisdonewiththemysqli_connect()function.
+ThisfunctionreturnsanobjectwhichrepresentstheconnectiontoaMySQLServer.,or
+FALSEanddiplaysawarningonfailure
+mysqli_connect(servername,username,password,dbname,port,socket)
+Syntax
+http://php.net/manual/en/function.mysqli-connect.php
+PHP MySQL Connect &disconnect to a Database
+ Toconnect PHP toa database, use mysqil_connect,
+ Terminate the connection to the database with
+mysqli_close
+$db =mysqli_connect("localhost","root","");
+……………………
+……………………
+mysqli_close($db);
+08:49
+lec10
+Dr Walid M. Aly
+Web Programming CS433/CS614
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+Example
+Stopexecutingcodeifnotconnectedandshowacertainmessage
+$db=mysqli_connect("localhost","root","")ordie(“cannotestablishconnection”);
+echo“ConnectedSuccessfullytodatabase”
+die()-exit()
+Syntax die(message) die(int)
+Parameter Description
+Message
+integer
+Ifstatusisastring,thisfunctionprintsthestatusjustbeforeexiting.
+Ifstatusisaninteger,thatvaluewillbeusedastheexitstatusand
+notprinted.Exitstatusesshouldbeintherange0to254,theexit
+status255isreservedbyPHPandshallnotbeused.Thestatus0is
+usedtoterminatetheprogramsuccessfully.
+DefinitionandUsage
+Thedie()functionexitsthecurrentscript
+Thisfunctionisanaliasoftheexit()function.
+voiddie( int$status)
+voiddie([string$status])
+mysqli_connect_errno() function
+Definition and Usage
+The mysqli_connect_errno() function returns the error code from the last connection
+error, if any
+Syntax
+Example
+mysqli_connect_errno();
+<?php
+$con=mysqli_connect("localhost","wrong_user","my_password","my_db");
+// Check connection
+if (!$con)
+{
+die("Connection error: " . mysqli_connect_errno()(;
+}
+?>
+Note:The concatenation operator (.) is used to put two string values together
+08:49
+lec10
+Dr Walid M. Aly
+9
+Web Programming CS433/CS614
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+mysqli_query()
+10
+Afterconnection,excutesqlstatmentsusingmysqli_query.
+ReturnsFALSEonfailure.
+ForsuccessfulSELECT,SHOW,DESCRIBEorEXPLAINqueries
+mysqli_query()willreturnamysqli_resultobject.
+Forothersuccessfulqueriesmysqli_query()willreturnTRUE.
+Syntax
+mysqli_query(connection,query,resultmode);
+Parameter Description
+connection Alinkidentifierreturnedbymysqli_connect()ormysqli_init()
+query Thequerystring.
+resultmode Optional:
+EithertheMYSQLI_USE_RESULT(Usethisifwehavetoretrievelarge
+amountofdata)
+MYSQLI_STORE_RESULT(Thisisdefault)
+Ref:http://www.w3schools.com/php/func_mysqli_query.asp
+mysqli_select_db()
+Definition and Usage
+The mysqli_select_db() function is used to change the
+default database for the connection.
+Syntax
+mysqli_select_db(connection,dbname);
+Parameter Description
+connection Required. Specifies the MySQL connection to use
+dbname
+Required. Specifies the default database to be used
+08:49
+lec10
+Dr Walid M. Aly
+11
+Web Programming CS433/CS614
+mysqli_affected_rows()
+Definition and Usage
+The mysqli_affected_rows() function returns the number of affected rows in
+the previous SELECT, INSERT, UPDATE, REPLACE, or DELETE query.
+Syntax
+mysqli_affected_rows(connection);
+Parameter Description
+connection Required. Specifies the MySQL connection to
+use
+08:49
+lec10
+Dr Walid M. Aly
+12
+Web Programming CS433/CS614
+mysqli_error()
+Definition and Usage
+Returns a string with the error description. "" if no error occurred
+Syntax
+mysqli_error(connection);
+Parameter
+Required. Specifies the MySQL connection to use
+Parameter Description
+connection Required. Specifies the MySQL connection to
+use
+08:49
+13
+Dr Walid M. Aly
+Web Programming CS433/CS614
+lec10
+Example :creates a database called "my_db":
+<?php
+$con = mysqil_connect("localhost","peter","abc123");
+if (!$con)
+{
+die("Connection error: " . mysqli_connect_errno();
+}
+if (mysqli_query($con, "CREATE DATABASE my_db“))
+{
+echo "Database created";
+}
+else
+{
+echo "Error creating database: " . mysqli_error($con);
+}
+mysqli_close($con);
+?>
+08:49
+lec10
+14
+Dr Walid M. Aly
+Web Programming CS433/CS614
+Example :Creating a database with tables
+<?php
+$con = mysqil_connect("localhost","peter","abc123");
+if (!$con){
+die("Connection error: " . mysqli_connect_errno();}
+// Create database
+if (mysqli_query($con, "CREATE DATABASE my_db") ) {
+echo "Database created";}
+else{
+echo "Error creating database: " . mysqli_error($con); }
+// Create table
+mysqli_select_db($con,“my_db");
+$sql = "CREATE TABLE Persons
+(
+FirstName varchar(15),
+LastName varchar(15),
+Age int
+)";
+// Execute query
+mysqli_query($con, $sql);
+mysqli_close($con);
+?>
+08:49
+lec10
+15
+Dr Walid M. Aly
+Web Programming CS433/CS614
+Example :inserting record into table
+<?php
+$con = mysqli_connect("localhost","root","") ;
+if (!$con)
+{
+die("Connection error: " . mysqli_connect_errno();
+}
+mysqli_select_db($con,"aast") or die(mysqli_error($con));
+$statment1="insert into courses (Code ,Title,prerequest) values('cs234','AI','CS244')";
+$flag =mysqli_query($con,$statment1);
+if ($flag)
+{echo "sql statment excuted";}
+else
+{
+die ("sql statment NOT excuted".mysqli_error($con ));
+}
+?>
+http://127.0.0.1/insertDemo/insertDemo.php
+Database: aast
+Table :courses
+N.B: The code to connect to server and use a certain database can be in a separate PHP file
+and embedded using require
+08:49
+lec10
+Dr Walid M. Aly
+16
+Web Programming CS433/CS614
+Example : using mysqli_affected_rows();
+<?php
+$con = mysqil_connect("localhost","mysql_user","mysql_pwd");
+if (!$con)
+{
+die("Connection error: " . mysqli_connect_errno();
+}
+mysqli_select_db($con,"mydb");
+mysqli_query($con, "DELETE FROM mytable WHERE id < 5");
+$rc = mysqli_affected_rows($con);
+echo "Records deleted: " . $rc;
+mysqli_close($con);
+?>
+08:49
+lec10
+Dr Walid M. Aly
+17
+Web Programming CS433/CS614
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+18
+Dealingwiththeresult
+mysqli_fetch_array(result,result_type)
+Thisfunctionreturnsarowfromtherecordset resultedfrommysqli_query()function
+Therowisreturnedas anarrayofstringsonsuccess,
+eachcalltothisfunctioncausesapointertomoveontonextrow
+ThefunctionreturnsFALSEonfailureorwhentherearenomorerows,
+ThearraytypecanbeMYSQL_ASSOC-Associativearray,withkeysequaltocolumnnames
+ MYSQL_NUM-Numericarray
+MYSQL_BOTH-Default.Bothassociativeandnumericarray
+3Column 2Column 1Column
+C B A
+E D C
+row1
+row2
+row3
+$sql="SELECT*fromPersonWHERELastname='Ahmed’";
+$result=mysqli_query($sql,$con);
+$data=(mysqli_fetch_array($result));
+echo$data[0];echo$data[1];echo$data[2];//ABC
+//echo$data[“column1”];echo$data[“colum2”];echo$data[“column3”];
+$data=(mysqli_fetch_array($result));
+echo$data[0];echo$data[1];echo$data[2];//CDE
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+19
+<?php
+$con=mysqli_connect("localhost","root","")
+ordie("cannotestablishconnection");
+mysqli_select_db($con,"aast")or
+die(mysqli_error($con));
+$statment1="SELECT*FROMcourses";
+$result=mysqli_query($con,$statment1);
+if(!($result)){echo("Error:
+".mysqli_error($con));}
+while($row=mysqli_fetch_array($result))
+{
+echo$row["Code"]."-";
+echo$row["Title"]."-";
+echo$row["Prerequest"];
+echo"<br/>";
+}
+?>
+Example:Dealingwiththeresult
+http://localhost/selectDemo/selectDemo.php
+Database:aast
+Table:courses
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+mysqli_num_rows()function
+20
+Parameter Description
+data Required.Specifieswhichdatapointertouse.Thedata
+pointer istheresultfromthemysqli_query()function
+DefinitionandUsage
+Themysqli_num_rows()functionreturnsthenumberofrowsinarecordset.
+ThisfunctionreturnsFALSEonfailure.
+Syntax
+mysqli_num_rows(data)
+<?php
+$con=mysqli_connect("localhost","peter","abc123");
+if(!$con)
+{die('Couldnotconnect:'.mysql_error());}
+$db_selected=mysqli_select_db($con,"test_db");
+$sql="SELECT*FROMperson";
+$result=mysqli_query($con,$sql);
+echomysqli_num_rows($result);
+mysqli_close($con);
+?>
+Example
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+<?php
+$con=mysqli_connect("localhost","root","")ordie("can
+notestablishconnection");
+mysqli_select_db($con,"aast")ordie(mysqli_error($con));
+$statment1="SELECT*FROMcourses";
+$result=mysqli_query($con,$statment1);
+$num_rows=mysqli_num_rows($result);
+for($row_num=0;$row_num<$num_rows;
+$row_num++){
+$row=mysqli_fetch_array($result);
+print"<p>Resultrownumber".
+($row_num+1).
+"Code:";
+echo($row["Code"]);
+echo"Title:";
+echo($row["Title"]);
+echo"Prerequest:";
+echo($row["Prerequest"]);
+echo"</p>";
+}
+?>
+Example:Dealingwiththeresultusingmysql_num_rowsfunction
+http://localhost/selectDemo/selectDemo2.php
+Database:aast
+Table:courses
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+Example:Inserting recordsusingaform
+insertForm.html
+<formmethod="post"action="insertForm.php">
+<tableborder="1">
+<tr>
+<td>CourseID</td>
+<td><inputtype="text"name="ID"></td>
+</tr>
+<tr>
+<td>CourseTitle</td>
+<td><inputtype="text" name="title"></td>
+</tr>
+<tr>
+<td>Prerequest</td>
+<td><inputtype="text" name="Prerequest"></td>
+</tr>
+<tr>
+<td><inputtype="submit"value="AddCourse"/>
+</td>
+<td><inputtype="reset"/></td>
+</tr>
+</table>
+</form>
+http://localhost/Insert_Form/insertForm.html
+insertForm.php
+<?php
+$id=$_POST["ID"];
+$title=$_POST["title"];
+$prequest=$_POST["Prerequest"];
+$con = mysqli_connect("localhost","root","") or die (" can not establish connection ");
+mysqli_select_db($con,"aast");
+$statment1= "insert into courses (Code ,Title,Prerequest) values('$id','$title','$prequest')";
+$flag =mysqli_query($con,$statment1);
+if ($flag)
+{
+echo "Record added Successfully";}
+else
+{
+die ("Can not add Record ".mysqli_error());
+}
+08:49
+Dr Walid M. Aly
+Web Programming CS433/CS614
+lec10
+Example : querying database using a form
+Database: aast
+Table :courses
+http://localhost/FormQuery/FormQuery.php
+08:49
+lec10
+Dr Walid M. Aly
+24
+Web Programming CS433/CS614
+WebProgramming CS433/CS614
+DrWalidM.Aly lec10 08:49
+25
+<formmethod="post"action="FormQuery.php">
+<p>CourseCode?</p>
+<selectname="Course_Code">
+<option>CS433</option>
+<option>CS244</option>
+<option>CC231</option>
+</select>
+<inputtype="submit“ value="CheckPrerequest"/>
+<inputtype="reset“ value="ResetForm"/>
+</form>
+
+…………………………………………………
+FormQuery.php
+FormQuery.php
+<?php
+$con = mysqli_connect("localhost","root","","aast") or die (" can not establish
+connection ");
+?>
+<?php
+if (isset($_POST["Course_Code"]))
+{
+$courseCode=$_POST['Course_Code'];
+$query = "SELECT Prerequest from courses where Code= '$courseCode' ";
+$result = mysqli_query($con,$query);
+if(!($result))
+{echo ("Error: ".mysqli_error($con));
+die ("Can not execute".mysqli_error());
+}
+$row = mysqli_fetch_array($result);
+$answer=$row ["Prerequest"];
+echo "<p> The Prerequest for $courseCode is $answer <p>";
+}
+?>
+</html>
+08:49
+lec10
+Dr Walid M. Aly
+26
+Web Programming CS433/CS614
+WebProgramming
+C333-CS614-CS644
+Dr Walid M. Aly
+Lecture#11
+Web Programming CS333/CS614
+08:50
+

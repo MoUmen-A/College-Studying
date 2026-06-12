@@ -1,0 +1,83 @@
+Question One (SO’s: 2) (10 Marks)
+Fill in the spaces. (In your answer sheet, write the item number and the missing words)
+
+...... is the HTML semantic element typically used for information appearing at the end of a document.
+
+...... are the HTML elements used to display titles and subtitles.
+
+...... is the HTML attribute used to specify what an image represents if the image cannot be displayed.
+
+...... is the HTML element used to mark up a part of text in a document.
+
+...... is the HTML element used to describe the content of a table.
+
+...... is the HTML element used to include and display a web page within another web page.
+
+...... is the HTML element used to identify items in a list.
+
+...... is the HTML attribute that is used to specify the address of a hyperlink.
+
+...... is the HTML entity that is used for non-breaking spaces.
+
+...... is the HTML attribute that is used to specify the amount of space between table cells.
+
+Question Two (SO’s: 1, ..., 6) (10 Marks)
+Determine the text color of each HTML element given below when the provided internal style sheet is applied. In your answer sheet, write the word that appears in each HTML element and its associated color.
+
+
+<body>
+<div class="container">Container
+    <p id="unique">Unique</p>
+    <p class="special">Special</p>
+    <span>Normal Span</span>
+    <span>Another Span</span>
+    <h2>Heading</h2>
+    <p>Nested<em>
+    <p class="highlight">Em</em>Text</p>
+</div>
+	<p class="unique">Standalone</p>
+</body>
+
+<style>	
+    div.container { color: navy; }	
+    p.special { color: red; }	
+    .unique { color: purple; }	
+    .highlight { color: magenta; }	
+    em.highlight { color: indigo; }	
+    p ~ span { color: blue; }	
+    p + span { color: violet; }	
+    p > em { color: green; }	
+    h2 ~ p { color: cyan; }	
+    div p { color: teal; }
+</style>	
+===== Page 2 =====
+
+2+4+4=10 Marks)
+
+Consider a table "UserProfile" in a database "Users". The table contains the fields Name, Email, and PhoneNumber. Based on this, write a PHP program to perform each of the following:
+
+(a) Design an "UpdateProfile" page that contains form elements for the fields indicated above. Your program should first check whether the user is already logged in. You should use the name "user" for the username field from the "login" page (assume that the "login" page already exists).
+
+(b) An error message should appear beside any form field that does not contain valid data. The following validations are required: the email should match a valid format (e.g., name@domain.com), and the phone number must be exactly 10 digits with no spaces.
+
+(c) If all validations are successful, the "UserProfile" table is updated. The user is redirected to another page named "Confirm" that shows the following message "Your Profile is successfully updated!"
+
+Question Four (SO's: 1,2,5)
+(5+5=10 Marks)
+
+(a) Given the web page design shown below, write a JavaScript program that calculates the total receipt value. When the user clicks the "Total" button, the program should determine which items are selected and retrieve the corresponding quantities. It should then calculate the total and display the result in an alert window as shown.
+
+N.B. You may use the following IDs for the given form elements (or any other appropriate method to retrieve the data as an array):
+
+beefChx and chickenChx for the "Beef Burger" and "Chicken Burger" checkboxes, respectively. beefTxt and chickenTxt for the corresponding quantity input fields.
+
+
+(b) Write the output of the following JavaScript code snippet.
+
+let a=[7,3,12,100,32,30]; 
+let b=[29,3,5,3,11,32];
+console.log (a.sort ()); 
+console.log (a.join(':')); 
+console.log (b.find((element) => element > 10));
+console.log (b.slice(- 2));
+console.log (b.indexOf(3,2));

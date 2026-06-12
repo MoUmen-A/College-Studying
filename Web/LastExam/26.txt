@@ -1,0 +1,108 @@
+Final Fall web 25_26.pdf
+===== Page 1 =====
+
+a) Choose the Correct Answer:
+
+All the following are HTML container elements EXCEPT:
+
+A. <img>
+B. <ol>
+C. <h1>
+D. <u>
+
+In CSS, the "the child selector" combinator is denoted by
+
+A. ~
+B. +
+C. >
+D. (space)
+
+In JavaScript, the function shows a pop-up box to allow the user inputs some text.
+
+A. alert ()
+B. prompt ()
+C. input
+D. confirm ()
+
+In PHP, which of the following is not a valid variable name.
+
+A. 
+i
+f
+B
+.
+ifB.IF
+C. $if
+D. if
+
+In PHP, the function sorts an associative array according to key in a descending order.
+
+A. ksort ()
+B. ksort ()
+C. asort ()
+D. rsort ()
+
+b) Put (√) or (×) for each of the following statements and correct the false statements:
+
+In HTML, the text attribute specifies an alternative text to be displayed, when an image is not displayed.
+
+In HTML, the Anchor tag < a> is a block level element.
+
+The CSS universal selector is denoted by #.
+
+CSS is responsible for the structural phase in web application development.
+
+The expression ("10" + "20") is evaluated to 1020 in JavaScript; while in PHP it raises an error.
+
+In JavaScript, the function names are not case-sensitive.
+
+The condition ("1000" != 1000) is evaluated to be false.
+
+The semicolon is mandatory at the end of each statement in both PHP and JavaScript.
+
+The POST method sends the user information appended to the page URL, separated by $ .
+
+In PHP, an associative array can be traversed using both for and foreach statements.
+
+===== Page 2 =====
+
+1
+
+Question 2 (15 Marks)
+Complete the following statements with a correct answer:
+a) In HTML, we use the tag - - (1) to display a numbered list, and to change it appearance to the form (a, b, c, ...) we use the attribute (or property) - - (2) - - .
+
+b) The image inserted with the <img> tag differs from the page's background-image in several aspects, such as: - - (3) - - , and - - (4) - - .
+
+c) To write (3) as in the formula 
+x
+3
+x 
+3
+  we use the tag - - (5) - - , while - - (6) - - is the HTML tag used to write a suffix (such as 2 in 
+H
+2
+O
+H 
+2
+​
+ O ).
+
+d) The - - (7) - - CSS is used to apply a style to a single HTML element, while the - - (8) - - CSS is used to define a style for a single HTML page.
+
+e) We use the attribute - - (9) - - to load a hyperlink within an iframe called "example". However, creating a link that navigates to a specific section labeled "top" on the same page we use - - (10) - - .
+
+f) To use an external CSS file for styling a web page, we use the tag - - (11) - - and this tag is written inside the - - (12) - - part of the HTML page.
+
+g) In PHP, the function - - (13) - - returns true if the specified key has a data in the array, while the function - - (14) - - returns a subset of the array, on the other hand, the function - - (15) - - removes the last element of the array.
+
+Question 3 (10 Marks)
+Given a database named "School" containing a table named "Students", which consists of 4 fields: name, password, address and grade.
+
+Write the code that performs each of the following:
+
+Design a register page, which contains an HTML form with the fields on the Students table. Validate using HTML attributes whether a form field is blank.
+
+On submitting, go to the PHP page called insertStudent.php that add a new student's data into the Student table, then display the following message "A new student, <name> is added successfully".
+
+Display the data of all students in grade "6".
