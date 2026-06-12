@@ -1,0 +1,53 @@
+A computer uses a memory unit with 256K words of 32 bits each. A binary instruction code is stored in one word of memory. The instruction has four parts: an indirect bit, an operation code, a register code part to specify one of 64 registers, and an address part. How many bits are there in the operation code, the register code part, and the address part? Draw the instruction word format and indicate the number of bits in each part. How many bits are there in the data and address inputs of the memory? (3 Marks)
+
+The content of AC in the basic computer is hexadecimal A937, and the initial value of E is 1. Determine the contents of AC, F, PC, AR, and IR in hexadecimal after the execution of the CLA instruction. Repeat the process for CLE, CMA, starting from each one of the register-reference instructions. The initial value of PC is hexadecimal 021. (Using Table1) (6 Marks)
+
+Design the control gates of AR register. (Using Table 1) (3 Marks)
+
+Show the complete logic control gates for the read/write of the memory in the basic computer. (Using Table 1) (4 Marks)
+
+Convert the following arithmetic expressions from infix notation to reverse Polish notation (RPN): (2 Marks)
+
+a. A∗B+C∗D+E∗F 
+b. A∗B+A∗(B∗D+C∗E)
+
+Convert the following arithmetic expressions from reverse Polish notation (RPN) to infix notation: (2 Marks)
+
+a. ABCDE+∗−/
+
+b. ABCDE+/−+
+
+===== Page 2 =====
+
+An 8-bit computer contains a register R. For each of the following instructions, determine the values of the status flags C (carry), S (sign), Z (zero), and V (overflow). Assume that the initial value of register R is hexadecimal 72 for all cases. All operands are given in hexadecimal. (2 Marks)
+
+a. Add the immediate operand C6 to register R.
+b. Perform a bitwise AND between register R and the immediate operand 8D.
+
+Determine the micro-operations that will be executed in the processor when the following 14-bit control words are applied. (3 Marks)
+
+(3 Marks)
+
+1.010 011 001 00101
+
+2.110 000 110 00001
+
+3.010 000 000 00000
+
+An instruction is stored at location 300 with its address field at location 301. The address field has the value 400. A processor register R1 contains the number 200. Evaluate the effective address if the addressing mode of the instruction is Direct, Immediate; Relative; Register Indirect; Index with R1 as the Index Register. (4 Marks)
+
+A no pipeline system takes 50 ns to process a task. The same task can be processed in a six-segment pipeline with a clock cycle of 10 ns. Determine the speedup ratio of the pipeline for 100 tasks. (2 Marks)
+
+Draw a space-time diagram for a six-segment pipeline showing the time it takes to process eight tasks. (2 Marks)
+
+A ROM chip of 
+1024
+×
+8
+1024×8 bits has four select inputs and operates from a 5-volt power supply. How many pins are needed for the IC package? Draw a block diagram and label all input and output terminals in the ROM. (2 Marks)
+
+A computer uses RAM chips of 1024×1 capacity.
+
+a. How many chips are needed, and how should their address lines be connected to provide a memory capacity of 1024 bytes?
+b. How many chips are needed to provide a memory capacity of 16K bytes?
+c. Explain in words how the chips are to be connected to the address bus. (5 Marks)

@@ -1,0 +1,107 @@
+
+Question 1: Essay Questions [10 Marks]:
+Describe the three main components of a computer and their roles.
+
+Compare DRAM and SRAM in terms of structure and usage.
+
+What is a page fault, and how does the OS handle it?
+
+Explain the purpose of virtual memory and how it enhances performance.
+
+Explain the fetch-decode-execute cycle in MARIE.
+
+Question 2: Choose the correct answer [10 Marks]:
+Which memory type is typically used for cache?
+
+a) DRAM
+
+b) SRAM
+
+c) ROM
+
+In direct-mapped cache, block 15 of main memory maps to which cache block if the cache has 8 blocks?
+
+a) 0
+b)7 
+c( 15)
+
+Introduction to Computer Architecture
+
+===== Page 2 =====
+
+What is the postfix equivalent of (A+B)∗C?
+a) A B + C *
+b) A B C * +
+c) A + B * C
+
+How many bits are needed to address 32 registers?
+a) 4
+b) 5
+c) 6
+
+Big-endian stores:
+a) The least significant byte at the lowest address
+b) The most significant byte at the lowest address
+c) Bytes in reverse order
+
+ARM processors use:
+a) Variable-length instructions
+b) Only memory-memory operations
+c) Fixed-length, three-operand instructions
+
+What must be done periodically to maintain DRAM contents?
+a) Defragmentation
+b) Refreshing
+c) Reboot
+
+Which pipeline hazard occurs when an instruction depends on the result of a prior instruction?
+a) Structural
+b) control 
+c) data
+Introduction to Computer Architecture
+
+===== Page 3 =====
+
+Which architecture uses zero-operand instructions?
+a) Accumulator
+b) Stack
+c) GPR
+
+What are the two principal parts of a CPU?
+a) ALU and Registers
+b) Datapath and Control Unit
+c) Cache and Main Memory
+
+Question 3: True/False Questions [10 Marks]:
+Fully associative cache has the lowest miss rate.
+
+The Memory Buffer Register (MBR) temporarily holds data retrieved from or to be written to the disk.
+
+Set-associative cache is a compromise between direct-mapped and fully associative.
+
+Hardwired control and microprogrammed control are two ways to implement a control unit.
+
+A larger cache always improves performance.
+
+Fully associative cache does not need an index field.
+
+Cache memory is faster than registers.
+
+===== Page 4 =====
+
+Virtual memory allows processes to use more memory than physically available.
+
+A page fault always results in a program crash.
+
+MIPS is a RISC architecture with Fixed-length instructions.
+
+Question 4: Problems calculation [10 Marks]:
+A memory system uses 16 chips, each with 2K × 8-bit capacity. How many address bits are needed to select a chip in high-order interleaving?
+
+A direct-mapped cache has 128 blocks, each 64 bytes. The memory address is 32 bits. Calculate the offset, index, and tag bits.
+
+A 2-way set-associative cache has 12 index bits and 32-byte blocks. What is the total cache size?
+
+A system uses 14-bit virtual addresses with 1KB pages. How many bits are used for the page number and offset?
+
+Suppose a byte-addressable memory contains 1MB and cache consists of 32 blocks, where each block contains 16 bytes. Using direct mapping, fully associative mapping, and a 4-way set associative mapping, determine where the main memory address 0x326A0 maps to in cache.
