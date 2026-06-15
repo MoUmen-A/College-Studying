@@ -1,0 +1,1178 @@
+Software Engineering
+LECTURE CHAPTERS GUIDE
+Chapter Explanations + MCQ Cheat Sheets + Essay Templates
+Built from your uploaded lecture slides and exact exam scope.
+Your exact scope and exam focus- Exam format: MCQ, essay questions, diagrams, and scenario-based question.- Chapter 4 is limited to p5, p6, and p44-p53 only, as you specified.- Chapter 13 Security Engineering is included only up to p19, as you specified.- Section diagrams are separated in the second PDF because diagrams are 20/40 marks.- Extra focus: Ch4, Ch8, and Ch2 methodologies/comparisons/lecture diagrams.
+How to use: First memorize the blue boxes, then the comparison tables, then practice the diagram recipes
+using any case description.
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 2
+0. Exam Strategy and Priority Map
+The goal of this PDF
+This is the lecture-only guide. Every chapter idea is rewritten in simple words, unnecessary wording is
+removed, and each chapter ends with MCQ and essay cheat sheets.
+Recommended 2-day order
+Time What to study Reason
+First block Diagram Section first: Use Case, Activity, Sequence,
+State, Misuse, Class
+This alone can be 20 marks. Diagrams also
+appear inside scenario questions.
+Second block Chapter 8 Testing Very likely essay and MCQ. Many
+comparison questions.
+Third block Chapter 4 requirements pages only The doctor explicitly said to focus on it.
+Fourth block Chapter 2 process models and diagrams High chance for methodology comparisons
+and MCQ.
+Final block Chapter 13 to p19 + Chapter 21 Important for MCQ/short
+essay/state-machine scenario.
+What each question type is really asking
+Question type How to answer fast
+MCQ Search for keywords: unclear requirements -> Spiral; static structure -> Class diagram;
+internal structure testing -> White-box; business acceptance -> Acceptance testing.
+Essay Use this structure: definition -> main points/process -> advantages/problems -> when used-> small example.
+Diagram Extract actors/classes from nouns, use cases/actions/messages from verbs, decisions from
+if/else, states from conditions, threats from security words.
+Scenario-based Do not rewrite the scenario. Underline roles, actions, conditions, data, and threats, then
+convert them into the requested UML diagram.
+Golden exam rule for diagrams-Actors/classes are usually nouns: Customer, Admin, Payment Gateway, Course, Restaurant.-Use cases/actions/messages are verbs: login, browse, enroll, place order, validate payment.-Alt/decision appears when the scenario says if/else, valid/invalid, sufficient/insufficient.-Loop appears when the scenario says repeat, multiple items, until, for each, many courses/products.-Threats/misuse cases appear when the scenario mentions attacker, fraud, data leak, denial of service,
+tampering.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+High probability topics from your uploaded past exam
+Past-exam pattern
+What to prepare
+MCQ from many chapters
+Essay/comparison
+Definitions and keywords: process model, testing type, UML diagram type,
+traceability, real-time.
+Waterfall vs Spiral, process models, strengths/weaknesses/suitable domains.
+Security diagram
+Real-time/state question
+Misuse case diagram for online banking or similar system.
+State machine for traffic light/elevator/microwave.
+Large case scenario
+Use Case + Sequence + Activity + Class from one long description.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 3
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 4
+Chapter 2: Software Processes
+Scope in this PDF Exam priority Must memorize
+Full chapter content included, with
+extra focus on process models,
+methodologies, comparisons, and
+lecture diagrams.
+Very high Waterfall, incremental, reuse-oriented, process
+activities, coping with change, prototyping,
+incremental delivery, process improvement,
+maturity levels.
+1) Core idea: what is a software process?-Software process: a structured set of activities needed to develop a software system.-All software processes include four main activities: Specification, Design and implementation, Validation,
+and Evolution.-Software process model: an abstract representation of a software process from a particular perspective.-When describing a process, mention activities, their order, products, roles, and pre/post-conditions.
+Term Simple meaning
+Product Outcome of a process activity, such as a requirements document or test report.
+Role Responsibility of a person in the process, such as developer, tester, manager, customer.
+Pre-condition Something true before the activity starts.
+Post-condition Something true after the activity finishes.
+2) Plan-driven vs agile
+Point Plan-driven process Agile process
+Planning Activities are planned in advance. Planning is incremental and flexible.
+Progress measure Measured against the original plan. Measured through working increments and
+feedback.
+Change Harder to change after the plan starts. Designed to accept changing requirements.
+Reality Useful when requirements are stable. Useful when requirements are unclear or
+changing.
+Exam sentence Plan first, follow plan. Build in small steps and adapt.
+Memorize
+There is no universally right or wrong software process. In practice, most real projects mix plan-driven and
+agile elements.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+3) Main software process models
+Model
+Idea
+Best when
+Waterfall
+Separate phases done mostly in
+sequence.
+Requirements are stable and
+well-understood; large
+engineering projects
+needing coordination.
+Main problem
+Difficult to accommodate
+change after the process
+starts.
+Incremental
+development
+Specification, development, and
+validation are interleaved; system
+delivered in versions.
+Requirements may change
+and early delivery is
+important.
+Integration and
+configuration /
+reuse-oriented
+System assembled from existing
+configurable components or COTS
+systems.
+Business systems where
+reusable components are
+available.
+Process may be less
+visible; structure may
+degrade without
+refactoring.
+Requirements
+compromises and loss of
+control over reused
+components.
+Lecture diagram: Waterfall model phases.
+4) Waterfall model
+Lecture diagram: Incremental development interleaves
+specification, development, validation.- Waterfall is a plan-driven model with separate and distinct phases.- Phases: requirements analysis and definition -> system/software design -> implementation and unit
+testing -> integration and system testing -> operation and maintenance.- Main drawback: difficult to accommodate change after the process is underway.- Appropriate only when requirements are well understood and changes are limited.- Mostly used in large systems engineering projects where many sites must coordinate work.
+Essay answer skeleton: Waterfall
+Waterfall is a sequential plan-driven model. It is simple and organized because each phase has defined
+outputs, but it is inflexible because changing requirements after starting the project causes expensive
+rework. Therefore, it is best for stable requirements and large coordinated engineering projects.
+5) Incremental development- The system is developed as a series of increments/versions.- Specification, development, and validation happen together instead of one strict sequence.- Can be plan-driven or agile.
+Benefits
+Problems
+Reduced cost of changing requirements because less
+analysis/documentation is redone.
+Process is not very visible to managers because frequent
+documents may be expensive.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 5
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 6
+Benefits Problems
+Easier customer feedback because customers can see
+working software.
+System structure can degrade as new increments are
+added.
+Faster delivery of useful functionality; customers gain value
+earlier.
+Refactoring is needed to keep the structure clean.
+Exam keyword
+Incremental = early value + easier change + customer feedback, but lower visibility + possible
+architecture degradation.
+6) Integration and configuration / reuse-oriented software
+engineering-Based on reuse: the system is built by integrating existing components or application systems.-Existing reusable elements may be configured to match user requirements.-Reusable software types: COTS stand-alone application systems, collections of objects/packages, and web
+services.
+Lecture diagram: reuse-oriented process stages. Lecture diagram: general model of design process.
+Stage Meaning
+Requirements specification Define what the system should do.
+Software discovery and evaluation Search for existing reusable systems/components.
+Requirements refinement Modify/adjust requirements based on available components.
+Application system configuration Configure existing application systems.
+Component adaptation and
+integration
+Adapt components and integrate them into the final system.
+Advantages Disadvantages
+Reduced cost and risk because less software is developed
+from scratch.
+Requirements compromises are inevitable.
+Faster delivery and deployment. The system may not fully meet real user needs.
+Uses tested existing components. Loss of control over evolution of reused components.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+7) The four basic process activities
+Activity
+What it means
+Important details
+Specification
+Design and
+implementation
+Establish system services and constraints.
+Convert the specification into an executable
+system.
+Requirements elicitation and analysis,
+specification, validation.
+Design the structure, then implement it; often
+interleaved.
+Validation
+Evolution
+Check the system conforms to specification
+and meets customer needs.
+Change the system in response to changing
+business/customer needs.
+Includes reviews, testing, V&V.;
+Software must evolve to remain useful.
+Requirements engineering process from Ch2.
+Design activities
+Testing stages: component, system, acceptance/customer.
+Design activity
+Meaning
+Architectural design
+Database design
+Identify overall structure, main components, relationships, and distribution.
+Design data structures and database representation.
+Interface design
+Component selection/design
+Define interfaces between system components.
+Find reusable components or design new components.
+Implementation and debugging- Implementation means developing programs or configuring an application system.- Programming is individual and has no standard process.- Debugging is finding program faults and correcting them.
+8) Validation and V-model- Verification and validation (V&V;) shows that the system conforms to specification and meets customer
+needs.- System testing executes the system with test cases based on specification and real data.- Testing stages: component testing -> system testing -> customer/acceptance testing.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 7
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Lecture diagram: V-model shows development phases linked with corresponding test planning/testing phases.
+9) Coping with change- Change is inevitable in large software projects.- Causes: business changes, new technologies, platform changes, and changing customer needs.- Change leads to rework: re-analyzing requirements plus implementing new functionality.
+Approach
+Meaning
+Example
+Change anticipation
+Process includes activities that predict possible changes
+before major rework is needed.
+Develop a prototype to
+clarify customer needs.
+Change tolerance
+Process is designed so changes can be handled at low
+cost.
+Use incremental
+development; change only a
+future/small increment.
+10) Prototyping- A prototype is an initial version used to demonstrate concepts and try design options.- Used in requirements engineering, design, and testing.- Prototype should focus on unclear areas of the product.- Prototypes may leave out error checking, recovery, and non-functional requirements such as
+reliability/security.
+Prototype development process.
+System evolution loop.
+Benefits of prototyping
+Why throw-away prototypes should be discarded
+Improved usability; closer match to real user needs; better
+design quality; improved maintainability; reduced
+development effort.
+Cannot be tuned easily for non-functional requirements;
+usually undocumented; structure degraded by rapid
+change; may not meet organizational quality standards.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 8
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 9
+11) Incremental delivery-Instead of one final delivery, the system is delivered in increments, each containing useful functionality.-User requirements are prioritized, and highest-priority requirements are delivered early.-Once an increment starts development, its requirements are frozen, while later increments may still
+evolve.
+Lecture diagram: incremental delivery develops and deploys increments until final system is complete.
+Incremental development Incremental delivery
+Develop and evaluate increments before moving to the
+next.
+Deploy each increment for real end-user use.
+User/customer proxy may evaluate. Real users evaluate in practical use.
+Common in agile methods. Hard for replacement systems because early increments
+may have less functionality than old system.
+Advantages Problems
+Customer value delivered earlier. Common basic facilities may be hard to identify early.
+Early increments act as prototypes for later requirements. Specification evolves with software, which can conflict with
+contract/procurement models.
+Lower overall project failure risk. Difficult if organization requires complete specification
+before contract.
+Highest-priority services get most testing. Integration/architecture must still be controlled.
+12) Process improvement-Process improvement means understanding existing processes and changing them to increase product
+quality and/or reduce cost/development time.-Two approaches: maturity approach and agile approach.
+Approach Focus Keyword
+Process maturity approach Improving process/project management and adopting good
+software engineering practice.
+Control and
+management.
+Agile approach Iterative development, less overhead, rapid delivery,
+responsiveness to changing requirements.
+Speed and flexibility.
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 10
+Process improvement cycle: measure -> analyze -> change. Capability maturity levels.
+Improvement activity Meaning
+Process measurement Measure attributes of process/product to create a baseline and assess improvement.
+Process analysis Assess current process, identify weaknesses and bottlenecks, build process maps.
+Process change Propose and introduce changes; then collect data again.
+Metric type Examples
+Time taken Calendar time or effort to complete an activity/process.
+Resources required Total effort in person-days.
+Number of events Number of defects discovered.
+SEI maturity level Simple meaning
+Initial Essentially uncontrolled.
+Repeatable Product management procedures defined and used.
+Defined Process management procedures and strategies defined and used.
+Managed Quality management strategies defined and used.
+Optimising Process improvement strategies defined and used.
+13) Past-exam add-on: Spiral model and V-model
+Why this is included
+Your past exam explicitly asked about Spiral and V-model. Even if your main Ch2 slides focus on
+waterfall/incremental/reuse, memorize this add-on because it is high-value for MCQ and comparison
+essays.
+Model Simple idea Best suited for Strength Weakness
+Spiral model Risk-driven iterative cycles. Each cycle
+identifies objectives, analyzes risks,
+develops/validates, then plans the next
+loop.
+Large, complex, high-risk
+projects or unclear
+requirements.
+Strong risk
+management
+and flexibility.
+Expensive
+and needs
+risk-analysis
+expertise.
+V-model Plan-driven model linking development
+stages to corresponding testing stages.
+Systems needing strong
+verification and
+validation.
+Testing is
+planned early.
+Less flexible
+with
+changing re
+quirements.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Comparison essay formula: Waterfall vs Spiral- Waterfall is linear and best for stable requirements; Spiral is iterative and best for unclear/high-risk
+requirements.- Waterfall controls phases; Spiral controls risk.- Waterfall weakness is inflexibility; Spiral weakness is cost and need for expertise.- Use Waterfall for stable large engineering work; use Spiral for uncertain risky systems.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 11
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 12
+Chapter 2 MCQ + Essay Cheat Sheets
+A) MCQ cheat sheet - Chapter 2
+If the MCQ says... Think... Choose / answer
+Structured set of activities definition Software process
+Abstract representation of a process definition Software process model
+All activities planned in advance rigid planning Plan-driven process
+Planning is incremental and change is
+easier
+flexible process Agile process
+Stable/well-understood requirements linear model Waterfall
+Unclear/changing requirements or early
+delivery
+versions Incremental development
+Existing components, COTS, web
+services
+reuse Integration and configuration / reuse-oriented
+Waterfall drawback change after starting Difficult to accommodate change
+Incremental benefits feedback + early value Lower change cost and faster delivery
+Incremental problems management visibility +
+structure
+Low visibility and architecture degradation
+Main process activities 4 words Specification, development, validation, evolution
+Design activities architecture/data/interfaces/
+components
+Architectural, database, interface, component
+design
+Validation stages component/system/custome
+r
+Component, system, customer testing
+Prototype purpose clarify unknowns Requirements elicitation/validation and design
+exploration
+Throw-away prototype not production Discard after learning
+Change anticipation predict before rework Prototype
+Change tolerance accept change cheaply Incremental development/delivery
+Process improvement cycle 3 steps Measurement -> analysis -> change
+Maturity levels from chaos to improvement Initial, repeatable, defined, managed, optimising
+Risk-driven iterative model past exam keyword Spiral model
+B) Essay / comparison cheat sheet - Chapter 2
+Universal essay structure-Define the model/concept in one sentence.-Explain the workflow or phases.-Give strengths.-Give weaknesses.-Say when it is suitable.-End with one example or exam keyword.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Likely essay
+Ready answer plan
+Waterfall model
+Incremental development
+Definition -> phases -> drawback/change problem -> suitable for stable
+requirements/large engineering -> diagram as sequential boxes.
+Definition -> interleaving specification/development/validation -> benefits -> problems-> refactoring needed.
+Reuse-oriented development
+Define improvement -> maturity/agile approaches -> measurement, analysis, change-> metrics.
+Definition -> reusable software types -> process stages -> advantages/disadvantages.
+Waterfall vs Spiral
+Waterfall = linear and stable requirements. Spiral = iterative and risk-driven. Compare
+change, risk, cost, suitability.
+Plan-driven vs agile
+Coping with change
+Plan-driven = planned in advance. Agile = incremental planning and responsive to
+change. Real projects mix both.
+Change is inevitable -> costs rework -> reduce by anticipation/prototyping and
+tolerance/incremental delivery.
+Process improvement
+C) Diagram cheat sheet - Chapter 2
+Diagram type
+How to draw in exam
+Waterfall
+Incremental
+Five boxes in a downward sequence: requirements -> design -> implementation/unit test-> integration/system test -> operation/maintenance.
+Left side development stages, right side matching test stages; testing planned against
+development artifacts.
+Show repeated increments where specification, development, and validation overlap;
+each increment adds functionality.
+Reuse-oriented
+Process improvement cycle
+Requirements specification -> software discovery/evaluation -> requirements refinement-> configuration/adaptation/integration.
+Circle: process measurement -> process analysis -> process change -> repeat.
+V-model
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 13
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 14
+Chapter 4: Requirements Processing - Only Your
+Exam Pages
+Scope in this PDF Exam priority Must memorize
+Only p5, p6, and p44-p53 included.
+Other Chapter 4 pages are
+intentionally excluded based on your
+instruction.
+Very high User vs system requirements, functional vs
+non-functional/domain requirements, changing
+requirements, requirements management,
+change management process.
+1) User requirements vs system requirements
+Type Meaning Written for Level of detail
+User requirements Natural language statements and diagrams of
+services and operational constraints.
+Customers/end users. High-level and
+understandable.
+System requirements Structured detailed document describing
+functions, services, and operational constraints.
+Developers/contractor
+s.
+Detailed enough to
+implement; may be
+contract.
+Exam sentence
+User requirements say what the user expects in simple language. System requirements define in detail
+what developers must implement.
+2) Functional, non-functional, and domain requirements
+Requirement type Meaning Examples / keywords
+Functional requirements Services the system should provide; how it reacts to
+inputs; behavior in situations; may state what it should
+not do.
+Login, search, calculate total,
+generate report, reject invalid
+payment.
+Non-functional requirements Constraints on services/functions, such as timing,
+process, standards, reliability, security, storage.
+Response time, reliability,
+development method,
+standards, performance.
+Domain requirements Constraints from the system operational domain. Medical rule, banking regulation,
+train braking characteristics.
+Important
+Non-functional requirements may be more critical than functional requirements. If a critical non-functional
+requirement such as security, reliability, or timing is not met, the system may become useless.
+3) Why requirements change-The business and technical environment changes after installation.-New hardware may be introduced.-The system may need to interface with other systems.-Business priorities may change.-New laws and regulations may appear.-Customers who pay for the system and end users who use it may have different needs.-Large systems have diverse user communities with conflicting priorities.-Final requirements are often a compromise, and real use may reveal the balance should change.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Lecture diagram: requirements evolve from initial understanding to changed requirements over time.
+4) Requirements management- Requirements management is the process of managing changing requirements during requirements
+engineering and system development.- New requirements emerge while the system is being developed and after it is used.- You must track individual requirements and keep links between dependent requirements.- Traceability is needed to assess the impact of requirement changes.- A formal process is needed for change proposals and linking them to requirements.
+5) Requirements management planning decisions
+Decision
+Meaning
+Requirements identification
+Change management process
+Each requirement must have a unique ID so it can be cross-referenced.
+Activities used to assess the impact and cost of changes.
+Traceability policies
+Define which relationships between requirements and design should be recorded.
+Tool support
+Tools may be specialist requirements management systems, spreadsheets, or
+simple databases.
+Memorize these 4 words
+ID - Change - Traceability - Tools. This is the requirements management planning answer.
+6) Requirements change management process
+Lecture diagram: identified problem -> problem analysis and change specification -> change analysis and costing -> change
+implementation -> revised requirements.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 15
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Step
+What happens
+Exam keyword
+1. Problem analysis and
+change specification
+2. Change analysis and
+costing
+Analyze the problem/change proposal and check that it is valid.
+Feedback may make the requester clarify or withdraw the request.
+Is the change valid?
+Assess the effect of the change using traceability information and
+knowledge of requirements. Decide whether to proceed.
+Impact + cost.
+3. Change implementation
+Modify the requirements document and, if necessary, system
+design and implementation.
+Apply the accepted
+change.
+Essay answer: requirements management
+Requirements management controls changing requirements by uniquely identifying requirements,
+maintaining traceability links, using a formal change management process, and applying tool support. Its
+purpose is to assess the impact and cost of changes before changing documents, design, or
+implementation.
+7) Chapter 4 key points- Requirements set what the system should do and define constraints on operation and implementation.- Functional requirements describe system services or computations.- Non-functional requirements constrain the system or development process and often apply to the system
+as a whole.- Business, organizational, and technical changes inevitably lead to requirement changes.- Requirements management manages and controls these changes.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 16
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 17
+Chapter 4 MCQ + Essay Cheat Sheets
+A) MCQ cheat sheet - Chapter 4
+If the MCQ says... Answer
+Natural language + diagrams for customers User requirements
+Detailed structured document for
+developers/contract
+System requirements
+Services, reactions to input, behavior, what system
+should/should not do
+Functional requirements
+Constraints on services/functions such as timing,
+standards, reliability, process
+Non-functional requirements
+Rules/constraints from operating domain Domain requirements
+Why requirements change Business, technical, organizational, legal changes; new
+stakeholders; conflicting users.
+Managing changing requirements Requirements management
+Unique ID for each requirement Requirements identification
+Relationships between requirements and design Traceability policies
+Activities to assess impact/cost of changes Change management process
+Tools for requirements management Specialist systems, spreadsheets, databases
+First change step Problem analysis and change specification
+Second change step Change analysis and costing
+Third change step Change implementation
+Assess effect of change using links Traceability information
+People who pay vs people who use Customer requirements may conflict with end-user requirements
+Large system users have different priorities Requirements are a compromise
+After delivery users ask for new features Requirements evolve
+Formal process for change proposals Needed in requirements management
+Chapter 4 memory code User/System - F/NF/Domain - Change - Manage - ID/Trace/Tools 
+Analyze/Cost/Implement
+B) Essay cheat sheet - Chapter 4
+Requirements management essay skeleton-Define requirements management.-Explain why requirements change.-Mention tracking individual requirements and dependent links.-List planning decisions: identification, change process, traceability policies, tools.-Explain change management: problem analysis -> change analysis/costing -> implementation.
+Likely essay Ready answer plan
+User vs system requirements User = high-level, natural language, for customers. System = detailed structured
+specification, for developers and contract.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Likely essay
+Ready answer plan
+Functional vs non-functional vs
+domain
+Changing requirements
+Functional = services/behavior. Non-functional = constraints/quality/process. Domain
+= rules from application area.
+Analyze validity -> analyze impact and cost -> implement accepted change in
+documents/design/code.
+Environment changes, new hardware/interfaces, business priorities, laws,
+customer/user conflict, diverse users.
+Requirements management
+planning
+Requirements change
+management
+ID each requirement, define change process, define traceability policies, choose tool
+support.
+C) Diagram / process cheat sheet - Chapter 4
+Question asks for...
+Draw / write
+Requirements change management
+Problem/change request -> problem analysis and change specification -> change
+analysis and costing -> change implementation -> revised requirements.
+Requirements evolution
+Initial requirements changing over time due to business, technical and
+organizational changes.
+Comparison table
+Use columns: definition, audience, detail level, examples, exam keyword.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 18
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Chapter 8: Software Testing
+Scope in this PDF
+Exam priority
+Full chapter included because you
+said Ch8 is very important for essays.
+Very high
+Must memorize
+Testing goals, validation vs defect testing,
+verification vs validation, inspections vs testing,
+development/release/user testing, TDD,
+regression, acceptance testing.
+1) Program testing: core definition- Testing is intended to show that a program does what it should do and to discover defects before use.- When testing, you execute the program using artificial data and check results for errors, anomalies, or
+non-functional information.- Testing can reveal the presence of errors, not their absence.- Testing is part of verification and validation (V&V;), along with static validation techniques.
+Input-output testing model: artificial test data is given to the system and outputs are checked for anomalies.
+2) Two testing goals
+Goal
+Meaning
+Successful test means
+Validation testing
+Defect testing
+Show the developer/customer that software meets
+requirements and expected use.
+Discover faults where behavior is incorrect or undesirable.
+System operates as
+intended.
+The test makes the system
+fail, exposing a defect.
+Memorize
+Validation testing asks: does the system work as expected? Defect testing asks: can we break the system
+and reveal faults?
+3) Verification vs validation
+Concept
+Question
+Meaning
+Verification
+Are we building the product right?
+Software conforms to its specification.
+Validation
+Are we building the right product?
+Software does what the user really requires.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 19
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+V&V; confidence depends on
+Factor
+Meaning
+Software purpose
+User expectations
+Critical systems need higher confidence.
+Users may accept lower quality in some types of software.
+Marketing environment
+Early market release may be more important than finding all defects.
+4) Inspections vs testing- Software inspections analyze static system representations to discover problems; no execution needed.- Software testing executes the product with test data and observes behavior; dynamic verification.- They are complementary, not opposing techniques. Use both in V&V.;
+Inspections can apply to requirements, architecture, UML models,
+database schemas, program, etc.
+General testing process model.
+Inspections - advantages
+Limitations
+Errors do not mask each other because inspection is static.
+Cannot check conformance with real customer
+needs.
+Incomplete systems can be inspected without building test
+harnesses.
+Cannot check non-functional characteristics such as
+performance/usability.
+Can check broader quality attributes such as standards, portability,
+maintainability.
+5) Stages of testing
+Needs people with knowledge and discipline.
+Stage
+Who/when
+Focus
+Development testing
+By development team during
+development.
+Check real-world reliability, performance, usability,
+robustness.
+Discover bugs and defects. Includes unit,
+component, system testing.
+Release testing
+By a separate testing team before
+release.
+Convince supplier it is good enough for external
+use; validation.
+User testing
+By users/customers in their
+environment.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 20
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+6) Development testing
+Type
+What is tested
+Main focus
+Unit testing
+Individual functions, methods, object classes, or small
+components in isolation.
+Interactions between components
+and emergent behavior.
+Functionality of methods/objects;
+defect testing.
+Component testing
+Several integrated units/objects forming a composite
+component.
+Component interface behavior.
+System testing
+Some or all components integrated into a system.
+Object class testing - complete coverage- Test all operations associated with the object.- Set and interrogate all object attributes.- Exercise the object in all possible states.- Inheritance makes class testing harder because behavior is not localized in one class.
+Automated unit testing
+Part
+Meaning
+Setup
+Call
+Initialize the system with inputs and expected outputs.
+Call the method/object being tested.
+Assertion
+Compare actual result with expected result; true = pass, false = fail.
+7) Choosing test cases- Choose test cases that show normal expected use works correctly.- Also choose abnormal inputs that reveal common defects or check the system does not crash.
+Strategy
+Meaning
+Partition testing
+Identify groups of inputs/outputs that should be processed
+equivalently and test one/few values from each partition.
+Example idea
+Valid marks, invalid
+marks, boundary values.
+Guideline-based testing
+Use previous experience and common error patterns to choose
+tests.
+Empty sequence, buffer
+overflow,
+first/middle/last item.
+General testing guidelines- Choose inputs that force all error messages.- Design inputs that cause input buffers to overflow.- Repeat the same input or series of inputs many times.- Force invalid outputs.- Force computation results to be too large or too small.- For sequences: test single value, different sizes, first/middle/last element, and zero length.
+8) Test-driven development (TDD)- TDD interleaves testing and code development.- Tests are written before code; passing tests drives development.- Develop code incrementally with a test for each increment; do not move to the next increment until tests
+pass.- Introduced in agile methods such as Extreme Programming, but can also be used in plan-driven
+processes.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 21
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 22
+TDD process activities from the lecture.
+TDD activity Meaning
+Identify small functionality increment Choose a small piece implementable in a few lines.
+Write automated test Write the test before code.
+Run all tests The new test fails initially because functionality is not implemented.
+Implement functionality Write code and rerun tests.
+Move on only when tests pass Continue to next functionality chunk.
+Benefit Meaning
+Code coverage Every code segment has at least one associated test.
+Regression testing A regression test suite grows incrementally.
+Simplified debugging If new test fails, the problem is likely in newly written code.
+System documentation Tests document what the code should do.
+Regression testing
+Regression testing checks that changes have not broken previously working code. With automated tests, all
+tests are rerun whenever changes are made.
+9) Release testing-Release testing tests a system release intended for use outside the development team.-Primary goal: convince the supplier that the system is good enough for use.-It should show specified functionality, performance, dependability, and normal-use stability.-Usually black-box testing: tests are derived from system specification, not source code.
+Development system testing Release testing
+Done by development team. Done by a separate team not involved in development.
+Focus on discovering bugs and defects. Focus on validation: meeting requirements and being good
+enough for external use.
+Can use knowledge of implementation. Usually black-box from specification.
+Requirements-based testing-Examine each requirement and develop one or more tests for it.-For every requirement, ask: what setup, action, and expected output proves this requirement works?
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Scenario testing- Create a typical usage scenario and derive tests from it.- The Mentcare scenario tests login, downloading/uploading records, scheduling, encryption/decryption,
+record modification, drug database links, and call prompting.
+Lecture slide: features tested by the Mentcare usage scenario.
+10) Performance and stress testing
+Type
+Meaning
+Performance testing
+A form of performance testing where the system is deliberately overloaded to test
+failure behavior.
+Tests emergent properties such as performance/reliability; tests should reflect the
+system use profile.
+Stress testing
+11) User testing- User/customer testing is when users or customers provide input and advice on system testing.- Essential even after comprehensive system/release testing because the real working environment affects
+reliability, performance, usability, and robustness.
+Type
+Meaning
+Alpha testing
+Beta testing
+Users work with the development team at the developer site.
+Customers test whether the system is ready to be accepted and deployed; mainly for
+custom systems.
+Release is made available to users to experiment and report problems.
+Acceptance testing
+Acceptance testing process: define criteria -> plan -> derive tests -> run tests -> negotiate results -> accept/reject.
+Agile acceptance testing- In agile, the user/customer is part of the development team and decides acceptability.- Tests are defined by the user/customer and automated with other tests.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 23
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy- There is no separate acceptance testing process.- Main problem: embedded user may not represent all stakeholders.
+Chapter 8 essay master answer
+Testing has two goals: validation and defect discovery. Development testing finds bugs during
+development through unit/component/system testing. Release testing is performed by a separate team to
+validate a complete release. User testing checks the system in the real user environment through alpha,
+beta, and acceptance testing. Testing cannot prove absence of defects; it can only show their presence.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 24
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 25
+Chapter 8 MCQ + Essay Cheat Sheets
+A) MCQ cheat sheet - Chapter 8
+If the MCQ says... Answer
+Testing can prove? Presence of errors, not absence.
+Execute program with artificial data Software testing
+Meets requirements / expected use Validation testing
+Find faults / break the system Defect testing
+Are we building the product right? Verification
+Are we building the right product? Validation
+Static representation, no execution Software inspection
+Dynamic verification, execution with data Software testing
+During development by development team Development testing
+Individual functions/classes in isolation Unit testing
+Integrated units and component interfaces Component testing
+Whole integrated system and interactions System testing
+Test complete release by separate team Release testing
+Black-box from specification Release testing
+Every requirement has tests Requirements-based testing
+Typical user story/usage flow test Scenario testing
+Write tests before code TDD / test-driven development
+Check changes did not break old code Regression testing
+Users at developer site Alpha testing
+Release made available to users to experiment Beta testing
+Customer decides ready to deploy Acceptance testing
+Overload system intentionally Stress testing
+B) Essay cheat sheet - Chapter 8
+Testing essay master structure-Define testing.-Mention two goals: validation and defect testing.-Compare verification vs validation.-Compare inspections vs testing.-Explain development testing: unit, component, system.-Explain release testing and user testing.-Add TDD/regression if relevant.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Likely essay/comparison
+Ready answer plan
+Validation vs defect testing
+Verification vs validation
+Validation expects correct behavior; successful test passes. Defect testing tries to
+expose faults; successful test makes system fail.
+Verification = product conforms to specification. Validation = product satisfies real
+user needs.
+Inspections vs testing
+Alpha at developer site, beta by external users, acceptance by customer for
+deployment.
+Inspection = static/no execution/can inspect incomplete artifacts. Testing =
+dynamic/execution/checks behavior and non-functional properties.
+Development vs release testing
+Development by dev team for defects; release by separate team to validate complete
+release.
+Unit/component/system testing
+TDD benefits
+Unit = isolated method/class. Component = interfaces between integrated units.
+System = interactions and emergent behavior.
+Code coverage, regression suite, easier debugging, documentation.
+User testing types
+C) Diagram / process cheat sheet - Chapter 8
+Diagram/process
+How to answer
+TDD process
+Acceptance testing process
+Identify small functionality -> write automated test -> run tests and fail -> implement-> rerun -> move on when all pass.
+Increase load until unacceptable; stress overloads deliberately to observe failure
+behavior.
+Define criteria -> plan -> derive tests -> run tests -> negotiate results ->
+accept/reject.
+Testing stages
+Automated test structure
+Development testing -> release testing -> user testing.
+Setup -> call -> assertion.
+Performance/stress
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 26
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 27
+Chapter 13: Security Engineering - Up to Page 19
+Only
+Scope in this PDF Exam priority Must memorize
+Only p1-p19 included as instructed.
+Later security requirements slides are
+not summarized here.
+Medium-high Security dimensions, levels, operational security,
+security/dependability, terminology, threat types,
+security assurance.
+1) What is security engineering?-Security engineering provides tools, techniques, and methods to develop and maintain systems that resist
+malicious attacks.-It is a sub-field of computer security.-Focus here is application security rather than infrastructure security.
+2) Security dimensions
+Dimension Meaning Failure example
+Confidentiality Information must not be disclosed to unauthorized
+people/programs.
+Attacker reads patient records.
+Integrity Information must not be damaged/corrupted so it becomes
+unreliable.
+Attacker changes a bank
+balance.
+Availability System/data normally available must remain accessible. Denial-of-service makes server
+unavailable.
+3) Security levels
+Level Meaning
+Infrastructure security Protects systems and networks that provide shared services to the organization.
+Application security Protects individual application systems; this is a software engineering problem.
+Operational security Protects secure operation and use of organizational systems; human/social issue.
+System security management
+Area Meaning
+User and permission management Add/remove users and set permissions.
+Software deployment and maintenance Install/configure software and middleware to avoid vulnerabilities.
+Attack monitoring, detection, recovery Monitor unauthorized access, resist attacks, and develop backup/recovery
+strategies.
+Operational security exam sentence
+Operational security is mainly a human/social issue. Users may compromise security by sharing passwords
+or leaving computers logged in, often because insecure behavior makes their job easier. Therefore, security
+must balance protection and system effectiveness.
+4) Security and dependability-Security is a system property reflecting the ability to protect itself from accidental or deliberate external
+attack.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy- Security is essential because most systems are networked and externally accessible.- Security is a prerequisite for availability, reliability, and safety.- If a networked system is insecure, reliability and safety claims become unreliable because intrusion may
+change the executing system or its data.
+5) Security terminology
+Lecture table: core security terminology.
+Term
+Meaning in simple words
+Asset
+Attack
+Something valuable that must be protected, such as system or data.
+Exploiting a vulnerability deliberately to cause damage.
+Control
+Exposure
+Protection that reduces vulnerability, such as encryption.
+Possible loss or harm after a breach.
+Threat
+Vulnerability
+Circumstance with potential to cause loss or harm.
+Weakness that may be exploited.
+6) Threat types
+Interception and interruption threats.
+Modification and fabrication threats.
+Threat type
+What attacker does
+Interception
+Gains access to an asset.
+Example
+Reads patient database records.
+Interruption
+Makes part of system unavailable.
+Denial-of-service against database
+server.
+Modification
+Fabrication
+Tampers with a system asset.
+Inserts false information.
+Alters or destroys a patient record.
+Adds false bank transactions.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 28
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Memory code
+IIMF: Interception = read, Interruption = stop, Modification = change, Fabrication = fake.
+7) Security assurance strategies
+Lecture slide: security assurance strategies.
+Strategy
+Meaning
+Vulnerability avoidance
+Design system so vulnerabilities do not occur.
+Example
+Backup policy restores
+damaged data.
+No external connection ->
+external attack impossible.
+Attack detection and
+elimination
+Detect and neutralize attacks before exposure.
+Virus checker/firewall.
+Exposure limitation and
+recovery
+Minimize damage and restore assets after successful
+attack.
+8) Security links to dependability
+Dependability property
+How security affects it
+Reliability
+Availability
+Attack may corrupt system/data and cause failures.
+Denial-of-service may make system unavailable.
+Safety
+Corruption invalidates safety assumptions and may cause safety-related failures.
+Resilience
+Resilience means resisting and recovering from damaging events; many such events
+are cyberattacks.
+Chapter 13 essay answer
+Security engineering protects confidentiality, integrity, and availability by identifying assets, threats,
+vulnerabilities, attacks, controls, and exposures. Security supports dependability because an insecure
+system cannot be reliably available, safe, or resilient.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 29
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 30
+Chapter 13 MCQ + Essay Cheat Sheets
+A) MCQ cheat sheet - Chapter 13
+If the MCQ says... Answer
+Prevent unauthorized disclosure Confidentiality
+Prevent data damage/corruption Integrity
+System/data remains accessible Availability
+DoS / denial of service Availability / interruption threat
+Protect all networks/shared services Infrastructure security
+Security of individual application systems Application security
+Secure use and human behavior Operational security
+Something valuable to protect Asset
+Weakness that can be exploited Vulnerability
+Circumstance with potential harm Threat
+Exploit of vulnerability Attack
+Protective measure Control
+Possible loss/harm Exposure
+Attacker reads asset Interception
+Attacker stops service Interruption
+Attacker changes asset Modification
+Attacker inserts false data Fabrication
+Design so vulnerability cannot occur Vulnerability avoidance
+Detect and neutralize attack Attack detection and elimination
+Backup and restore after attack Exposure limitation and recovery
+B) Essay cheat sheet - Chapter 13
+Security essay master structure-Define security engineering.-Explain CIA: confidentiality, integrity, availability.-Mention security levels: infrastructure, application, operational.-Explain terminology: asset, vulnerability, threat, attack, control, exposure.-Explain threat types: interception, interruption, modification, fabrication.-Connect security to dependability: reliability, availability, safety, resilience.
+Likely essay/comparison Ready answer plan
+Security dimensions Confidentiality prevents disclosure, integrity prevents corruption, availability
+prevents denial of access.
+Application vs infrastructure vs
+operational security
+Application = software design issue; infrastructure = system/network
+management; operational = human/social issue.
+Threat types IIMF: interception/read, interruption/stop, modification/change, fabrication/fake.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Likely essay/comparison
+Ready answer plan
+Security assurance
+Insecure systems can lose reliability through corruption, availability through DoS,
+safety through invalid assumptions, and resilience through poor recovery.
+Avoid vulnerabilities, detect/eliminate attacks, limit exposure and recover.
+Security and dependability
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 31
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Chapter 21: Real-time Software Engineering
+Scope in this PDF
+Exam priority
+Full uploaded chapter included.
+Medium
+Must memorize
+Real-time definition, hard vs soft, embedded
+characteristics, periodic/aperiodic stimuli,
+real-time architecture, design process, state
+models, programming issues.
+1) Embedded software and responsiveness- Embedded software controls systems from domestic machines to manufacturing plants.- It reacts to events from hardware and may issue control signals in response.- It is usually embedded in hardware, often in read-only memory, and responds in real time.- Responsiveness is the critical difference between embedded systems and ordinary software.
+Core definition
+A real-time system is a software system where correct functioning depends on the results produced and
+the time at which those results are produced.
+Type
+Soft real-time system
+Meaning
+Operation is degraded if results are not produced according to timing
+requirements.
+Hard real-time system
+Operation is incorrect if results are not produced according to timing specification.
+2) Characteristics of embedded systems- They usually run continuously and do not terminate.- Interactions with the environment are unpredictable.- Physical limitations may affect design.- Direct hardware interaction may be necessary.- Safety and reliability may dominate the design.
+3) Embedded system design- Design is a systems engineering process that must consider hardware design and performance.- Designers decide which capabilities are implemented in software and which in hardware.- Low-level hardware, support software, and timing decisions must be considered early.- Extra functionality such as battery and power management may be required.
+4) Reactive systems and stimuli- Real-time systems are reactive: given a stimulus, the system must produce a response within a specified
+time.
+Stimulus type
+Meaning
+Periodic stimuli
+Occur at predictable time intervals.
+Example
+Power failure interrupt or I/O transfer
+complete.
+Temperature sensor polled 10 times per
+second / sensor checked every 50 ms.
+Aperiodic stimuli
+Occur irregularly and unpredictably, often via
+interrupts.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 32
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+5) Real-time architecture
+General embedded real-time system model: sensors -> real-time control system -> actuators.
+Sensor and actuator process model.- Simple sequential loops are usually not enough because different stimuli have different timing demands.- Real-time systems are often designed as cooperating processes controlled by a real-time executive.
+System element
+Meaning
+Sensor control processes
+Data processor
+Collect information from sensors and may buffer it.
+Processes collected information and computes response.
+Actuator control processes
+Generate control signals for actuators.
+6) Design process activities
+Activity
+Meaning
+Platform selection
+Stimuli/response identification
+Choose hardware/software platform.
+Identify events and required responses.
+Timing analysis
+Process design
+Analyze timing constraints and deadlines.
+Design cooperating processes.
+Algorithm design
+Data design
+Design algorithms for responses.
+Design data structures and data exchange.
+Process scheduling
+Schedule processes to meet deadlines.
+7) Process coordination- Real-time processes must coordinate and share information.- Mutual exclusion is needed so one process cannot change a shared resource while another process is
+modifying it.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 33
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy- Information exchange must consider that processes may run at different speeds.
+8) State models in real-time systems- A stimulus can trigger a transition from one state to another.- UML state diagrams are often used to describe embedded real-time systems.
+Lecture diagram: state machine model of a petrol pump.
+9) Real-time programming- Languages must allow hardware access and predictable operation timing.- System-level languages such as C are widely used because they generate efficient code.- Java/object-oriented systems may add performance overhead due to extra mediation code; this can make
+deadlines harder to meet.
+Chapter 21 MCQ keywords- Real-time correctness = result + time.- Hard real-time = wrong if deadline missed.- Soft real-time = degraded if deadline missed.- Periodic = predictable intervals.- Aperiodic = unpredictable interrupt-like events.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 34
+CSE2001 - Software Engineering Final Exam Ready Guide Premium condensed lecture notes + exam strategy
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern. Page 35
+Chapter 21 MCQ + Essay Cheat Sheets
+A) MCQ cheat sheet - Chapter 21
+If the MCQ says... Answer
+Correctness depends on result and time Real-time system
+Missed timing degrades operation Soft real-time
+Missed timing makes operation incorrect Hard real-time
+Software embedded in hardware/ROM and reacts to
+events
+Embedded software
+Critical difference from normal software Responsiveness
+Occurs at predictable intervals Periodic stimulus
+Occurs unpredictably / interrupt Aperiodic stimulus
+Given stimulus, produce response in specified time Reactive system
+Collect information from sensors Sensor control processes
+Compute system response Data processor
+Generate signals to actuators Actuator control processes
+Why simple sequential loop is weak Different stimuli have different timing demands
+Real-time architecture uses Cooperating processes + real-time executive
+Shared resource protection Mutual exclusion
+Stimuli trigger transitions State machine/state model
+Common language for real-time systems C / systems-level languages
+OO/Java may be problematic because Performance overhead makes deadlines harder
+Design activity: choose hardware/software Platform selection
+Design activity: identify events/actions Stimuli/response identification
+Design activity: deadlines Timing analysis
+B) Essay / state diagram cheat sheet - Chapter 21
+Real-time essay master structure-Define real-time system.-Compare hard vs soft real-time.-Explain embedded characteristics.-Explain periodic and aperiodic stimuli.-Describe architecture: sensors -> sensor control -> data processor -> actuator control -> actuators.-Mention state models and timing/design activities.
+Likely question Ready answer plan
+Hard vs soft real-time Hard = incorrect if deadline missed. Soft = degraded quality if deadline missed.
+Periodic vs aperiodic stimuli Periodic = predictable intervals; aperiodic = irregular and often interrupt-driven.
+Embedded characteristics Continuous, unpredictable environment, physical limitations, hardware interaction,
+safety/reliability dominate.
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Likely question
+Ready answer plan
+Real-time architecture
+States are modes like Idle/Moving/Waiting; events are triggers like request,
+timeout, emergency; add emergency to safe state.
+Cooperating processes handled by real-time executive; sensor control, data
+processor, actuator control.
+State machine from scenario
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 36
+CSE2001 - Software Engineering Final Exam Ready Guide
+Premium condensed lecture notes + exam strategy
+Source Scope Used - Lecture PDF
+Uploaded source
+How it was used
+Ch2 SW Processes
+Ch4 Requirement Engineering
+Full chapter summarized with focus on process models, process activities,
+diagrams, comparisons, and improvement.
+Only p5, p6, p44-p53 used, exactly as instructed.
+Ch8 Testing
+Ch13 Security Engineering 2026
+Full chapter summarized because it is high priority for essays and MCQ.
+Only p1-p19 used, exactly as instructed.
+Ch21 Real-time Software Engineering 2026
+Full uploaded chapter summarized.
+Final lecture advice
+For MCQ: memorize keyword triggers. For essay: use definition -> process/table -> advantages/problems-> suitable use -> example. For diagrams related to lectures, redraw only the main process/state diagrams
+shown in this PDF.
+Use this for memorization: definitions -> comparisons -> diagram recipes -> past exam pattern.
+Page 37

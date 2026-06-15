@@ -1,0 +1,100 @@
+Exam Date: 6/1/2026
+
+Question 1: determine the true/false statements and illustrate your answer with reason
+Functional requirements that focuses on what the system should do and should not do.
+
+Component diagram depicts a static view of the run-time configuration of hardware nodes and the software components that run on those nodes.
+
+The formal project monitoring mechanisms rely on the ability of project manager to make daily discussions with project staff.
+
+The project delivers is part of project plan which represent the beginning and end date of the task or project.
+
+Failing to meet a non-functional requirement can mean that the whole system is unusable
+
+The standard requirement is classified as non-functional and organizational requirement.
+
+Domain requirements that come from the application domain of the system and that reflect characteristics and constraints, and they are represented as non functional requirements.
+
+Use Case diagram represents the interaction of the user with the software but tells nothing about the internal working of the software.
+
+The object diagram is more specific compared to class diagram, where it shows instances instead of classes.
+
+When comparing the Communication Diagram and the Activity Diagram, we'll see the first is more focused on showing the collaboration of objects rather than the time sequence.
+
+Question 2: MCQ
+Which model can be selected if unexperienced user is involved in all the phases of SDLC?
+
+a) Waterfall Model
+
+b) Prototyping Model
+
+c) iterative Model
+
+d) both Prototyping Model & iterative Model
+
+Which of the following considers as milestones:
+
+a. The project plan approval.
+
+b. The requirement definition
+
+c. The design identification
+
+d. A and C
+
+The project scheduling processes are iterative process that may be repeated from the
+
+a. Identifying activity stage
+
+b. Estimate process stage
+
+c. Identifying activity dependencies stage
+
+d. All of the mentioned
+
+===== Page 2 =====
+
+Proposal Writing is one of the management activities which concerns on
+
+a. keep track of the progress of the project
+b. identifying the activities, milestones and deliverables produced by a project
+c. describes the objectives of the project, cost and schedule estimates
+d. Motivating project personnel
+
+The system allow the registered user to check the history", which kind of requirements this sentence represents
+
+a. non functional
+b. system
+c. functional
+d. non of mentioned
+
+Question 3: Answer THREE of the following question, illustrate your answer with example
+Discuss the different risk planning strategies, illustrate your answer with example
+
+list the project scheduling processes, Then Discuss them in detail.
+
+Discuss the Objectives of Software Engineering.
+
+Question 4: Analyse the following and develop the use cases and sequence diagrams
+Let's imagine we will develop a browser-based training system to help people prepare for such a certification exam. A user can request a quiz for the system. The system picks a set of questions from its database, and compose them together to make a quiz. It rates the user's answers, and gives hints if the user requests it.
+
+In addition to users, we also have tutors who provide questions and hints. And also examinations who must certify questions to make sure they are not too trivial.
+
+Make a use case diagram to model this system. Work out some of your use cases. Since we don't have real stake holders here, you are free to fill in details.
+
+Develop the use case diagram.
+
+Develop sequence diagram.
+
+Question 5: Determine the type of risks for the following cases, consider the overlapped cases
+New Technologies used in the product; for example a new DB server, a new programming language.
+
+Delays in the delivery of the automated tools for testing, and Lack of testing environments.
+
+New government regulations or policies.
+
+The communication between the client and team is insufficient.
+
+Improper resource allocation are associated with software development process.
+
+Best Wishes

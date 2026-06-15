@@ -1,0 +1,88 @@
+Date exam : 21/6/2025
+===== Page 1 =====
+
+How does the Spiral Model address requirement engineering throughout the software lifecycle?
+a) All requirements are fully defined and frozen at the very beginning of the project.
+b) Requirements are incrementally refined and re-evaluated during each iteration
+c) Requirement engineering is primarily a post-development activity to document features.
+d) It focuses solely on technical requirements, ignoring user needs.
+
+In the context of software testing, which technique focuses on testing the internal structure, design, and implementation of the software?
+
+a) White-box Testing
+b) Black-box Testing
+c) Acceptance Testing
+d) Regression Testing
+
+Which of the following best describes a 'hard real-time' system?
+
+a) A system where missing a deadline degrades performance but is tolerable.
+b) A system where missing a deadline results in catastrophic system failure.
+c) A system that responds quickly to user input, but not necessarily within strict time constraints.
+d) A system that requires frequent updates to its software.
+
+Which of the following is a characteristic of the Incremental Model?
+
+a) All requirements are gathered and documented at the beginning.
+b) It is best suited for projects with well-understood and stable requirements.
+c) A working version of the system is produced quickly and then evolved.
+d) It minimizes customer feedback during development.
+
+Which type of stimulus in a real-time system occurs at unpredictable intervals?
+
+a) Periodic Stimuli
+b) Deterministic Stimuli
+c) Continuous Stimuli
+d) Aperiodic Stimuli
+
+===== Page 2 =====
+
+A city is developing an autonomous traffic light control system for a critical intersection. This system uses real-time video feeds from cameras to detect vehicle presence and density, and inductive loops in the road to identify individual cars and their speeds. The system must adjust traffic light timings instantly to prevent collisions and optimize traffic flow, especially during peak hours. A delay of even a few seconds in reaction time could lead to gridlock or serious accidents. The system continuously receives data from the sensors, but also responds to sudden, unpredictable events like emergency vehicle sirens.
+
+Task:
+a) Classify this system as either a hard real-time system or a soft real-time system. Provide a clear justification for your classification based on the scenario.
+b) Identify and describe one (1) periodic stimulus and one (1) aperiodic stimulus that this traffic light control system would need to process.
+c) Explain the concept of responsiveness in the context of this specific autonomous traffic light control system.
+
+B. A university wants to develop a new online course platform. Initially, they need basic features like course listing, student enrollment, and fundamental content delivery. However, they anticipate adding interactive features such as live discussions, collaborative assignments, advanced grading modules, and analytics in future phases based on pilot program feedback and emerging educational technologies. They prioritize quick initial deployment to gather user feedback.
+
+Task:
+a) Recommend one software engineering process model that would be most suitable for this project. Justify your choice with at least two (2) reasons based on the scenario.
+b) Draw a conceptual diagram illustrating the typical flow of the software process model you selected in part (a) as it would apply to this project.
+c) Briefly explain why the alternative model (the one you did not choose in part a) would be less appropriate for this specific project.
+
+Question 3 - Mini Case Studies: Behavioral & Security Modeling (10 Marks)
+A. A new Online Public Event Ticket Sales System is being developed to allow users to conveniently browse upcoming events (concerts, sports games), select seats, purchase tickets, and receive digital tickets via email. Furthermore, the system will handle sensitive customer payment and personal information, making data security a paramount concern. The integrity of the sales process itself must also be maintained, guarding against any actions that could disrupt legitimate operations or manipulate ticket allocations.
+
+Task:
+
+Draw a Misuse Case Diagram for the Online Public Event Ticket Sales System.
+
+===== Page 3 =====
+
+Consider the typical operation of automatic washing machine. When the machine is simply plugged in but not running, it's ready for use. A user will load clothes, add detergent, close the door, and then select a wash program ("Cotton," "Delicate"). Once the "Start" button is pressed, the machine first fills with water. After the water level is sufficient, it begins the main washing agitation cycle. Following this, the dirty water is drained, and the machine proceeds to fill with clean water for the rinsing phase. After rinsing, the water is drained again, and a high-speed spin cycle begins to remove excess water from the clothes. Once the spin cycle is complete, the machine indicates that the wash is finished, and the door can be safely opened. At any point before the "Wash Complete" indication, if the user presses "Pause" or opens the door, the current cycle will halt, and the machine will wait for input.
+
+Task:
+Draw a State Machine Diagram for the Automatic Washing Machine's wash cycle.
+
+Question 4 - Case Study- Comprehensive UML System Specification (15 Marks)
+Hospital Appointment Scheduling System (HASS)
+The Hospital Appointment Scheduling System (HASS) is a proposed web-based and mobile-accessible application aimed at streamlining the process of booking and managing patient appointments within a hospital or clinic network. Traditionally, patients would call or visit the hospital, leading to long hold times, miscommunications, and inefficient use of staff time. The HASS seeks to enhance patient convenience, optimize resource allocation, and reduce administrative overhead.
+
+The system allows patients to register for a new account or log in using their existing credentials. Once logged in, a patient can search for available appointments by specifying a doctor's name, a medical specialty (such as Cardiology, Dermatology, etc.), or a preferred date/time. The system displays available slots, factoring in doctor's availability and clinic hours. After selecting a suitable slot, the patient can book the appointment, receiving an immediate confirmation via email or SMS. Patients also have the ability to view their upcoming appointments, reschedule existing appointments to a different time or date, or cancel appointments if necessary. The system sends automated reminders to patients before their scheduled visit.
+
+Medical staff, including receptionists and nurses, can also log into the system. They primarily use the system to manage the daily schedule for their assigned doctors or departments. They can view a doctor's full calendar, book appointments on behalf of patients, and mark appointments as 'checked-in' upon patient arrival. They can also update patient details or record basic visit notes (though detailed electronic health records are handled by a separate, integrated system).
+
+Doctors have read-only access to their personal appointment schedules. They can view their daily or weekly patient list, including patient details relevant to the appointment, and see the status of each appointment.
+
+===== Page 4 =====
+
+Hospital administrators possess higher-level access. They can manage doctor profiles (adding new doctors, updating specialties, managing leave), configure available clinic services and departments, and set up operating hours for various clinics. Administrators can also generate comprehensive reports, such as daily appointment summaries, monthly patient visit statistics, or doctor workload analysis, to aid in resource planning and operational efficiency. The HASS is designed to ensure all appointment data is accurate, secure, and readily accessible to authorized personnel, significantly improving the overall patient experience and hospital management.
+
+Based on the scenario above, draw the following UML diagrams clearly and correctly.
+
+Use case diagram
+
+Sequence Diagram - Select one (1) significant interaction from the scenario -
+
+Class Diagram
