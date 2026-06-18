@@ -4,6 +4,72 @@ This exam focuses on Reverse Polish Notation (RPN), infix-to-postfix conversion,
 
 ---
 
+## Topic Summary
+
+This exam covers the following core concepts from the COA course:
+
+- **Reverse Polish Notation (RPN) / Postfix Notation:**
+  - An algebraic notation where operators **follow** their operands (e.g., $A + B$ becomes $A\ B\ +$).
+  - Eliminates the need for parentheses and operator precedence rules during parsing.
+- **Infix to Postfix (RPN) Conversion:**
+  - Evaluates operands and operators based on standard precedence ($*$, $/$ before $+$, $-$) and parentheses, working from left to right.
+  - Operand order is always preserved (e.g., $A$ appears before $B$ in both infix and postfix).
+- **Stack-Based RPN Evaluation:**
+  - Operands are pushed onto a stack.
+  - When an operator is encountered, the top two elements are popped, the operation is applied, and the result is pushed back.
+  - Crucial: For non-commutative operations (subtraction, division), the first popped element is the **right** operand (divisor/subtractor) and the second popped element is the **left** operand (dividend/minuend).
+- **Zero-Address Instruction Architectures:**
+  - Instruction sets that do not use explicit memory addresses for arithmetic operations (e.g., `ADD`, `SUB`).
+  - Rely on a hardware stack. Only `PUSH` and `POP` require memory addresses to move data between registers/memory and the stack.
+
+---
+
+## How to Solve Questions in This Exam
+
+### Infix to Postfix Conversions (Q1, Q2, Q7)
+1. **Parenthesize the infix expression completely** according to operator precedence.
+   - E.g., $A + B * C \implies A + (B * C) \implies (A + (B * C))$.
+2. **Move the operators to the right of their respective closing parentheses.**
+   - E.g., $(A + (B\ C\ *)) \implies (A\ (B\ C\ *)\ +) \implies A\ B\ C\ *\ +$.
+3. **Remove all parentheses** to obtain the final RPN expression.
+4. **Always verify:** Check that the operands ($A, B, C, \dots$) remain in the exact same left-to-right order as in the original infix expression.
+
+### Postfix (RPN) to Infix Conversions (Q3, Q4)
+1. Scan the RPN expression from left to right.
+2. If you see an operand, push it to a mental stack.
+3. If you see a binary operator:
+   - Pop the top element (call it $Y$).
+   - Pop the next element (call it $X$).
+   - Form the parenthesized infix string: $(X \text{ OP } Y)$.
+   - Push this string back onto the stack.
+4. The final item on the stack is the equivalent infix expression.
+
+### RPN Stack Trace Tables (Q5, Q6, Q7)
+1. Set up columns: `Step`, `Token`, `Action`, `Stack State (Bottom → Top)`.
+2. For each number/variable: Action is `Push operand`, append to the right end of the stack list.
+3. For each operator:
+   - Action is `Pop Y, X; Push result`.
+   - Perform the math: $X - Y$ for subtraction, $X / Y$ for division.
+   - Update the stack list.
+4. Write the final result clearly. Always perform a quick sanity check by evaluating the infix equivalent.
+
+### Zero-Address Programming (Q8)
+- Zero-address code directly mirrors the RPN representation of the expression.
+- Convert the algebraic target expression to RPN.
+- Replace operands with `PUSH Operand`.
+- Replace operators with the corresponding zero-address instructions (`ADD`, `SUB`, `MUL`, `DIV`).
+- Add a final `POP Destination` to store the result in the target variable.
+- **Double check subtraction and division orders:**
+  - To compute $C - D$, write:
+    ```
+    PUSH C
+    PUSH D
+    SUB
+    ```
+  - This ensures $D$ is at the top of the stack and $C$ is below it, so `SUB` computes $C - D$.
+
+---
+
 ## Part 1: Infix to Postfix Conversions [10 Marks]
 
 ### Q1 — Application (Conversion) | Bloom's: Apply | Difficulty: Medium | Marks: 2

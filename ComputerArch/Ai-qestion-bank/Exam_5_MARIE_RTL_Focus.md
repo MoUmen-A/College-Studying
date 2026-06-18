@@ -4,6 +4,70 @@ This exam focuses on the MARIE architecture, register details, RTL notation prec
 
 ---
 
+## Topic Summary
+
+This exam covers the following core concepts from the COA course:
+
+- **MARIE Architecture Overview:** MARIE is a simple hypothetical computer with a stored-program concept, binary two's complement representation, and 4K×16-bit word-addressable memory.
+- **Seven Registers:** AC (16-bit accumulator), MAR (12-bit address register), MBR (16-bit data buffer), PC (12-bit program counter), IR (16-bit instruction register), InREG (8-bit input), OutREG (8-bit output).
+- **Instruction Format:** 16-bit instructions split into a 4-bit opcode (IR[15–12]) and a 12-bit address field (IR[11–0]). This allows up to 16 instructions and 4K addressable words.
+- **Fetch-Decode-Execute Cycle (RTL):**
+  - **Fetch:** `MAR ← PC` then `IR ← M[MAR], PC ← PC + 1`
+  - **Decode:** `MAR ← IR[11-0]`, decode `IR[15-12]`
+  - **Execute:** Depends on the instruction (LOAD, STORE, ADD, SUBT, etc.)
+- **Key RTL Sequences:**
+  - **LOAD X:** `MBR ← M[MAR]; AC ← MBR`
+  - **STORE X:** `MAR ← X, MBR ← AC; M[MAR] ← MBR`
+  - **ADD X:** `MBR ← M[MAR]; AC ← AC + MBR`
+  - **SUBT X:** `MBR ← M[MAR]; AC ← AC − MBR`
+- **Direct vs. Indirect Addressing:** Direct = 1 memory access in execute; Indirect (LOADI, STOREI, ADDI) = 2 memory accesses (read pointer, then access data).
+- **Word-Addressable:** PC increments by 1 (not 2 or 4) because each address refers to one 16-bit word.
+- **MBR–AC Connection:** A direct dedicated path exists between MBR and AC, bypassing the main bus.
+
+---
+
+## How to Solve Questions in This Exam
+
+### RTL Trace Questions (Q6, Q7, Q8)
+These are the highest-value questions. Follow this step-by-step method:
+
+1. **Always start with the Fetch phase:**
+   - Write `MAR ← PC` (copy PC value into MAR).
+   - Write `IR ← M[MAR], PC ← PC + 1` (read instruction from memory, increment PC by **1**).
+   - **Tip:** PC increments by 1 because MARIE is word-addressable. This is the #1 tested detail.
+
+2. **Decode phase:**
+   - Extract the lower 12 bits of IR → `MAR ← IR[11-0]`.
+   - Identify the opcode from the upper 4 bits → `Decode IR[15-12]`.
+   - **Tip:** Convert the hex instruction to binary, split into 4-bit opcode + 12-bit address.
+
+3. **Execute phase** — depends on the instruction:
+   - **LOAD:** `MBR ← M[MAR]` then `AC ← MBR` (AC gets the memory value).
+   - **ADD:** `MBR ← M[MAR]` then `AC ← AC + MBR` (adds to AC, does NOT replace).
+   - **SUBT:** `MBR ← M[MAR]` then `AC ← AC − MBR` (subtracts MBR **from** AC).
+   - **STORE:** `MAR ← X, MBR ← AC` (same line!) then `M[MAR] ← MBR`.
+   - **LOADI:** Extra steps: `MBR ← M[MAR]`, `MAR ← MBR`, `MBR ← M[MAR]`, `AC ← MBR`.
+
+4. **After tracing, fill in the register table:**
+   - Track PC, IR, MAR, MBR, AC after each instruction.
+   - For multi-instruction traces (Q7), carry forward the register values from the previous instruction.
+
+### Essay / Short Answer Questions (Q1–Q5)
+- **Register questions:** Memorize all 7 registers with exact bit-widths. Key trap: MAR and PC are 12-bit, not 16-bit.
+- **"Why" questions:** Always tie your answer to MARIE being word-addressable, having a fixed 16-bit instruction format, or having specific hardware paths.
+- **Trade-off questions (Q5):** Use the formula $2^n$ to show how changing opcode/address bits affects instruction count and memory size.
+
+### Fill-in-the-Blank Questions (Q9–Q13)
+- Focus on exact terminology: MBR, PC, word-addressable, IR[15–12], IR[11–0].
+- Pay attention to "next" vs. "current" — PC holds the **next** instruction address; IR holds the **current** instruction.
+
+### True/False Questions (Q14–Q23)
+- Read carefully for subtle word changes (e.g., "replaces" vs. "adds to" for ADD).
+- Common traps: PC and MAR are 12-bit (not 16); InREG/OutREG are 8-bit; LOADI needs more cycles than LOAD.
+- Always justify with a one-sentence explanation referencing the specific architectural detail.
+
+---
+
 ## Part 1: Essay Questions [10 Marks]
 
 ### Q1 — Short Answer / Essay | Bloom's: Remember | Difficulty: Easy | Marks: 2

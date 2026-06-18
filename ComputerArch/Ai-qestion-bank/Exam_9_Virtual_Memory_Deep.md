@@ -4,6 +4,60 @@ This exam provides deep coverage of virtual memory systems: paging, segmentation
 
 ---
 
+## Topic Summary
+
+This exam covers the following core concepts from the COA course:
+
+- **Virtual Memory Overview:** Provides processes with a large, contiguous, private address space by abstraction over physical RAM and secondary disk storage.
+- **Paging Systems:**
+  - Memory is divided into fixed-size blocks: **pages** (logical) and **frames** (physical).
+  - Virtual addresses are split: `[Virtual Page Number (VPN) | Offset]`.
+  - Physical addresses are split: `[Physical Frame Number (PFN) | Offset]`.
+  - The **offset** is identical in both virtual and physical addresses.
+  - Page Table Entry (PTE) flags: **Valid bit** (1 = in RAM, 0 = Page Fault), **Dirty bit** (1 = modified, write-back to disk required on eviction).
+- **Segmentation:** Memory is divided into variable-size blocks based on logical structures (code, stack, heap). Leads to external fragmentation (wasted space between segments) rather than internal fragmentation (wasted space within a page).
+- **TLB (Translation Lookaside Buffer):** A small, high-speed cache of recent address translations.
+  - TLB Hit: Translation is instant; only 1 memory access to read the actual data.
+  - TLB Miss: Extra memory accesses are required to walk the page table before retrieving data.
+- **Effective Access Time (EAT) with VM:**
+  - $\text{EAT}_{\text{no fault}} = H_{\text{TLB}} \cdot (T_{\text{TLB}} + T_{\text{mem}}) + (1 - H_{\text{TLB}}) \cdot (T_{\text{TLB}} + 2 \cdot T_{\text{mem}})$.
+  - $\text{EAT}_{\text{full}} = (1 - p) \cdot \text{EAT}_{\text{no fault}} + p \cdot T_{\text{fault\_service}}$, where $p$ is the page fault rate.
+- **Multi-Level Page Tables:** Reduces memory footprint of page tables by allocating sub-tables only for active address spaces.
+
+---
+
+## How to Solve Questions in This Exam
+
+### Virtual/Physical Address Field Conversions (Q4, Q7)
+1. **Find Page Offset bits:** $\text{Offset} = \log_2(\text{Page Size in bytes})$.
+2. **Compute VPN bits:** $\text{VPN} = \text{Virtual Address bits} - \text{Offset}$.
+3. **Compute PFN bits:** $\text{PFN} = \text{Physical Address bits} - \text{Offset}$.
+4. **Number of virtual pages:** $2^{\text{VPN}}$.
+5. **Page Table Size:** $\text{Number of entries (same as pages)} \times \text{Size of each PTE (bytes)}$.
+
+### Translating Virtual Addresses via Page Table (Q5)
+1. **Determine field widths:** Convert page size to get offset bits.
+2. **Convert the hex address to binary:** Write it out completely.
+3. **Partition the binary address:**
+   - Extract the rightmost `Offset` bits.
+   - Extract the remaining leftmost bits to get the `VPN`.
+4. **Convert VPN to decimal:** Use this index to look up the entry in the page table.
+5. **Perform validation check:**
+   - If the Valid Bit = 0, stop and report a **Page Fault**.
+   - If Valid Bit = 1, retrieve the PFN (convert from hex to binary if necessary).
+6. **Construct Physical Address:** Concatenate the binary PFN and the binary Offset. Convert the result back to hex.
+
+### EAT with TLB and Page Faults (Q6)
+1. **Formulate the TLB paths:**
+   - Hit time: $T_{\text{TLB}} + T_{\text{mem}}$.
+   - Miss time: $T_{\text{TLB}} + 2 \cdot T_{\text{mem}}$ (1 access to read page table + 1 access to read data).
+2. **Calculate EAT without page faults:** $H_{\text{TLB}} \cdot T_{\text{hit}} + (1 - H_{\text{TLB}}) \cdot T_{\text{miss}}$.
+3. **Incorporate Page Faults:**
+   - Ensure all time units are matched (convert $10\text{ ms}$ page fault service time to $10,000,000\text{ ns}$).
+   - Use $\text{EAT}_{\text{full}} = (1 - p) \cdot \text{EAT}_{\text{no fault}} + p \cdot T_{\text{fault\_service}}$.
+
+---
+
 ## Part 1: Virtual Memory Concepts [10 Marks]
 
 ### Q1 — Short Answer / Essay | Bloom's: Understand | Difficulty: Medium | Marks: 3

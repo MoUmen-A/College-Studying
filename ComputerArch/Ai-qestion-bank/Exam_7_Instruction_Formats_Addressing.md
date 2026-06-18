@@ -4,6 +4,70 @@ This exam covers instruction format design, ISA types (three-address, two-addres
 
 ---
 
+## Topic Summary
+
+This exam covers the following core concepts from the COA course:
+
+- **Instruction Word Design:** Instructions consist of fields including opcode, registers, address fields, and control bits (like indirect bit $I$). Field widths are computed based on quantities:
+  - Registers field: $\log_2(\text{Number of Registers})$ bits.
+  - Address field: $\log_2(\text{Memory Addressable Words})$ bits.
+  - Opcode field: Remaining bits in the fixed-length word size.
+- **ISA Types (Address Count):**
+  - **Three-Address:** `OP Dest, Src1, Src2` (e.g., standard register-register computers).
+  - **Two-Address:** `OP Dest, Src` (e.g., standard x86 operations where Dest is modified).
+  - **One-Address:** `OP Src` (Accumulator-based, e.g., MARIE. AC is the implicit operand and destination).
+  - **Zero-Address:** `OP` (Stack-based, e.g., JVM or RPN evaluations. Operands are popped from the stack and results are pushed back).
+- **Addressing Modes & Effective Address (EA) Calculations:**
+  - **Immediate:** No EA. Operand is the value in the address field itself.
+  - **Direct:** $EA = A$. Operand is $M[A]$.
+  - **Indirect (Memory-Indirect):** $EA = M[A]$. Operand is $M[M[A]]$.
+  - **Register-Indirect:** $EA = R$. Operand is $M[R]$. Avoids multiple memory accesses.
+  - **Indexed:** $EA = A + R_{index}$. Excellent for array traversal where $A$ is base, $R_{index}$ is index.
+  - **Based:** $EA = A + R_{base}$. Used for segment/offset referencing.
+  - **Relative:** $EA = A + PC$. PC points to the address *after* the current instruction has been fetched.
+- **Endianness:**
+  - **Big-Endian:** Stores the Most Significant Byte (MSB) at the lowest memory address.
+  - **Little-Endian:** Stores the Least Significant Byte (LSB) at the lowest memory address.
+- **Expanding Opcode Technique:** Optimizes instruction representation under fixed-width formats. Uses the state-space limit $2^{\text{width}}$ as the budget. Opcode prefixes are reserved to extend short opcodes to longer opcodes for classes with fewer operands.
+
+---
+
+## How to Solve Questions in This Exam
+
+### Instruction Word Design & Bit Allocation (Q1, Q2)
+1. **Identify all system constraints:** total instruction size, number of registers, memory capacity (words), and flags.
+2. **Convert all capacities to powers of 2:**
+   - E.g., $128\text{K words} = 2^7 \times 2^{10} = 2^{17} \text{ words} \implies 17\text{ bits}$ for the address field.
+   - E.g., $32\text{ registers} = 2^5 \implies 5\text{ bits}$ for register select.
+3. **Subtract known fields from the total instruction width** to find the opcode bit-width.
+4. **Draw a clean layout diagram** showing starting and ending bit indexes (from MSB on the left to LSB on the right).
+
+### Writing ISA Sequence for Algebraic Expressions (Q3)
+- **Three-Address:** Directly translate expressions into binary ops (e.g., `ADD T1, A, B`).
+- **Two-Address:** You must load operands into registers using `MOV` before performing operations because the first register is overwritten (e.g., `MOV R1, A`, then `ADD R1, B`).
+- **One-Address:** Load the first operand to AC (`LOAD A`), do the operation (`ADD B`), and save to a temporary variable (`STORE T`) before loading the next sub-expression.
+- **Zero-Address:** Convert the infix expression to postfix (RPN) first, then write the sequence of `PUSH` and arithmetic operators (`ADD`, `SUB`, `MUL`).
+
+### Effective Address Calculation Table (Q4)
+- **Immediate:** Remember, EA does not exist or is "N/A". The operand is the literal address field value.
+- **Indirect:** Double check the memory dereference. Read $M[address]$, which becomes the address to read the final value from.
+- **Relative:** Always ensure you add the **post-fetch PC** value (PC of next instruction) to the offset, not the address of the current instruction.
+- **Indexed vs. Based:** Be sure you add the correct register contents to the offset.
+
+### Endianness Memory Tracing (Q6)
+1. **Split the hex value into byte pairs** from left to right (MSB to LSB). E.g., `0xDEADBEEF` $\implies$ `DE` (MSB), `AD`, `BE`, `EF` (LSB).
+2. **Assign addresses sequentially:**
+   - **Big-Endian:** Put the MSB `DE` at the lowest address, and proceed in order.
+   - **Little-Endian:** Put the LSB `EF` at the lowest address, and proceed in order.
+
+### Expanding Opcode State-Space Verification (Q7)
+1. **Compute total states:** $2^{\text{Instruction Bits}}$.
+2. **Compute states consumed by each class:** $\text{Number of Instructions in Class} \times 2^{\text{Operand Bits}}$.
+3. **Verify the budget constraint:** Sum of all consumed states must be less than or equal to the total available states.
+4. **Determine maximum zero-operand instructions:** The unused state capacity.
+
+---
+
 ## Part 1: Instruction Format Design [12 Marks]
 
 ### Q1 — Application (Design) | Bloom's: Create | Difficulty: Hard | Marks: 4

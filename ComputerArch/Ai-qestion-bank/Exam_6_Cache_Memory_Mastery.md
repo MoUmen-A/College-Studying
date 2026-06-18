@@ -4,6 +4,65 @@ This exam provides deep coverage of cache memory topics: direct mapping, fully a
 
 ---
 
+## Topic Summary
+
+This exam covers the following core concepts from the COA course:
+
+- **Cache Mapping Schemes:**
+  - **Direct-Mapped:** Each memory block maps to a unique cache block using $Y = X \bmod N$. Fast hit time, high conflict miss rate.
+  - **Fully Associative:** A memory block can go into any cache block. No index bits required. Low conflict miss rate, high hardware complexity (parallel tag comparators).
+  - **Set-Associative:** Hybrid scheme where memory blocks map to a specific set ($Y = X \bmod S$), and can reside in any block (way) within that set.
+- **Address Bit Fields Formulation:**
+  - **Offset Bits:** $\text{Offset} = \log_2(\text{Block Size in Bytes})$.
+  - **Index/Set-Index Bits:**
+    - Direct-Mapped: $\text{Index} = \log_2(\text{Number of Cache Blocks})$.
+    - Set-Associative: $\text{Set-Index} = \log_2(\text{Number of Sets})$.
+    - Fully Associative: $0$ bits (no index).
+  - **Tag Bits:** $\text{Tag} = \text{Total Address Bits} - \text{Index} - \text{Offset}$.
+- **Effective Access Time (EAT):**
+  - **Concurrent Model:** L1 and memory accessed in parallel (or overlap). $\text{EAT} = H \cdot T_{L1} + (1 - H) \cdot T_{MM}$.
+  - **Sequential Model:** Access L2/memory only on an L1 miss. $\text{EAT} = T_{L1} + (1 - H_1) \cdot [T_{L2} + (1 - H_2) \cdot T_{MM}]$.
+- **Replacement Policies:**
+  - **LRU (Least Recently Used):** Evicts the block unaccessed for the longest time.
+  - **FIFO (First-In, First-Out):** Evicts the oldest loaded block.
+  - **Optimal (Bélády's):** Evicts the block that will not be used for the longest time in the future. Serves as a theoretical upper bound.
+
+---
+
+## How to Solve Questions in This Exam
+
+### Cache Address Partitioning (Q5, Q6, Q7, Q9)
+Follow these logical steps to partition any physical memory address:
+
+1. **Calculate Field Sizes first:**
+   - Always find the block offset width first: $\log_2(\text{Block Size in bytes})$.
+   - Determine number of blocks ($\frac{\text{Cache Size}}{\text{Block Size}}$).
+   - If direct-mapped, $\text{Index bits} = \log_2(\text{Blocks})$.
+   - If set-associative, $\text{Set-Index bits} = \log_2\left(\frac{\text{Blocks}}{\text{Ways}}\right)$.
+   - If fully associative, index is $0$ bits.
+   - Tag bits are the remaining bits.
+2. **Convert the hex address to binary:**
+   - Write out all bits carefully. E.g., for a 20-bit address, ensure you have exactly 20 bits (5 hex characters).
+3. **Partition from Right to Left:**
+   - Group the rightmost bits for the Offset.
+   - Group the next bits for the Index/Set-Index (if any).
+   - The remaining leftmost bits are the Tag.
+4. **Convert binary fields back to hex or decimal as required.**
+
+### EAT Calculations (Q8, Q12)
+1. **Identify the access model:** The problem will specify whether access is concurrent or sequential.
+2. **For sequential models (nested hierarchy):**
+   - Start from the outermost level. E.g., $T_{miss\_L2} = T_{MM}$.
+   - Average access time from L2 level: $T_{avg\_L2} = T_{L2} + (1 - H_{L2}) \cdot T_{MM}$.
+   - Substitute into L1: $\text{EAT} = T_{L1} + (1 - H_{L1}) \cdot T_{avg\_L2}$.
+3. **Double-check global miss rate:** $\text{Global Miss Rate} = \text{Local Miss Rate 1} \times \text{Local Miss Rate 2}$.
+
+### Comparative & Concept Questions (Q1, Q2, Q4)
+- When comparing mapping rules, always state the equation $Y = X \bmod N$ for direct mapping, and the role of parallel comparators in fully associative and set-associative.
+- In trade-off essays, link the number of ways (associativity) to the number of comparators. More comparators = higher cost + higher power + slower multiplexing logic, but lower conflict miss rate.
+
+---
+
 ## Part 1: Cache Concepts & Comparisons [10 Marks]
 
 ### Q1 — Compare & Contrast | Bloom's: Analyse | Difficulty: Medium | Marks: 3

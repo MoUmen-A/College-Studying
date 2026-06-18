@@ -4,6 +4,66 @@ This exam focuses on instruction pipelining (speedup, space-time diagrams, hazar
 
 ---
 
+## Topic Summary
+
+This exam covers the following core concepts from the COA course:
+
+- **Instruction Pipelining Mechanics:**
+  - **Pipelined Execution Time:** $T_p = (k + n - 1) \cdot t_p$, where $k$ is the number of stages, $n$ is the number of instructions, and $t_p$ is the clock cycle time.
+  - **Non-Pipelined Execution Time:** $T_{np} = n \cdot t_n$, where $t_n$ is the total execution time for one instruction.
+  - **Speedup Ratio ($S$):** $S = \frac{T_{np}}{T_p}$.
+  - **Theoretical Max Speedup:** $S_{max} = k$ (as $n \to \infty$).
+  - **Space-Time Diagram:** Staggered diagonal representation of pipeline stages (Y-axis) versus clock cycles (X-axis).
+- **Pipeline Stages:** Typical 6 stages are FI (Fetch Instruction), DI (Decode Instruction), EA (Calculate Effective Address), FO (Fetch Operand), EI (Execute Instruction), and SR (Store Result).
+- **Pipeline Hazards:**
+  - **Structural Hazards:** Resource conflict (e.g., instructions in different stages trying to access memory simultaneously).
+  - **Data Hazards:** RAW (Read After Write - true data dependency), WAR (Write After Read - anti-dependency), WAW (Write After Write - output dependency).
+  - **Control Hazards:** Branch instructions changing PC, stalling subsequent instructions until branch target is known.
+- **Memory Types:**
+  - **SRAM (Static RAM):** Flip-flop design, fast, expensive, low density, no refresh needed. Used in L1/L2/L3 cache.
+  - **DRAM (Dynamic RAM):** Capacitor + transistor design, slower, cheap, dense, requires periodic refresh. Used in main memory.
+  - **ROM (Read-Only Memory):** Non-volatile, stores firmware/boot logic.
+- **Memory Hierarchy & Locality:** Layered architecture designed to achieve effective access speed of registers/caches with capacity/cost of disks, leveraging temporal and spatial locality.
+- **Memory Chip Design:** Combining multiple RAM/ROM chips of smaller size/bit-width to build a larger target memory module, designing address decoder logic based on memory maps.
+
+---
+
+## How to Solve Questions in This Exam
+
+### Pipeline Speedup and CPI Calculations (Q1, Q5)
+1. **Pipelined Time Formula:** Use $T_p = (k + n - 1) \cdot t_p$. Ensure you don't confuse $n$ (instructions) and $k$ (stages).
+2. **Speedup:** Compute $S = \frac{T_{np}}{T_p}$. It should be a number, usually between 1 and $k$.
+3. **CPI with Hazards:**
+   - Standard ideal CPI = 1.
+   - For every stall cycle per instruction, add that value. E.g., 1 stall cycle per 4 instructions $\implies \text{CPI} = 1 + 0.25 = 1.25$.
+   - Calculate effective time: $\text{CPI} \times t_p$.
+
+### Drawing Space-Time Diagrams (Q2)
+1. **Set up the grid:** Stages (rows, $S1$ to $Sk$) vs. Clock Cycles (columns, 1 to $k+n-1$).
+2. **Stagger the tasks:** Task $i$ starts at Cycle $i$ in Stage 1 and progresses diagonally down-right to stage $k$ at Cycle $i+k-1$.
+3. **Check final cycle:** Ensure the last task finishes at cycle $k + n - 1$.
+
+### Identifying Data Hazards (Q4)
+1. **Locate destination register of each instruction:** The register being written to (usually the first operand).
+2. **Locate source registers of subsequent instructions:** Registers being read (usually the second and third operands).
+3. **Check for RAW overlaps:** If a subsequent instruction reads a register before a previous instruction writes it, a RAW hazard exists.
+4. **Choose resolution:**
+   - If it's a RAW hazard between two ALU operations, **Forwarding** completely resolves it without stalls.
+   - If it's a RAW hazard between a LOAD instruction and an ALU operation (LOAD-use), **Forwarding + 1-cycle stall** is required.
+
+### Memory System Chip Count and Decoding Design (Q8)
+1. **ROM Chip Count:** $\text{ROM count} = \frac{\text{ROM region size (bytes)}}{\text{ROM chip size (bytes)}}$.
+2. **RAM Chip Count:** Pay attention to bit widths!
+   - E.g., RAM region size is $7\text{ KB} = 7168\text{ bytes} = 7168 \times 8\text{ bits}$.
+   - Available chip is $1024 \times 1\text{ bit}$.
+   - $\text{RAM count} = \frac{7168 \times 8}{1024 \times 1} = 56\text{ chips}$ (organized as 7 rows of 8 chips in parallel to form 8-bit bytes).
+3. **Address Bus Width:** Compute $\log_2(\text{Total capacity in bytes})$.
+4. **Decoder Design:**
+   - Partition address range into binary.
+   - Identify which address bits are constant in each range (ROM vs RAM). Use those bits (e.g., $A_{12}, A_{11}, A_{10}$) as inputs to the chip-select decoder.
+
+---
+
 ## Part 1: Instruction Pipelining [20 Marks]
 
 ### Q1 — Calculation | Bloom's: Apply | Difficulty: Medium | Marks: 4
