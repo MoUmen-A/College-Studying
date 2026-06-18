@@ -1,0 +1,347 @@
+Sheet 8-1 on chapter 6 first lecture
+Essay Questions (10) with Model Answers
+1.	Explain the memory hierarchy pyramid and why it's structured this way.
+Model Answer: The memory hierarchy is structured as a pyramid with CPU registers at the top (fastest but smallest), followed by cache memory (L1, L2, L3), then main memory (DRAM), and finally disk storage at the bottom (slowest but largest). This organization provides the best performance/cost ratio by keeping frequently accessed data in faster but more expensive memory near the CPU.
+2.	Compare DRAM and SRAM in terms of structure and usage.
+Model Answer: DRAM uses capacitors that require periodic refreshing (every few milliseconds) and is used for main memory because it's cheaper and denser. SRAM uses flip-flop circuits, doesn't need refreshing, is faster but more expensive, making it ideal for cache memory.
+3.	Explain the principle of locality and its three forms.
+Model Answer: The principle of locality states that programs tend to reuse data and instructions near those they've used recently. The three forms are: (1) Temporal locality - recently accessed items are likely to be accessed again soon; (2) Spatial locality - items near referenced items are likely to be accessed; (3) Sequential locality - instructions are normally executed sequentially.
+4.	Describe how direct-mapped cache works with an example.
+Model Answer: In direct-mapped cache, each memory block maps to exactly one cache block using modulo arithmetic (Y = X mod N). For example, with 4 cache blocks, memory blocks 0,4,8... map to cache block 0; 1,5,9... to block 1, etc. The address is divided into tag, block/index, and offset fields.
+5.	Compare fully associative and set-associative cache mapping.
+Model Answer: Fully associative allows any block to go anywhere in cache but requires expensive parallel search hardware. Set-associative is a compromise where blocks map to specific sets but can be placed anywhere within that set, balancing performance and cost.
+6.	Explain cache hit, miss, hit rate, and miss penalty.
+Model Answer: A hit occurs when requested data is found in cache; a miss when it's not. Hit rate is the percentage of accesses that are hits; miss rate is 1 - hit rate. Miss penalty is the extra time needed to fetch data from lower memory levels after a miss.
+7.	Describe how address fields are determined in cache mapping.
+Model Answer: The offset field size is determined by block size (log2 of bytes per block). The index field size is log2 of number of blocks (direct-mapped) or sets (set-associative). The tag field uses the remaining address bits after offset and index.
+8.	What are the advantages of set-associative over direct-mapped cache?
+Model Answer: Set-associative cache reduces conflict misses by allowing multiple blocks to map to the same set, while being more practical to implement than fully associative cache. It offers better hit rates than direct-mapped with reasonable hardware complexity.
+9.	Explain why cache memory uses block transfer.
+Model Answer: Cache transfers entire blocks (not just requested words) because of spatial locality - nearby data is likely to be needed soon. This reduces future misses by prefetching adjacent data that will probably be accessed.
+10.	Compare the hardware requirements of the three mapping techniques.
+Model Answer: Direct-mapped is simplest (single comparator per access). Fully associative requires parallel comparison of all tags (expensive). Set-associative needs parallel comparison only within a set (fewer comparators than fully associative).
+Multiple Choice Questions (15) with Answers
+1.	What must be done periodically to maintain DRAM contents?
+a) Defragmentation
+b) Refreshing
+c) Reboot
+d) Compression
+Answer: b) Refreshing
+2.	Which memory type is typically used for cache?
+a) DRAM
+b) SRAM
+c) ROM
+d) Flash
+Answer: b) SRAM
+3.	In a direct-mapped cache with 16 blocks, where does memory block 27 map?
+a) Block 0
+b) Block 11
+c) Block 27
+d) Block 3
+Answer: b) Block 11 (27 mod 16 = 11)
+4.	Which locality refers to reusing recently accessed data?
+a) Spatial
+b) Temporal
+c) Sequential
+d) Random
+Answer: b) Temporal
+5.	How many offset bits are needed for 32-byte blocks?
+a) 3
+b) 5
+c) 8
+d) 32
+Answer: b) 5 (2^5 = 32)
+6.	What is searched in parallel in fully associative cache?
+a) Data blocks
+b) All tags
+c) Index bits
+d) Offset bits
+Answer: b) All tags
+7.	A 4-way set-associative cache with 64 sets has how many blocks?
+a) 64
+b) 128
+c) 256
+d) 512
+Answer: c) 256 (4 × 64)
+8.	Which field is absent in fully associative cache addresses?
+a) Tag
+b) Index
+c) Offset
+d) All are present
+Answer: b) Index
+9.	What happens when a cache miss occurs?
+a) Data is written to cache
+b) Data is fetched from lower memory
+c) Cache is cleared
+d) CPU halts
+Answer: b) Data is fetched from lower memory
+10.	Which replacement policy is most complex to implement?
+a) FIFO
+b) LRU
+c) Random
+d) Direct
+Answer: b) LRU
+11.	How many tag bits are needed for 16-bit addresses, 8 blocks, 8-byte blocks?
+a) 4
+b) 8
+c) 11
+d) 16
+Answer: c) 11 (16 - (3 offset + 3 index))
+12.	What determines the set in set-associative cache?
+a) Tag
+b) Index
+c) Offset
+d) Replacement policy
+Answer: b) Index
+13.	Which memory type keeps data when power is off?
+a) DRAM
+b) SRAM
+c) ROM
+d) Cache
+Answer: c) ROM
+14.	What is the main advantage of direct-mapped cache?
+a) Highest hit rate
+b) Simplest hardware
+c) No conflicts
+d) No miss penalty
+Answer: b) Simplest hardware
+15.	What principle justifies block transfer in caches?
+a) Locality
+b) Random access
+c) Memory hierarchy
+d) Virtual memory
+Answer: a) Locality
+True/False Questions (15) with Answers
+1.	SRAM needs periodic refreshing. (False)
+2.	Fully associative cache has the lowest conflict misses. (True)
+3.	Direct-mapped cache has no capacity misses. (False)
+4.	The offset field selects the cache block. (False)
+5.	Temporal locality refers to sequential instruction access. (False)
+6.	ROM is used for permanent data storage. (True)
+7.	Increasing block size always improves cache performance. (False)
+8.	Set-associative cache is more expensive than direct-mapped. (True)
+9.	Virtual memory extends the cache hierarchy. (False)
+10.	All cache levels use the same mapping technique. (False)
+11.	The tag field must be stored with each cache block. (True)
+12.	Higher associativity reduces compulsory misses. (False)
+13.	DRAM is faster than SRAM. (False)
+14.	The memory hierarchy balances speed and cost. (True)
+15.	Cache misses always cause program errors. (False)
+Cash memory
+1. Essay Questions (10) with Model Answers
+Direct-Mapped Cache
+1.	Explain how direct-mapped cache works, including how memory blocks are mapped to cache blocks.
+Model Answer:
+In direct-mapped cache, each block of main memory maps to exactly one cache block using the formula:
+Cache Block=(Memory Block Address)mod  (Number of Cache Blocks)Cache Block=(Memory Block Address)mod(Number of Cache Blocks)
+The memory address is divided into tag, index (block), and offset fields. The index determines the cache block, the tag ensures correct identification, and the offset selects the exact byte within the block.
+2.	What are the advantages and disadvantages of direct-mapped cache?
+Model Answer:
+Advantages:
+o	Simple and fast (only one possible location for each block).
+o	Low hardware overhead (no complex search logic).
+Disadvantages:
+o	High conflict misses (multiple memory blocks compete for the same cache slot).
+o	Poor performance if programs access memory with repeating modulo patterns.
+Fully Associative Cache
+3.	Describe fully associative cache and explain how it differs from direct-mapped cache.
+Model Answer:
+In fully associative cache, a memory block can be placed in any cache block, unlike direct-mapped cache where each block has a fixed location. This reduces conflict misses but requires parallel tag comparison (expensive hardware).
+4.	Why is fully associative cache rarely used for large cache sizes?
+Model Answer:
+Because searching all tags in parallel requires complex and costly hardware (CAM - Content-Addressable Memory). As cache size increases, the search delay and power consumption become impractical.
+Set-Associative Cache
+5.	How does set-associative cache combine features of direct-mapped and fully associative caches?
+Model Answer:
+Set-associative cache divides the cache into sets, each containing multiple blocks (ways). A memory block maps to a specific set (like direct-mapped) but can occupy any block within that set (like fully associative). This balances speed and conflict reduction.
+6.	Compare 2-way vs. 4-way set-associative caches in terms of performance and hardware cost.
+Model Answer:
+o	2-way: Fewer conflicts than direct-mapped, lower hardware cost than 4-way.
+o	4-way: Fewer misses than 2-way, but slower (more comparisons needed) and more expensive.
+General Cache Concepts
+7.	Explain the principle of locality and its impact on cache performance.
+Model Answer:
+o	Temporal Locality: Recently accessed data is likely to be reused.
+o	Spatial Locality: Nearby data is likely to be accessed soon.
+Caches exploit locality by storing recently used data and adjacent blocks, improving hit rates.
+8.	What is a "cache miss penalty," and how does it affect CPU performance?
+Model Answer:
+A miss penalty is the extra time needed to fetch data from main memory after a cache miss. High miss penalties slow down the CPU, as it must wait for data instead of executing instructions.
+9.	How do replacement policies (LRU, FIFO, Random) affect cache performance?
+Model Answer:
+o	LRU (Least Recently Used): Best hit rate but complex to implement.
+o	FIFO (First-In-First-Out): Simpler but may evict useful data.
+o	Random: Easy to implement but unpredictable performance.
+10.	Why is cache memory organized hierarchically (L1, L2, L3)?
+Model Answer:
+•	L1 (small, fastest): Minimizes access time for critical data.
+•	L2/L3 (larger, slower): Reduce main memory accesses while keeping cost manageable.
+________________________________________
+2. Multiple-Choice Questions (15) with Answers
+Direct-Mapped Cache
+1.	In direct-mapped cache, block 15 of main memory maps to which cache block if the cache has 8 blocks?
+a) 0
+b) 7
+c) 15
+d) 1
+Answer: b) 7 (15 mod 8 = 7)
+2.	Which field in a direct-mapped cache address selects the cache block?
+a) Tag
+b) Index
+c) Offset
+d) Set
+Answer: b) Index
+3.	A direct-mapped cache with 64 blocks and 32-byte blocks has how many offset bits?
+a) 5
+b) 6
+c) 11
+d) 32
+Answer: a) 5 (since 2^5 = 32)
+Fully Associative Cache
+4.	Which cache mapping allows a block to be placed anywhere?
+a) Direct-mapped
+b) Fully associative
+c) Set-associative
+d) None
+Answer: b) Fully associative
+5.	Fully associative cache requires:
+a) A modulo operation
+b) Parallel tag comparison
+c) Fixed block mapping
+d) No tags
+Answer: b) Parallel tag comparison
+6.	A fully associative cache with 32-byte blocks and 32-bit addresses has how many tag bits?
+a) 5
+b) 27
+c) 32
+d) 64
+Answer: b) 27 (32 - 5 offset bits)
+Set-Associative Cache
+7.	A 4-way set-associative cache with 64 sets has how many blocks?
+a) 16
+b) 64
+c) 256
+d) 4
+Answer: c) 256 (4 × 64)
+8.	Which field is NOT present in a set-associative cache address?
+a) Tag
+b) Index
+c) Offset
+d) Block
+Answer: d) Block
+9.	A 2-way set-associative cache is better than direct-mapped because:
+a) It has no conflicts
+b) It reduces conflict misses
+c) It is cheaper
+d) It doesn’t use tags
+Answer: b) It reduces conflict misses
+General Cache Questions
+10.	The "hit rate" is:
+a) Time to access cache
+b) % of accesses found in cache
+c) Cache size
+d) Miss penalty
+Answer: b) % of accesses found in cache
+11.	Which locality refers to sequential instruction access?
+a) Temporal
+b) Spatial
+c) Sequential
+d) Random
+Answer: c) Sequential
+12.	Increasing cache associativity usually:
+a) Increases hit time
+b) Decreases hit rate
+c) Reduces cost
+d) Eliminates misses
+Answer: a) Increases hit time
+13.	A cache miss occurs when:
+a) Data is found in cache
+b) Data is not in cache
+c) Cache is full
+d) CPU is idle
+Answer: b) Data is not in cache
+14.	Which replacement policy is hardest to implement?
+a) LRU
+b) FIFO
+c) Random
+d) Direct
+Answer: a) LRU
+15.	The memory hierarchy exists because:
+a) Faster memory is cheaper
+b) Slower memory is larger
+c) Trade-off between speed and cost
+d) All of the above
+Answer: c) Trade-off between speed and cost
+________________________________________
+3. True/False Questions (15) with Answers
+1.	Direct-mapped cache has no conflicts.
+False (Conflicts occur when multiple blocks map to the same cache slot.)
+2.	Fully associative cache has the lowest miss rate.
+True (No conflicts, but high hardware cost.)
+3.	Set-associative cache is a compromise between direct-mapped and fully associative.
+True
+4.	The offset field determines the cache block.
+False (It selects the byte within a block.)
+5.	Temporal locality means recently accessed data is likely reused.
+True
+6.	A larger cache always improves performance.
+False (Too large caches can increase hit time.)
+7.	LRU is easier to implement than FIFO.
+False (LRU requires tracking usage, FIFO is simpler.)
+8.	Fully associative cache does not need an index field.
+True (Only tag and offset.)
+9.	Increasing associativity reduces compulsory misses.
+False (Reduces conflict misses, not compulsory.)
+10.	Cache memory is faster than registers.
+False (Registers are the fastest.)
+11.	A direct-mapped cache with N blocks uses log₂N index bits.
+True
+12.	Set-associative cache requires parallel search hardware.
+True (Within each set.)
+13.	Random replacement is the best policy for high hit rates.
+False (LRU is better but complex.)
+14.	The tag field is larger in direct-mapped than in set-associative cache.
+True (Because set-associative uses some bits for the set index.)
+15.	Virtual memory extends the cache hierarchy.
+False (It extends main memory, not cache.)
+________________________________________
+4. Calculation Problems (6) with Solutions
+Direct-Mapped Cache
+1.	A direct-mapped cache has 128 blocks, each 64 bytes. The memory address is 32 bits. Calculate:
+o	Offset bits
+o	Index bits
+o	Tag bits
+Solution:
+o	Offset = log₂(64) = 6 bits
+o	Index = log₂(128) = 7 bits
+o	Tag = 32 - (6 + 7) = 19 bits
+2.	A 16 KB direct-mapped cache has 32-byte blocks. How many blocks does it have?
+Solution:
+Total blocks = Cache size / Block size = 16KB / 32B = 512 blocks
+Fully Associative Cache
+3.	A fully associative cache uses 48-bit addresses and 128-byte blocks. Calculate:
+o	Offset bits
+o	Tag bits
+Solution:
+o	Offset = log₂(128) = 7 bits
+o	Tag = 48 - 7 = 41 bits
+4.	A fully associative cache has 256 blocks, each 16 words. If the memory address is 40 bits, how many tag bits are needed?
+Solution:
+Offset = log₂(16) = 4 bits
+Tag = 40 - 4 = 36 bits
+Set-Associative Cache
+5.	A 4-way set-associative cache has 64 sets and 32-byte blocks. The memory address is 36 bits. Calculate:
+o	Offset bits
+o	Index bits
+o	Tag bits
+Solution:
+o	Offset = log₂(32) = 5 bits
+o	Index = log₂(64) = 6 bits
+o	Tag = 36 - (5 + 6) = 25 bits
+6.	A 2-way set-associative cache has 12 index bits and 32-byte blocks. What is the total cache size?
+Solution:
+Number of sets = 2¹² = 4096
+Total blocks = 2 × 4096 = 8192
+Cache size = 8192 × 32B = 256 KB
+________________________________________
+

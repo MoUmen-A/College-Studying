@@ -1,3 +1,6 @@
+Exam date : 12/2/2026
+Time : 2 Hours
+
 A computer uses a memory unit with 256K words of 32 bits each. A binary instruction code is stored in one word of memory. The instruction has four parts: an indirect bit, an operation code, a register code part to specify one of 64 registers, and an address part. How many bits are there in the operation code, the register code part, and the address part? Draw the instruction word format and indicate the number of bits in each part. How many bits are there in the data and address inputs of the memory? (3 Marks)
 
 The content of AC in the basic computer is hexadecimal A937, and the initial value of E is 1. Determine the contents of AC, F, PC, AR, and IR in hexadecimal after the execution of the CLA instruction. Repeat the process for CLE, CMA, starting from each one of the register-reference instructions. The initial value of PC is hexadecimal 021. (Using Table1) (6 Marks)
