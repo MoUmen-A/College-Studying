@@ -1,6 +1,6 @@
 # CSE2001 - Software Engineering Final Exam Solutions
 **Date of Exam:** 6/1/2026  
-**Course Curriculum Reference:** [AllContent.txt](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt)
+**Course Curriculum Reference:** [AllContent.txt]( /SoftwareEng/Lec/AllContent.txt)
 
 ---
 
@@ -8,7 +8,7 @@
 
 ### 1. Functional requirements that focuses on what the system should do and should not do.
 - **Answer:** **True**  
-- **Reason (Ref: [AllContent.txt:L446-451](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L446-451)):** Functional requirements describe the system services or functions that the software must provide (what it should do), and also specify security restrictions or invalid operations that the system must prevent (what it should not do).
+- **Reason (Ref: [AllContent.txt:L446-451]( /SoftwareEng/Lec/AllContent.txt#L446-451)):** Functional requirements describe the system services or functions that the software must provide (what it should do), and also specify security restrictions or invalid operations that the system must prevent (what it should not do).
 
 ### 2. Component diagram depicts a static view of the run-time configuration of hardware nodes and the software components that run on those nodes.
 - **Answer:** **False**  
@@ -24,7 +24,7 @@
 
 ### 5. Failing to meet a non-functional requirement can mean that the whole system is unusable.
 - **Answer:** **True**  
-- **Reason (Ref: [AllContent.txt:L460-462](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L460-462)):** Non-functional requirements constrain the system as a whole (such as security, safety, reliability, or response speed). If a critical constraint is violated, the system becomes unsafe or unusable, regardless of whether its individual functions work.
+- **Reason (Ref: [AllContent.txt:L460-462]( /SoftwareEng/Lec/AllContent.txt#L460-462)):** Non-functional requirements constrain the system as a whole (such as security, safety, reliability, or response speed). If a critical constraint is violated, the system becomes unsafe or unusable, regardless of whether its individual functions work.
 
 ### 6. The standard requirement is classified as non-functional and organizational requirement.
 - **Answer:** **True**  
@@ -32,15 +32,15 @@
 
 ### 7. Domain requirements that come from the application domain of the system and that reflect characteristics and constraints, and they are represented as non functional requirements.
 - **Answer:** **False**  
-- **Reason (Ref: [AllContent.txt:L457-458](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L457-458)):** Domain requirements are not represented solely as non-functional. While they can constrain functions, they often introduce brand-new functional requirements in their own right (such as formulas for banking interest) or dictate how specific mathematical computations must be performed.
+- **Reason (Ref: [AllContent.txt:L457-458]( /SoftwareEng/Lec/AllContent.txt#L457-458)):** Domain requirements are not represented solely as non-functional. While they can constrain functions, they often introduce brand-new functional requirements in their own right (such as formulas for banking interest) or dictate how specific mathematical computations must be performed.
 
 ### 8. Use Case diagram represents the interaction of the user with the software but tells nothing about the internal working of the software.
 - **Answer:** **True**  
-- **Reason (Ref: [AllContent.txt:L18](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L18)):** A Use Case diagram displays an external actor's interaction with system functions. It acts as a black-box model of features and does not depict any internal design, database structures, or execution workflow.
+- **Reason (Ref: [AllContent.txt:L18]( /SoftwareEng/Lec/AllContent.txt#L18)):** A Use Case diagram displays an external actor's interaction with system functions. It acts as a black-box model of features and does not depict any internal design, database structures, or execution workflow.
 
 ### 9. The object diagram is more specific compared to class diagram, where it shows instances instead of classes.
 - **Answer:** **True**  
-- **Reason (Ref: [AllContent.txt:L20-21](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L20-21)):** While a class diagram shows the general structure and relationships of classes, an object diagram captures a concrete snapshot of actual objects, showing their runtime attributes and links at a specific moment.
+- **Reason (Ref: [AllContent.txt:L20-21]( /SoftwareEng/Lec/AllContent.txt#L20-21)):** While a class diagram shows the general structure and relationships of classes, an object diagram captures a concrete snapshot of actual objects, showing their runtime attributes and links at a specific moment.
 
 ### 10. When comparing the Communication Diagram and the Activity Diagram, we'll see the first is more focused on showing the collaboration of objects rather than the time sequence.
 - **Answer:** **True**  
@@ -57,7 +57,7 @@
 - d) both Prototyping Model & iterative Model
 
 **Answer:** **b**  
-**Explanation (Ref: [AllContent.txt:L230-231](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L230-231)):** When users are inexperienced, they often struggle to express requirements. Prototyping builds a mock-up/working model that allows users to interact with the system, clarify their expectations, and establish solid requirements.
+**Explanation (Ref: [AllContent.txt:L230-231]( /SoftwareEng/Lec/AllContent.txt#L230-231)):** When users are inexperienced, they often struggle to express requirements. Prototyping builds a mock-up/working model that allows users to interact with the system, clarify their expectations, and establish solid requirements.
 
 ---
 
@@ -90,7 +90,7 @@
 - d. Motivating project personnel
 
 **Answer:** **c**  
-**Explanation (Ref: [AllContent.txt:L58-62](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L58-62)):** Proposal writing is a pre-project activity that defines what the project will accomplish, outlines its objectives, and offers cost and schedule estimates to clients.
+**Explanation (Ref: [AllContent.txt:L58-62]( /SoftwareEng/Lec/AllContent.txt#L58-62)):** Proposal writing is a pre-project activity that defines what the project will accomplish, outlines its objectives, and offers cost and schedule estimates to clients.
 
 ---
 
@@ -101,7 +101,7 @@
 - d. non of mentioned
 
 **Answer:** **c**  
-**Explanation (Ref: [AllContent.txt:L446-451](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L446-451)):** Checking user history is a concrete functional service/capability that the system must provide to the user, making it a functional requirement.
+**Explanation (Ref: [AllContent.txt:L446-451]( /SoftwareEng/Lec/AllContent.txt#L446-451)):** Checking user history is a concrete functional service/capability that the system must provide to the user, making it a functional requirement.
 
 ---
 

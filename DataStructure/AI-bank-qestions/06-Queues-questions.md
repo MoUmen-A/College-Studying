@@ -1,6 +1,6 @@
 # Question Bank — Queues
-**Source lecture:** [`06-Queues.txt`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/06-Queues.txt)
-**Calibrated against:** [`23-spring.txt`](file:///d:/Gam3a/Exam-Creation/DataStructure/PrevExams/23-spring.txt) · [`25-spring`](file:///d:/Gam3a/Exam-Creation/DataStructure/PrevExams/25-spring)
+**Source lecture:** [`06-Queues.txt`]( /DataStructure/Lec/06-Queues.txt)
+**Calibrated against:** [`23-spring.txt`]( /DataStructure/PrevExams/23-spring.txt) · [`25-spring`]( /DataStructure/PrevExams/25-spring)
 **Course:** CCS2401 — Data Structures & Algorithms | Dr. Ahmed Said
 
 ---

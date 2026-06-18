@@ -9,7 +9,7 @@
 
 - Focus **exclusively** on the **Web Programming** course. Cover all topics that appear in the uploaded lecture materials (see [Course topics covered](#course-topics-covered)).
 - Analyse lecture content and extract core HTML elements/attributes, CSS styling rules, JavaScript array operations/functions, and PHP form processing/database query logic.
-- Calibrate question tone, phrasing, and difficulty to match **all** previous exam samples found inside the [`LastExam\`](file:///d:/Gam3a/Exam-Creation/Web/LastExam) folder (currently: `25.txt`, `26.txt`). **Re-scan this folder at the start of every session** — any newly added exam file must be read and incorporated into tone calibration automatically.
+- Calibrate question tone, phrasing, and difficulty to match **all** previous exam samples found inside the [`LastExam\`]( /Web/LastExam) folder (currently: `25.txt`, `26.txt`). **Re-scan this folder at the start of every session** — any newly added exam file must be read and incorporated into tone calibration automatically.
 - Generate a diverse bank of questions across various types to cover all potential exam structures (such as Fill in the spaces, MCQ, True/False, Trace Code, and Write Code).
 - Provide a structured guide answer for every question — including syntactically correct HTML/CSS, robust JavaScript scripts, and secure PHP snippets.
 - Highlight specific details required to get the **full mark** (e.g., proper CSS selectors, accurate array outputs, form field validations, session checking in PHP).
@@ -19,7 +19,7 @@
 
 ## Course topics covered
 
-> ⚠️ **Material is still being uploaded.** Topics listed here are derived from the lecture files currently available in [`d:\Gam3a\Exam-Creation\Web\Lecture`](file:///d:/Gam3a/Exam-Creation/Web/Lecture). When new lecture files are added to that folder, **re-read them first** and automatically extend this table before generating any questions. Do not generate questions on topics not yet confirmed in the uploaded lectures.
+> ⚠️ **Material is still being uploaded.** Topics listed here are derived from the lecture files currently available in [`d:\Gam3a\Exam-Creation\Web\Lecture`]( /Web/Lecture). When new lecture files are added to that folder, **re-read them first** and automatically extend this table before generating any questions. Do not generate questions on topics not yet confirmed in the uploaded lectures.
 
 | Topic area | Key concepts & Lecture references |
 |---|---|
@@ -48,8 +48,8 @@ Name each file descriptively using the `.md` format, e.g., `HTML-CSS-questions.m
 
 | Input | Description | Required |
 |---|---|---|
-| Lecture content | Files inside [`Lecture\`](file:///d:/Gam3a/Exam-Creation/Web/Lecture) (re-scan folder each session) | Yes |
-| Previous exam samples | Files inside [`LastExam\`](file:///d:/Gam3a/Exam-Creation/Web/LastExam) (currently: `25.txt`, `26.txt`) | Yes |
+| Lecture content | Files inside [`Lecture\`]( /Web/Lecture) (re-scan folder each session) | Yes |
+| Previous exam samples | Files inside [`LastExam\`]( /Web/LastExam) (currently: `25.txt`, `26.txt`) | Yes |
 | Focus | Web Programming topics confirmed in uploaded lectures only | Fixed |
 
 ---

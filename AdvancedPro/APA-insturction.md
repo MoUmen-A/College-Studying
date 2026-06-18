@@ -40,7 +40,7 @@ Every question generated must be grounded in the following topics from the **Adv
 | Input | Description | Required |
 |---|---|---|
 | Lecture content | Slides, notes, transcripts, or code samples | Yes |
-| Previous exam samples | Exam models (e.g., [25-26.md](file:///d:/Gam3a/Exam-Creation/AdvancedPro/PrevExams/25-26.md) and [25.md](file:///d:/Gam3a/Exam-Creation/AdvancedPro/PrevExams/25.md)) | Yes |
+| Previous exam samples | Exam models (e.g., [25-26.md]( /AdvancedPro/PrevExams/25-26.md) and [25.md]( /AdvancedPro/PrevExams/25.md)) | Yes |
 | Focus | "Advanced Programming" only | Fixed |
 
 ---

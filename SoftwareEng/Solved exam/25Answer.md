@@ -1,6 +1,6 @@
 # CSE2001 - Software Engineering Final Exam Solutions
 **Date of Exam:** 21/6/2025  
-**Course Curriculum Reference:** [AllContent.txt](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt)
+**Course Curriculum Reference:** [AllContent.txt]( /SoftwareEng/Lec/AllContent.txt)
 
 ---
 
@@ -14,7 +14,7 @@ How does the Spiral Model address requirement engineering throughout the softwar
 - d) It focuses solely on technical requirements, ignoring user needs.
 
 **Answer:** **b**  
-**Explanation (Ref: [AllContent.txt:L304-307](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L304-307)):** The Spiral Model is an iterative, risk-driven process model. Unlike the Waterfall model which freezes requirements early, each loop of the spiral involves identifying goals, analyzing risks, and incrementally refining and re-evaluating requirements based on prototype feedback.
+**Explanation (Ref: [AllContent.txt:L304-307]( /SoftwareEng/Lec/AllContent.txt#L304-307)):** The Spiral Model is an iterative, risk-driven process model. Unlike the Waterfall model which freezes requirements early, each loop of the spiral involves identifying goals, analyzing risks, and incrementally refining and re-evaluating requirements based on prototype feedback.
 
 ---
 
@@ -26,7 +26,7 @@ In the context of software testing, which technique focuses on testing the inter
 - d) Regression Testing
 
 **Answer:** **a**  
-**Explanation (Ref: [AllContent.txt:L29-30](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L29-30)):** White-box testing (also called structural testing) uses knowledge of the program's code, structure, design, and implementation to design test cases, contrasting with Black-box testing which relies solely on requirements.
+**Explanation (Ref: [AllContent.txt:L29-30]( /SoftwareEng/Lec/AllContent.txt#L29-30)):** White-box testing (also called structural testing) uses knowledge of the program's code, structure, design, and implementation to design test cases, contrasting with Black-box testing which relies solely on requirements.
 
 ---
 
@@ -38,7 +38,7 @@ Which of the following best describes a 'hard real-time' system?
 - d) A system that requires frequent updates to its software.
 
 **Answer:** **b**  
-**Explanation (Ref: [AllContent.txt:L1049-1050](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L1049-1050)):** By definition, in a hard real-time system, the correctness of the system depends not only on the logical result but also on the time it is delivered. Missing a timing deadline leads to total and potentially catastrophic failure of the system.
+**Explanation (Ref: [AllContent.txt:L1049-1050]( /SoftwareEng/Lec/AllContent.txt#L1049-1050)):** By definition, in a hard real-time system, the correctness of the system depends not only on the logical result but also on the time it is delivered. Missing a timing deadline leads to total and potentially catastrophic failure of the system.
 
 ---
 
@@ -50,7 +50,7 @@ Which of the following is a characteristic of the Incremental Model?
 - d) It minimizes customer feedback during development.
 
 **Answer:** **c**  
-**Explanation (Ref: [AllContent.txt:L104-108](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L104-108)):** In the incremental model, development is broken down into multiple increments. The basic core requirements are implemented first, yielding a working version of the system quickly, which is subsequently evolved and expanded in later stages.
+**Explanation (Ref: [AllContent.txt:L104-108]( /SoftwareEng/Lec/AllContent.txt#L104-108)):** In the incremental model, development is broken down into multiple increments. The basic core requirements are implemented first, yielding a working version of the system quickly, which is subsequently evolved and expanded in later stages.
 
 ---
 
@@ -62,7 +62,7 @@ Which type of stimulus in a real-time system occurs at unpredictable intervals?
 - **d) Aperiodic Stimuli**
 
 **Answer:** **d**  
-**Explanation (Ref: [AllContent.txt:L1064-1066](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L1064-1066)):** Aperiodic stimuli occur irregularly and unpredictably, usually triggered by external events in the environment (e.g., interrupts or emergency overrides), unlike periodic stimuli which occur at set intervals.
+**Explanation (Ref: [AllContent.txt:L1064-1066]( /SoftwareEng/Lec/AllContent.txt#L1064-1066)):** Aperiodic stimuli occur irregularly and unpredictably, usually triggered by external events in the environment (e.g., interrupts or emergency overrides), unlike periodic stimuli which occur at set intervals.
 
 ---
 
@@ -79,7 +79,7 @@ Which type of stimulus in a real-time system occurs at unpredictable intervals?
 - **Aperiodic Stimulus:** The sudden detection of an emergency vehicle siren, or an emergency manual override signal from traffic authority dispatchers, which happens at unpredictable intervals.
 
 #### c) Responsiveness
-- **Responsiveness** is the system's ability to receive an environmental input (stimulus) and complete the execution of the corresponding logic to control the output (actuator) within a strict, guaranteed timing deadline (Ref: [AllContent.txt:L1040-1043](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L1040-1043)).
+- **Responsiveness** is the system's ability to receive an environmental input (stimulus) and complete the execution of the corresponding logic to control the output (actuator) within a strict, guaranteed timing deadline (Ref: [AllContent.txt:L1040-1043]( /SoftwareEng/Lec/AllContent.txt#L1040-1043)).
 - In this specific traffic control system, responsiveness represents how quickly the system processes video streams showing an approaching car or an emergency siren, computes the updated timing schedule, and changes the traffic signals to prevent accidents.
 
 ---
@@ -90,7 +90,7 @@ Which type of stimulus in a real-time system occurs at unpredictable intervals?
 - **Recommended Model:** **Incremental Development Model**
 - **Justification:**
   1. **Quick Initial Feedback:** The scenario specifies that the university wants to *"prioritize quick initial deployment to gather user feedback"*. The Incremental model allows rapid release of a core version (with basic listing and enrollment) to gather feedback, which then informs subsequent builds.
-  2. **Evolving & Flexible Scope:** The university anticipates adding complex, interactive features (live discussion, analytics) in *"future phases based on pilot program feedback and emerging technologies."* The Incremental model is designed to handle changing requirements, allowing specification, development, and validation to interleave (Ref: [AllContent.txt:L104-108](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L104-108)).
+  2. **Evolving & Flexible Scope:** The university anticipates adding complex, interactive features (live discussion, analytics) in *"future phases based on pilot program feedback and emerging technologies."* The Incremental model is designed to handle changing requirements, allowing specification, development, and validation to interleave (Ref: [AllContent.txt:L104-108]( /SoftwareEng/Lec/AllContent.txt#L104-108)).
 
 #### b) Flow Diagram for the Incremental Process Model
 ```mermaid
@@ -108,7 +108,7 @@ flowchart TD
 
 #### c) Evaluation of the Alternative Model (Waterfall Model)
 - **Why Waterfall is Less Appropriate:**
-  1. **Inflexibility to Change:** Waterfall is a linear, sequential plan-driven model (Ref: [AllContent.txt:L130-133](file:///d:/Gam3a/Exam-Creation/SoftwareEng/Lec/AllContent.txt#L130-133)). All requirements must be finalized at the start. Since the university needs to adapt based on feedback and emerging educational technologies, any changes under Waterfall would require expensive rework.
+  1. **Inflexibility to Change:** Waterfall is a linear, sequential plan-driven model (Ref: [AllContent.txt:L130-133]( /SoftwareEng/Lec/AllContent.txt#L130-133)). All requirements must be finalized at the start. Since the university needs to adapt based on feedback and emerging educational technologies, any changes under Waterfall would require expensive rework.
   2. **No Early Working System:** Under Waterfall, the platform would not be delivered or seen by users until the very end of the cycle (after all coding and testing of all features is complete). This directly conflicts with the goal of a quick initial pilot deployment to gather feedback.
 
 ---

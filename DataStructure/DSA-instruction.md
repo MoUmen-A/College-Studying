@@ -9,7 +9,7 @@
 
 - Focus **exclusively** on the **Data Structures & Algorithms** course. Cover all topics that appear in the uploaded lecture materials (see [Course topics covered](#course-topics-covered)).
 - Analyse lecture content and extract core data structure definitions, C++ class/function signatures, algorithm logic, traversal sequences, and complexity properties.
-- Calibrate question tone, phrasing, and difficulty to match **all** previous exam samples found inside the [`PrevExams\`](file:///d:/Gam3a/Exam-Creation/DataStructure/PrevExams) folder (currently: `23-spring.txt`, `25-spring`). **Re-scan this folder at the start of every session** — any newly added exam file must be read and incorporated into tone calibration automatically.
+- Calibrate question tone, phrasing, and difficulty to match **all** previous exam samples found inside the [`PrevExams\`]( /DataStructure/PrevExams) folder (currently: `23-spring.txt`, `25-spring`). **Re-scan this folder at the start of every session** — any newly added exam file must be read and incorporated into tone calibration automatically.
 - Generate a diverse bank of questions across 7 types to cover all potential exam structures.
 - Provide a structured guide answer for every question — including syntactically correct C++ code snippets, hand-traced algorithm tables, and drawn tree/graph states.
 - Highlight specific details required to get the **full mark** (e.g., proper rotation labels, boundary conditions, correct traversal order, and complete complexity analysis).
@@ -19,16 +19,16 @@
 
 ## Course topics covered
 
-> ⚠️ **Material is still being uploaded.** Topics listed here are **generic placeholders** derived from the lecture files currently available in [`d:\Gam3a\Exam-Creation\DataStructure\Lec`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec). When new lecture files are added to that folder, **re-read them first** and automatically extend this table before generating any questions. Do not generate questions on topics not yet confirmed in the uploaded lectures.
+> ⚠️ **Material is still being uploaded.** Topics listed here are **generic placeholders** derived from the lecture files currently available in [`d:\Gam3a\Exam-Creation\DataStructure\Lec`]( /DataStructure/Lec). When new lecture files are added to that folder, **re-read them first** and automatically extend this table before generating any questions. Do not generate questions on topics not yet confirmed in the uploaded lectures.
 
 | Topic area | Key concepts & Lecture references |
 |---|---|
-| **Doubly Linked List** | Node structure (`data`, `prev`, `next`), insertion (front, end, position), deletion, traversal (forward & backward), average calculation, deletion by condition (e.g., above-average nodes) — [`04-Doubly-Linked-List.md`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/04-Doubly-Linked-List.md) |
-| **Queues** | Array-based and link-based queue ADT, circular queue, `enqueue` / `dequeue`, front/rear pointers, `PrintReversed()` using auxiliary stack, real-world applications (CPU scheduling, resource management) — [`06-Queues.txt`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/06-Queues.txt) |
-| **Trees** | General tree terminology (root, leaf, height, depth, level), binary tree properties, traversals (Inorder, Preorder, Postorder, Level-order), tree construction from two traversals, complete/full/perfect binary trees, max nodes formula $2^{h+1}-1$ — [`07-Trees.md`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/07-Trees.md) |
-| **Binary Search Tree (BST)** | BST property, insertion, search, deletion (leaf / one-child / two-children using in-order successor or predecessor), in-order successor definition, cousin-node function, traversal output sequences — [`08-BST.md`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/08-BST.md) |
-| **AVL Tree** | Balance factor, LL / RR / LR / RL rotations, step-by-step insertion and deletion with rotation type annotation (S/D/N), drawing intermediate states — [`08-BST.md`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/08-BST.md) |
-| **Graphs** | Directed / undirected / weighted graphs, adjacency matrix vs adjacency list representation, BFS (uses queue), DFS (uses stack), Dijkstra's shortest-path algorithm (manual table with known set, distances, paths), real-world application mapping — [`11-Graph.md`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec/11-Graph.md) |
+| **Doubly Linked List** | Node structure (`data`, `prev`, `next`), insertion (front, end, position), deletion, traversal (forward & backward), average calculation, deletion by condition (e.g., above-average nodes) — [`04-Doubly-Linked-List.md`]( /DataStructure/Lec/04-Doubly-Linked-List.md) |
+| **Queues** | Array-based and link-based queue ADT, circular queue, `enqueue` / `dequeue`, front/rear pointers, `PrintReversed()` using auxiliary stack, real-world applications (CPU scheduling, resource management) — [`06-Queues.txt`]( /DataStructure/Lec/06-Queues.txt) |
+| **Trees** | General tree terminology (root, leaf, height, depth, level), binary tree properties, traversals (Inorder, Preorder, Postorder, Level-order), tree construction from two traversals, complete/full/perfect binary trees, max nodes formula $2^{h+1}-1$ — [`07-Trees.md`]( /DataStructure/Lec/07-Trees.md) |
+| **Binary Search Tree (BST)** | BST property, insertion, search, deletion (leaf / one-child / two-children using in-order successor or predecessor), in-order successor definition, cousin-node function, traversal output sequences — [`08-BST.md`]( /DataStructure/Lec/08-BST.md) |
+| **AVL Tree** | Balance factor, LL / RR / LR / RL rotations, step-by-step insertion and deletion with rotation type annotation (S/D/N), drawing intermediate states — [`08-BST.md`]( /DataStructure/Lec/08-BST.md) |
+| **Graphs** | Directed / undirected / weighted graphs, adjacency matrix vs adjacency list representation, BFS (uses queue), DFS (uses stack), Dijkstra's shortest-path algorithm (manual table with known set, distances, paths), real-world application mapping — [`11-Graph.md`]( /DataStructure/Lec/11-Graph.md) |
 | **⚙️ Upcoming topics** | Additional topics will be added here as new lecture files are uploaded to the `Lec` folder. Re-scan the folder at generation time and incorporate any new `.md` / `.txt` files automatically. |
 
 ---
@@ -49,8 +49,8 @@ Name each file descriptively, e.g., `BST-questions.md`, `Graph-Dijkstra-question
 
 | Input | Description | Required |
 |---|---|---|
-| Lecture content | Files inside [`Lec\`](file:///d:/Gam3a/Exam-Creation/DataStructure/Lec) (re-scan folder each session) | Yes |
-| Previous exam samples | [`23-spring.txt`](file:///d:/Gam3a/Exam-Creation/DataStructure/PrevExams/23-spring.txt) and [`25-spring`](file:///d:/Gam3a/Exam-Creation/DataStructure/PrevExams/25-spring) | Yes |
+| Lecture content | Files inside [`Lec\`]( /DataStructure/Lec) (re-scan folder each session) | Yes |
+| Previous exam samples | [`23-spring.txt`]( /DataStructure/PrevExams/23-spring.txt) and [`25-spring`]( /DataStructure/PrevExams/25-spring) | Yes |
 | Focus | DSA topics confirmed in uploaded lectures only | Fixed |
 
 ---
