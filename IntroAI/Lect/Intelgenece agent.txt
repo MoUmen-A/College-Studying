@@ -1,0 +1,305 @@
+
+for this as well
+Intelligent Agents
+Outline
+
+Agents and environments- Rationality- PEAS (Performance measure, Environment, Actuators, Sensors)- Environment types- Agent types
+
+Agents
+
+An agent is an entity that perceives and acts
+
+An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators
+
+Human agent: eyes, ears, and other organs for sensors; hands, legs, mouth, and other body parts for actuators
+
+Robotic agent: cameras and infrared range finders for sensors; various motors for actuators
+
+Agents and environments
+
+The agent function maps from percept histories to actions: [f: P* →A]
+
+The agent program runs on the physical architecture to produce f
+
+agent = architecture + program- Percept refers to the agent's perceptual input at a given instant- Percept Sequence is a complete history of percepts.
+
+[Diagram showing environment, agent, sensors, actuators, percepts, and actions]
+
+[Diagram showing vacuum-cleaner world with Agent/Robot, location A and B, dirt, and iRobot Roomba 400 image]
+
+Vacuum- cleaner world
+
+[Diagram showing two locations A and B, with dirt in both and a vacuum robot in A]
+
+Percepts: location and contents, e.g., [A,Dirty]
+
+Actions: Left, Right, Suck, NoOp
+
+A vacuum- cleaner function
+
+<table>Percept SequenceAction[A, Clean]Right[A, Dirty]Suck[B, Clean]Left[B, Dirty]Suck[A, Clean], [A, Clean]Right[A, Clean], [A, Dirty]Suck...</table>
+The Vacuum- cleaner world
+
+[Diagram showing vacuum robot in location A with dirt in A and B]
+
+function REFLEX- VACUUM- AGENT ([location, status]) return an action if status == Dirty then return Suck else if location == A then return Right else if location == B then return Left
+
+Rationality
+
+The proposed definition requires:
+
+Information gathering/exploration- To maximize future rewards
+
+Learn from percepts- Extending prior knowledge
+
+Agent autonomy- Compensate for incorrect prior knowledge
+
+Rational agents
+
+Rationality is distinct from omniscience (all- knowing with infinite knowledge)
+
+Agents can perform actions in order to modify future percepts so as to obtain useful information (information gathering, exploration)
+
+An agent is autonomous if its behavior is determined by its own experience (with ability to learn and adapt)
+
+Rational agents
+
+An agent should strive to "do the right thing", based on what it can perceive and the actions it can perform. The right action is the one that will cause the agent to be most successful
+
+Performance measure: An objective criterion for success of an agent's behavior
+
+E.g., performance measure of a vacuum- cleaner agent could be amount of dirt cleaned up, amount of time taken, amount of electricity consumed, amount of noise generated, etc.
+
+Rational agents
+
+Rational Agent: For each possible percept sequence, a rational agent should select an action that is expected to maximize its performance measure, given the evidence provided by the percept sequence and whatever built- in knowledge the agent has.
+
+The nature of environments: PEAS
+
+PEAS: Performance measure, Environment, Actuators, Sensors Must first specify the setting for intelligent agent design
+
+Consider, e.g., the task of designing an automated taxi driver:
+
+Performance measure- Environment- Actuators- Sensors
+
+The nature of environments: PEAS
+
+Must first specify the setting for intelligent agent design
+
+Consider, e.g., the task of designing an automated taxi driver:
+
+Performance measure: Safe, fast, legal, comfortable trip, maximize profits- Environment: Roads, other traffic, pedestrians, customers- Actuators: Steering wheel, accelerator, brake, signal, horn- Sensors: Cameras, sonar, speedometer, GPS, odometer, engine sensors, keyboard
+
+PEAS
+
+Agent: Medical diagnosis system
+
+Performance measure: Healthy patient, minimize costs, lawsuits- Environment: Patient, hospital, staff- Actuators: Screen display (questions, tests, diagnoses, treatments, referrals)- Sensors: Keyboard (entry of symptoms, findings, patient's answers)
+
+PEAS
+
+Agent: Part- picking robot
+
+Performance measure: Percentage of parts in correct bins- Environment: Conveyor belt with parts, bins- Actuators: Jointed arm and hand- Sensors: Camera, joint angle sensors
+
+Environment Types
+• Fully Observable: The agent can perceive the complete state of the environment at any given moment. Think of a board game like chess, where all pieces and their positions are visible.
+
+Example: A chess-playing AI that sees the entire board
+
+• Partially Observable: The agent has limited information about the environment. This can be due to sensors with limited range, incomplete data, or hidden aspects. Imagine navigating a maze where you can only see your immediate surroundings.
+
+Example: A self-driving car navigating with cameras and LIDAR, not seeing behind buildings.
+
+Environment Types
+• Deterministic: The outcome of an action depends solely on the current state and chosen action. There's no randomness involved.
+
+Example: Solving a math equation, where following the right steps always leads to the correct answer.
+
+• Stochastic: The outcome of an action is partly based on chance or unknown factors, even with the same state and action.
+
+Example: Playing dice, where the outcome depends on a random roll despite choosing to throw the dice
+
+Environment Types
+
+Single-agent: Only one agent operates in the environment. Example: A robot playing chess against a computer program.- Multi-agent: Multiple agents interact and potentially compete or cooperate with each other. Example: A swarm of robots collaborating to build a structure
+
+Environment Types
+• Static: The environment remains unchanged while the agent makes decisions and takes actions.
+
+Example: Static: Solving a Sudoku puzzle, where the grid remains constant.
+
+• Dynamic: The environment changes independently of the agent's actions, requiring constant adaptation.
+
+Example: Traffic navigation, where other cars and weather conditions constantly change
+
+Environment Types
+• Discrete: The environment has a finite number of distinct states and actions.
+
+Example: Discrete: Playing checkers with a fixed board and limited moves.
+
+• Continuous: The environment has an infinite number of possible states and actions, often represented by real numbers.
+
+Example: Controlling a robot arm with infinite possible positions and joint angles
+
+Environment Types
+• Episodic: Each interaction with the environment is self-contained, and past episodes don't directly influence future ones.
+
+Example: Playing a single game of Tetris, where each game starts fresh.
+
+• Sequential: Actions and outcomes in one episode influence decisions in subsequent episodes, requiring the agent to learn over time.
+
+Example: Training a language model on a continuous stream of text, where past conversations inform future responses
+
+Environment types
+
+The simplest environment is- Fully observable, deterministic, episodic, static, discrete and single-agent.- Most real situations are:- Partially observable, stochastic, sequential, dynamic, continuous and multi-agent.
+
+Agent functions and programs
+
+An agent is completely specified by the agent function mapping percept sequences to actions- One agent function (or a small equivalence class) is rational- Aim: find a way to implement the rational agent function concisely
+
+Table- lookup agent
+
+Function TABLE- DRIVEN_AGENT(percept) returns an action
+
+static: percepts, a sequence initially empty table, a table of actions, indexed by percept sequence
+
+append percept to the end of percepts action 
+←
+← LOOKUP(percepts, table) return action
+
+Drawbacks:
+
+Huge table
+
+Take a long time to build the table
+
+No autonomy
+
+Even with learning, need a long time to learn the table entries
+
+To example: Vacuum world.
+
+Percepts: robot senses it's location and "cleanliness."
+
+So, location and contents, e.g., [A, Dirty], [B, Clean].
+
+With 2 locations, we get 4 different possible sensor inputs.
+
+Actions: Left, Right, Suck, NoOp
+
+[Diagram showing vacuum robot in location A with dirt in both locations]
+
+<table>Percept sequenceAction[A, Clean]<br>[A, Dirty]<br>[B, Clean]<br>[B, Dirty]<br>[A, Clean], [A, Clean]<br>[A, Clean], [A, Dirty]<br>[A, Clean], [A, Clean], [A, Clean]<br>[A, Clean], [A, Clean], [A, Dirty]<br>[A, Clean], [A, Clean], [A, Clean], [A, Dirty]<br>[A, Clean]Right<br>Suck<br>Left<br>Suck<br>Right<br>Suck<br>Right<br>Suck<br>Right<br>Suck</table>
+Table- lookup agent
+
+Action sequence of length K, gives 4^K different possible sequences.- At least many entries are needed in the table. So, even in this very toy- world, with K = 20, you need a table with over 4^20 > 10^12 entries.- In more real-world scenarios, one would have many more different- percepts (eg many more locations), e.g., >=100. There will therefore be
+
+Table- lookup agent
+
+100^K different possible sequences of length K. For K = 20, this would
+
+require a table with over 100^20 = 10^40 entries. Infeasible to even store.
+
+So, table lookup formulation is mainly of theoretical interest. For practical agent systems, we need to find much more compact representations. For example,
+
+logic-based representations, Bayesian net representations,
+
+or neural net style representations, or use a different agent architecture,
+
+e.g., "ignore the past" --- Reflex agents.
+
+Agent types
+
+Four basic types in order of increasing generality:
+
+Simple reflex agents- Model-based reflex agents- Goal-based agents- Utility-based agents
+
+Simple reflex agents
+
+[Diagram of a Simple reflex agent architecture]
+
+Select action on the basis of only the current percept. - E.g. the vacuum- agent Large reduction in possible percept/action situations(next page). Implemented through condition- action rules - If dirty then suck
+
+The vacuum- cleaner world
+
+[Diagram showing vacuum robot in location A with dirt in both locations]
+
+function REFLEX- VACUUM- AGENT ([location, status]) return an action if status == Dirty then return Suck else if location == A then return Right else if location == B then return Left
+
+Reduction from 4T to 4 entries
+
+Simple reflex agent
+
+function SIMPLE- REFLEX- AGENT(percept) returns an action
+
+static: rules, a set of condition- action rules
+
+state ← INTERPRET- INPUT(percept) rule ← RULE- MATCH(state, rules) action ← RULE- ACTION[rule] return action
+
+Will only work if the environment is fully observable otherwise infinite loops may occur.
+
+Model-based reflex agents
+
+[Diagram of a Model-based reflex agent architecture]
+
+To tackle partially observable environments.
+
+Maintain internal state
+
+Over time update state using world knowledge
+
+How does the world change.
+
+How do actions affect world.
+
+Model of World
+
+Model- based reflex agents
+
+function REFLEX- AGENT- WITH- STATE(percept) returns an action
+
+static: rules, a set of condition- action rules state, a description of the current world state action, the most recent action.
+
+state ← UPDATE- STATE(state, action, percept) rule ← RULE- MATCH(state, rule) action ← RULE- ACTION[rule] return action
+
+Goal- based agents
+
+[Diagram of a Goal-based agent architecture]
+
+The agent needs a goal to know which situations are desirable.
+
+Things become difficult when long sequences of actions are required to find the goal.
+
+Typically investigated in search and planning research.
+
+Major difference: future is taken into account
+
+Is more flexible since knowledge is represented explicitly and can be manipulated.
+
+Utility- based agents
+
+[Diagram of a Utility-based agent architecture]
+
+Certain goals can be reached in different ways.
+
+Some are better, have a higher utility.
+
+Utility function maps a (sequence of) state(s) onto a real number.
+
+Improves on goals:
+
+Selecting between conflicting goals Select appropriately between several goals based on likelihood of success.
+
+Learning agents
+
+[Diagram of a Learning agent architecture]
+
+All previous agent- programs describe methods for selecting actions.
+
+Yet it does not explain the origin of these programs.- Learning mechanisms can be used to perform this task.- Teach them instead of instructing them.- Advantage is the robustness of the program toward initially unknown environments.
+
+Summary: Intelligent Agents
+
+An agent perceives and acts in an environment, has an architecture, and is implemented by an agent program.- Task environment - PEAS (Performance, Environment, Actuators, Sensors)- The most challenging environments are inaccessible, nondeterministic, dynamic, and continuous.- An ideal agent always chooses the action which maximizes its expected performance, given its percept sequence so far.- An agent program maps from percept to action and updates internal state.- Reflex agents respond immediately to percepts.- simple reflex agents- model-based reflex agents- Goal-based agents act in order to achieve their goal(s).- Utility-based agents maximize their own utility function.- Agents can improve their performance through learning.
