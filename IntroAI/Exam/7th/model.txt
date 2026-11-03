@@ -1,0 +1,204 @@
+==== Page 1 =====
+
+Question 1
+
+Consider the following state space graph. Ties are broken in alphabetical order.
+
+[State space graph diagram with nodes S, A, B, C, D, G and their h-values]
+
+(2 pts.) What path would DFS return? S- A- B- C- D- G
+
+(2 pts.) What path would BFS return? S- A- D- G
+
+(2 pts.) What path would UCS return? S- B- D- G
+
+(2 pts.) What path would Greedy search return? S- B- D- G
+
+(2 pts.) Is the heuristic in the above graph admissible? Why? Yes
+
+A heuristic 
+h
+h is admissible (optimistic) if:
+
+0
+≤
+h
+(
+n
+)
+≤
+h
+∗
+(
+n
+)
+0≤h(n)≤h 
+∗
+ (n)
+(2 pts.) Is the heuristic in the above graph consistent? If not, provide a minimal set of edges whose costs must be changed along with their new costs in order to make the heuristic consistent.
+
+No
+
+Change the cost of S- B to something equal to or above 3.
+
+===== Page 2 =====
+
+4 pts.) Draw the search tree and graph search starting from node S.
+
+[Diagram titled "search tree" showing a tree starting from S, expanding to A and B, and further down to C, D, G]
+
+Question 2
+(2 pts.) Translate the following FOL into English statements:
+
+∃
+x
+∃x 
+(
+C
+a
+r
+(
+x
+)
+∧
+R
+e
+d
+(
+x
+)
+)
+(Car(x)∧Red(x))
+
+There exists at least one car that is red
+
+∀
+x
+∀x 
+(
+B
+i
+r
+d
+(
+x
+)
+⇒
+C
+a
+n
+F
+l
+y
+(
+x
+)
+)
+(Bird(x)⇒CanFly(x))
+
+For all 
+x
+x if 
+x
+x is a bird, then 
+x
+x can fly.
+
+(2 pts.) Translate the following statements into FOL:
+
+Some students like pizza.
+
+∃
+x
+(
+s
+t
+u
+d
+e
+n
+t
+(
+x
+)
+∧
+l
+i
+k
+e
+s
+(
+x
+,
+p
+i
+z
+z
+a
+)
+)
+∃x(student(x)∧likes(x,pizza))
+
+Every teacher respects all hardworking students.
+
+∀
+x
+(
+t
+e
+a
+c
+h
+e
+r
+(
+x
+)
+→
+∀
+y
+(
+(
+s
+t
+u
+d
+e
+n
+t
+(
+y
+)
+∧
+h
+a
+r
+d
+w
+o
+r
+k
+i
+n
+g
+(
+y
+)
+)
+→
+r
+e
+s
+p
+e
+c
+t
+s
+(
+x
+,
+y
+)
+)
+)
+∀x(teacher(x)→∀y((student(y)∧hardworking(y))→respects(x,y)))
