@@ -34,7 +34,8 @@ An **Intelligent Agent** is the foundational paradigm of modern Artificial Intel
 4. **PEAS Framework:** Performance measure, Environment, Actuators, and Sensors.
 5. **Environment Types:** Dimensional taxonomy of task environments.
 6. **Agent Implementations & Limitations:** Table-lookup agents and combinatorial explosion.
-7. **The Four (Five) Basic Agent Architectures:** Simple reflex, model-based reflex, goal-based, utility-based, and learning agents.
+7. **The Basic Agent Architectures:** Diagram anatomy (Boxes vs. Ovals), internal cognitive questions, and famous real-world examples.
+8. **Comparative Summary & Decision Flowchart:** Side-by-side comparison matrix and architecture selection tree.
 
 ---
 
@@ -308,6 +309,54 @@ graph TD
     A --> LA[5. Learning Agents]
 ```
 
+### Anatomy of Agent Diagrams: Boxes vs. Ovals
+
+In standard AI agent architecture diagrams (e.g., Russell & Norvig), shapes carry distinct functional meanings:
+
+| Shape in Diagram | Meaning | Role in Agent Operation |
+| :--- | :--- | :--- |
+| **Rectangles (Boxes)** | **Cognitive Questions & Processes** | Active questions and computational steps the agent executes at runtime (e.g., *"What the world is like now"*, *"What action I should do now"*). |
+| **Ovals (Bubbles)** | **Knowledge Representations & Models** | Stored information, internal models of physics/rules, and memory structures preserved in the agent's knowledge base. |
+
+```
+                       EVOLUTION OF AGENT QUESTIONS
+                       
+Simple Reflex:       [What the world is like now] 
+                                |
+                                v
+                     [What action I should do now]
+                                
+-------------------------------------------------------------------------
+Model-Based:         [What the world is like now] <-- (Uses State & World Evolution)
+                                |
+                                v
+                     [What action I should do now]
+                                
+-------------------------------------------------------------------------
+Goal-Based:          [What the world is like now]
+                                |
+                                v
+                     [What will it be like if I do action X?]
+                                |
+                                v
+                     [Does this state achieve my GOAL?]
+                                |
+                                v
+                     [What action I should do now]
+                                
+-------------------------------------------------------------------------
+Utility-Based:       [What the world is like now]
+                                |
+                                v
+                     [What will it be like if I do action X?]
+                                |
+                                v
+                     [How HAPPY will I be? (Utility Score)]
+                                |
+                                v
+                     [What action I should do now (Maximize Expected Utility)]
+```
+
 ---
 
 ### 1. Simple Reflex Agents
@@ -331,6 +380,20 @@ flowchart LR
     ConditionRules -->|"What action I should do now"| Actuators
     Actuators -->|Action Effect| EnvState
 ```
+
+#### Internal Questions (Diagram Breakdown):
+* **Box 1: *"What the world is like now"*** — Interprets raw sensor readings directly into a current state description without historical context.
+* **Box 2: *"What action I should do now"*** — Directly executes a pre-programmed condition-action rule.
+* **Oval: *Condition-Action Rules*** — Handcrafted lookup mapping (`if condition then action`).
+
+#### Famous Real-World Examples:
+1. **Automated Sliding Supermarket Door:**
+   * *Sensors:* Motion/infrared detector.
+   * *Rule:* `if motion_detected == True then OPEN_DOOR else CLOSE_DOOR`.
+   * *Limitation:* It has no memory of people who just walked through, nor does it predict who is approaching next.
+2. **Standard Home Thermostat:**
+   * *Sensors:* Bimetallic strip / temperature sensor.
+   * *Rule:* `if temperature < 20°C then TURN_HEATER_ON else if temperature > 22°C then TURN_HEATER_OFF`.
 
 #### Pseudocode
 ```text
@@ -358,24 +421,43 @@ flowchart TD
     subgraph Agent["Model-Based Reflex Agent"]
         Sensors[Sensors]
         Actuators[Actuators]
-        State["Internal State\n(Percept History Memory)"]
-        WorldModel["Model of the World:\n- How world evolves\n- How actions affect world"]
-        Rules["Condition-Action Rules"]
+        State["State\n(Internal Memory of History)"]
+        WorldModel["How the world evolves\n(Independent changes)"]
+        ActionModel["What my actions do\n(Action consequences)"]
+        Box1["What the world is like now"]
+        Box2["What action I should do now"]
+        Rules["Condition-action rules"]
         
-        Sensors --> State
-        WorldModel --> State
-        State --> Rules
-        Rules --> Actuators
+        Sensors --> Box1
+        State --> Box1
+        WorldModel --> Box1
+        ActionModel --> Box1
+        Box1 -.->|Update| State
+        Box1 --> Box2
+        Rules --> Box2
+        Box2 --> Actuators
     end
     
     Env[Environment] --> Sensors
     Actuators --> Env
 ```
 
-#### Key Components:
-1. **Internal State:** Reflects current beliefs about the environment.
-2. **Transition Model:** Knowledge of how the world changes independently of the agent.
-3. **Sensor/Action Model:** Knowledge of how the agent's own actions transform the environment.
+#### Internal Questions (Diagram Breakdown):
+* **Box 1: *"What the world is like now"***  
+  Synthesizes current sensor data with past memory to reconstruct the hidden state of the environment using:
+  1. **Oval: *State*** — The agent's current internal memory of past percepts.
+  2. **Oval: *How the world evolves*** — Physics/dynamics of the environment that occur independently of the agent (e.g., another car in the blind spot keeps driving forward).
+  3. **Oval: *What my actions do*** — How the agent's own previous actions modified the world (e.g., turning the steering wheel moves the vehicle into the left lane).
+* **Box 2: *"What action I should do now"***  
+  Selects an action based on the reconstructed complete world state using condition-action rules.
+
+#### Famous Real-World Examples:
+1. **Robotic Vacuum Cleaner with SLAM / Map Memory (e.g., Roomba i7 / Roborock):**
+   * *Problem:* When facing a blank wall, sensors only see the wall.
+   * *Model/State:* Remembers the complete layout of the apartment and tracks which rooms have already been cleaned so it doesn't vacuum them again.
+2. **Autonomous Vehicle Blind-Spot Braking:**
+   * *Problem:* A pedestrian walks behind a large parked truck, becoming temporarily occluded (invisible to cameras/LIDAR).
+   * *World Evolution Model:* Knows that people do not vanish; the pedestrian is still moving across the street behind the truck $\to$ triggers precautionary braking.
 
 #### Pseudocode
 ```text
@@ -402,18 +484,34 @@ flowchart TD
         Sensors[Sensors]
         Actuators[Actuators]
         State["Current State"]
-        Goals["Goals (Desirable States)"]
-        Predictor["Search & Planning:\n'What will happen if I do Action X?'"]
+        Goals["Goals\n(Desired Target States)"]
+        Predictor["What will it be like\nif I do action X?"]
+        Decision["What action I should do now\n(Search & Planning toward Goal)"]
         
         Sensors --> State
         State --> Predictor
-        Goals --> Predictor
-        Predictor --> Actuators
+        Predictor --> Decision
+        Goals --> Decision
+        Decision --> Actuators
     end
     
     Env[Environment] --> Sensors
     Actuators --> Env
 ```
+
+#### Internal Questions (Diagram Breakdown):
+* **Box 1: *"What the world is like now"*** — Keeps track of the current environment state.
+* **Box 2: *"What will it be like if I do action X?"*** — Projects forward into the future to predict outcomes of candidate actions.
+* **Box 3: *"Does this action lead to my GOAL?"*** — Checks whether hypothetical future states satisfy the goal criteria.
+* **Box 4: *"What action I should do now"*** — Selects the action that forms part of a valid plan to reach the goal.
+
+#### Famous Real-World Examples:
+1. **GPS Navigation (Google Maps / Waze):**
+   * *Goal:* *"Arrive at Cairo International Airport"*.
+   * *Operation:* It does not merely react to the current intersection; it searches paths, simulates potential future turns, and constructs a multi-step route to reach the destination.
+2. **Chess Playing AI (e.g., Minimax / Stockfish):**
+   * *Goal:* *"Checkmate the opponent's King"*.
+   * *Operation:* Searches branches in the game tree to find a sequence of moves that guarantees victory regardless of the opponent's responses.
 
 * **Core Mechanism:** Incorporates **Search and Planning** algorithms to evaluate multi-step action sequences.
 * **Key Advantage:** Far more flexible than reflex agents. If destination/goals change, the agent updates its goal specification rather than requiring a complete rewriting of condition-action rules.
@@ -432,18 +530,36 @@ flowchart TD
         Sensors[Sensors]
         Actuators[Actuators]
         State["Current State"]
-        Utility["Utility Function\n(Scores Desirability / Trade-offs)"]
-        Evaluator["Decision Evaluation:\nMaximize Expected Utility"]
+        Utility["Utility Function\n(Quality / Trade-off Scorer)"]
+        Predictor["What will it be like\nif I do action X?"]
+        Evaluator["How happy will I be?\n(Calculate Expected Utility)"]
+        Decision["What action I should do now\n(Maximize Expected Utility)"]
         
         Sensors --> State
-        State --> Evaluator
+        State --> Predictor
+        Predictor --> Evaluator
         Utility --> Evaluator
-        Evaluator --> Actuators
+        Evaluator --> Decision
+        Decision --> Actuators
     end
     
     Env[Environment] --> Sensors
     Actuators --> Env
 ```
+
+#### Internal Questions (Diagram Breakdown):
+* **Box 1: *"What the world is like now"*** — Reconstructs the current state.
+* **Box 2: *"What will it be like if I do action X?"*** — Predicts successor states.
+* **Box 3: *"How happy / satisfied will I be in such a state?"*** — Evaluates the quantitative score (utility) of each candidate outcome.
+* **Box 4: *"What action I should do now"*** — Chooses the action that maximizes the agent's expected utility across conflicting criteria and uncertainty.
+
+#### Famous Real-World Examples:
+1. **Ride-Hailing Route Optimizer (Uber / Lyft):**
+   * *Context:* Multiple different routes achieve the goal of reaching the airport.
+   * *Trade-off:* Route A is fast (20 mins) but costs \$15 in highway tolls; Route B is free of tolls but takes 40 mins; Route C is bumpy with lots of turns.
+   * *Utility Function:* Computes $\text{Utility} = - w_1(\text{Time}) - w_2(\text{Cost}) + w_3(\text{Comfort})$ to pick the best trade-off.
+2. **Autonomous Taxi (Waymo):**
+   * Balances conflicting objectives: travel speed vs. passenger safety vs. fuel efficiency vs. ride smoothness.
 
 #### Why Utility is Essential:
 1. **Conflicting Goals:** Provides principled trade-offs between competing criteria (e.g., speed vs. safety vs. fuel economy in an automated taxi).
@@ -460,21 +576,21 @@ All preceding agent programs assume that action-selection logic is hardcoded by 
 ```mermaid
 flowchart TD
     subgraph Agent["Learning Agent Architecture"]
-        Critic["Critic\n(Compares against external standard)"]
-        LearningElement["Learning Element\n(Makes improvements & updates knowledge)"]
+        Critic["Critic\n('How well am I doing?')"]
+        LearningElement["Learning Element\n('How should I improve?')"]
         LearningGoals["Learning Goals"]
-        ProblemGenerator["Problem Generator\n(Suggests exploratory actions)"]
-        PerformanceElement["Performance Element\n(Selects actions based on percepts)"]
+        ProblemGenerator["Problem Generator\n('What novel action should I try?')"]
+        PerformanceElement["Performance Element\n('What action should I do now?')"]
         Sensors[Sensors]
         Actuators[Actuators]
         
         Sensors --> Critic
         Sensors --> PerformanceElement
-        Critic -->|Feedback| LearningElement
+        Critic -->|Feedback / Performance Evaluation| LearningElement
         LearningGoals --> LearningElement
-        LearningElement -->|Experimentation goals| ProblemGenerator
-        LearningElement -->|Policy updates| PerformanceElement
-        ProblemGenerator -->|Exploration actions| PerformanceElement
+        LearningElement -->|Experimentation guidelines| ProblemGenerator
+        LearningElement -->|Policy / knowledge updates| PerformanceElement
+        ProblemGenerator -->|Exploratory actions| PerformanceElement
         PerformanceElement --> Actuators
     end
 
@@ -482,23 +598,53 @@ flowchart TD
     Actuators --> Env
 ```
 
-#### The Four Core Components:
-1. **Performance Element:** The existing agent program responsible for selecting external actions based on percepts (e.g., reflex, goal, or utility engine).
-2. **Critic:** Evaluates the agent's behavior against an external, fixed performance standard and supplies evaluative feedback.
-3. **Learning Element:** Utilizes feedback from the critic to adjust and improve the performance element.
-4. **Problem Generator:** Proposes novel exploratory actions that may be suboptimal in the short term but discover valuable new knowledge for long-term optimization.
+#### The Four Core Components & Their Internal Questions:
+1. **Critic:** *"How well is the agent performing relative to an external performance standard?"* Evaluates sensor data and outputs performance feedback.
+2. **Learning Element:** *"How should I modify the program to perform better next time?"* Responsible for making lasting behavioral improvements.
+3. **Problem Generator:** *"What new, exploratory actions should I experiment with?"* Suggests sub-optimal short-term actions that reveal valuable new long-term knowledge.
+4. **Performance Element:** *"What action should I execute right now?"* The operational agent (reflex, goal, or utility) that interacts directly with actuators.
+
+#### Famous Real-World Examples:
+1. **AlphaGo / AlphaZero:**
+   * *Critic:* Evaluates game outcome (Win / Loss) and intermediate territory balance.
+   * *Problem Generator:* Intentionally explores unconventional moves in self-play to discover novel strategies.
+   * *Learning Element:* Updates deep neural network policy and value weights.
+2. **Content Recommendation System (YouTube / TikTok):**
+   * *Critic:* Measures user watch time, completion rate, and likes/dislikes.
+   * *Learning Element:* Refines user taste vector.
+   * *Problem Generator:* Injects diverse, unfamiliar video topics into your feed to explore whether your interests have changed.
 
 ---
 
 ## 9. Comparative Summary of Agent Architectures
 
-| Architecture | Basis for Action Selection | Maintains History? | Handles Partial Observability? | Adaptability / Flexibility |
-| :--- | :--- | :--- | :--- | :--- |
-| **Simple Reflex** | Current percept only via condition-action rules | No | No (risks infinite loops) | Low (rigid rules) |
-| **Model-Based Reflex** | Current percept + internal state model | Yes | Yes (tracks hidden variables) | Moderate (model-dependent) |
-| **Goal-Based** | Current state + search toward explicit goal states | Yes | Yes | High (goals are reprogrammable) |
-| **Utility-Based** | Current state + optimization of real-valued utility | Yes | Yes | Very High (balances competing goals & risk) |
-| **Learning Agent** | Performance element guided by critic and problem generator | Yes | Yes | Maximum (adapts to unknown environments) |
+| Architecture | Basis for Action Selection | Maintains History? | Handles Partial Observability? | Key Internal Questions | Famous Real-World Example |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| **Simple Reflex** | Current percept only via condition-action rules | No | No (risks infinite loops) | *"What the world is like now?"* $\to$ *"What action should I do now?"* | **Automatic Sliding Door**, **Home Thermostat** |
+| **Model-Based Reflex** | Current percept + internal state model | Yes | Yes (tracks hidden variables) | *"What is the world like now (using memory & evolution)?"* | **Roomba with SLAM / Map Memory**, **Self-Driving Car Braking** |
+| **Goal-Based** | Current state + search toward explicit goal states | Yes | Yes | *"What will happen if I do X?"* $\to$ *"Does this achieve my goal?"* | **Google Maps / GPS Navigation**, **Chess AI (Stockfish)** |
+| **Utility-Based** | Current state + optimization of real-valued utility | Yes | Yes | *"What will happen if I do X?"* $\to$ *"How happy will I be (utility)?"* | **Uber Route Optimizer**, **Waymo Autonomous Taxi** |
+| **Learning Agent** | Performance element guided by critic and problem generator | Yes | Yes | *"How well am I doing?"* $\to$ *"How can I improve?"* $\to$ *"What to try?"* | **AlphaGo / AlphaZero**, **YouTube / TikTok Recommender** |
+
+### Decision Flowchart: Which Agent Architecture Should You Choose?
+
+```mermaid
+flowchart TD
+    Q1{"Is the environment fully observable?"}
+    Q1 -->|Yes, immediate reaction suffices| A1["Simple Reflex Agent\n(Thermostat / Sliding Door)"]
+    Q1 -->|No, need internal memory of history| Q2{"Do you just react, or need future planning?"}
+    
+    Q2 -->|Just react to current state| A2["Model-Based Reflex Agent\n(Roomba with map / Autonomous braking)"]
+    Q2 -->|Need to achieve a target goal| Q3{"Are there trade-offs / conflicts between paths?"}
+    
+    Q3 -->|No, binary success / failure| A3["Goal-Based Agent\n(Google Maps / Chess AI)"]
+    Q3 -->|Yes, balance speed, safety, cost| A4["Utility-Based Agent\n(Uber Route Optimizer / Waymo Taxi)"]
+    
+    A1 -.->|Needs to learn & adapt over time| L["Wrap with Learning Agent\n(Critic + Learning Element + Problem Generator)"]
+    A2 -.->|Needs to learn & adapt over time| L
+    A3 -.->|Needs to learn & adapt over time| L
+    A4 -.->|Needs to learn & adapt over time| L
+```
 
 ---
 
