@@ -669,10 +669,47 @@ Every search algorithm is evaluated along four criteria:
 3. **Time Complexity:** How many nodes are generated/evaluated before finding a goal?
 4. **Space Complexity:** What is the maximum number of nodes kept in memory simultaneously?
 
-#### Core Complexity Parameters:
-* $b$: Maximum **branching factor** (maximum number of successors for any node).
-* $d$: Depth of the **shallowest goal node**.
-* $m$: Maximum **depth of the state space** (can be $\infty$).
+#### Core Complexity Parameters: Why $b, d, m$ Instead of Traditional $N$?
+
+In traditional algorithm analysis (e.g., Dijkstra or sorting), complexity is expressed in terms of input size $N$ or vertices $|V|$ and edges $|E|$. In AI search, **we do not possess the full graph in advance**; the state space is generated dynamically on-the-fly and is often astronomical or infinite. 
+
+Therefore, complexity is measured using three **geometric parameters** of the search tree:
+
+```
+Level 0:                 (Root)                      Depth = 0
+                       /   |   \
+Level 1:             O     O     O                   Depth = 1  (b nodes)
+                   / | \ / | \ / | \
+Level 2:          O  O  O ...   O  O  O              Depth = 2  (b^2 nodes)
+                     :     :     :
+Level d:            ... [GOAL (d)] ...               Depth = d  (b^d nodes)  <-- BFS stops here!
+                     :     :     :
+Level m:           [Leaf] [Leaf] [Dead-End] ...      Depth = m  (b^m nodes)  <-- DFS can reach here!
+                                                     (m can be ∞ if loops exist)
+```
+
+| Parameter | Formal Name | Meaning & Geometric Intuition | Practical Examples | Impact on Algorithms |
+| :---: | :--- | :--- | :--- | :--- |
+| **$b$** | **Maximum Branching Factor** | The maximum number of successors (children) that any node can generate. It dictates the **horizontal width** and exponential growth rate of the tree. | • Binary Tree: $b = 2$<br>• 8-Puzzle: $b \le 4$<br>• Chess: $b \approx 35$<br>• Go: $b \approx 250$ | Every additional level of depth multiplies the number of nodes by $b$. |
+| **$d$** | **Depth of Shallowest Goal** | The number of steps from the root to the closest goal node with the lowest path cost. | • If an 8-puzzle requires at minimum 6 sliding moves to solve, then $d = 6$. | Dictates the stopping point for **BFS** and **Iterative Deepening (IDS)** ($O(b^d)$ time). |
+| **$m$** | **Maximum Depth of Space** | The maximum length of any path from root to a leaf or dead-end in the search tree. Can be $\infty$ if loops/cycles exist. | • Tic-Tac-Toe: $m = 9$<br>• Acyclic finite game: finite $m$<br>• Unchecked grid with loops: $m = \infty$ | Dictates the worst-case time for **DFS** ($O(b^m)$). If $m = \infty$, DFS gets stuck forever. |
+
+---
+
+#### The Fundamental Contrast: $d$ vs. $m$
+
+$$\text{Always: } d \le m$$
+
+* **Breadth-First Search (BFS) is bounded by $d$:**
+  * BFS explores level-by-level ($0, 1, 2, \dots, d$).
+  * It terminates the instant it discovers the shallowest goal at level $d$.
+  * It completely ignores whatever exists below $d$ (even if $m = \infty$).
+  * **Time:** $O(b^d)$ | **Space:** $O(b^d)$
+* **Depth-First Search (DFS) is bounded by $m$:**
+  * DFS follows a single branch straight down to its maximum depth $m$ before backtracking.
+  * If it picks the wrong leftmost branch, it may explore all the way down to level $m$ before ever checking the goal at level $d$ in a neighboring branch!
+  * **Time:** $O(b^m)$ (catastrophic if $m \gg d$, infinite if $m = \infty$).
+  * **Space:** $O(b \cdot m)$ (linear memory: stores only the current branch of depth $m$ plus unexpanded siblings).
 
 ---
 
