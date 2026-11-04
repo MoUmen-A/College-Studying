@@ -10,6 +10,7 @@
 7. [**Genealogy Knowledge Base Case Study**](#7-case-study-genealogy-knowledge-base-in-fol): Axiomatic family tree relations, recursion, and query evaluation under CWA.
 8. [**Comparison: PL vs. FOL**](#8-propositional-logic-vs-first-order-logic): Systematic comparison of expressiveness, complexity, and decidability.
 9. [**Key Takeaways**](#9-key-takeaways): Summary of fundamental principles and practical AI trade-offs.
+10. [**Exam Practice & Mastery Drills (Exam Replica & Full-Mark Guide)**](#10-exam-practice--mastery-drills): Scanned exam questions with complete solutions, pattern analysis, and replica practice sets with answer keys.
 
 ---
 
@@ -465,4 +466,370 @@ $$\forall x, y \, (\text{relative}(x, y) \leftrightarrow \text{relative}(y, x)) 
 5. **Order Matters:** While $\forall x \forall y$ and $\exists x \exists y$ are commutative, switching $\forall x \exists y$ and $\exists y \forall x$ drastically alters semantic meaning.
 6. **Inference Bridge:** Quantifier instantiation rules (Universal Elimination and Skolemization) connect First-Order sentences to propositional theorem proving engines.
 7. **Computational Trade-off:** FOL gains enormous expressiveness at the expense of semi-decidability (proving non-entailment may not terminate on infinite domains).
+
+---
+
+## 10. Exam Practice & Mastery Drills
+
+This section provides a rigorous, step-by-step methodology to solve any First-Order Logic translation question, highlights the exact traps examiners use to deduct marks, deconstructs the **actual exam questions** from your test paper, and provides matched practice sets with full model answers.
+
+---
+
+### 10.1 Step-by-Step Solver Guide: How to Tackle Translation Questions
+
+#### Part A: English $\to$ FOL Translation (The 5-Step Pipeline)
+
+```mermaid
+flowchart TD
+    S1["Step 1: Identify Quantifiers & Scope\n(All/Every -> ∀, There is/Some -> ∃)"]
+    S2["Step 2: Classify Entities\n(Constants = Bill/AI, Predicates = Student/Smart)"]
+    S3["Step 3: Select the Canonical Connective\n(∀ pairs with ->, ∃ pairs with ∧)"]
+    S4["Step 4: Check Constraints & Modifiers\n('Other' -> ¬(x=y), 'Either/or' -> XOR, Cardinality)"]
+    S5["Step 5: Sanity Check & Boundary Testing\n(Check variable binding & vacuous truth)"]
+    S1 --> S2 --> S3 --> S4 --> S5
+```
+
+##### Step 1: Detect Quantifiers from Keyword Triggers
+* **Universal Triggers ($\forall$):** *"Every"*, *"All"*, *"Each"*, *"Any"*, *"Whoever"*, *"Whatever"*.
+* **Existential Triggers ($\exists$):** *"There exists"*, *"There is"*, *"Some"*, *"At least one"*, *"A/An"* (when referring to existence, e.g., *"a student passed"*).
+* **Negative Triggers ($\neg\exists$ or $\forall \neg$):** *"No"*, *"None"*, *"Nobody"*, *"Nothing"*, *"Never"*.
+
+##### Step 2: Separate Objects (Constants) from Categories (Predicates)
+* **Constants (Named Individuals):** Specific people, courses, semesters, or places are constants, passed as arguments inside predicates:
+  * $\text{Bill}$, $\text{AI}$, $\text{History}$, $\text{Spring2024}$.
+  * > [!CAUTION] Do **not** create predicates out of proper constants! Writing $\text{AI}(x)$ or $\text{Bill}(x)$ is invalid syntax and loses marks. Bill is an entity $\text{Bill}$; AI is a course object $\text{AI}$.
+* **Unary Predicates (Types & Properties):** General categories and single properties:
+  * $\text{Student}(x)$, $\text{Smart}(x)$, $\text{Course}(c)$.
+* **$N$-ary Predicates (Relations & Actions):** Connections between two or more objects:
+  * $\text{Passed}(x, c)$, $\text{Loves}(x, y)$, $\text{Attended}(x, c, s)$.
+
+##### Step 3: Apply the Canonical Connective Rule (The Golden Law of Logic)
+| Quantifier | Required Primary Connective | General Schema | Why? |
+| :---: | :---: | :---: | :--- |
+| **Universal ($\forall$)** | **Conditional ($\to$)** | $\forall x \, (\text{Condition}(x) \to \text{Property}(x))$ | If an object does not meet the condition, the implication is vacuously true, preserving the domain constraint. |
+| **Existential ($\exists$)** | **Conjunction ($\wedge$)** | $\exists x \, (\text{Condition}(x) \wedge \text{Property}(x))$ | You are asserting that an entity simultaneously exists in the category **and** exhibits the property. |
+
+##### Step 4: Handle Special Modifiers & Relational Nuances
+* **"Some other / another":** When an entity acts on another entity of the same kind, enforce distinctness with $\neg(x = y)$:
+  $$\forall x \, (\text{Student}(x) \to \exists y \, (\text{Student}(y) \wedge \neg(x = y) \wedge \dots))$$
+* **"Either $A$ or $B$ (but not both)":** This is exclusive OR ($\text{XOR}$). Standard FOL lacks an official $\oplus$ connective, so expand it explicitly:
+  $$(A \vee B) \wedge \neg(A \wedge B) \quad \text{or} \quad (A \wedge \neg B) \vee (\neg A \wedge B)$$
+* **"Only":** "Only students study" means if someone studies, they are a student ($\text{Studies}(x) \to \text{Student}(x)$). "Only $A$ are $B$" $\equiv \forall x (B(x) \to A(x))$.
+
+##### Step 5: Perform the "Vacuous Truth" Boundary Test
+Ask yourself: *What happens if the universe has no students (or no one who took AI)?*
+* If you wrote $\forall x (\text{Student}(x) \wedge \text{Smart}(x))$: if a cat exists in the universe, the sentence evaluates to **False** (a fatal flaw).
+* If you wrote $\exists x (\text{Student}(x) \to \text{Smart}(x))$: if a cat exists (not a student), $\text{False} \to \text{Smart}(\text{cat})$ is **True**, making your sentence automatically True even if not a single student exists!
+
+---
+
+#### Part B: FOL $\to$ English Translation (Inside-Out Decoding)
+
+Translating from logic back into English requires identifying recognized semantic patterns rather than rendering clumsy mechanical word-by-word text:
+
+```
++-------------------------------------------------------------------------------------------------------+
+| FOL FORMULA FINGERPRINT                                  | NATURAL ENGLISH TRANSLATION               |
++-------------------------------------------------------------------------------------------------------+
+| ¬∃x (Student(x) ∧ P(x))                                  | "No student is P."                         |
+| ∀x (Student(x) -> ¬P(x))                                 | "No student is P." (Equivalent to above)   |
++-------------------------------------------------------------------------------------------------------+
+| ∃x (P(x) ∧ ∀y (P(y) => x = y))                           | "Exactly one object is P."                 |
+| ∃x (Student(x) ∧ Failed(x, H) ∧ ∀y (... => x = y))      | "Exactly one student failed H."            |
++-------------------------------------------------------------------------------------------------------+
+| ∃x ∃y (P(x) ∧ P(y) ∧ ¬(x = y))                           | "There are at least two distinct P's."    |
+| ∃x ∃y (SisterOf(x, B) ∧ SisterOf(y, B) ∧ ¬(x = y))       | "Bill has at least two sisters."           |
++-------------------------------------------------------------------------------------------------------+
+| ∀x ∀y ((P(x) ∧ P(y)) -> x = y)                           | "There is at most one P."                  |
++-------------------------------------------------------------------------------------------------------+
+| ¬∃x (P(x) ∧ ∀y (P(y) ∧ ¬(x=y) => R(x,y)))               | "No P does R to every other P."            |
++-------------------------------------------------------------------------------------------------------+
+```
+
+##### 3-Step Translation Technique:
+1. **Identify the Core Predicates:** List the nouns and verbs involved (e.g., $x$ is a student, $x$ failed History).
+2. **Decode the Structural Frame:** Look for cardinality idioms (e.g., uniqueness $\forall y (\dots \implies x = y)$, multiplicity $\neg(x = y)$, or total negation $\neg\exists$).
+3. **Draft Both Literal and Idiomatic Sentences:** Write the literal meaning first to verify logical fidelity, then write the clean, idiomatic English sentence on your exam sheet.
+
+---
+
+### 10.2 Fatal Exam Mistakes & Best Practices to Avoid Them
+
+The following table summarizes the most frequent deduction causes observed on introductory AI exams:
+
+| Error Category | Common Student Mistake | Why Marks Are Deducted | Correct Full-Credit Version |
+| :--- | :--- | :--- | :--- |
+| **1. The $\forall$-with-$\wedge$ Disaster** | $\forall x \, (\text{Student}(x) \wedge \text{Smart}(x))$ | Asserts that every single entity in existence is a student and is smart. | $\forall x \, (\text{Student}(x) \to \text{Smart}(x))$ |
+| **2. The $\exists$-with-$\to$ Disaster** | $\exists x \, (\text{Student}(x) \to \text{Passed}(x))$ | Vacuously satisfied by any non-student object in the universe (a rock, a dog). | $\exists x \, (\text{Student}(x) \wedge \text{Passed}(x))$ |
+| **3. Forgetting Distinctness ($\neg(x = y)$)** | $\forall x \, (\text{Student}(x) \to \exists y \, (\text{Student}(y) \wedge \text{Loves}(x, y)))$ | Fails to enforce *"some other"*; allows $x = y$ (students loving themselves). | Add $\neg(x = y)$ inside the existential scope. |
+| **4. Mistaking "At least 2" for "Two"** | Translating $\exists x \exists y (\dots \wedge \neg(x=y))$ as *"There are two sisters."* | $\exists x \exists y$ does not forbid a third sister; it means **at least two**. | Write: *"Bill has at least two sisters."* |
+| **5. Missing Uniqueness Condition** | Translating $\exists x (\text{Student}(x) \wedge \text{Failed}(x) \wedge \dots)$ as *"A student failed."* | Ignores the universal clause $\forall y (\dots \implies x=y)$ which enforces uniqueness. | Write: *"Exactly one student failed."* |
+| **6. Making Constants into Predicates** | $\forall x \, (\text{AI}(x) \to \dots)$ or $\text{Bill}(x)$ | $\text{Bill}$ and $\text{AI}$ are specific ground terms (objects), not unary classes. | Use predicates over terms: $\text{Studied}(x, \text{AI})$ |
+| **7. Free / Unbound Variables** | $\forall x \, (\text{Student}(x) \to \text{Loves}(x, y))$ | $y$ is free (unquantified), making the sentence an invalid WFF. | Ensure every variable has an enclosing $\forall$ or $\exists$. |
+
+---
+
+### 10.3 Scanned Exam Paper: Complete Solutions & Scoring Breakdown
+
+Here is the exact solution sheet for the test paper shown in the exam scan:
+
+```
++----------------------------------------------------------------------------------------------------+
+|                                    ACTUAL EXAM PAPER DECONSTRUCTION                                 |
++----------------------------------------------------------------------------------------------------+
+```
+
+#### Question (Two): Translate English Statements into FOL [5 Degrees]
+
+##### Statement A: *"All students who studied AI are smart."*
+* **Analysis:** Universal statement over students with a composite condition (being a student **and** having studied AI).
+* **Predicate Definitions:**
+  * $\text{Student}(x)$: "$x$ is a student"
+  * $\text{Studied}(x, \text{AI})$: "$x$ studied AI"
+  * $\text{Smart}(x)$: "$x$ is smart"
+* **FOL Formula:**
+  $$\forall x \, ((\text{Student}(x) \wedge \text{Studied}(x, \text{AI})) \to \text{Smart}(x))$$
+* **Grading Trap:** Never use $\wedge$ as the main connective with $\forall$:
+  * *Incorrect:* $\forall x \, (\text{Student}(x) \wedge \text{Studied}(x, \text{AI}) \wedge \text{Smart}(x))$ (Means every entity in the universe is a student, studied AI, and is smart).
+
+---
+
+##### Statement B: *"There is a student who passed AI in Spring 2024."*
+* **Analysis:** Existential statement asserting the simultaneous existence of an entity who is a student and passed AI during a specific semester.
+* **Predicate Definitions:**
+  * $\text{Student}(x)$: "$x$ is a student"
+  * $\text{Passed}(x, c, s)$: "$x$ passed course $c$ in semester $s$" (or ternary predicate $\text{Passed}(x, \text{AI}, \text{Spring2024})$)
+* **FOL Formula:**
+  $$\exists x \, (\text{Student}(x) \wedge \text{Passed}(x, \text{AI}, \text{Spring2024}))$$
+  *(Acceptable alternative if using separate predicates:)*
+  $$\exists x \, (\text{Student}(x) \wedge \text{Passed}(x, \text{AI}) \wedge \text{TakenIn}(x, \text{Spring2024}))$$
+* **Grading Trap:** Never use $\to$ with $\exists$. $\exists x \, (\text{Student}(x) \to \dots)$ is vacuously true if anything in the universe is not a student.
+
+---
+
+##### Statement C: *"There is a smart student who attended courses in Spring 2024."*
+* **Analysis:** Existential statement over a student who satisfies two properties: being smart, and having attended at least one course in Spring 2024.
+* **Predicate Definitions:**
+  * $\text{Student}(x)$, $\text{Smart}(x)$
+  * $\text{Course}(c)$: "$c$ is a course"
+  * $\text{Attended}(x, c, s)$: "$x$ attended course $c$ in semester $s$"
+* **FOL Formula (Most Rigorous / Preferred):**
+  $$\exists x \, (\text{Student}(x) \wedge \text{Smart}(x) \wedge \exists c \, (\text{Course}(c) \wedge \text{Attended}(x, c, \text{Spring2024})))$$
+* **Acceptable Compact Form (If course is treated relationally):**
+  $$\exists x \, (\text{Student}(x) \wedge \text{Smart}(x) \wedge \text{AttendedCourses}(x, \text{Spring2024}))$$
+
+---
+
+##### Statement D: *"Bill takes either Analysis or Geometry (but not both)."*
+* **Analysis:** Exclusive OR ($\text{XOR}$ / $\oplus$). True if Bill takes Analysis and not Geometry, OR Bill takes Geometry and not Analysis.
+* **Predicate Definition:** $\text{Takes}(p, c)$: "$p$ takes course $c$"
+* **FOL Formula (Standard Definition of XOR):**
+  $$(\text{Takes}(\text{Bill}, \text{Analysis}) \vee \text{Takes}(\text{Bill}, \text{Geometry})) \wedge \neg(\text{Takes}(\text{Bill}, \text{Analysis}) \wedge \text{Takes}(\text{Bill}, \text{Geometry}))$$
+* **Alternative Equivalent Form:**
+  $$(\text{Takes}(\text{Bill}, \text{Analysis}) \wedge \neg\text{Takes}(\text{Bill}, \text{Geometry})) \vee (\neg\text{Takes}(\text{Bill}, \text{Analysis}) \wedge \text{Takes}(\text{Bill}, \text{Geometry}))$$
+* **Biconditional Negation Form:**
+  $$\text{Takes}(\text{Bill}, \text{Analysis}) \leftrightarrow \neg\text{Takes}(\text{Bill}, \text{Geometry})$$
+
+---
+
+##### Statement E: *"Every student loves some other student."*
+* **Analysis:** Universal quantifier on students, existential on another student. The keyword **"other"** demands that the two students are distinct ($x \neq y$).
+* **FOL Formula:**
+  $$\forall x \, (\text{Student}(x) \to \exists y \, (\text{Student}(y) \wedge \neg(x = y) \wedge \text{Loves}(x, y)))$$
+* **Grading Trap:** Forgetting $\neg(x = y)$ loses half the mark. Without $\neg(x = y)$, a student could love themselves, violating *"some other student"*.
+
+---
+
+#### Question (Three): Translate FOL into English Statements [5 Degrees]
+
+##### Formula A:
+$$\neg\exists x \, (\text{Student}(x) \wedge \text{Loves}(x, \text{Bill}))$$
+* **Literal Reading:** "It is not thecase that there exists an $x$ such that $x$ is a student and $x$ loves Bill."
+* **Natural English (Full-Mark Answer):**
+  > **"No student loves Bill."** *(or "There is no student who loves Bill.")*
+* **Equivalent Form:** $\forall x \, (\text{Student}(x) \to \neg\text{Loves}(x, \text{Bill}))$ ("All students do not love Bill").
+
+---
+
+##### Formula B:
+$$\exists x \, (\text{Student}(x) \wedge \text{Failed}(x, \text{History}) \wedge \forall y \, (\text{Student}(y) \wedge \text{Failed}(y, \text{History}) \implies x = y))$$
+* **Pattern Recognition:** This is the classical FOL idiom for **Uniqueness / Exact Cardinality of 1**.
+  * $\exists x \, (\dots)$: There exists a student $x$ who failed History.
+  * $\forall y \, (\dots \implies x = y)$: Any student $y$ who failed History must be that exact same person $x$.
+* **Natural English (Full-Mark Answer):**
+  > **"Exactly one student failed History."** *(or "Only one student failed History.")*
+* > [!WARNING] Don't just write "There is a student who failed History". You must capture the uniqueness constraint $\forall y (\dots \implies x=y)$.
+
+---
+
+##### Formula C:
+$$\neg\exists x \, (\text{Student}(x) \wedge \text{Failed}(x, \text{Chemistry})) \wedge \exists x \, (\text{Student}(x) \wedge \text{Failed}(x, \text{History}))$$
+* **Breakdown:** Conjunction of two independent quantified clauses:
+  1. $\neg\exists x \, (\text{Student}(x) \wedge \text{Failed}(x, \text{Chemistry}))$: "No student failed Chemistry."
+  2. $\exists x \, (\text{Student}(x) \wedge \text{Failed}(x, \text{History}))$: "At least one student failed History."
+* **Natural English (Full-Mark Answer):**
+  > **"No student failed Chemistry, and (at least) one student failed History."**
+  *(or: "While no student failed Chemistry, some student failed History.")*
+
+---
+
+##### Formula D:
+$$\exists x \exists y \, (\text{SisterOf}(x, \text{Bill}) \wedge \text{SisterOf}(y, \text{Bill}) \wedge \neg(x = y))$$
+* **Pattern Recognition:** Two existential variables with an explicit inequality $\neg(x = y)$ represents **"at least two"**.
+* **Literal Reading:** "There exist two individuals $x$ and $y$ such that $x$ is a sister of Bill, $y$ is a sister of Bill, and $x$ is not equal to $y$."
+* **Natural English (Full-Mark Answer):**
+  > **"Bill has at least two sisters."** *(or "There are at least two different sisters of Bill.")*
+
+---
+
+##### Formula E:
+$$\neg\exists x \, (\text{Student}(x) \wedge \forall y \, (\text{Student}(y) \wedge \neg(x = y) \implies \text{Fools}(x, y)))$$
+* **Breakdown from Inside Out:**
+  * $\text{Student}(y) \wedge \neg(x = y)$: "any other student $y$".
+  * $\forall y \, (\text{Student}(y) \wedge \neg(x = y) \implies \text{Fools}(x, y))$: "$x$ fools every other student".
+  * $\text{Student}(x) \wedge \dots$: "a student $x$ who fools every other student".
+  * $\neg\exists x \, (\dots)$: "there does not exist such a student".
+* **Natural English (Full-Mark Answer):**
+  > **"No student fools every other student."** *(or "There is no student who fools all other students.")*
+
+---
+
+### 10.4 The 6 Architectural Patterns Tested in University Exams
+
+Every translation question on midterm and final AI exams tests one of six canonical forms:
+
+```
++-------------------------------------------------------------------------------------------------------+
+| Pattern 1: Universal Conditional Assertion                                                            |
+| English: "All X with property P do Y"                                                                 |
+| FOL:     ∀x ((X(x) ∧ P(x)) -> Y(x))                                                                   |
++-------------------------------------------------------------------------------------------------------+
+| Pattern 2: Existential Instance with Context                                                          |
+| English: "There is an X who did Y in context C"                                                       |
+| FOL:     ∃x (X(x) ∧ Y(x, C))                                                                          |
++-------------------------------------------------------------------------------------------------------+
+| Pattern 3: Exclusive Choice (Either / Or but not both)                                                |
+| English: "A does P or Q but not both"                                                                 |
+| FOL:     (P(A) ∨ Q(A)) ∧ ¬(P(A) ∧ Q(A))                                                               |
++-------------------------------------------------------------------------------------------------------+
+| Pattern 4: Relational Action on a Distinct Object                                                     |
+| English: "Every X does R to some other X"                                                             |
+| FOL:     ∀x (X(x) -> ∃y (X(y) ∧ ¬(x = y) ∧ R(x, y)))                                                  |
++-------------------------------------------------------------------------------------------------------+
+| Pattern 5: Exact Numerical Cardinality (At least, At most, Exactly)                                    |
+| • At least two: ∃x ∃y (P(x) ∧ P(y) ∧ ¬(x = y))                                                        |
+| • At most one:  ∀x ∀y ((P(x) ∧ P(y)) -> x = y)                                                        |
+| • Exactly one:  ∃x (P(x) ∧ ∀y (P(y) -> x = y))                                                        |
++-------------------------------------------------------------------------------------------------------+
+| Pattern 6: Universal/Existential Negation                                                             |
+| English: "No X does Y"                                                                                |
+| FOL:     ¬∃x (X(x) ∧ Y(x))   [Identical to: ∀x (X(x) -> ¬Y(x))]                                       |
++-------------------------------------------------------------------------------------------------------+
+```
+
+---
+
+### 10.5 Exam-Replica Practice Set 1: English $\to$ FOL
+
+> **Instructions:** Translate each of the following 5 statements into First-Order Logic formulas. Use clear predicate names. (5 Points)
+
+1. **Question 1A:** All professors who teach Machine Learning are knowledgeable.
+2. **Question 1B:** There is a doctor who treated COVID patients in Winter 2021.
+3. **Question 1C:** There is a talented musician who performed concerts in Paris in 2023.
+4. **Question 1D:** Omar passed either Linear Algebra or Calculus (but not both).
+5. **Question 1E:** Every researcher collaborates with some other researcher.
+
+<details>
+<summary><b>Click to View Model Answers & Explanations (Set 1)</b></summary>
+
+* **1A:**
+  $$\forall x \, ((\text{Professor}(x) \wedge \text{Teaches}(x, \text{MachineLearning})) \to \text{Knowledgeable}(x))$$
+* **1B:**
+  $$\exists x \, (\text{Doctor}(x) \wedge \text{Treated}(x, \text{COVID}, \text{Winter2021}))$$
+  *(or: $\exists x \, (\text{Doctor}(x) \wedge \exists p \, (\text{Patient}(p) \wedge \text{Has}(p, \text{COVID}) \wedge \text{Treated}(x, p, \text{Winter2021})))$)*
+* **1C:**
+  $$\exists x \, (\text{Musician}(x) \wedge \text{Talented}(x) \wedge \exists c \, (\text{Concert}(c) \wedge \text{PerformedIn}(x, c, \text{Paris}, 2023)))$$
+* **1D:**
+  $$(\text{Passed}(\text{Omar}, \text{LinearAlgebra}) \vee \text{Passed}(\text{Omar}, \text{Calculus})) \wedge \neg(\text{Passed}(\text{Omar}, \text{LinearAlgebra}) \wedge \text{Passed}(\text{Omar}, \text{Calculus}))$$
+* **1E:**
+  $$\forall x \, (\text{Researcher}(x) \to \exists y \, (\text{Researcher}(y) \wedge \neg(x = y) \wedge \text{CollaboratesWith}(x, y)))$$
+
+</details>
+
+---
+
+### 10.6 Exam-Replica Practice Set 2: FOL $\to$ English
+
+> **Instructions:** Translate each of the following FOL formulas into clear, natural English statements. (5 Points)
+
+1. **Question 2A:**
+   $$\neg\exists x \, (\text{Employee}(x) \wedge \text{Disrespects}(x, \text{Manager}))$$
+2. **Question 2B:**
+   $$\exists x \, (\text{Politician}(x) \wedge \text{ElectedPresident}(x) \wedge \forall y \, (\text{Politician}(y) \wedge \text{ElectedPresident}(y) \implies x = y))$$
+3. **Question 2C:**
+   $$\neg\exists x \, (\text{Runner}(x) \wedge \text{Injured}(x, \text{Marathon})) \wedge \exists x \, (\text{Runner}(x) \wedge \text{BrokeRecord}(x, \text{Marathon}))$$
+4. **Question 2D:**
+   $$\exists x \exists y \, (\text{BrotherOf}(x, \text{Sarah}) \wedge \text{BrotherOf}(y, \text{Sarah}) \wedge \neg(x = y))$$
+5. **Question 2E:**
+   $$\neg\exists x \, (\text{Player}(x) \wedge \forall y \, (\text{Player}(y) \wedge \neg(x = y) \implies \text{Defeats}(x, y)))$$
+
+<details>
+<summary><b>Click to View Model Answers & Explanations (Set 2)</b></summary>
+
+* **2A:** **"No employee disrespects the manager."** *(or "There is no employee who disrespects the manager.")*
+* **2B:** **"Exactly one politician was elected president."** *(or "Only one politician was elected president.")*
+* **2C:** **"No runner was injured in the marathon, and at least one runner broke a record in the marathon."**
+* **2D:** **"Sarah has at least two brothers."**
+* **2E:** **"No player defeats every other player."** *(or "There is no player who beats all other players.")*
+
+</details>
+
+---
+
+### 10.7 High-Yield Advanced Exam Variations (To Guarantee 100%)
+
+Examiners love introducing slight twists to the core templates. Master these 5 variations:
+
+#### Variation 1: "At most one student scored 100 in AI."
+* **Formula:**
+  $$\forall x \forall y \, ((\text{Student}(x) \wedge \text{Scored100}(x, \text{AI}) \wedge \text{Student}(y) \wedge \text{Scored100}(y, \text{AI})) \to x = y)$$
+* *Logic:* If any two students scored 100, they must actually be the same person. (Allows 0 or 1, but never 2).
+
+#### Variation 2: "There is a course that every student passed." vs "Every student passed some course."
+* **There is a course that every student passed:**
+  $$\exists c \, (\text{Course}(c) \wedge \forall s \, (\text{Student}(s) \to \text{Passed}(s, c)))$$
+  *(One single shared course exists).*
+* **Every student passed some course:**
+  $$\forall s \, (\text{Student}(s) \to \exists c \, (\text{Course}(c) \wedge \text{Passed}(s, c)))$$
+  *(Each student may have passed a completely different course).*
+
+#### Variation 3: "No two distinct students share the same ID."
+* **Formula:**
+  $$\forall x \forall y \, ((\text{Student}(x) \wedge \text{Student}(y) \wedge \neg(x = y)) \to \neg(\text{ID}(x) = \text{ID}(y)))$$
+  *(Or equivalently: $\forall x \forall y \, ((\text{Student}(x) \wedge \text{Student}(y) \wedge \text{ID}(x) = \text{ID}(y)) \to x = y)$)*
+
+#### Variation 4: "Not all smart students take AI."
+* **Formula (Direct):**
+  $$\neg \forall x \, ((\text{Student}(x) \wedge \text{Smart}(x)) \to \text{Takes}(x, \text{AI}))$$
+* **Formula (De Morgan Dual):**
+  $$\exists x \, (\text{Student}(x) \wedge \text{Smart}(x) \wedge \neg\text{Takes}(x, \text{AI}))$$
+  *Both are 100% equivalent and earn full credit.*
+
+#### Variation 5: "Only students who study pass AI."
+* **Key English Distinction:** "Only $P$ are $Q$" means $Q \to P$ (not $P \to Q$).
+* **Formula:**
+  $$\forall x \, ((\text{Student}(x) \wedge \text{Passes}(x, \text{AI})) \to \text{Studies}(x))$$
+
+---
+
+### 10.8 The Full-Mark Exam Day Checklist
+
+Before handing in your exam paper, verify each sentence against this 5-point checklist:
+
+- [ ] **Universal ($\forall$) uses $\to$:** Ensure your $\forall x$ statement does NOT have $\wedge$ as its primary connective.
+- [ ] **Existential ($\exists$) uses $\wedge$:** Ensure your $\exists x$ statement does NOT have $\to$ as its connective.
+- [ ] **"Other" or "Distinct" checks $\neg(x = y)$:** Whenever the English prompt mentions *"another"*, *"some other"*, *"two different"*, or *"someone else"*, check that $\neg(x = y)$ is explicitly included.
+- [ ] **Exactness checks Uniqueness ($\forall y (\dots \implies x = y)$):** "Exactly one" requires BOTH the existential existence of $x$ AND the universal condition that forces all candidates to equal $x$.
+- [ ] **All variables are bound:** Count every variable ($x, y, z$) inside predicates and ensure each one is governed by an enclosing $\forall$ or $\exists$. Free variables will immediately lose marks.
+
 
