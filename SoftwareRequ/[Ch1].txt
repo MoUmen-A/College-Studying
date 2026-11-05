@@ -1,0 +1,265 @@
+age 1
+Chapter 1: Fundamentals — Lect1.
+
+Page 2
+Introduction
+The requirements for a system are the descriptions of the services provided by the system and its operational constraints.
+
+These requirements reflect the needs of customers for a system that helps solve some problem such as controlling a device, placing an order or finding information.
+
+The process of finding out, analyzing, documenting and checking these services and constraints is called requirements engineering (RE).
+
+Page 3
+Introduction (cont.)
+The planning phase deliverables are the key inputs into the analysis phase.
+
+In the analysis phase, the systems analyst works extensively with the business user of the new system to understand their needs from the new system.
+
+The basic process of analysis involves three steps:
+
+Understand the existing situation (the as-is system).
+
+Identify improvements.
+
+Define requirements for the new system (the to-be system).
+
+Page 4
+What Is a Requirement?
+A Requirement is simply what the system does or what characteristics it needs to have. During a systems development project, requirements will be created that describe:
+
+what the users need to do (user requirements)
+
+what the software should do (functional requirements)
+
+characteristics the system should have (nonfunctional requirements)
+
+how the system should be built (system requirements)
+
+Page 5
+Software Requirements Classification (section title)
+Page 6
+Software Requirements Classification
+Software system requirements are often classified as:
+
+Functional requirements — These are statements of services the system should provide, how the system should react to particular inputs and how the system should behave in particular situations. In some cases, the functional requirements may also explicitly state what the system should not do.
+
+Non-functional requirements — These are constraints on the services or functions offered by the system. They include timing constraints, constraints on the development process and standards. Non-functional requirements often apply to the system as a whole. They do not usually just apply to individual system features or services.
+
+Domain requirements — These are requirements that come from the application domain of the system and that reflect characteristics and constraints of that domain. They may be functional or non-functional requirements.
+
+Page 7
+Functional Requirements (section title)
+Page 8
+Functional Requirements
+The functional requirements for a system describe what the system should do.
+
+These requirements depend on:
+
+the type of software being developed,
+
+the expected users of the software and
+
+the general approach taken by the organization when writing requirements.
+
+Page 9
+Functional Requirements [Example]
+For example, the functional requirements for a university library system called LIBSYS, used by students and faculty to order books and documents from other libraries:
+
+The user shall be able to search either all of the initial set of databases or select a subset from it.
+
+The system shall provide appropriate viewers for the user to read documents in the document store.
+
+Every order shall be allocated a unique identifier (ORDER_ID), which the user shall be able to copy to the account's permanent storage area.
+
+Page 10
+Functional Requirements Example for Medical Health Care – Patient Management System
+R1: A user shall be able to search the appointments lists for all clinics.
+
+R2: The system shall generate each day, for each clinic, a list of patients who are expected to attend appointments that day.
+
+R3: Each staff member using the system shall be uniquely identified by his/her 8-digit employee number.
+
+We listed some functional requirements. In your opinion, to what extent the requirements analysis for this list is important???
+
+Page 11
+Functional Requirements Specification
+These functional user requirements define specific facilities to be provided by the system.
+
+These have been taken from the user requirements document, and they illustrate that functional requirements may be written at different levels of detail (contrast requirements 1 and 3).
+
+The functional requirements specification of a system should be both complete and consistent.
+
+Completeness means that all services required by the user should be defined.
+
+Consistency means that requirements should not have contradictory definitions.
+
+Page 12
+Requirements Imprecision
+Problems arise when requirements are not precisely stated.
+
+Ambiguous requirements may be interpreted in different ways by developers and users.
+
+Consider the term 'search' in requirement 1:
+
+User intention — search for a patient name across all appointments in all clinics;
+
+Developer interpretation — search for a patient name in an individual clinic. User chooses clinic then search.
+
+The goal of the requirements analysis and specification phase is to fully understand the user requirements, remove inconsistencies, incompleteness and anomalies from requirements.
+
+Page 13
+Requirements Imprecision (Cont.)
+Inconsistency: Some requirements contradict others.
+
+One end-user wants the heater to be switched off when the temperature of the heating element in the tower rises above some specified value, maybe >55°C.
+
+Another end-user under similar circumstances may want the coolant circulation to be switched on instead of the heater being switched off.
+
+Incompleteness: Some requirements are omitted due to oversight.
+
+The analyst has not recorded: when temperature falls below 25°C, heater should be turned ON, coolant circulation should be turned OFF.
+
+Anomaly: An ambiguity in a requirement; several interpretations possible.
+
+"When the temperature is high, the heater should be switched off."
+
+Page 14
+Non-Functional Requirements (section title)
+Page 15
+Non-functional Requirements
+Non-functional requirements are requirements that are not directly concerned with the specific functions delivered by the system.
+
+Non-functional requirements specify or constrain the emergent properties of the system.
+
+They may relate to emergent system properties such as reliability, response time and store occupancy.
+
+They may define constraints on the system such as the capabilities of I/O devices and the data representations used in system interfaces.
+
+They may specify system performance, security, availability, and other emergent properties.
+
+Page 16
+Non-functional Requirements (cont.)
+System users can usually find ways to work around a system function that doesn't really meet their needs. However, failing to meet a non-functional requirement can mean that the whole system is unusable.
+
+For example, if an aircraft system does not meet its reliability requirements, it will not be certified as safe for operation; if a real-time control system fails to meet its performance requirements, the control functions will not operate correctly.
+
+Page 17
+Non-functional Requirements (cont.)
+Non-functional requirements arise through:
+
+user needs,
+
+budget constraints,
+
+organizational policies,
+
+the need for interoperability with other software or hardware systems, or
+
+external factors such as safety regulations or privacy legislation.
+
+Page 18
+How can non-functional requirements affect the implementation?
+Non-functional requirements may affect the overall architecture of a system rather than the individual components.
+
+For example, to ensure that performance requirements are met, you may have to organize the system to minimize communications between components.
+
+A single non-functional requirement, such as a security requirement, may generate a number of related functional requirements that define system services that are required.
+
+It may also generate requirements that restrict existing requirements.
+
+Page 19
+Non-Functional Requirements Classification
+(Diagram: Non-Functional Requirements → Product Requirements, Organizational Requirements, External Requirements)
+
+Product Requirements — Requirements which specify that the delivered product must behave in a particular way, e.g. execution speed, reliability, etc.
+
+Organizational Requirements — Requirements which are a consequence of organizational policies and procedures, e.g. process standards used, implementation requirements.
+
+External Requirements — Requirements which arise from factors which are external to the system and its development process, e.g. interoperability requirements, legislative requirements.
+
+Page 20
+Non-Functional Requirements Classification Example (Medical Health Care – Patient Management System)
+Product requirement: The MHC-PMS shall be available to all clinics during normal working hours (Mon–Fri, 0830–17.30). Downtime within normal working hours shall not exceed five seconds in any one day.
+
+Organizational requirement: Users of the MHC-PMS system shall authenticate themselves using their health authority identity card.
+
+External requirement: The system shall implement patient privacy provisions as set out in HStan-03-2006-priv.
+
+Page 21
+(Blank / separator slide)
+
+Page 22
+Figure 6.4 Examples of non-functional requirements
+
+Product requirement: 8.1 The user interface for LIBSYS shall be implemented as simple HTML without frames or Java applets.
+
+Organisational requirement: 9.3.2 The system development process and deliverable documents shall conform to the process and deliverables defined in XYZCo-SP-STAN-95.
+
+External requirement: 10.6 The system shall not disclose any personal information about system users apart from their name and library reference number to the library staff who use the system.
+
+Page 23
+Domain Requirements (section title)
+Page 24
+Domain Requirements
+Domain requirements are derived from the application domain of the system rather than from the specific needs of system users.
+
+They usually include specialized domain terminology or reference to domain concepts.
+
+They may be new functional requirements in their own right, constrain existing functional requirements or set out how particular computations must be carried out.
+
+Because these requirements are specialized, software engineers often find it difficult to understand how they are related to other system requirements.
+
+Page 25
+Domain Requirements (cont.) — The LIBSYS system includes a number of domain requirements:
+There shall be a standard user interface to all databases that shall be based on the Z39.50 standard. This specifies that the user interface to the database must be implemented according to a specific library standard. The developers therefore have to find out about that standard before starting the interface design.
+
+Because of copyright restrictions, some documents must be deleted immediately on arrival. Depending on the user's requirements, these documents will either be printed locally on the system server for manual forwarding to the user or routed to a network printer. This has been introduced because of copyright laws that apply to material used in libraries. It specifies that the system must include an automatic delete-on-print facility for some classes of document. This means that users of the library system cannot have their own electronic copy of the document.
+
+Page 26
+Domain Requirements (cont.)
+Figure 6.7 A domain requirement from a train protection system
+
+The deceleration of the train shall be computed as:
+
+D
+train
+=
+D
+control
++
+D
+gradient
+D 
+train
+​
+ =D 
+control
+​
+ +D 
+gradient
+​
+ 
+where 
+D
+gradient
+D 
+gradient
+​
+  is 
+9.81
+ 
+ms
+2
+9.81 ms 
+2
+  + compensated gradient/alpha, and where the values of 
+9.81
+ 
+ms
+2
+/
+alpha
+9.81 ms 
+2
+ /alpha are known for different types of train.
+

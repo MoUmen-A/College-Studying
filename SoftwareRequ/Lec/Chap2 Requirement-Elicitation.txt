@@ -1,0 +1,267 @@
+Ch2: Requirement Elicitation – Extracted Content
+Page 1
+Ch2: Requirement Election (title slide)
+
+Page 2 – Agenda
+Requirement Elicitation
+
+Identify the Business Problems and Objectives
+
+Identify the Success Metrics
+
+Determine the vision and Scope
+
+Identify the Stakeholders
+
+Requirements elicitation techniques
+
+Page 3 – Requirements Engineering Activities
+Requirements Engineering Process mainly consists of four activities:
+
+Requirements elicitation
+
+Requirements Analysis
+
+Requirements specification
+
+Requirements verification and validation
+
+(Diagram: sequential flow — Requirements Elicitation → Requirements Analysis → Requirements Specification → Requirements verification and validation)
+
+Page 4 – Requirements Engineering Activities (cont.)
+Requirements Engineering Process mainly consists of four activities:
+
+Requirements Development
+
+Requirements Engineering
+
+Requirements Analysis
+
+Requirements specification
+
+Requirements verification and validation
+
+Requirements management
+
+(FIGURE 1-4: Subdisciplines of software requirements engineering — Requirements Engineering splits into Requirements Development and Requirements Management; Requirements Development splits into Elicitation, Analysis, Specification, Validation)
+
+Page 5 – What is Requirements Elicitation?
+It is the process of identifying the business need, scope, assumptions, and risks of a project based on data from key stakeholders.
+
+It's an imperative part of requirements management as the outcome impacts the fundamental understanding of the project's goal.
+
+Failure to clearly define business needs can lead to catastrophic results such as expensive mistakes or system failure.
+
+Advantages of requirements elicitation:
+
+Lower project costs by catching requirements problems before development begins.
+
+Increase the likelihood that users and customers get what they want.
+
+Reduce the risk of project failure.
+
+Page 6 – Requirements Elicitation (Cont.)
+The key actions in this phase are:
+
+Identify the business goals and objectives of the product.
+
+Identifying the product's expected user classes and other stakeholders.
+
+Elicit Stakeholder Requirements
+
+Learning about the environment in which the new product will be used.
+
+Working with individuals who represent each user class to understand their functionality needs and their quality expectations.
+
+Page 7 – Business Requirements
+"Business requirements" refers to a set of information that, in the aggregate, describes a need that leads to one or more projects to deliver a solution and the desired ultimate business outcomes.
+
+Business requirements are composed of business opportunities, business objectives, success metrics, and a vision statement.
+
+Business requirements issues must be resolved before the functional and nonfunctional requirements can be fully specified.
+
+The business requirements provide a reference for making decisions about proposed requirement changes and enhancements.
+
+Business requirements directly influence which user requirements to implement and in which sequence.
+
+Page 8 – Identify the Business Problems and Objective
+(FIGURE 5-4: Example conversation between a business analyst and an executive sponsor)
+
+Analyst Questions	Executive Responses
+What motivates your interest in a chemical tracking system?	Managing chemical inventories manually costs too much and is inefficient.
+How much would you like to reduce your chemical expenses?	By 25% within one year.
+What is keeping you from cutting by 25% today? What is causing the high cost and inefficiency?	We buy unnecessary chemicals because we don't know what we have in inventory. We discard too much unused material that has expired.
+Anything else I should know?	Placing orders is complicated; it takes users a long time. The government reports we create are manually generated, which takes far too much time.
+Page 9 – Success Metrics
+Success metrics indicate whether a project is on track to meet its business objectives. The metrics can be tracked during testing or shortly after product release.
+
+Example: For the Chemical Tracking System, "Reduce time spent ordering chemicals to 10 minutes on 80 percent of orders," because you can measure the average order time during testing or soon after release.
+
+(FIGURE 5-5: Example business objectives model for the Chemical Tracking System)
+
+Business Problem 1: Managing chemical inventories manually costs too much and is inefficient.
+
+Business Objective 1: Reduce chemical purchasing expenses by 25% in the first year.
+
+Business Problem 2: Chemicals are being wasted because inventory is not adequately documented. → Business Objective 2: Track 95% of commercial and 90% of containers and 90% of proprietary chemicals within one year. → Inventory Management
+
+Business Problem 3: Placing a chemical order is complicated and time consuming. → Business Objective 3: Reduce time spent ordering chemicals to 10 minutes on 80% of orders. → Single Order Portal
+
+Business Problem 4: Manually creating reports to comply with federal and state regulations is inefficient. → Business Objective 4: Comply with 100% of federal and state usage and disposal reporting regulations within 6 months. → Automatic Reporting
+
+Product Concept: Chemical Tracking System
+
+Page 10 – Vision Statement
+For scientists who need to request containers of chemicals, the Chemical Tracking System is an information system that will provide a single point of access to the chemical stockroom and to vendors. The system will store the location of every chemical container within the company, the quantity of material remaining in it, and the complete history of each container's locations and usage. This system will save the company 25 percent on chemical costs in the first year of use by allowing the company to fully exploit chemicals that are already available within the company, dispose of fewer partially used or expired containers, and use a standard chemical purchasing process. Unlike the current manual ordering processes, our product will generate all reports required to comply with federal and state government regulations that require the reporting of chemical usage, storage, and disposal.
+
+Page 11 – Scope Representation Techniques
+The scope description establishes the boundary and connections between the system you're developing and everything else.
+
+The purpose of tools such as the context diagram, ecosystem map, feature tree, and event list is to foster clear and accurate communication among the project stakeholders.
+
+Page 12 – Context Diagram
+The context diagram visually illustrates the scope boundary.
+
+It identifies external entities (also called terminators) outside the system that interface to it some way, as well as data, control, and material flows between the terminators and the system.
+
+The context diagram is a top level data flow diagram.
+
+(FIGURE 5-6: Partial context diagram for the Chemical Tracking System)
+
+External entities: Chemist, Buyer, Chemical Stockroom, Health and Safety Department, Bar Code Reader, Training Database
+
+Flows include: vendor catalog query, vendor catalog information, request for chemical, chemical container, vendor order status, vendor chemical request, inventory report, chemical container, inventory update, chemical usage, chemical report, request for usage report, scanned bar code, training request, training record, hazardous training record
+
+Key: data flow → System; External Entity
+
+Page 13 – Ecosystem Map
+An ecosystem map represents scope by showing all the systems that interconnect and that therefore might need to be modified to accommodate your new system. Ecosystem maps differ from context diagrams in that they show other systems that have a relationship with the system you're working on, including those without direct interfaces. You can identify the affected systems by determining which ones consume data from your system. When you reach the point that your project does not affect any additional data, you've identified the scope boundary of systems that participate in the solution.
+
+(FIGURE 5-7: Partial ecosystem map for the Chemical Tracking System)
+
+Systems: Vendor (orders ← Purchasing System), Purchasing System (requests → Chemical Tracking System), Personnel System, Receiving System (chemical containers → Chemical Tracking System), Corporate Training Database (training records → Chemical Tracking System), Health and Safety Incident Database (compliance reports → OSHA/EPA Reporting Interface), Chemical Tracking System (central)
+
+Flows: Vendor → chemical containers → Receiving System → chemical containers → Chemical Tracking System; Purchasing System → orders → Vendor; Purchasing System → requests → Chemical Tracking System; Corporate Training Database → training records → Chemical Tracking System; Chemical Tracking System → compliance reports → Health and Safety Incident Database → OSHA/EPA Reporting Interface
+
+Page 14 – Feature Tree
+A feature tree is a visual depiction of the product's features organized in logical groups, hierarchically subdividing each feature into further levels of detail (Beatty and Chen 2012).
+
+The feature tree provides a concise view of all of the features planned for a project, making it an ideal model to show to executives who want a quick glance at the project scope.
+
+A feature tree can show up to three levels of features, commonly called level 1 (L1), level 2 (L2), and level 3 (L3). L2 features are subfeatures of L1 features, and L3 features are subfeatures of L2 features.
+
+(FIGURE 5-8: Partial feature tree for the Chemical Tracking System)
+
+Health and Safety: MSDS, Incident Reporting (OSHA, EPA), Health and Safety Info, Chemical Exposure Report, Compliance Reporting (OSHA, EPA)
+
+Order Chemicals: Create Request, Cancel Request, Chemical Request, Track Request, Change Request, Preferred Vendors (Search, Catalog Search, Local Lab Search)
+
+Inventory Management: Inventory Report, Laboratories, Bar Code Scan, Proprietary Chemicals, Chemical Stockroom, Auto Reorder, Receiving
+
+Page 15 – Event List
+An event list identifies external events that could trigger behavior in the system. The event list depicts the scope boundary for the system by naming possible business events triggered by users, time-triggered (temporal) events, or signal events received from external components, such as hardware devices. The event list only names the events.
+
+External Events for Chemical Tracking System
+
+Chemist places a chemical request.
+
+Chemical container bar code is scanned.
+
+Time to generate OSHA compliance report arrives.
+
+Vendor issues new chemical catalog.
+
+New proprietary chemical is accessioned into system.
+
+Vendor indicates chemical is backordered.
+
+Chemist asks to generate his chemical exposure report.
+
+Updated material safety datasheet is received from EPA.
+
+New vendor is added to preferred vendor list.
+
+Chemical container is received from vendor.
+
+Page 16 – How to identify the stakeholders?
+Primary Stakeholders (direct impact)
+
+Secondary Stakeholders (indirect impact)
+
+Key Stakeholders
+
+Page 17 – 2.2. REQUIREMENTS ELICITATION TECHNIQUES
+An analyst is very much like a detective (and business users sometimes are like elusive suspects). He/she knows that there is a problem to be solved and therefore must look for clues that uncover the solution.
+
+Unfortunately, the clues are not always obvious (and often are missed), so the analyst needs to notice details, talk with witnesses, and follow leads, just as Sherlock Holmes would have done.
+
+The best analysts will thoroughly search for requirements using a variety of techniques and make sure that the current business processes and the needs for the new system are well understood before moving into design.
+
+You don't want to discover later that you have key requirements wrong—surprises like this late in the SDLC can cause all kinds of problems.
+
+Page 18 – A. Observation
+Benefit: You can figure out exactly where users are at the start of your project, and you can use your strengths to document it.
+
+Observation is primarily useful for capturing what's already in existence and enables several other types of requirements tools, not the least of which is existing use-case scenarios.
+
+Also, an analyst can document what she observes through numerous types of diagramming and business process models besides use cases. This method not only helps an analyst really get her brain around precisely what the current business needs and processes are, the wide array of available diagramming and modeling techniques ensure that you can use whatever you are most comfortable with.
+
+Page 19 – B. Brainstorming
+Benefit: brainstorming enables you to take in a wide amount of information at once, helping you figure out where you want to go from here.
+
+Done properly (without censoring ideas as you go) and with the right audience (representatives of each group, SMEs, stakeholders).
+
+To an extent, this takes the onus off you for knowing your unknowns by helping everyone think outside the box and helping stakeholders take ownership of the direction of a project.
+
+The myriad of ideas and information also give you a rich repository of knowledge to choose from, so you can discern where to go next with your project.
+
+Page 20 – C. Interviews
+Benefit: By exploring someone's knowledge and needs in-depth, one-on-one, you ensure you understand the real, not just the perceived, need.
+
+Interviews help you dig through users' knowledge base, so you can understand what they understand and think—which is what you need to write strong requirements. One writer notes, "Interviews provide an efficient way to collect large amounts of data quickly," but is quick to add, "The results of interviews, such as the usefulness of the information gathered, can vary significantly depending on the skill of the interviewer." For your interview to be effective, you must be persistent.
+
+Remember the five Ws—Who, What, When, Where and Why. When you can't ask why anymore—you're going in circles, you're done with your interview. Also, decide how structured or unstructured you want your interview to be. One analyst advocates unstructured interviews, noting, "The most important thing to remember when interviewing is to ask open ended questions." You will want to keep your interviews unstructured enough to be sure that you've successfully mined your interviewee's knowledge base, but structured enough to be sure that you cover all of your basic questions and don't go too far off topic.
+
+Page 21 – D. Requirements Workshops
+Benefit: You can get your basic requirements done in a hurry. Also, everyone you invite can become invested in the project.
+
+In a requirements workshop, you ask everyone to sit down and hammer out the requirements with you. A requirements workshop is a highly productive focused event attended by carefully selected key stakeholders and subject matter experts for a short, intensive period (typically one or a few days). To many analysts, this may sound impossible. Stakeholders are notorious for changing their minds and adding to discovery after six months—you're going to put them in a conference room and nail down the scope over a weekend?
+
+Page 22 – D. Requirements Workshops (cont.)
+For your workshop to be successful, you will need to:
+
+Select the right participants, stakeholders, users, and so on. If you leave someone necessary out, the results of the workshop may have to be completely overhauled. Think about this carefully before inviting your group.
+
+Get everyone on the same page regarding the purpose of the workshop ahead of time (defining scope, unearthing business requirements, etc.) Do some base research—use case scenarios, etc., before you start so everyone knows what the current process is.
+
+Conduct the workshop like an interview, with open-ended questions presented to the room.
+
+Document everything. Get a recorder or get someone besides you (or whomever will be busy facilitating) to write everything down.
+
+Page 23 – E. Prototyping
+Benefit: You can make sure that what you're designing is really what people need while you still have time to change it.
+
+No matter how hard they try, some people just can't analyze a system or product until they try it. Make it as easy as possible for them to do that. One analyst notes, "Users and business owners should not be expected to be able to visualize the new software. Users usually don't know what they want until they see something they don't want."
+
+Obviously, you can't do this too early in the project—you need some idea of where you're going before a prototype is feasible. "An advantage of using prototypes is that they encourage stakeholders, and more specifically the users, to play an active role in developing the requirements. The prototyping is extremely helpful when developing new systems for entirely new applications."
+
+Page 24 – F. Survey/Questionnaire
+Use this when:
+
+You have a large audience to gather information from
+
+Your interviewees are scattered around time zones, making a virtual meeting or focus group unfeasible.
+
+Note the constraint of this method is it can be difficult to ask follow-up questions or let a user interact with a prototype. "Questionnaires lack the opportunity to delve further on a topic, or expand on new ideas. In the same way they provide no mechanism for the participants to request clarification or correct misunderstandings."
+
+Page 25 – G. Focus Group
+You haven't gotten a lot of feedback from customers or users through Customer Service complaints, responses to the sales force, or any other avenue, and you need to explore their thoughts to chart your direction.
+
+While focus groups allow you to dig into the thought processes of a select group of users, remember there's always the danger that a small group may not be reflective of your entire audience of users. Also, participants must feel comfortable speaking honestly about their needs without fear of offending the moderator or stakeholders, or the benefit of the focus group is moot.
+
+Page 26 – H. Document Analysis/Interface Analysis
+Use this when:
+
+You're checking out what's already there. In the course of nearly every project, every analyst will look at the user guides, previous requirements, and existing systems of their own organization.
+
+You're bringing something competitive to market. Don't just review your own documents. Without breaking any non-disclosure clauses or copyright laws, review everything you can get your hands on from competitors and other industries that have similar systems.

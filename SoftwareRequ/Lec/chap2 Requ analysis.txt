@@ -1,0 +1,218 @@
+
+Elicitation	Analysis	Specification	Validation
+Define vision and scope	Model the application environment	Adopt requirement document templates	Review the requirements
+Identify user classes	Create prototypes	Identify requirement origins	Test the requirements
+Select product champions	Analyze feasibility	Uniquely label each requirement	Define acceptance criteria
+Conduct focus groups	Prioritize requirements	Record business rules	Simulate the requirements
+Identify user requirements	Create a data dictionary	Specify nonfunctional requirements	
+Identify system events and responses	Model the requirements		
+Hold elicitation interviews	Analyze interfaces		
+Hold facilitated elicitation workshops	Allocate requirements to subsystems		
+Observe users performing their jobs			
+Distribute questionnaires			
+Perform document analysis			
+Examine problem reports			
+Reuse existing requirements			
+Page 3
+Additional good practices (grouped by category):
+
+Change control / Requirements management:
+
+Establish a change control process
+
+Perform change impact analysis
+
+Establish baselines and control versions of requirements sets
+
+Maintain change history
+
+Track requirements status
+
+Track requirements issues
+
+Maintain a requirements traceability matrix
+
+Use a requirements management tool
+
+Knowledge:
+
+Train business analysts
+
+Educate stakeholders about requirements
+
+Educate developers about application domain
+
+Define a requirements engineering process
+
+Create a glossary
+
+Project management:
+
+Select an appropriate life cycle
+
+Plan requirements approach
+
+Estimate requirements effort
+
+Base plans on requirements
+
+Identify requirements decision makers
+
+Renegotiate commitments
+
+Manage requirements risks
+
+Track requirements effort
+
+Review past lessons learned
+
+Page 4
+FIGURE 3-1 — Requirements development is an iterative process.
+
+Page 5
+Requirements Analysis
+Page 6
+Requirements Analysis activities:
+
+Model the application environment
+
+Create user interface and technical prototypes
+
+Analyze requirement feasibility
+
+Prioritize the requirements
+
+Create a data dictionary
+
+Model the requirements
+
+Analyze interfaces between your system and the outside world
+
+Allocate requirements to subsystems
+
+Page 7
+1. Model the Application Environment
+The context diagram is a simple analysis model that shows how the new system fits into its environment.
+
+It defines the boundaries and interfaces between the system being developed and external entities, such as users, hardware devices, and other systems.
+
+An ecosystem map shows the various systems in the solution space that interact with each other and the nature of their interconnections.
+
+Page 8
+2. Create user interface and technical prototypes
+When developers or users aren't certain about the requirements, construct a prototype—a partial, possible, or preliminary implementation—to make the concepts and possibilities more tangible.
+
+Prototypes allow developers and users to achieve a mutual understanding of the problem being solved, as well as helping to validate requirements.
+
+Page 9
+3. Analyze requirement feasibility
+The BA should work with developers to evaluate the feasibility of implementing each requirement at acceptable cost and performance in the intended operating environment.
+
+This allows stakeholders to understand the risks associated with implementing each requirement, including conflicts and dependencies with other requirements, dependencies on external factors, and technical obstacles.
+
+Requirements that are technically infeasible or overly expensive to implement can perhaps be simplified and still contribute to achieving the project's business objectives.
+
+Page 10
+4. Prioritize the requirements
+It's important to prioritize requirements to ensure that the team implements the highest value or most timely functionality first.
+
+Apply an analytical approach to determine the relative implementation priority of product features, use cases, user stories, or functional requirements.
+
+Based on priority, determine which release or increment will contain each feature or set of requirements.
+
+Adjust priorities throughout the project as new requirements are proposed and as customer needs, market conditions, and business goals evolve.
+
+Page 11
+5. Create a data dictionary
+Definitions of the data items and structures associated with the system reside in the data dictionary.
+
+This enables everyone working on the project to use consistent data definitions.
+
+As requirements are developed, the data dictionary should define data items from the problem domain to facilitate communication between the customers and the development team.
+
+Page 12
+6. Model the requirements
+An analysis model is a diagram that depicts requirements visually, in contrast to the textual representation of a list of functional requirements.
+
+Models can reveal incorrect, inconsistent, missing, and superfluous requirements.
+
+Such models include data flow diagrams, entity-relationship diagrams, state-transition diagrams, state tables, dialog maps, decision trees, and others.
+
+Page 13
+7. Analyze interfaces between your system and the outside world
+All software systems have connections to other parts of the world through external interfaces.
+
+Information systems have user interfaces and often exchange data with other software systems.
+
+Embedded systems involve interconnections between software and hardware components.
+
+Network-connected applications have communication interfaces.
+
+Analyzing these helps make sure that your application will fit smoothly into its environment.
+
+Page 14
+8. Allocate requirements to subsystems
+The requirements for a complex product that contains multiple subsystems must be apportioned among the various software, hardware, and human subsystems and components.
+
+An example of such a product is an access system to a secure building that includes magnetic or optical badges, scanners, video cameras and recorders, door locks, and human guards.
+
+Page 15
+Requirements Specification
+Page 16
+Requirements Specification activities:
+
+Adopt requirement document templates
+
+Identify requirement origins
+
+Uniquely label each requirement
+
+Record business rules
+
+Specify nonfunctional requirements
+
+Page 17
+Adopt requirement document templates
+Adopt standard templates for documenting requirements in your organization, such as the vision and scope document template in Chapter 5, the use case template in Chapter 8, and the SRS template in Chapter 10.
+
+The templates provide a consistent structure for recording various groups of requirements-related information.
+
+Even if you don't store the requirements in traditional document form, the template will remind you of the various kinds of requirements information to explore and record.
+
+Page 18
+2. Identify requirement origins
+To ensure that all stakeholders know why every requirement is needed, trace each one back to its origin.
+
+This might be a use case or some other customer input, a high-level system requirement, or a business rule.
+
+Recording the stakeholders who are affected by each requirement tells you whom to contact when a change is requested.
+
+Requirement origins can be identified through traceability links or by defining a requirement attribute for this purpose.
+
+Page 19
+3. Uniquely label each requirement
+Define a convention for giving each requirement a unique identifying label.
+
+The convention must be robust enough to withstand additions, deletions, and changes made in the requirements over time.
+
+Labeling the requirements permits requirements traceability and the recording of changes made.
+
+Page 20
+4. Record business rules
+Business rules include corporate policies, government regulations, standards, and computational algorithms.
+
+Document your business rules separately from a project's requirements because they typically have an existence beyond the scope of a specific project. That is, treat business rules as an enterprise-level asset, not a project-level asset.
+
+Some rules will lead to functional requirements that enforce them, so define traceability links between those requirements and the corresponding rules.
+
+Page 21
+5. Specify nonfunctional requirements
+It's possible to implement a solution that does exactly what it's supposed to do but does not satisfy the users' quality expectations.
+
+To avoid that problem, you need to go beyond the functionality discussion to understand the quality characteristics that are important to success.
+
+These characteristics include performance, reliability, usability, modifiability, and many others.
+
+Customer input on the relative importance of these quality attributes lets the developer make appropriate design decisions.
+
+Also, specify external interface requirements, design and implementation constraints, internationalization issues, and other nonfunctional requirements.
