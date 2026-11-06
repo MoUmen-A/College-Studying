@@ -1,0 +1,199 @@
+Page 1
+Ch3: Requirement Validation & Verification — Part 1
+
+Introduction
+In this chapter, we will study how we can validate and verify the requirements that are gathered for the software product. In this chapter, we will study the characteristics of requirements and discuss different types of requirement tests that help us to verify and validate the requirements.
+
+Page 2
+We will explore requirement validation and verification in software engineering. It elucidates the importance of clear, complete, correct, coherent, and feasible requirements, outlining methods for verification, including model creation, logical argumentation, inspection, analysis, and expert review, ensuring adherence to quality criteria.
+
+3.1. Requirement Validation
+What is Requirement Validation
+Page 3
+Requirement validation is the process of confirming the completeness and correctness of the requirement.
+
+Validation also ensures the requirements are:
+
+Clearly define the business objective.
+
+Clearly define the idea of the object.
+
+Clearly define the scope of the project.
+
+Verify that requirements meet the needs of customers.
+
+Verify that requirements are clearly understood by the developer.
+
+Objective:
+
+Page 4
+The objective of the validation is essential to the identification of the missing requirements and to ensure that requirements meet the quality criteria. Validation targets the individual requirement.
+
+3.1.1. Characteristics of Requirement
+a. Clear
+The requirement should be clear and crystal and should not be ambiguous.
+
+Page 5
+Unambiguous requirements are clear and specific, leaving little room for interpretation. They are often quantifiable and measurable, making it easy to test whether the solution meets the requirement.
+
+Page 6
+Ambiguous requirements, on the other hand, are open to interpretation and can be difficult to define. They may be subjective or difficult to measure, making it challenging to determine whether the solution meets the requirement. They may also lead to misunderstandings or miscommunications between stakeholders.
+
+It is important for business analysts to work closely with stakeholders to clarify ambiguous requirements and ensure that requirements are unambiguous, clear, and specific.
+
+Page 7
+This can help to reduce the risk of misinterpretation or misunderstandings, which can lead to project delays, cost overruns, or other issues.
+
+Examples:
+
+Unambiguous Requirements:
+
+The system shall allow users to input alphanumeric characters only in the "Username" field.
+
+The application must be able to process at least 100 transactions per second.
+
+The report must include the total number of sales for each product category.
+
+Ambiguous Requirements:
+
+The system should be easy to use.
+
+Page 8
+The report must be visually appealing.
+
+The application should be scalable.
+
+b. Complete
+The requirement should be complete, meaning not more and not less.
+
+A lack of proper requirements validation with the stakeholders typically results in requirements that are incomplete because they fail to specify important stakeholder needs, or they are incorrect because of misunderstandings between the requirements engineers and the stakeholders.
+
+Page 9
+When speaking of the completeness of requirements, it is important to establish the scope of the term 'completeness.' There are at least seven different ways in which the phrase 'requirements completeness' could be interpreted. These include the completeness of:
+
+Requirements analysis models
+
+Individual requirements
+
+Metadata describing individual requirements
+
+Requirements repositories
+
+The set of requirements documents
+
+Individual requirements specification documents
+
+A requirements baseline
+
+Page 10
+Why is the completeness of the requirements so important?
+
+Acceptance and Satisfaction. Missing or incomplete requirements can cause customers to reject systems and users to be dissatisfied with the systems, even if they pass acceptance testing. Customers want to know that what they are buying will be adequate to meet the users' needs. This is primarily a requirements validation issue.
+
+Page 11
+Development Cost and Schedule. Because requirements are used to estimate system development cost and schedule, missing or incomplete requirements mean that these costs and schedules will be underestimated. One large study implicated incomplete requirements as the cause of 12.3% of cost overruns and failed projects [Standish 1994]. The primary reasons why missing or incomplete requirements cause cost and schedule overruns are that:
+
+Page 12
+The original estimates were too low because missing requirements were not considered, and
+
+Costly rework was needed once these omissions were discovered.
+
+Development. Missing or incomplete requirements ensure that the architecture, design, implementation, and tests that are derived from them will be:
+
+Incomplete themselves and/or
+
+Incorrect because the architects, designers, implementers, or testers will make incorrect guesses or assumptions.
+
+Page 13
+Verification. Incomplete requirements are often ambiguous and therefore unverifiable.
+
+Safety. Perhaps the most important aspect of requirements completeness has to do with safety because over time more and more software-intensive systems have been given safety-related responsibilities. Up to 50% of all accidents are due to requirements problems, and many of these accidents are due to missing or incomplete requirements.
+
+Incomplete requirements are a very common problem for several reasons:
+
+Page 14
+It takes more effort, time, training, and willpower to do the non-trivial extra work needed to make requirements complete.
+
+It is difficult to know just how complete the requirements should be given the limited resources (e.g., schedule and personnel) available to the requirements team.
+
+Subject matter experts and other sources of requirements often take certain information for granted and omit it during requirements engineering, even though it is not obvious to other stakeholders.
+
+Page 15
+3. Correct
+
+Accurately define the customer external needs.
+
+Correct requirements can also complete the specifications characteristics or effective software requirements before the development process commences. Often, engineers design prototypes or other user tests to gather feedback from end users about whether all the requirements are included.
+
+Page 16
+Only your clients know what they want in a product, whether related to functional and non-functional requirements. Customers use prototypes to determine whether the requirements are correct. Alternatively, they'll suggest more requirements or missing requirements.
+
+4. Feasibility
+
+Page 17
+All the information you gather for a software system should be feasible in the SDLC. Software requirements specification without feasibility will result in a failed software system. Engineers should be able to implement the requirements within system capabilities and limitations.
+
+Page 18
+Software engineering could help in providing quality characteristics for feasible specifications for the user interface or other functional requirements. Project managers often work with a technical team to ensure implementation details will work within the system's constraints in software development.
+
+5. Modifiable
+
+Page 19
+Important requirements are somewhat modifiable before you implement the developed software system. Good requirements also originate from being able to modify specifications on a system when change requests call for changes to an SRS document.
+
+Page 20
+Therefore, you must label and reference each requirement to ensure you can change them as software engineering or stakeholders insist. Also, each atomic or complete requirement must only appear once in the SRS document to ensure you update easily. Requirement helps modify requirements with ease.
+
+6. Necessary & Prioritized
+
+Page 21
+Requirement prioritization is essential to effective software requirements. You must determine whether new requirements are necessary before you implement any finalizations on an SRS document in such a way that you can define all the requirements essential to software development.
+
+Page 22
+Assign implementation priorities to all the requirements documents to ensure you meet more characteristics of good specifications. Business requirements are the highest level, while user requirements guide the functional and non-functional requirements for a user-friendly system.
+
+7. Testability
+
+Page 23
+Important requirements specification also needs to be testable. Can programmers apply test cases on implemented requirements? Test cases can verify whether business goals and requirements are met. Test cases also define whether user needs are met before software development.
+
+Page 24
+It's one of the primary characteristics of a good SRS document. A user story allows programmers to design the tests and prototypes to determine whether the system functions as end users and different stakeholders intend or desire, which also focuses on different perspectives for improvement.
+
+8. Verifiable Specifications
+
+Page 25
+You should be able to confirm functional and non-functional requirements for software system projects. Programmers do testing, but managers must also be able to verify progress and track changes, milestones, and any issues risking consistent specifications.
+
+Page 26
+For example, you can't list a requirement that a system must be easy to use because it isn't measurable or quantifiable. Instead, a complete requirement is the specifications and techniques necessary to create logins for clients on e-commerce websites.
+
+9. Consistent
+
+Page 27
+One of the top characteristics of good specifications is that individual requirements offer consistent software functionality and system performance for software engineers and project managers. Software engineering relies heavily on consistency to develop a software system's functionality and features.
+
+Page 28
+A consistent requirement gathering won't contradict another specification on the SRS document. For example, a contradiction is when an SRS document suggests an email entry is mandatory but the user story says it's optional. Good software has consistent requirements throughout the document.
+
+3.2. Disadvantages of having a poorly written SRS
+Page 29
+Confusion and misunderstandings between stakeholders and developers, as the requirements are not clearly defined or are vague.
+
+Increased rework and change requests, as the SRS does not accurately capture the requirements of the software system.
+
+Reduced quality of the final software system, as a poorly written SRS can result in requirements being missed or not fully met.
+
+Reduced stakeholder satisfaction, as a poorly written SRS does not accurately capture the needs of the business and its users.
+
+Page 30
+Reduced traceability and verifiability, as a poorly written SRS can't be traced to other documents and artifacts, and its requirements can't be tested and validated.
+
+Time-consuming: Creating a good SRS document can be a time-consuming process, especially for complex software projects, which can delay the development process.
+
+Changes and Updates: Changes or updates to the SRS document can cause delays in the software development process and can be difficult to manage.
+
+Page 31
+Lack of Flexibility: A detailed SRS document can restrict the flexibility of the development process, which can be challenging for projects that require agile development methodologies.
+
+Ambiguity: A poorly written SRS document can lead to ambiguity and misunderstandings, which can cause issues throughout the software development process.
